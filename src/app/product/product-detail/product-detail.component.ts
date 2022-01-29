@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from '../product.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-product-detail',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductDetailComponent implements OnInit {
 
-  constructor() { }
+  panelExpanded = true;
+  product: any;
+
+  constructor(public productService: ProductService) { }
 
   ngOnInit(): void {
+    this.getSingleProduct();
+    console.log(this.product);
+  }
+
+  productFeatures = [
+    {title: 'Materials', description: 'Materials123456'},
+    {title: 'Tassels', description: 'Description'},
+    {title: 'Lead Time', description: 'Description'},
+    {title: 'Returns', description: 'Description'}
+  ]
+
+  getSingleProduct(){
+    this.productService.getsingleProduct(117)
+    .subscribe(product => {this.product = product; console.log(product)});
   }
 
 }
