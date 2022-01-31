@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  product_list_api:"https://projects.webtech-evolution.com/rug/public/api/products"
 };
 
 /*

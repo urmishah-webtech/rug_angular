@@ -1,1 +1,17 @@
-<p>productlist works!</p>
+
+    <div class="row">
+        <div class="col-md-6" *ngFor="let product of product">
+          <img style="height:50%;width: 50%;" src="{{  product['image'] }}" alt="Hover">
+           <div class="">
+              <span class="">{{ product['title'] }}</span>
+              
+                <br>
+                {{ product['descripation']  }}
+              
+              <br>
+              
+                {{  product['price_range'] }}
+              
+            </div>
+        </div>
+    </div>
