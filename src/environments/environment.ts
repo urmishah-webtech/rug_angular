@@ -4,7 +4,10 @@
 
 export const environment = {
   production: false,
-  product_list_api:"https://projects.webtech-evolution.com/rug/public/api/products"
+  product_list_api:"https://projects.webtech-evolution.com/rug/public/api/products",
+  register_api:"https://projects.webtech-evolution.com/rug/public/api/",
+  faq_category:"https://projects.webtech-evolution.com/rug/public/api/faq-category",
+  faqs:"https://projects.webtech-evolution.com/rug/public/api/faq",
 };
 
 /*
