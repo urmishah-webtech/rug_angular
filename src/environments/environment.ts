@@ -8,9 +8,12 @@ export const environment = {
   register_api:"https://projects.webtech-evolution.com/rug/public/api/",
   faq_category:"https://projects.webtech-evolution.com/rug/public/api/faq-category",
   faqs:"https://projects.webtech-evolution.com/rug/public/api/faq",
+  menu: "https://projects.webtech-evolution.com/rug/public/api/menu-list/1",
+  product_detail:"https://projects.webtech-evolution.com/rug/public/api/products/",
+  product_variation:"https://projects.webtech-evolution.com/rug/public/api/product-variant/"
 };
 
-/*
+/*d
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
  *

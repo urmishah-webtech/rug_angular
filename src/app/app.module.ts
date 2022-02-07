@@ -16,6 +16,8 @@ import { LoginComponent } from './auth/login/login.component';
 import { FaqComponent } from './page/faq/faq.component';
 import { LoaderComponent } from './general/loader/loader.component';
   
+import { HeaderComponent } from './header/header.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +27,8 @@ import { LoaderComponent } from './general/loader/loader.component';
     SignupComponent,
     LoginComponent,
     FaqComponent,
-    LoaderComponent
+    LoaderComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

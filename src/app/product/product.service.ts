@@ -2,20 +2,21 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { environment } from "src/environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-
+  headers = new HttpHeaders({'Content-Type': 'application/json','Authorization': "Bearer null",'Access-Control-Allow-Origin': '*'});
   constructor(private http: HttpClient) { }
 
-  url = 'https://projects.webtech-evolution.com/rug/public/api/products/';
-
   getsingleProduct(id: any): Observable<any>{
-    const headers = new HttpHeaders({'Content-Type': 'application/json'});
-    return this.http.get(this.url+id).pipe(map((response: any) => {
-      return response;
-      }));
+    //const headers = new HttpHeaders({'Content-Type': 'application/json'});
+    return this.http.get(environment.product_detail+id, { headers: this.headers});
+  }
+
+  getproductVariation(id: any){
+    return this.http.get(environment.product_variation+id,{ headers: this.headers });
   }
 }

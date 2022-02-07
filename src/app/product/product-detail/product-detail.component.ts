@@ -10,13 +10,18 @@ import { Observable } from 'rxjs';
 export class ProductDetailComponent implements OnInit {
 
   panelExpanded = true;
-  product: any;
+  product: any = [];
+  productVariation: any = [];
+  rotateImg: any;
+  degrees = 90;
+  showcolors: boolean = false;
 
   constructor(public productService: ProductService) { }
 
   ngOnInit(): void {
     this.getSingleProduct();
-    console.log(this.product);
+    this.getproductVariation();
+    //console.log(this.product);
   }
 
   productFeatures = [
@@ -27,8 +32,31 @@ export class ProductDetailComponent implements OnInit {
   ]
 
   getSingleProduct(){
-    this.productService.getsingleProduct(117)
-    .subscribe(product => {this.product = product; console.log(product)});
+    this.productService.getsingleProduct(162).subscribe(
+      data => {
+        this.product = data;
+      });
+  }
+
+  getproductVariation(){
+    this.productService.getproductVariation(162).subscribe(
+      data => {
+        this.productVariation = data;
+      }
+    )
+  }
+
+  rotate(event: any){
+      event.target.style.transform='rotate('+this.degrees+'deg)';
+      this.degrees+=90;
+  }
+  showallcolors(){
+    this.showcolors = !this.showcolors;
+  }
+  variantProduct(variantId: string){
+    console.log(variantId);
+    console.log(this.product.image);
+    this.product.image = this.productVariation[0].image;
   }
 
 }
