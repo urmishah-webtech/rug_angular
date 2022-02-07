@@ -10,7 +10,7 @@ export const environment = {
   product_variation:"https://projects.webtech-evolution.com/rug/public/api/product-variant/"
 };
 
-/*
+/*d
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
  *
