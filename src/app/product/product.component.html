@@ -1,1 +1,21 @@
-<p>product works!</p>
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-4" *ngFor="let product of product">
+            <img style="height:50%;width: 50%;" src="{{product['image']}}" alt="Hover">
+             <div class="">
+                <a [routerLink]="['/product-detail', product.id]"><span class="">{{ product['title'] }}</span></a>
+                  <br>
+                  {{ product['descripation']  }}
+                <br>
+                  {{  product['price_range'] }}
+                
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+      
+  

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
 import { Observable } from 'rxjs';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-product-detail',
@@ -9,6 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class ProductDetailComponent implements OnInit {
 
+  private productId: any = '';
   panelExpanded = true;
   product: any = [];
   productVariation: any = [];
@@ -16,11 +18,17 @@ export class ProductDetailComponent implements OnInit {
   degrees = 90;
   showcolors: boolean = false;
 
-  constructor(public productService: ProductService) { }
+  constructor(public productService: ProductService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.getSingleProduct();
-    this.getproductVariation();
+    this.route.paramMap.subscribe((paramMap: ParamMap)=>{
+      if(paramMap.has('productId')){
+        this.productId = paramMap.get('productId');
+        console.log(this.productId);
+      }
+    })
+    this.getSingleProduct(this.productId);
+    this.getproductVariation(this.productId);
     //console.log(this.product);
   }
 
@@ -31,15 +39,15 @@ export class ProductDetailComponent implements OnInit {
     {title: 'Returns', description: 'Description'}
   ]
 
-  getSingleProduct(){
-    this.productService.getsingleProduct(162).subscribe(
+  getSingleProduct(id: number){
+    this.productService.getsingleProduct(id).subscribe(
       data => {
         this.product = data;
       });
   }
 
-  getproductVariation(){
-    this.productService.getproductVariation(162).subscribe(
+  getproductVariation(id: number){
+    this.productService.getproductVariation(id).subscribe(
       data => {
         this.productVariation = data;
       }
@@ -58,5 +66,4 @@ export class ProductDetailComponent implements OnInit {
     console.log(this.product.image);
     this.product.image = this.productVariation[0].image;
   }
-
 }

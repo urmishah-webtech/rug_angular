@@ -7,11 +7,14 @@ import { environment } from 'src/environments/environment';
 })
 export class HeaderService {
 
-  menuUrl = environment.menu;
+  menuUrl = environment.api;
   headers = new HttpHeaders({'Content-Type': 'application/json','Authorization': "Bearer null",'Access-Control-Allow-Origin': '*'});
   constructor(private http: HttpClient) { }
 
   getMenu(){
-    return this.http.get(this.menuUrl, {headers: this.headers});
+    return this.http.get(this.menuUrl+'menu-list/1', {headers: this.headers});
+  }
+  getSubMenu(id: number){
+    return this.http.get(this.menuUrl+'sub-menu-list/'+id, {headers: this.headers});
   }
 }

@@ -8,14 +8,13 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./productlist.component.scss']
 })
 export class ProductlistComponent implements OnInit {
+  product:any = [];
 
   constructor(private __productListService:ProductListService,) { }
-  product = [];
+  
   ngOnInit(): void {
-    this.__productListService.product_list().subscribe((data:any)=>{
-      console.log(data);
-      this.product = data;
-    })  
+     
   }
+  
 
 }

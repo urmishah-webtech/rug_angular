@@ -13,6 +13,6 @@ export class ProductListService{
 
    }
    product_list(){
-        return this.http.get(environment.product_list_api);
+        //return this.http.get(environment.product_list_api);
    }
 }
