@@ -6,6 +6,13 @@ export const environment = {
   production: false,
   api: "https://projects.webtech-evolution.com/rug/public/api/",
   menu: "https://projects.webtech-evolution.com/rug/public/api/menu-list/1",
+  // product_list_api:"https://projects.webtech-evolution.com/rug/public/api/products",
+  register_api:"https://projects.webtech-evolution.com/rug/public/api/",
+  faq_category:"https://projects.webtech-evolution.com/rug/public/api/faq-category",
+  faqs:"https://projects.webtech-evolution.com/rug/public/api/faq",
+  // menu: "https://projects.webtech-evolution.com/rug/public/api/menu-list/1",
+  // product_detail:"https://projects.webtech-evolution.com/rug/public/api/products/",
+  // product_variation:"https://projects.webtech-evolution.com/rug/public/api/product-variant/"
 };
 
 /*d
