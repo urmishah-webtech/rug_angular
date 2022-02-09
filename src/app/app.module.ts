@@ -18,6 +18,9 @@ import { LoaderComponent } from './general/loader/loader.component';
   
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
+import { NodataComponent } from './nodata/nodata.component';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { FooterComponent } from './footer/footer.component';
     LoginComponent,
     FaqComponent,
     LoaderComponent,
-    HeaderComponent
+    HeaderComponent,
+    HomeComponent,
+    NodataComponent,
+  
   ],
   imports: [
     BrowserModule,
