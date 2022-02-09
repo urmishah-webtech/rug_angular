@@ -66,6 +66,9 @@ h1, .h1 {
 .row:before, .row:after {
   display: none !important;
 }
+.btn{
+  font-family: 'Raleway', sans-serif !important;
+}
 
 p {
   font-family: 'Raleway', sans-serif !important;
@@ -200,6 +203,16 @@ section{
   font-weight: 500;
 }
 
+.blue-btn{
+  color: #fff;
+  background-color: #627b80;
+  font-size: 16px;
+  border-radius: 25px;
+  font-weight: 500;
+  height: 45px;
+  
+}
+
 
 /*================(Main CSS Start)=============*/
 
@@ -254,11 +267,6 @@ padding: 4rem 0rem;
   width: 31%;
 }
 
-
-
-
-
-
 .top-footer .navbar-nav .nav-item .nav-link:hover , .top-footer .navbar-nav .nav-item .nav-link:focus{
   color:#627b80 !important;
 }
@@ -309,9 +317,73 @@ padding: 4rem 0rem;
 
 
 
-
-
 /*************Banner CSS Ends*********/
+
+#section1{
+  background-image: url("assets/img/sec-bg1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#section1 h2::after{
+  content: '';
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: #627b80;
+    bottom: 0; 
+    margin-top: 5px;
+}
+
+#section1 button i{
+  padding-left: 10px;
+}
+
+/**********Section 2********/
+
+  #section2 {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+}
+
+
+/******Section3***********/
+#section3 .container{
+  max-width: 700px !important;
+  width: 100%;
+}
+
+
+#section3{
+  margin-top: -10rem;
+  background-image:transparent;
+ 
+}
+
+#section3 h2::after{
+  content: '';
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: #627b80;
+    bottom: 0; 
+    margin-top: 5px;
+}
+
+#section3 button i{
+  padding-left: 10px;
+}
+
+#section3 .box{
+  z-index: 100000;
+  padding:1.5rem;
+  background-color: #eeeeee;
+}
 
 
 
