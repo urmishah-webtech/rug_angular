@@ -12,4 +12,10 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  slideConfig = {"slidesToShow": 4, 
+  "slidesToScroll": 1,
+    "autoplay":true,
+    "speed":1000
+  
+  };
 }

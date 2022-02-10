@@ -20,6 +20,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { NodataComponent } from './nodata/nodata.component';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 
 @NgModule({
@@ -46,7 +47,9 @@ import { NodataComponent } from './nodata/nodata.component';
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    SlickCarouselModule
+
   ],
   providers: [{provide: ToastrService, useClass: ToastrService}
   ],
