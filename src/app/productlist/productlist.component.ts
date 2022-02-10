@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./productlist.component.scss']
 })
 export class ProductlistComponent implements OnInit {
+  product:any = [];
 
   constructor(private __productListService:ProductListService) { }
   products = [];
@@ -21,5 +22,7 @@ export class ProductlistComponent implements OnInit {
       this.products = data;
     })  
   }
+  
+  
 
 }

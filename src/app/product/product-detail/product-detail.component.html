@@ -30,7 +30,15 @@
         <p (click)="showallcolors()">Colors</p>
         <div *ngIf="showcolors">
         <ul *ngFor="let variation of productVariation">
-          <li (click)="variantProduct(variation.variant_id)">{{variation.attribute1}} {{ variation.attribute2}}</li>
+          <li (click)="variantProduct(variation.variant_id)">{{variation.attribute1}}</li>
+        </ul>
+        </div>
+      </div>
+      <div class="row">
+        <p (click)="showallcolors()">Size</p>
+        <div *ngIf="showcolors">
+        <ul *ngFor="let variation of productVariation">
+          <li (click)="variantProduct(variation.variant_id)">{{ variation.attribute2}}</li>
         </ul>
         </div>
       </div>

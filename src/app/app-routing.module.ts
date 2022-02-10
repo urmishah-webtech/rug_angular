@@ -6,10 +6,12 @@ import { FaqComponent } from './page/faq/faq.component';
 import { FooterContactComponent } from './page/footer-contact/footer-contact.component';
 import { PageComponent } from './page/page.component';
 import { ProductDetailComponent } from './product/product-detail/product-detail.component';
+import { ProductComponent } from './product/product.component';
 import { ProductlistComponent } from './productlist/productlist.component';
+import { HomeComponent } from './home/home.component';
+import { NodataComponent } from './nodata/nodata.component';
 
 const routes: Routes = [
-    {path: 'product-detail', component: ProductDetailComponent},
     {path: 'products', component: ProductlistComponent},
     {path: 'signup', component: SignupComponent},
     {path: 'login', component: LoginComponent},
@@ -23,7 +25,18 @@ const routes: Routes = [
           component: PageComponent
         },
       ],
-    }
+    },
+  {path:'', component:HomeComponent},
+  {path: 'products', component: ProductComponent},
+  {path: 'product-detail/:productId', component: ProductDetailComponent},
+ // {path: 'product-detail', component: ProductDetailComponent},
+    // {path: 'products', component: ProductlistComponent},
+    {path: 'signup', component: SignupComponent},
+    {path: 'login', component: LoginComponent},
+    {path: 'faq', component: FaqComponent},
+    {path:'**', component:NodataComponent}
+
+
 ];
 
 @NgModule({

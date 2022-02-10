@@ -18,4 +18,5 @@ export class ProductListService{
     get_customize_blog(){
         return this.http.get(environment.product_customize_blog_api);
     }
+  
 }

@@ -19,6 +19,10 @@ import { LoaderComponent } from './general/loader/loader.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterContactComponent } from './page/footer-contact/footer-contact.component';
 import { PageComponent } from './page/page.component';
+import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
+import { NodataComponent } from './nodata/nodata.component';
+
 
 @NgModule({
   declarations: [
@@ -26,13 +30,18 @@ import { PageComponent } from './page/page.component';
     ProductComponent,
     ProductlistComponent,
     ProductDetailComponent,
+    HeaderComponent,
+    FooterComponent,
     SignupComponent,
     LoginComponent,
     FaqComponent,
     LoaderComponent,
     HeaderComponent,
     FooterContactComponent,
-    PageComponent
+    PageComponent,
+    HomeComponent,
+    NodataComponent,
+  
   ],
   imports: [
     BrowserModule,

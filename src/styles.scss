@@ -1,1 +1,390 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+  position: relative;
+  font-family: 'Raleway', sans-serif !important;
+  color: #424242;
+  font-size: 14px;
+  overflow-x: hidden;
+  font-weight: 500;
+}
+
+html,body {
+  height: 100%;
+  width: 100%;
+overflow: auto;
+}
+
+html {
+  font-size: 16px;
+}
+
+.modal {
+  overflow-y: auto !important;
+}
+
+h6,.h6, h5,.h5, h4,.h4, h3,.h3, h2,.h2, h1,.h1 {
+    font-family: 'Raleway', sans-serif !important;
+  color: #000;
+  font-weight: 600 !important;
+}
+
+
+h1, .h1 {
+    font-size: 50px !important;
+    line-height: 55px !important;
+    letter-spacing: 1px;
+  }
+  
+  h2, .h2 {
+    font-size: 40px !important;
+    line-height: 45px !important;
+    letter-spacing: 0px;
+  }
+  
+  h3, .h3 {
+    font-size: 28px !important;
+    line-height: 35px !important;
+  }
+  
+  h4, .h4 {
+    font-size: 24px !important;
+    line-height: 30px !important;
+  }
+  
+  h5, .h5 {
+    font-size: 20px !important;
+    line-height: 22px !important;
+  }
+  
+  h6, .h6 {
+    font-size: 16px !important;
+    line-height: 20px !important;
+    letter-spacing: 0.07rem;
+  }
+
+.row:before, .row:after {
+  display: none !important;
+}
+.btn{
+  font-family: 'Raleway', sans-serif !important;
+}
+
+p {
+  font-family: 'Raleway', sans-serif !important;
+  color: #000000;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+}
+
+ul{
+  padding-left:0rem !important;
+}
+
+li {
+  list-style: none;
+  text-decoration: none;
+}
+
+a {
+  color: #000 !important;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.container{
+  width: 100%;
+  max-width: 1140px !important;
+}
+
+button {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+input:focus-visible {
+  outline: unset;
+}
+
+input:focus {
+  border-color: #C4C4C4 !important;
+  outline: unset !important;
+  box-shadow: unset !important;
+}
+
+textarea:focus {
+  outline: unset !important;
+  box-shadow: unset !important;
+}
+
+.btn:focus {
+  box-shadow: unset !important;
+}
+
+.form-control{
+  border-color: #C4C4C4 !important;
+}
+.form-control:focus{
+  border-color: #C4C4C4 !important;
+}
+
+select:focus{
+  border-color: #C4C4C4 !important;
+  box-shadow: unset !important;
+}
+
+.form-select{
+  font-size: 14px !important;
+  color:#c4c4c4 !important;
+}
+
+
+
+::placeholder {
+  color: #C4C4C4 !important;
+  font-size: 12px;
+}
+
+.btn-primary {
+  font-weight: 600 !important;
+  border: none !important;
+  color: #fff;
+  background: #78B2FF !important;
+}
+
+.btn-primary:focus,
+.btn-primary:focus {
+  box-shadow: unset !important;
+  color: #fff;
+  background: #63a6ff !important;
+}
+
+.btn-secondary {
+  border: none !important;
+  color: #fff !important;
+  background: #C4C4C4 !important;
+}
+
+.btn-secondary:focus,
+.btn-secondary:hover {
+  color: #fff !important;
+  background: #C4C4C4 !important;
+}
+
+form input {
+  font-weight: 400 !important;
+  font-size: 12px !important;
+  height: 30px;
+  border-color: #C4C4C4;
+}
+
+.modal-dialog .modal-content {
+  border: none !important;
+  border-radius: 20px !important;
+}
+
+hr{
+  margin:0rem !important;
+}
+.badge-success {
+  color: #fff;
+  background-color: #28a745;
+}
+section{
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.black-btn{
+  color: #000;
+  background-color: #fff;
+  font-size: 16px;
+  border-radius: 25px;
+  font-weight: 500;
+}
+
+.blue-btn{
+  color: #fff;
+  background-color: #627b80;
+  font-size: 16px;
+  border-radius: 25px;
+  font-weight: 500;
+  height: 45px;
+  
+}
+
+
+/*================(Main CSS Start)=============*/
+
+/*************Header CSS Starts*********/
+#header {
+	.navbar {
+		img {
+			width: 200px;
+		}
+		.nav-item {
+			.nav-link {
+				color: #627b80;
+				font-weight: 600;
+			}
+			.nav-link.active {
+				background-color: transparent !important;
+				border-bottom: 2px solid #627b80;
+				border-radius: 0px;
+			}
+			padding-left: 1rem;
+			padding-right: 1rem;
+		}
+	}
+	svg {
+		width: 60px;
+		height: 60px;
+	}
+}
+
+
+
+/*************Header CSS Ends*********/
+
+
+/***************Footer Css Starts*******/
+
+.top-footer{
+background: #eeeeee;
+padding: 4rem 0rem;
+}
+
+.top-footer .navbar-nav .nav-item .nav-link{
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.top-footer .col-md-3{
+  width: 23%;
+}
+
+.top-footer .col-md-3:first-child{
+  width: 31%;
+}
+
+.top-footer .navbar-nav .nav-item .nav-link:hover , .top-footer .navbar-nav .nav-item .nav-link:focus{
+  color:#627b80 !important;
+}
+
+.top-footer svg{
+  margin-right:10px;
+  width: 20px;
+  height: 20px;
+}
+
+.bottom-footer{
+  background-color: #000;
+}
+
+
+.bottom-footer p{
+  color: #fff;
+}
+
+/************Footer CSS Ends*********/
+
+/*************Banner CSS Starts*******/
+#banner-section{
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  background: linear-gradient(-45deg, rgb(56 73 77 / 50%), rgb(56 73 77 / 50%)), url(assets/img/banner.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#banner-section .container{
+  max-width: 1100px !important;
+  width: 100%;
+}
+
+#banner-section h1{
+  color: #fff;
+}
+
+#banner-section h6{
+  color: #fff;
+}
+
+#banner-section button{
+  padding:0.8rem;
+  width: 150px;
+}
+
+
+
+/*************Banner CSS Ends*********/
+
+#section1{
+  background-image: url("assets/img/sec-bg1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#section1 h2::after{
+  content: '';
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: #627b80;
+    bottom: 0; 
+    margin-top: 5px;
+}
+
+#section1 button i{
+  padding-left: 10px;
+}
+
+/**********Section 2********/
+
+  #section2 {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+}
+
+
+/******Section3***********/
+#section3 .container{
+  max-width: 700px !important;
+  width: 100%;
+}
+
+
+#section3{
+  margin-top: -10rem;
+  background-image:transparent;
+ 
+}
+
+#section3 h2::after{
+  content: '';
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: #627b80;
+    bottom: 0; 
+    margin-top: 5px;
+}
+
+#section3 button i{
+  padding-left: 10px;
+}
+
+#section3 .box{
+  z-index: 100000;
+  padding:1.5rem;
+  background-color: #eeeeee;
+}
+
+
+
+
