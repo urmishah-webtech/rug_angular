@@ -12,9 +12,12 @@ export class ProductlistComponent implements OnInit {
 
   constructor(private __productListService:ProductListService) { }
   products = [];
+  customize_blog:any;
   ngOnInit(): void {
+    this.__productListService.get_customize_blog().subscribe((response:any)=>{
+      this.customize_blog = response;
+    })  
     this.__productListService.product_list().subscribe((data:any)=>{
-      console.log(data);
       this.products = data;
     })  
   }

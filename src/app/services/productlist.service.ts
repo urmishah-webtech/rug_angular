@@ -12,7 +12,10 @@ export class ProductListService{
     ){
 
    }
-   product_list(){
+    product_list(){
         return this.http.get(environment.product_list_api);
+    }
+    get_customize_blog(){
+        return this.http.get(environment.product_customize_blog_api);
     }
 }

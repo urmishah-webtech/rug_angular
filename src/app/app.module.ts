@@ -17,6 +17,8 @@ import { FaqComponent } from './page/faq/faq.component';
 import { LoaderComponent } from './general/loader/loader.component';
   
 import { HeaderComponent } from './header/header.component';
+import { FooterContactComponent } from './page/footer-contact/footer-contact.component';
+import { PageComponent } from './page/page.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { HeaderComponent } from './header/header.component';
     LoginComponent,
     FaqComponent,
     LoaderComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterContactComponent,
+    PageComponent
   ],
   imports: [
     BrowserModule,

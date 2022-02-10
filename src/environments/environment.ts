@@ -10,7 +10,10 @@ export const environment = {
   faqs:"https://projects.webtech-evolution.com/rug/public/api/faq",
   menu: "https://projects.webtech-evolution.com/rug/public/api/menu-list/1",
   product_detail:"https://projects.webtech-evolution.com/rug/public/api/products/",
-  product_variation:"https://projects.webtech-evolution.com/rug/public/api/product-variant/"
+  product_variation:"https://projects.webtech-evolution.com/rug/public/api/product-variant/", 
+  product_customize_blog_api:"https://projects.webtech-evolution.com/rug/public/api/blogs/collections_customize",
+  footer_contact_blog_api:"https://projects.webtech-evolution.com/rug/public/api/blogs/our_story_contact",
+  terms_condition_api:"https://projects.webtech-evolution.com/rug/public/api/pages/terms-of-service"
 };
 
 /*d
