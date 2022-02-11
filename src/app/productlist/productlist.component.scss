@@ -1,3 +1,17 @@
 .visible{
     display: none;
 }
+.collection-hero {
+    overflow: hidden;
+    text-align: center;
+}
+.collection-image {
+    display: block;
+    /* width: 100%; */
+}
+.collection-hero .collection-description {
+    font-size: 22px;
+    margin: 1em auto 2em;
+    max-width: 724px;
+    padding: 0 var(--gutter);
+}

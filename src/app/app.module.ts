@@ -17,7 +17,13 @@ import { FaqComponent } from './page/faq/faq.component';
 import { LoaderComponent } from './general/loader/loader.component';
   
 import { HeaderComponent } from './header/header.component';
+import { FooterContactComponent } from './page/footer-contact/footer-contact.component';
+import { PageComponent } from './page/page.component';
 import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
+import { NodataComponent } from './nodata/nodata.component';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +37,12 @@ import { FooterComponent } from './footer/footer.component';
     LoginComponent,
     FaqComponent,
     LoaderComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterContactComponent,
+    PageComponent,
+    HomeComponent,
+    NodataComponent,
+  
   ],
   imports: [
     BrowserModule,
@@ -40,7 +51,9 @@ import { FooterComponent } from './footer/footer.component';
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    SlickCarouselModule
+
   ],
   providers: [{provide: ToastrService, useClass: ToastrService}
   ],
