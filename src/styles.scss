@@ -145,32 +145,6 @@ select:focus{
   font-size: 12px;
 }
 
-.btn-primary {
-  font-weight: 600 !important;
-  border: none !important;
-  color: #fff;
-  background: #78B2FF !important;
-}
-
-.btn-primary:focus,
-.btn-primary:focus {
-  box-shadow: unset !important;
-  color: #fff;
-  background: #63a6ff !important;
-}
-
-.btn-secondary {
-  border: none !important;
-  color: #fff !important;
-  background: #C4C4C4 !important;
-}
-
-.btn-secondary:focus,
-.btn-secondary:hover {
-  color: #fff !important;
-  background: #C4C4C4 !important;
-}
-
 form input {
   font-weight: 400 !important;
   font-size: 12px !important;
@@ -220,7 +194,7 @@ section{
 #header {
 	.navbar {
 		img {
-			width: 200px;
+			width: 150px;
 		}
 		.nav-item {
 			.nav-link {
@@ -241,6 +215,37 @@ section{
 		height: 60px;
 	}
 }
+
+
+.dropbtn {
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #e8e4db;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+
 
 
 
@@ -325,6 +330,7 @@ padding: 4rem 0rem;
   background-repeat: no-repeat;
 }
 
+
 #section1 h2::after{
   content: '';
     position: relative;
@@ -338,6 +344,10 @@ padding: 4rem 0rem;
 
 #section1 button i{
   padding-left: 10px;
+}
+
+#section1 .col-md-6:last-child{
+  padding-left: 3rem;
 }
 
 /**********Section 2********/
@@ -408,89 +418,11 @@ padding: 4rem 0rem;
 #section4 button i{
   padding-left: 10px;
 }
+
+#section4 .col-md-6:first-child{
+  padding-right: 3rem;
+}
 /***********Section4 css End********/
-$bubble-count: 50;
-$sway-type: "sway-left-to-right", "sway-right-to-left";
-
-@function random_range($min, $max) {
-  $rand: random();
-  $random_range: $min + floor($rand * (($max - $min) + 1));
-  @return $random_range;
-}
-
-@function sample($list) {
-  @return nth($list, random(length($list)));
-}
-
-.bubbles {
-  position: relative;
-  width: 100%;
-  
-  overflow: hidden;
-}
-
-.bubble {
-  position: absolute;
-  left: var(--bubble-left-offset);
-  bottom: -75%;
-  display: block;
-  width: var(--bubble-radius);
-  height: var(--bubble-radius);
-  border-radius: 50%;
-  animation: float-up var(--bubble-float-duration) var(--bubble-float-delay) ease-in infinite;
-
-  &::before {
-    position: absolute;
-    content: '';
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background:#e7e3dcb0;
-    border-radius: inherit;
-    animation: var(--bubble-sway-type) var(--bubble-sway-duration) var(--bubble-sway-delay) ease-in-out alternate infinite;
-  }
-
-  @for $i from 0 through $bubble-count {
-    &:nth-child(#{$i}) {
-      --bubble-left-offset: #{random_range(0vw, 100vw)};
-      --bubble-radius: #{random_range(1vw, 10vw)};
-      --bubble-float-duration: #{random_range(6s, 12s)};
-      --bubble-sway-duration: #{random_range(4s, 6s)};
-      --bubble-float-delay: #{random_range(0s, 4s)};
-      --bubble-sway-delay: #{random_range(0s, 4s)};
-      --bubble-sway-type: #{sample($sway-type)};
-    }
-  }
-}
-
-@keyframes float-up {
-  to {
-    transform: translateY(-175vh);
-  }
-}
-
-@keyframes sway-left-to-right {
-  from {
-    transform: translateX(-100%);
-  }
-
-  to {
-    transform: translateX(100%);
-  }
-}
-
-@keyframes sway-right-to-left {
-  from {
-    transform: translateX(100%);
-  }
-
-  to {
-    transform: translateX(-100%);
-  }
-}
-
-
 /************Section 5 CSS Start************/
 #section5 h2::after{
   content: '';
@@ -571,12 +503,13 @@ figure {
 
 #section6 .col-md-4.col-12{
   padding-top: 9rem;
+  padding-left: 3rem;
 }
 
 #section6  .sec6-img {
   position: relative;
   width: 360px;
-  height: 640px;
+  height: 600px;
   background: rgba(0, 0, 0, 0);
   transition: 0.5s;
 }
@@ -641,11 +574,50 @@ figure {
 
 
 /**************Section 8  css Start ************/
+#section8{
+  background-image: linear-gradient(-45deg, rgb(0 0 0 / 50%), rgb(0 0 0 / 50%)), url("assets/img/sec8-bg.jpg");
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  background-attachment: fixed;
+}
+
+#section8 h2{
+  color: #fff;
+  
+}
+
+#section8 h2::after{
+  content: '';
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: #fff;
+    bottom: 0;
+    left: calc(48% - 20px);
+    text-align: center;
+    margin-top: 10px;
+}
+
+#section8 h6{
+  color: #fff;
+}
+
+#section-slider{
+  margin-top: -10rem;
+}
+
+
 #section-slider .box{
   margin: 1rem;
-  box-shadow: 0 0 4px #00000066;
-  padding: 1rem
+  box-shadow:0 0 10px #3333336e;
+  padding: 1rem;
+  border:1px solid #fff;
 
+}
+
+#section-slider img{
+width: 100%;
 }
 
 /**************Section 8 css End ************/
