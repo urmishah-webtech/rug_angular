@@ -9,7 +9,7 @@ import { HeaderService } from '../services/header.service';
 export class HeaderComponent implements OnInit {
   menu: any = [];
   submenu: any = [];
-  menuId: string = '';
+  menuId: number = 80;
   openDropdown = false
 
   constructor(private headerService: HeaderService) { }
@@ -25,7 +25,7 @@ export class HeaderComponent implements OnInit {
       // this.menuId = data.id;
     })
   }
-  getSubmenu(id: string){
+  getSubmenu(id: number){
     this.headerService.getSubMenu(80).subscribe(data=>{
       this.submenu = data;
     })

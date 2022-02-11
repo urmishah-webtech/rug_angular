@@ -19,17 +19,17 @@ export class FaqComponent implements OnInit {
       this.categories=data;
       this.selected_cat=this.categories[0]['id']
       this.__pageService.faqs(this.categories[0]['id']).subscribe((faqs:any)=>{
-        this.faqs=faqs     
+        this.faqs=faqs
         this.title=this.categories[0]['category']
         this.isLoaderVisible=false
       })
       this.isLoaderVisible=false
     })
-  } 
+  }
   getFaq(id:any,title:any){
-    this.isLoaderVisible=true
     if(this.selected_cat != id){
       this.selected_cat=id;
+      this.isLoaderVisible=true
       this.__pageService.faqs(id).subscribe((faqs:any)=>{
         this.faqs=faqs
         this.title=title
