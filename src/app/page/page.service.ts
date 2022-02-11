@@ -16,4 +16,10 @@ export class PageService {
   faqs(id:any){
     return this.http.get(environment.faqs+'/'+id);
   }
+  footer_contact_blog(){
+    return this.http.get(environment.footer_contact_blog_api);
+  }
+  terms_condition(){
+    return this.http.get(environment.terms_condition_api);
+  }
 }
