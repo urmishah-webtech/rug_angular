@@ -8,16 +8,23 @@ import { HeaderService } from '../services/header.service';
 })
 export class FooterComponent implements OnInit {
 
-  menu: any = [];
+  company: any = [];
+  support: any = [];
   constructor(private headerService: HeaderService) { }
 
   ngOnInit(): void {
+    this.getcompany()
+    this.getSupport()
   }
 
-  getmenu(){
+  getcompany(){
     this.headerService.getMenu().subscribe(data=> {
-      this.menu = data;
-      // this.menuId = data.id;
+      this.company = data;
+    })
+  }
+  getSupport(){
+    this.headerService.getfooterMenu().subscribe(data=>{
+      this.support = data;
     })
   }
 }

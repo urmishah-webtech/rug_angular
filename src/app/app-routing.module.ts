@@ -12,31 +12,24 @@ import { HomeComponent } from './home/home.component';
 import { NodataComponent } from './nodata/nodata.component';
 
 const routes: Routes = [
-    {path: 'products', component: ProductlistComponent},
-    {path: 'signup', component: SignupComponent},
-    {path: 'login', component: LoginComponent},
-    {path: 'faq', component: FaqComponent},
+    {path:'', component:HomeComponent},
     {path: 'footer', component: FooterContactComponent},
-    {
-      path: 'pages',
-      children: [
-        {
-          path: 'terms-of-service',
-          component: PageComponent
-        },
-      ],
-    },
-  {path:'', component:HomeComponent},
-  {path: 'products', component: ProductComponent},
-  {path: 'product-detail/:productId', component: ProductDetailComponent},
- // {path: 'product-detail', component: ProductDetailComponent},
-    // {path: 'products', component: ProductlistComponent},
+    // {
+    //   path: 'pages',
+    //   children: [
+    //     {
+    //       path: 'terms-of-service',
+    //       component: PageComponent
+    //     },
+    //   ],
+    // },
+    {path: 'pages/:pageId', component: PageComponent},
+    {path: 'products', component: ProductComponent},
+    {path: 'product-detail/:productId', component: ProductDetailComponent},
     {path: 'signup', component: SignupComponent},
     {path: 'login', component: LoginComponent},
     {path: 'faq', component: FaqComponent},
-    {path:'**', component:NodataComponent}
-
-
+    {path: '**', component:NodataComponent}
 ];
 
 @NgModule({

@@ -12,10 +12,10 @@
                 <div>
                     <h4>Company</h4>
                     <ul class = "navbar-nav">
-                        <li class = "nav-item">
-                            <a routerLink = '' class = "nav-link">Home</a>
+                        <li class = "nav-item" *ngFor="let company of company">
+                            <a [routerLink] = "company.link" class = "nav-link">{{company.menu_title}}</a>
                         </li>
-                        <li class = "nav-item">
+                        <!-- <li class = "nav-item">
                             <a href = "#" class = "nav-link">Visit Us</a>
                         </li>
                         <li class = "nav-item">
@@ -23,7 +23,7 @@
                         </li>
                         <li class = "nav-item">
                             <a href = "#" class = "nav-link">Our Story</a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </div>
@@ -31,10 +31,10 @@
                 <div>
                     <h4>Support</h4>
                     <ul class = "navbar-nav">
-                        <li class = "nav-item">
-                            <a href = "#" class = "nav-link">Our Story</a>
+                        <li class = "nav-item" *ngFor="let supportLinks of support">
+                            <a [routerLink]="['pages', supportLinks.seo_title]" class = "nav-link">{{supportLinks.title}}</a>
                         </li>
-                        <li class = "nav-item">
+                        <!-- <li class = "nav-item">
                             <a href = "#" class = "nav-link">Career</a>
                         </li>
                         <li class = "nav-item">
@@ -42,7 +42,7 @@
                         </li>
                         <li class = "nav-item">
                             <a href = "#" class = "nav-link">Privacy & Cookie policy</a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </div>
@@ -50,10 +50,10 @@
                 <div>
                     <h4>Contact Us</h4>
                     <div>
-                        
+
 
     <h6>
-        
+
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="256" height="256" viewBox="0 0 256 256" xml:space="preserve">
     <desc>Created with Fabric.js 1.7.22</desc>
     <defs>
@@ -68,8 +68,8 @@
     </svg>
         +1234567890</h6>
         <h6>
-           
-            
+
+
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="256" height="256" viewBox="0 0 256 256" xml:space="preserve">
     <desc>Created with Fabric.js 1.7.22</desc>
     <defs>
