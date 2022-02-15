@@ -213,7 +213,14 @@ section .blue-btn:hover{
 
 
 /*================(Main CSS Start)=============*/
+/*************Page 404 CSS Starts**********/
+#page_404{
+	background-color: #efefef;
+	padding-top: 5rem;
+	padding-bottom: 5rem;
+}
 
+/*************Page 404  CSS Ends**********/
 /*************Header CSS Starts*********/
 #header {
 	.navbar {
@@ -232,6 +239,19 @@ section .blue-btn:hover{
 			}
 			padding-left: 1rem;
 			padding-right: 1rem;
+		}
+		.navbar-toggler-icon{
+			width: 1em;
+			height: 1em;
+		}
+
+		.navbar-toggler{
+			border: 3px solid #1a1a1a;
+			height: 40px;
+
+			&:focus{
+				box-shadow: unset !important;
+			}
 		}
 	}
 	svg {
@@ -292,7 +312,7 @@ section .blue-btn:hover{
 			}
 		}
 	}
-	.col-md-3 {
+	.col-lg-3 {
 		width: 23%;
 		&:first-child {
 			width: 31%;
@@ -303,12 +323,17 @@ section .blue-btn:hover{
 		width: 20px;
 		height: 20px;
 	}
+	.contact_details h6{
+    padding-top: 0.5rem;
+	}
 }
 .bottom-footer {
 	background-color: #000;
 	p {
 		color: #fff;
 	}
+
+
 }
 
 /************Footer CSS Ends*********/
@@ -519,6 +544,18 @@ section .blue-btn:hover{
 /***********Section4 css End********/
 /************Section 5 CSS Start************/
 #section5 {
+	h2 {
+		&::after {
+			content: '';
+			position: relative;
+			display: block;
+			width: 40px;
+			height: 3px;
+			background: #627b80;
+			bottom: 0;
+			margin-top: 5px;
+		}
+	}
 	.title {
 		color: #1a1a1a;
 		text-align: center;
@@ -560,6 +597,7 @@ section .blue-btn:hover{
 	}
 	.content-image {
 		width: 100%;
+		object-fit: cover;
 	}
 	img {
 		box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.1);
@@ -596,10 +634,8 @@ section .blue-btn:hover{
 /************section 5 css ends*********/
 
 /************section 6 css start*********/
-
 #section6 {
-
-	p{
+	p {
 		padding-left: 2rem;
 	}
 	h2 {
@@ -626,38 +662,55 @@ section .blue-btn:hover{
 	.col-md-4.col-12 {
 		padding-top: 9rem;
 	}
-	.sec6-img {
+	.hover-effect {
 		position: relative;
-		width: 360px;
-		height: 600px;
-		background: rgba(0, 0, 0, 0);
-		transition: 0.5s;
-		img {
-			position: absolute;
+		
+		img{
 			width: 100%;
-			transition: 0.5s;
+			object-fit: cover;
+		}
+		&::before {
+			right: 0;
+			opacity: 0.8;
+			top: 0;
+			content: "";
+			background: #000;
+			height: 0;
+			width: 0;
+			z-index: 1;
+			position: absolute;
+			-webkit-transition-duration: 1.3s !important;
+			-o-transition-duration: 1.3s;
+			transition-duration: 1.3s !important;
+		}
+		&::after {
+			bottom: 0;
+			opacity: 0.7;
+			left: 0;
+			content: "";
+			background: #000;
+			height: 0;
+			width: 0;
+			z-index: 1;
+			position: absolute;
+			-webkit-transition-duration: 1.3s !important;
+			-o-transition-duration: 1.3s;
+			transition-duration: 1.3s !important;
 		}
 		&:hover {
-			img {
-				&:nth-child(4) {
-					transform: translate(-60px, 60px);
-					opacity: 1;
-				}
-				&:nth-child(3) {
-					transform: translate(-40px, 40px);
-					opacity: 0.8;
-				}
-				&:nth-child(2) {
-					transform: translate(-20px,20px);
-					opacity: 0.6;
-				}
-				&:nth-child(1) {
-					transform: translate(-0px, 0px);
-					opacity: 0.4;
-				}
+			&::after {
+				height: 100%;
+				opacity: 0;
+				width: 100%;
+			}
+			&::before {
+				height: 100%;
+				opacity: 0;
+				width: 100%;
 			}
 		}
 	}
+	
 }
 
 /***********section 6 css ends**********/
@@ -756,6 +809,7 @@ section .blue-btn:hover{
 	}
 	img {
 		width: 100%;
+		object-fit: cover;
 	}
 	.slick-arrow{
 		display: none !important;
@@ -895,33 +949,37 @@ section .blue-btn:hover{
 
 @media(max-width:991px) {
 	h1, .h1 {
-	  font-size: 40px !important;
-	  line-height: 50px !important;
-	}
-	h2, .h2 {
-	  font-size: 32px !important;
-	  line-height: 39px !important;
-	}
-	h3, .h3 {
-	  font-size: 24px !important;
-	  line-height: 36px !important;
-	}
-	h4, .h4 {
-	  font-size: 19px !important;
-	  line-height: 28px !important;
-	}
-	h5, .h5 {
-	  font-size: 17px !important;
-	  line-height: 26px !important;
-	}
-	h6, .h6 {
-	  font-size: 15px !important;
-	  line-height: 22px !important;
-	}
+		font-size: 40px !important;
+		line-height: 46px !important;
+	  }
+	  h2, .h2 {
+		font-size: 32px !important;
+		line-height: 36px !important;
+	  }
+	  h3, .h3 {
+		font-size: 26px !important;
+		line-height: 32px !important;
+	  }
+	  h4, .h4 {
+		font-size: 20px !important;
+		line-height: 26px !important;
+	  }
+	  h5, .h5 {
+		font-size: 18px !important;
+		line-height: 25px !important;
+	  }
+	  h6, .h6 {
+		font-size: 16px !important;
+		line-height: 20px !important;
+	  }
 
 	section {
 		padding-top: 2rem;
 		padding-bottom: 2rem;
+	}
+
+	footer .top-footer .col-lg-3.col-md-6.col-sm-6.col-12{
+		width: 50%;
 	}
 	
 
@@ -932,35 +990,58 @@ section .blue-btn:hover{
 	.sec1-col2{
 		padding-bottom:1rem;
 	}
-	
+
+	#section1 {
+		background-image: unset;
+	}
+
+	#section1 .col-md-6:last-child {
+		background-image: url("assets/img/sec-bg2.png");
+		background-size: 100%;
+		background-repeat: no-repeat;
+	}
+
+	#section7 .col-left {
+		padding-top: 0rem;
+	}
+
+	#section7 .col-lg-6.col-md-6.col-12{
+		margin-top: 1.5rem;
+		padding-top: 0rem !important;
+	}
+
+	#section6 .hover-effect {
+		position: relative;
+		margin: 0.7rem 0rem;
+	}	
 
   }
   
   @media(max-width:768px) {
 	h1, .h1 {
-	  font-size: 36px !important;
-	  line-height: 45px !important;
-	}
-	h2, .h2 {
-	  font-size: 30px !important;
-	  line-height: 35px !important;
-	}
-	h3, .h3 {
-	  font-size: 22px !important;
-	  line-height: 32px !important;
-	}
-	h4, .h4 {
-	  font-size: 18px !important;
-	  line-height: 25px !important;
-	}
-	h5, .h5 {
-	  font-size: 16px !important;
-	  line-height: 23px !important;
-	}
-	h6, .h6 {
-	  font-size: 14px !important;
-	  line-height: 21px !important;
-	}
+		font-size: 40px !important;
+		line-height: 46px !important;
+	  }
+	  h2, .h2 {
+		font-size: 32px !important;
+		line-height: 36px !important;
+	  }
+	  h3, .h3 {
+		font-size: 26px !important;
+		line-height: 32px !important;
+	  }
+	  h4, .h4 {
+		font-size: 20px !important;
+		line-height: 26px !important;
+	  }
+	  h5, .h5 {
+		font-size: 18px !important;
+		line-height: 25px !important;
+	  }
+	  h6, .h6 {
+		font-size: 17px !important;
+		line-height: 24px !important;
+	  }
 	p {
 	  font-size: 14px;
 	  line-height: 21px;
@@ -974,20 +1055,165 @@ section .blue-btn:hover{
 		width: 50%;
 	}
 
+	#section7 .card{
+      width: 300px;
+	}
+
+	#section7 .col-lg-6.col-md-6.col-12{
+		display: flex;
+		justify-content: center;
+	}
+
+	#section6 .hover-effect{
+		padding:0.7rem 0rem;
+	}
+
+	.blue-btn{
+		font-size: 16px;
+		width: 150px;
+	}
+
+	#banner-section {
+	padding-top: 8rem;
+	padding-bottom: 8rem;
+	}
+
+	#section-slider {
+		margin-top: -9rem;
+	}
+
+	.black-btn{
+		font-size: 16px;
+		width: 180px !important;
+		line-height: 20px;
+	}
+
+	#section3{
+		margin-top: -15rem;
+	}
+
+	.top-footer .col-md-3:first-child {
+		width: 50%;
+	}
+
+	#header .navbar img {
+		width: 100px;
+	}
+
   }
   
   @media(max-width:576px) {
 	h1, .h1 {
+		font-size: 38px !important;
+		line-height: 46px !important;
+	  }
+	  h2, .h2 {
+		font-size: 30px !important;
+		line-height: 33px !important;
+	  }
+	  h3, .h3 {
+		font-size: 24px !important;
+		line-height: 32px !important;
+	  }
+	  h4, .h4 {
+		font-size: 20px !important;
+		line-height: 26px !important;
+	  }
+	  h5, .h5 {
+		font-size: 17px !important;
+		line-height: 24px !important;
+	  }
+	  h6, .h6 {
+		font-size: 16px !important;
+		line-height: 23px !important;
+	  }
+	footer .top-footer .col-lg-3.col-md-6.col-sm-6.col-12:first-child{
+		width: 100%;
+	}
+
+	footer .top-footer .col-lg-3.col-md-6.col-sm-6.col-12{
+		width: 100%;
+		padding:16px 12px;
+	}
+	
+
+	
+
+	#banner-section {
+		padding-top: 6rem;
+		padding-bottom: 6rem;
+		}
+
+		#section8{
+			padding-top: 5rem;
+			padding-bottom: 5rem;
+		}
+
+		#section-slider {
+			margin-top: -8rem;
+		}
+
+		#section3{
+			margin-top: -20rem;
+		}
+  
+  }
+  
+  @media(max-width:470px) {
+	h1, .h1 {
+		font-size: 36px !important;
+		line-height: 44px !important;
+	  }
+	  h2, .h2 {
+		font-size: 28px !important;
+		line-height: 33px !important;
+	  }
+	  h3, .h3 {
+		font-size: 20px !important;
+		line-height: 28px !important;
+	  }
+	  h4, .h4 {
+		font-size: 18px !important;
+		line-height: 25px !important;
+	  }
+	  h5, .h5 {
+		font-size: 16px !important;
+		line-height: 23px !important;
+	  }
+	  h6, .h6 {
+		font-size: 15px !important;
+		line-height: 22px !important;
+	  }
+	#section7 .card_img img {
+		
+		transform: scale(1);
+	
+		
+	}
+
+	#section6 img {
+	height: 450px;
+	}
+
+	#section-slider {
+		margin-top: -7rem;
+	}
+	
+   
+  }
+  
+  @media(max-width:360px) {
+	h1, .h1 {
 	  font-size: 36px !important;
-	  line-height: 45px !important;
+	  line-height: 44px !important;
 	}
 	h2, .h2 {
-	  font-size: 30px !important;
-	  line-height: 35px !important;
+	  font-size: 28px !important;
+	  line-height: 33px !important;
 	}
 	h3, .h3 {
-	  font-size: 22px !important;
-	  line-height: 32px !important;
+	  font-size: 20px !important;
+	  line-height: 28px !important;
 	}
 	h4, .h4 {
 	  font-size: 18px !important;
@@ -998,73 +1224,16 @@ section .blue-btn:hover{
 	  line-height: 23px !important;
 	}
 	h6, .h6 {
-	  font-size: 14px !important;
-	  line-height: 21px !important;
-	}
-	
-
-	.top-footer .col-md-3 {
-		width: 100%;
-	}
-
-  
-  
-  }
-  
-  @media(max-width:470px) {
-	h1, .h1 {
-	  font-size: 34px !important;
-	  line-height: 40px !important;
-	}
-	h2, .h2 {
-	  font-size: 28px !important;
-	  line-height: 30px !important;
-	}
-	h3, .h3 {
-	  font-size: 20px !important;
-	  line-height: 28px !important;
-	}
-	h4, .h4 {
-	  font-size: 17px !important;
-	  line-height: 24px !important;
-	}
-	h5, .h5 {
 	  font-size: 15px !important;
 	  line-height: 22px !important;
 	}
-	h6, .h6 {
-	  font-size: 14px !important;
-	  line-height: 21px !important;
-	}
-	
-   
-  }
-  
-  @media(max-width:360px) {
-	h1, .h1 {
-	  font-size: 32px !important;
-	  line-height: 39px !important;
-	}
-	h2, .h2 {
-	  font-size: 26px !important;
-	  line-height: 30px !important;
-	}
-	h3, .h3 {
-	  font-size: 20px !important;
-	  line-height: 28px !important;
-	}
-	h4, .h4 {
-	  font-size: 17px !important;
-	  line-height: 24px !important;
-	}
-	h5, .h5 {
-	  font-size: 15px !important;
-	  line-height: 22px !important;
-	}
-	h6, .h6 {
-	  font-size: 14px !important;
-	  line-height: 21px !important;
-	}
+
+	#banner-section {
+		padding-top: 4rem;
+		padding-bottom: 4rem;
+		}
+
+		
   
 	
   }
