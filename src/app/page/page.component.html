@@ -2,26 +2,10 @@
    <app-loader *ngIf="isLoaderVisible"></app-loader>
     <div class="row">
        <div class="shopify-policy__title">
-          <h1>Terms of Service</h1>
+          <h1>{{pageData.title}}</h1>
        </div>
-       <div class="shopify-policy__body">
-          <div class="rte">
-             <div class="translate-tooltip-mtz hidden">
-                <div class="header">
-                   <div class="header-controls">
-                      <span class="sound-translate"></span> <span class="settings"></span>
-                   </div>
-                   <div class="translate-icons">
-                      <img class="from"> <img class="arrow"> <img class="to">
-                   </div>
-                </div>
-                <div class="translated-text">
-                   <div class="words"></div>
-                   <div class="sentences"></div>
-                </div>
-             </div>
-             <span style="" class="translate-button-mtz"></span>
-          </div>
+       <div class="page-content">
+          <div [innerHTML]="pageData.content"></div>
        </div>
     </div>
  </div>

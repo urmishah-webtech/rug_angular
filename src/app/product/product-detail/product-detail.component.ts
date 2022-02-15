@@ -24,7 +24,7 @@ export class ProductDetailComponent implements OnInit {
     this.route.paramMap.subscribe((paramMap: ParamMap)=>{
       if(paramMap.has('productId')){
         this.productId = paramMap.get('productId');
-        console.log(this.productId);
+        //console.log(this.productId);
       }
     })
     this.getSingleProduct(this.productId);

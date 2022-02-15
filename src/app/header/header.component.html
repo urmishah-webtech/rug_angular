@@ -8,29 +8,30 @@
       <span class="navbar-toggler-icon"><i class = "fa fa-bars"></i></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-md-auto  gap-2 nav-pills">
-          <li class="nav-item rounded ">
-            <a class="nav-link"  routerLink = "" routerLinkActive = "active" [routerLinkActiveOptions] = "{exact : true}">Home</a>
+        <ul class="navbar-nav ms-md-auto  gap-2 nav-pills" >
+          <li class="nav-item rounded" *ngFor="let menu of menu">
+            <div *ngIf="!menu.children; else parentMenu">
+            <a class="nav-link"  [routerLink]="menu.link" routerLinkActive = "active" [routerLinkActiveOptions] = "{exact : true}">{{menu.menu_title}}</a>
+            </div>
+            <ng-template #parentMenu>
+              <div class="dropdown">
+                <a [routerLink]="menu.link" class=" nav-link dropbtn">{{menu.menu_title}} <i class = "fa fa-angle-down"></i></a>
+                <div class="dropdown-content">
+                  <a [routerLink]="submenu.link" *ngFor="let submenu of menu.children">{{submenu.sub_menu_title}}</a>
+                </div>
+              </div>
+            </ng-template>
           </li>
-          <li class="nav-item rounded">
+
+          <!-- <li class="nav-item rounded">
             <a class="nav-link" routerLink = "about" routerLinkActive = "active">Visit Us</a>
           </li>
           <li class="nav-item rounded">
             <a class="nav-link" routerLink = "library" routerLinkActive = "active">Our Process</a>
           </li>
-          <li class="nav-item dropdown">
-            <div class="dropdown">
-              <a href = "#" class=" nav-link dropbtn">Dropdown <i class = "fa fa-angle-down"></i></a>
-              <div class="dropdown-content">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-              </div>
-            </div>
-          </li>
           <li class="nav-item rounded">
             <a class="nav-link" routerLink = "contact" routerLinkActive = "active">Our Story</a>
-          </li>
+          </li> -->
         </ul>
         <div  class = "ms-4">
           <a href = "#">
@@ -38,7 +39,7 @@
               <desc>Created with Fabric.js 1.7.22</desc>
               <defs>
               </defs>
-              <g transform="translate(128 128) scale(0.72 0.72)" style="">
+              <g transform="translate(128 128) scale(0.72 0.72)">
                 <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(-175.05 -175.05000000000004) scale(3.89 3.89)" >
                   <path d="M 24.158 57.596 h 54.898 c 2.293 0 4.313 -1.509 4.964 -3.709 l 5.841 -19.759 c 0.633 -2.141 -0.972 -4.289 -3.204 -4.289 H 16.95 L 24.158 57.596 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(98,123,128); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
                   <path d="M 79.585 70.399 H 27.091 c -0.687 0 -1.287 -0.464 -1.46 -1.129 L 14.404 26.034 c -0.421 -1.62 -1.883 -2.751 -3.557 -2.751 H 1.508 C 0.675 23.283 0 22.608 0 21.775 s 0.675 -1.508 1.508 -1.508 h 9.339 c 3.048 0 5.711 2.06 6.476 5.01 l 10.935 42.106 h 51.327 c 0.833 0 1.508 0.676 1.508 1.508 C 81.093 69.724 80.417 70.399 79.585 70.399 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(98,123,128); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />

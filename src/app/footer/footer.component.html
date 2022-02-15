@@ -1,93 +1,89 @@
 <footer>
-    <div class = "top-footer">
-      <div class = "container">
-        <div class = "row">
-          <div class = "col-md-3 col-sm-6 col-12">
-            <div>
-              <h4>About Us</h4>
-              <p class = "mb-0 pt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In auctor egestas purus, at pharetra urna. Aliquam commodo eu justo in iaculis. Nulla facilisi. </p>
-            </div>
+  <div class = "top-footer">
+    <div class = "container">
+      <div class = "row">
+        <div class = "col-md-3 col-sm-6 col-12">
+          <div>
+            <h4>About Us</h4>
+            <p class = "mb-0 pt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In auctor egestas purus, at pharetra urna. Aliquam commodo eu justo in iaculis. Nulla facilisi. </p>
           </div>
-          <div class = "col-md-3 col-sm-6 col-12">
-            <div>
-              <h4>Company</h4>
-              <ul class = "navbar-nav">
-                <li class = "nav-item">
-                  <a routerLink = '' class = "nav-link">Home</a>
+        </div>
+        <div class = "col-md-3 col-sm-6 col-12">
+          <div>
+            <h4>Company</h4>
+            <ul class = "navbar-nav">
+              <li class = "nav-item" *ngFor="let company of company">
+                <a [routerLink] = "company.link" class = "nav-link">{{company.menu_title}}</a>
+              </li>
+              <!-- <li class = "nav-item">
+                <a href = "#" class = "nav-link">Visit Us</a>
                 </li>
                 <li class = "nav-item">
-                  <a href = "#" class = "nav-link">Visit Us</a>
+                <a href = "#" class = "nav-link">Our Process</a>
                 </li>
                 <li class = "nav-item">
-                  <a href = "#" class = "nav-link">Our Process</a>
-                </li>
-                <li class = "nav-item">
-                  <a href = "#" class = "nav-link">Our Story</a>
-                </li>
-              </ul>
-            </div>
+                <a href = "#" class = "nav-link">Our Story</a>
+                </li> -->
+            </ul>
           </div>
-          <div class = "col-md-3 col-sm-6 col-12">
-            <div>
-              <h4>Support</h4>
-              <ul class = "navbar-nav">
-                <li class = "nav-item">
-                  <a href = "#" class = "nav-link">Our Story</a>
+        </div>
+        <div class = "col-md-3 col-sm-6 col-12">
+          <div>
+            <h4>Support</h4>
+            <ul class = "navbar-nav">
+              <li class = "nav-item" *ngFor="let supportLinks of support">
+                <a [routerLink]="['pages', supportLinks.seo_title]" class = "nav-link">{{supportLinks.title}}</a>
+              </li>
+              <!-- <li class = "nav-item">
+                <a href = "#" class = "nav-link">Career</a>
                 </li>
                 <li class = "nav-item">
-                  <a href = "#" class = "nav-link">Career</a>
+                <a href = "#" class = "nav-link">Terms & Conditions</a>
                 </li>
                 <li class = "nav-item">
-                  <a href = "#" class = "nav-link">Terms & Conditions</a>
-                </li>
-                <li class = "nav-item">
-                  <a href = "#" class = "nav-link">Privacy & Cookie policy</a>
-                </li>
-              </ul>
-            </div>
+                <a href = "#" class = "nav-link">Privacy & Cookie policy</a>
+                </li> -->
+            </ul>
           </div>
-          <div class = "col-md-3 col-sm-6 col-12">
+        </div>
+        <div class = "col-md-3 col-sm-6 col-12">
+          <div>
+            <h4>Contact Us</h4>
             <div>
-              <h4>Contact Us</h4>
-              <div>
-                <h6>
-                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="256" height="256" viewBox="0 0 256 256" xml:space="preserve">
-                    <desc>Created with Fabric.js 1.7.22</desc>
-                    <defs>
-                    </defs>
-                    <g transform="translate(128 128) scale(1.66 1.66)" style="">
-                      <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(-76.04999999999998 -76.05) scale(1.69 1.69)" >
-                        <path d="M 69.457 88.342 l 8.938 -4.509 c 4.251 -2.145 4.761 -8.012 0.944 -10.858 L 65.846 62.917 c -2.035 -1.517 -4.773 -1.69 -6.983 -0.441 l -3.919 2.215 c -1.88 1.063 -4.182 1.133 -6.088 0.118 C 38.56 59.328 30.672 51.44 25.191 41.144 c -1.015 -1.906 -0.945 -4.208 0.118 -6.088 l 2.215 -3.919 c 1.249 -2.209 1.076 -4.948 -0.441 -6.983 L 17.025 10.661 c -2.846 -3.818 -8.714 -3.308 -10.858 0.944 l -4.509 8.938 c -2.107 4.177 -2.224 9.101 -0.246 13.341 c 11.6 24.87 29.834 43.104 54.704 54.704 C 60.355 90.566 65.28 90.449 69.457 88.342 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(98,123,128); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
-                        <path d="M 85.913 53.128 c -2.257 0 -4.087 -1.829 -4.087 -4.087 c 0 -22.535 -18.333 -40.868 -40.868 -40.868 c -2.257 0 -4.087 -1.829 -4.087 -4.087 S 38.701 0 40.959 0 C 68 0 90 22 90 49.041 C 90 51.299 88.171 53.128 85.913 53.128 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(244,219,63); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
-                        <path d="M 69.566 53.128 c -2.257 0 -4.087 -1.829 -4.087 -4.087 c 0 -13.521 -10.999 -24.521 -24.521 -24.521 c -2.257 0 -4.087 -1.829 -4.087 -4.087 s 1.829 -4.087 4.087 -4.087 c 18.028 0 32.694 14.667 32.694 32.694 C 73.653 51.299 71.823 53.128 69.566 53.128 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(244,219,63); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
-                      </g>
+              <h6>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="256" height="256" viewBox="0 0 256 256" xml:space="preserve">
+                  <desc>Created with Fabric.js 1.7.22</desc>
+                  <defs>
+                  </defs>
+                  <g transform="translate(128 128) scale(0.72 0.72)" style="">
+                    <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(-175.05 -175.05000000000004) scale(3.89 3.89)" >
+                      <path d="M 38.789 51.211 l 10.876 10.876 c 0.974 0.974 2.471 1.194 3.684 0.543 l 13.034 -6.997 c 0.964 -0.518 2.129 -0.493 3.07 0.066 l 19.017 11.285 c 1.357 0.805 1.903 2.489 1.268 3.933 c -1.625 3.698 -4.583 10.476 -5.758 13.473 c -0.247 0.631 -0.615 1.209 -1.127 1.652 c -12.674 10.986 -37.89 -2.4 -57.191 -21.701 C 6.358 45.039 -7.028 19.823 3.958 7.149 c 0.444 -0.512 1.022 -0.88 1.652 -1.127 c 2.996 -1.175 9.775 -4.133 13.473 -5.758 c 1.444 -0.635 3.128 -0.089 3.933 1.268 l 11.285 19.017 c 0.558 0.941 0.583 2.106 0.066 3.07 L 27.37 36.651 c -0.651 1.213 -0.431 2.71 0.543 3.684 C 27.913 40.335 38.789 51.211 38.789 51.211 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(98,123,128); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                      <path d="M 60.282 42.839 l 13.376 -13.376 l 5.134 5.134 c 0.843 0.843 2.284 0.458 2.592 -0.695 l 8.561 -31.95 C 90.254 0.8 89.2 -0.254 88.048 0.054 l -31.95 8.561 c -1.152 0.309 -1.538 1.749 -0.695 2.592 l 5.134 5.134 L 47.161 29.718 c -0.628 0.628 -0.628 1.646 0 2.274 l 10.847 10.847 C 58.636 43.467 59.654 43.467 60.282 42.839 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(98,123,128); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
                     </g>
-                  </svg>
-                  +1234567890
-                </h6>
-                <h6>
-                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="256" height="256" viewBox="0 0 256 256" xml:space="preserve">
-                    <desc>Created with Fabric.js 1.7.22</desc>
-                    <defs>
-                    </defs>
-                    <g transform="translate(128 128) scale(0.72 0.72)" style="">
-                      <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(-175.05 -175.05000000000004) scale(3.89 3.89)" >
-                        <path d="M 82.379 11.629 H 7.621 C 3.418 11.629 0 15.047 0 19.25 v 44.501 c 0 4.202 3.418 7.62 7.621 7.62 h 74.758 c 4.202 0 7.621 -3.418 7.621 -7.62 V 19.25 C 90 15.047 86.581 11.629 82.379 11.629 z M 87 63.751 c 0 2.548 -2.073 4.62 -4.621 4.62 H 7.621 C 5.073 68.371 3 66.299 3 63.751 V 19.25 c 0 -0.851 0.247 -1.639 0.65 -2.324 l 36.414 30.95 C 41.495 49.092 43.247 49.7 45 49.7 c 1.752 0 3.505 -0.608 4.935 -1.824 l 36.414 -30.95 C 86.753 17.611 87 18.399 87 19.25 V 63.751 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(98,123,128); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
-                        <path d="M 82.379 14.629 c 0.587 0 1.144 0.121 1.662 0.322 l -36.048 30.64 c -1.735 1.476 -4.252 1.474 -5.984 0 L 5.959 14.95 c 0.517 -0.201 1.074 -0.321 1.661 -0.321 H 82.379 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(98,123,128); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
-                        <path d="M 87 63.751 c 0 2.548 -2.073 4.62 -4.621 4.62 H 7.621 C 5.073 68.371 3 66.299 3 63.751 V 19.25 c 0 -0.851 0.247 -1.639 0.65 -2.324 l 36.414 30.95 C 41.495 49.092 43.247 49.7 45 49.7 c 1.752 0 3.505 -0.608 4.935 -1.824 l 36.414 -30.95 C 86.753 17.611 87 18.399 87 19.25 V 63.751 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(244,219,63); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
-                        <path d="M 6 22.86 l 32.121 27.302 C 40.047 51.799 42.49 52.7 45 52.7 c 2.51 0 4.953 -0.902 6.878 -2.538 L 84 22.86 v 40.891 c 0 0.893 -0.727 1.62 -1.621 1.62 H 7.621 C 6.727 65.371 6 64.644 6 63.751 V 22.86 M 3.65 16.926 C 3.247 17.611 3 18.399 3 19.25 v 44.501 c 0 2.548 2.073 4.62 4.621 4.62 h 74.758 c 2.548 0 4.621 -2.072 4.621 -4.62 V 19.25 c 0 -0.851 -0.247 -1.638 -0.65 -2.324 l -36.414 30.95 C 48.506 49.092 46.753 49.7 45 49.7 c -1.753 0 -3.506 -0.608 -4.936 -1.824 L 3.65 16.926 L 3.65 16.926 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
-                      </g>
+                  </g>
+                </svg>
+                +1234567890
+              </h6>
+              <h6>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="256" height="256" viewBox="0 0 256 256" xml:space="preserve">
+                  <desc>Created with Fabric.js 1.7.22</desc>
+                  <defs>
+                  </defs>
+                  <g transform="translate(128 128) scale(0.72 0.72)" style="">
+                    <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(-175.05 -175.05000000000004) scale(3.89 3.89)" >
+                      <path d="M 86.17 11.255 H 3.83 c -2.115 0 -3.83 1.715 -3.83 3.83 v 59.83 c 0 2.115 1.715 3.83 3.83 3.83 h 82.34 c 2.115 0 3.83 -1.715 3.83 -3.83 v -59.83 C 90 12.97 88.285 11.255 86.17 11.255 z M 84.55 69.598 c 0 1.739 -1.498 3.149 -3.346 3.149 h -3.792 V 26.717 L 45.016 54.692 L 12.843 26.91 v 45.836 H 9.051 c -1.848 0 -3.346 -1.41 -3.346 -3.149 V 20.403 c 0 -1.739 1.498 -3.149 3.346 -3.149 h 1.535 h 2.209 h 0.048 v 0.041 l 32.173 27.782 l 32.221 -27.823 h 2.209 l 0 0 h 1.757 c 1.848 0 3.346 1.41 3.346 3.149 V 69.598 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(98,123,128); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
                     </g>
-                  </svg>
-                  lorem123@gmail.com
-                </h6>
-              </div>
+                  </g>
+                </svg>
+                lorem123@gmail.com
+              </h6>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class = "bottom-footer py-4 text-center">
-      <p class = "mb-0">Copyright © 2022 Rug, All Rights Reserved.</p>
-    </div>
-  </footer>
+  </div>
+  <div class = "bottom-footer py-4 text-center">
+    <p class = "mb-0">Copyright © 2022 Rug, All Rights Reserved.</p>
+  </div>
+</footer>

@@ -10,6 +10,10 @@ export class PageService {
 
   constructor(private http:HttpClient) { }
 
+  getpage(page: string){
+    return this.http.get(environment.api+'pages/'+page);
+  }
+
   faq_category(){
     return this.http.get(environment.faq_category);
   }
