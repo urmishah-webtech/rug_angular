@@ -19,7 +19,8 @@ export class ProductDetailComponent implements OnInit {
   showcolors: boolean = false;
 
   constructor(public productService: ProductService, private route: ActivatedRoute) { }
-
+   
+ 
   ngOnInit(): void {
     this.route.paramMap.subscribe((paramMap: ParamMap)=>{
       if(paramMap.has('productId')){
@@ -30,6 +31,22 @@ export class ProductDetailComponent implements OnInit {
     this.getSingleProduct(this.productId);
     this.getproductVariation(this.productId);
     //console.log(this.product);
+  }
+
+  /********plus minus Quantity ****/
+  quantity:number =1;
+  i=1
+  plus(){
+    if(this.i !=20){
+      this.i++;
+      this.quantity = this.i;
+    }
+  }
+  minus(){
+    if(this.i !=1){
+      this.i--;
+      this.quantity = this.i;
+    }
   }
 
   productFeatures = [

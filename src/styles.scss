@@ -944,8 +944,103 @@ section .blue-btn:hover{
 }
 
 
+/*****=================(product Page Scss)=============*******/
+#product-details {
+	.accordion-button {
+		padding: 0rem 1rem !important;
+		&:not(.collapsed) {
+			color: #000;
+			background-color: #e8e4dd;
+			box-shadow: inset 0 -1px 0 rgb(0 0 0 / 13%);
+			&::after {
+				background-image: url("assets/img/product/minus.svg") !important;
+				transform: rotate(0deg) !important;
+			}
+		}
+		&::after {
+			background-image: url("assets/img/product/plus.svg") !important;
+		}
+		&:focus {
+			z-index: 3;
+			border-color: #000;
+			outline: 0;
+			box-shadow: unset !important;
+		}
+	}
+	.product-quantity {
+		input {
+			height: 50px;
+			width: 50px;
+			text-align: center;
+			font-size: 40px !important;
+			vertical-align: middle;
+			padding: 0px !important;
+			border: none;
+		}
+		button {
+			width: 34px;
+			height: 34px;
+			background: #fff;
+			padding: 1px 8px 8px 8px;
+			border: 1px solid #ddd;
+			display: inline-block;
+			vertical-align: middle;
+			text-align: center;
+			border-radius: 25px;
+			font-size: 20px;
+		}
+	}
+	.product_button {
+		a {
+			color: #fff !important;
+			background-color: #627b80;
+			width: 100%;
+			text-align: center;
+			border-radius: 25px;
+			padding: 0.6rem;
+			font-size: 20px;
+		}
+	}
+}
 
-/****=============(Responsive CSS)============******/
+
+
+
+/**************Product Page scss Ends*********/
+
+/************Breadcrumb scss starts********/
+.breadcrumbs {
+	ol {
+		margin-top: 4px;
+		margin-bottom: 0px;
+	}
+	li {
+		i {
+			padding: 0px 10px;
+		}
+	}
+}
+.breadcrumb-item {
+	a {
+		font-weight: 500;
+		text-decoration: none;
+		color: #000;
+		font-size: 14px;
+		&:hover {
+			color: #000;
+		}
+	}
+}
+.breadcrumb-item.active {
+	font-size: 14px;
+	line-height: 22px;
+	color: #8E8E8E;
+}
+
+/***********Breadcrumb scss ends***********/
+
+
+/****=============(Responsive SCSS)============******/
 
 @media(max-width:991px) {
 	h1, .h1 {

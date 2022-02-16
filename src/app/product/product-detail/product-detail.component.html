@@ -1,3 +1,4 @@
+<!-------------
 <div class="container">
   <div class="row">
     <div class="col-md-12">
@@ -45,3 +46,122 @@
     </div>
   </div>
 </div>
+
+--->
+<!----------Breadcrumb Starts---------->
+<section class="py-2">
+	<div class="container">
+		<div aria-label="breadcrumb" class="breadcrumbs large-font">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink = "" role="button" tabindex="0">Home</a></li>
+        <li><i class="fa fa-angle-right" aria-hidden="true"></i>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">Resolute</li>
+      </ol>
+    </div>
+	</div>
+</section>
+
+<!----------Breadcrumb end---------->
+<!----------Product Details Section Starts---------->
+<section id = "product-details">
+  <div class="container product_container ">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-7 product_detail_left-col p-0">
+        <div class="product">
+          <div class = "img-container">
+            <img id = "imageBox" src="assets/img/product/product1.png" width="100%">
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-5 product_col">
+        <div class="product-detail-section">
+          <h2>Resolute</h2>
+         
+            <div>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt incidunt officiis repellat blanditiis illo deserunt maxime vero iusto perferendis fugiat.</p>
+            </div>
+            <div class = "d-flex justify-content-between py-2">
+              
+              <div class = "product-quantity">
+                <button type = "button" (click) = minus()>-</button>
+                  <input type = "text" [value] ="quantity">   
+                <button type = "button" (click) = plus()>+</button>
+              </div>
+              <div>
+                <h1>$200</h1>
+              </div>
+            </div>
+            <div class="accordion" id="accordionExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Materials
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, totam? Fuga hic cumque ipsa debitis officiis vero beatae dolores modi optio at, tempora corporis iure in, exercitationem cupiditate! Incidunt, dolore?</p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Tassels
+                  </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, totam? Fuga hic cumque ipsa debitis officiis vero beatae dolores modi optio at, tempora corporis iure in, exercitationem cupiditate! Incidunt, dolore?</p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Lead Time
+                  </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, totam? Fuga hic cumque ipsa debitis officiis vero beatae dolores modi optio at, tempora corporis iure in, exercitationem cupiditate! Incidunt, dolore?</p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                    Returns
+                  </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, totam? Fuga hic cumque ipsa debitis officiis vero beatae dolores modi optio at, tempora corporis iure in, exercitationem cupiditate! Incidunt, dolore?</p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFive">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseThree">
+                    What does 3' x 5' look like?
+                  </button>
+                </h2>
+                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, totam? Fuga hic cumque ipsa debitis officiis vero beatae dolores modi optio at, tempora corporis iure in, exercitationem cupiditate! Incidunt, dolore?</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <div>
+            <div class = "product_button pt-3">
+              <a type="button" class="btn product_button1" href = "">ADD TO CART</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!----------Product Details Section Ends---------->
