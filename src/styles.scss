@@ -12,7 +12,7 @@ body {
 html,body {
   height: 100%;
   width: 100%;
- 
+
 }
 
 html {
@@ -35,28 +35,28 @@ h1, .h1 {
     line-height: 55px !important;
     letter-spacing: 1px;
   }
-  
+
   h2, .h2 {
     font-size: 40px !important;
     line-height: 45px !important;
     letter-spacing: 0px;
   }
-  
+
   h3, .h3 {
     font-size: 28px !important;
     line-height: 35px !important;
   }
-  
+
   h4, .h4 {
     font-size: 24px !important;
     line-height: 30px !important;
   }
-  
+
   h5, .h5 {
     font-size: 20px !important;
     line-height: 22px !important;
   }
-  
+
   h6, .h6 {
     font-size: 16px !important;
     line-height: 20px !important;
@@ -181,7 +181,7 @@ section{
 }
 
 .black-btn:hover{
-	
+
 	background: #00000080 !important;
 	color:#fff;
 }
@@ -197,7 +197,7 @@ section{
   text-align: left;
   width: 200px;
   transition: 0.5s;
-  
+
 }
 
 section .blue-btn{
@@ -208,7 +208,7 @@ section .blue-btn{
 section .blue-btn:hover{
 	color: #000 !important;
   transform: translateX(10px);
-  
+
 }
 
 
@@ -438,7 +438,7 @@ section .blue-btn:hover{
     overflow: hidden;
     z-index: -1;
 }
-/******Section3 css Ends***********/ 
+/******Section3 css Ends***********/
 
 /******Section3 css start***********/
 #section3 {
@@ -664,7 +664,7 @@ section .blue-btn:hover{
 	}
 	.hover-effect {
 		position: relative;
-		
+
 		img{
 			width: 100%;
 			object-fit: cover;
@@ -710,7 +710,7 @@ section .blue-btn:hover{
 			}
 		}
 	}
-	
+
 }
 
 /***********section 6 css ends**********/
@@ -772,7 +772,7 @@ section .blue-btn:hover{
 		}
 	}
 }
-/**************Section 7  css ends************/ 
+/**************Section 7  css ends************/
 
 /**************Section 8  css Start ************/
 #section8 {
@@ -847,10 +847,10 @@ section .blue-btn:hover{
 			margin-top: 1rem;
 		}
 		button.btn {
-			&:disabled {
-				pointer-events: auto;
-				opacity: 1;
-			}
+			// &:disabled {
+			// 	pointer-events: auto;
+			// 	opacity: 1;
+			// }
 			font-weight: 800;
 		}
 		.background {
@@ -912,12 +912,12 @@ section .blue-btn:hover{
 			cursor: pointer;
 			margin-top: 1rem;
 		}
-		button.btn {
-			&:disabled {
-				pointer-events: auto;
-				opacity: 1;
-			}
-		}
+		// button.btn {
+		// 	&:disabled {
+		// 		pointer-events: auto;
+		// 		opacity: 1;
+		// 	}
+		// }
 		.background {
 			.shape {
 				height: 100px;
@@ -981,7 +981,7 @@ section .blue-btn:hover{
 	footer .top-footer .col-lg-3.col-md-6.col-sm-6.col-12{
 		width: 50%;
 	}
-	
+
 
 	#section1 .col-md-6:last-child {
 		padding-top: 1rem;
@@ -1013,10 +1013,10 @@ section .blue-btn:hover{
 	#section6 .hover-effect {
 		position: relative;
 		margin: 0.7rem 0rem;
-	}	
+	}
 
   }
-  
+
   @media(max-width:768px) {
 	h1, .h1 {
 		font-size: 40px !important;
@@ -1101,7 +1101,7 @@ section .blue-btn:hover{
 	}
 
   }
-  
+
   @media(max-width:576px) {
 	h1, .h1 {
 		font-size: 38px !important;
@@ -1135,9 +1135,9 @@ section .blue-btn:hover{
 		width: 100%;
 		padding:16px 12px;
 	}
-	
 
-	
+
+
 
 	#banner-section {
 		padding-top: 6rem;
@@ -1156,9 +1156,9 @@ section .blue-btn:hover{
 		#section3{
 			margin-top: -20rem;
 		}
-  
+
   }
-  
+
   @media(max-width:470px) {
 	h1, .h1 {
 		font-size: 36px !important;
@@ -1185,10 +1185,10 @@ section .blue-btn:hover{
 		line-height: 22px !important;
 	  }
 	#section7 .card_img img {
-		
+
 		transform: scale(1);
-	
-		
+
+
 	}
 
 	#section6 img {
@@ -1198,10 +1198,10 @@ section .blue-btn:hover{
 	#section-slider {
 		margin-top: -7rem;
 	}
-	
-   
+
+
   }
-  
+
   @media(max-width:360px) {
 	h1, .h1 {
 	  font-size: 36px !important;
@@ -1233,28 +1233,28 @@ section .blue-btn:hover{
 		padding-bottom: 4rem;
 		}
 
-		
-  
-	
-  }
-  
-  @media (min-width: 768px) {
-   
 
-  
+
+
   }
-  
+
+  @media (min-width: 768px) {
+
+
+
+  }
+
   @media(min-width:991px) {
 
   }
-  
-  
-  
+
+
+
   @media (min-width: 576px) {
 
-  
+
   }
-  
-  
-  
+
+
+
 

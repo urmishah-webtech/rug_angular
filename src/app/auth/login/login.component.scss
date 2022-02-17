@@ -1,0 +1,13 @@
+#login {
+  .box {
+    button.btn {
+      font-weight: 800
+    }
+    .alert-danger {
+      background-color: transparent !important;
+      border: unset !important;
+      color: #ff0017;
+      padding: 0.5rem 0rem 0rem 0rem !important;
+    }
+  }
+}
