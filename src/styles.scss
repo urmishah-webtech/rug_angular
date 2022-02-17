@@ -293,7 +293,6 @@ section .blue-btn:hover{
 
 /*************Header CSS Ends*********/
 
-
 /***************Footer Css Starts*******/
 .top-footer {
 	background-color: #e7e3dc;
@@ -428,7 +427,6 @@ section .blue-btn:hover{
 	}
 }
 
-
 /**********Section 2 css Starts********/
 
 #section2 {
@@ -438,8 +436,12 @@ section .blue-btn:hover{
     overflow: hidden;
     z-index: -1;
 }
+<<<<<<< HEAD
 /******Section3 css Ends***********/
 
+=======
+/******Section3 css Ends***********/ 
+>>>>>>> 24fa7559d41855a99237740b56d695177fb07857
 /******Section3 css start***********/
 #section3 {
 	.container {
@@ -476,7 +478,6 @@ section .blue-btn:hover{
 }
 
 /***********Section3 css End********/
-
 /***********Section4 css Start********/
 #section4 {
 	background-image: url("assets/img/sec-bg2.png");
@@ -540,7 +541,6 @@ section .blue-btn:hover{
 		}
 	}
 }
-
 /***********Section4 css End********/
 /************Section 5 CSS Start************/
 #section5 {
@@ -629,7 +629,6 @@ section .blue-btn:hover{
 		}
 	}
 }
-
 
 /************section 5 css ends*********/
 
@@ -821,8 +820,6 @@ section .blue-btn:hover{
 
 /*=============(Signup & Login CSS Starts)===============*/
 
-
-
 /************Signup css*********/
 #signup {
 	background-image: url("assets/img/signup-bg.jpg");
@@ -887,7 +884,6 @@ section .blue-btn:hover{
 	}
 }
 
-
 /************login css*********/
 
 #login {
@@ -943,9 +939,110 @@ section .blue-btn:hover{
 	}
 }
 
+/*****=================(product Page Scss)=============*******/
+#product-details {
+
+	 p{
+     font-size: 14px;
+	 margin-bottom: 0px;
+	}
+	.accordion-button {
+		padding: 0rem 1rem !important;
+		&:not(.collapsed) {
+			color: #000;
+			background-color: #e8e4dd;
+			box-shadow: inset 0 -1px 0 rgb(0 0 0 / 13%);
+			&::after {
+				background-image: url("assets/img/product/minus.svg") !important;
+				transform: rotate(0deg) !important;
+			}
+		}
+		&::after {
+			background-image: url("assets/img/product/plus.svg") !important;
+		}
+		&:focus {
+			z-index: 3;
+			border-color: #000;
+			outline: 0;
+			box-shadow: unset !important;
+		}
+	}
+	.product-quantity {
+		input {
+			height: 50px;
+			width: 50px;
+			text-align: center;
+			font-size: 30px !important;
+			vertical-align: middle;
+			padding: 0px !important;
+			border: none;
+		}
+		button {
+			width: 30px;
+			height: 30px;
+			background: #fff;
+			padding: 0px 8px 8px 8px;
+			border: 1px solid #ddd;
+			display: inline-block;
+			vertical-align: middle;
+			text-align: center;
+			border-radius: 25px;
+			font-size: 20px;
+		}
+
+		.minus{
+			line-height: 26px;
+		}
+	}
+	.product_button {
+		a {
+			color: #fff !important;
+			background-color: #627b80;
+			width: 100%;
+			text-align: center;
+			border-radius: 25px;
+			padding: 0.6rem;
+			font-size: 20px;
+		}
+	}
+}
 
 
-/****=============(Responsive CSS)============******/
+/**************Product Page scss Ends*********/
+
+/************Breadcrumb scss starts********/
+.breadcrumbs {
+	ol {
+		margin-top: 4px;
+		margin-bottom: 0px;
+	}
+	li {
+		i {
+			padding: 0px 10px;
+		}
+	}
+}
+.breadcrumb-item {
+	a {
+		font-weight: 500;
+		text-decoration: none;
+		color: #000;
+		font-size: 14px;
+		&:hover {
+			color: #000;
+		}
+	}
+}
+.breadcrumb-item.active {
+	font-size: 14px;
+	line-height: 22px;
+	color: #8E8E8E;
+}
+
+/***********Breadcrumb scss ends***********/
+
+
+/****=============(Responsive SCSS)============******/
 
 @media(max-width:991px) {
 	h1, .h1 {
