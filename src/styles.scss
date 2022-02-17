@@ -293,7 +293,6 @@ section .blue-btn:hover{
 
 /*************Header CSS Ends*********/
 
-
 /***************Footer Css Starts*******/
 .top-footer {
 	background-color: #e7e3dc;
@@ -428,7 +427,6 @@ section .blue-btn:hover{
 	}
 }
 
-
 /**********Section 2 css Starts********/
 
 #section2 {
@@ -439,7 +437,6 @@ section .blue-btn:hover{
     z-index: -1;
 }
 /******Section3 css Ends***********/ 
-
 /******Section3 css start***********/
 #section3 {
 	.container {
@@ -476,7 +473,6 @@ section .blue-btn:hover{
 }
 
 /***********Section3 css End********/
-
 /***********Section4 css Start********/
 #section4 {
 	background-image: url("assets/img/sec-bg2.png");
@@ -540,7 +536,6 @@ section .blue-btn:hover{
 		}
 	}
 }
-
 /***********Section4 css End********/
 /************Section 5 CSS Start************/
 #section5 {
@@ -629,7 +624,6 @@ section .blue-btn:hover{
 		}
 	}
 }
-
 
 /************section 5 css ends*********/
 
@@ -821,8 +815,6 @@ section .blue-btn:hover{
 
 /*=============(Signup & Login CSS Starts)===============*/
 
-
-
 /************Signup css*********/
 #signup {
 	background-image: url("assets/img/signup-bg.jpg");
@@ -887,7 +879,6 @@ section .blue-btn:hover{
 	}
 }
 
-
 /************login css*********/
 
 #login {
@@ -943,9 +934,13 @@ section .blue-btn:hover{
 	}
 }
 
-
 /*****=================(product Page Scss)=============*******/
 #product-details {
+
+	 p{
+     font-size: 14px;
+	 margin-bottom: 0px;
+	}
 	.accordion-button {
 		padding: 0rem 1rem !important;
 		&:not(.collapsed) {
@@ -972,22 +967,26 @@ section .blue-btn:hover{
 			height: 50px;
 			width: 50px;
 			text-align: center;
-			font-size: 40px !important;
+			font-size: 30px !important;
 			vertical-align: middle;
 			padding: 0px !important;
 			border: none;
 		}
 		button {
-			width: 34px;
-			height: 34px;
+			width: 30px;
+			height: 30px;
 			background: #fff;
-			padding: 1px 8px 8px 8px;
+			padding: 0px 8px 8px 8px;
 			border: 1px solid #ddd;
 			display: inline-block;
 			vertical-align: middle;
 			text-align: center;
 			border-radius: 25px;
 			font-size: 20px;
+		}
+
+		.minus{
+			line-height: 26px;
 		}
 	}
 	.product_button {
@@ -1002,8 +1001,6 @@ section .blue-btn:hover{
 		}
 	}
 }
-
-
 
 
 /**************Product Page scss Ends*********/
