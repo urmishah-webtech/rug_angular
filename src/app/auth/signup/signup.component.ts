@@ -29,7 +29,7 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {
 
   }
-  
+
   registerForm = this.fb.group({
     first_name: ['',Validators.required],
     last_name: ['',Validators.required],
@@ -51,7 +51,7 @@ export class SignupComponent implements OnInit {
           this.isLoaderVisible=false
           if (err instanceof HttpErrorResponse) {
             const errorMessages = new Array<{ propName: string; errors: string }>();
-      
+
             if (err.status === 401) {
                 this.error_data=err.error.message;
                 console.log(this.error_data)
@@ -62,7 +62,7 @@ export class SignupComponent implements OnInit {
                       this.notifyService.showError("Error",_item)
                   })
                 }
-            
+
 
                 if(!(this.error_data.password === undefined))
                 {
@@ -71,7 +71,7 @@ export class SignupComponent implements OnInit {
                     this.notifyService.showError("Error",_item)
                   })
                 }
-          
+
 
                 if(!(this.error_data.first_name === undefined))
                 {
@@ -80,7 +80,7 @@ export class SignupComponent implements OnInit {
                     this.notifyService.showError("Error",_item)
                   })
                 }
-                
+
 
                 if(!(this.error_data.last_name === undefined))
                 {
@@ -89,14 +89,14 @@ export class SignupComponent implements OnInit {
                     this.notifyService.showError("Error",_item)
                   })
                 }
-            
+
             }
             if(err.status===500){
               this.notifyService.showError("Error",'Server Error')
             }
           }
         }
-        
+
         )
       }
       else{
