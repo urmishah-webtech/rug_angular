@@ -23,6 +23,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { NodataComponent } from './nodata/nodata.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { CartComponent } from './cart/cart.component';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     PageComponent,
     HomeComponent,
     NodataComponent,
+    CartComponent,
   
   ],
   imports: [

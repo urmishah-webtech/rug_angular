@@ -75,13 +75,13 @@ export class ProductDetailComponent implements OnInit {
         }
       },
       {
-        breakpoint: 700,
+        breakpoint: 800,
         settings: {
           slidesToShow: 2
         }
       },
       {
-        breakpoint: 400,
+        breakpoint: 500,
         settings: {
           slidesToShow: 1
         }
@@ -91,6 +91,18 @@ export class ProductDetailComponent implements OnInit {
 
 
   };
+
+   /*****Product Slider*****/
+   slideConfigSwatch = {"slidesToShow": 1, 
+   "slidesToScroll": 1,
+     "dots":false,
+     "arrows": false,
+  "infinite": true,
+  "speed": 1000,
+  "autoplay": true,
+  "autoplaySpeed": 2000,
+   
+   };
 
   
   productFeatures = [

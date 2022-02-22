@@ -10,10 +10,12 @@ import { ProductComponent } from './product/product.component';
 import { ProductlistComponent } from './productlist/productlist.component';
 import { HomeComponent } from './home/home.component';
 import { NodataComponent } from './nodata/nodata.component';
+import { CartComponent } from './cart/cart.component';
 
 const routes: Routes = [
     {path:'', component:HomeComponent},
     {path: 'footer', component: FooterContactComponent},
+    {path: 'cart', component: CartComponent},
     // {
     //   path: 'pages',
     //   children: [
