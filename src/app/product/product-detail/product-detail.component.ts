@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
-import { Observable } from 'rxjs';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
@@ -19,8 +18,8 @@ export class ProductDetailComponent implements OnInit {
   showcolors: boolean = false;
 
   constructor(public productService: ProductService, private route: ActivatedRoute) { }
-   
- 
+
+
   ngOnInit(): void {
     this.route.paramMap.subscribe((paramMap: ParamMap)=>{
       if(paramMap.has('productId')){
