@@ -1,57 +1,57 @@
 <!-------------
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="row">
-        <div class="col-md-4">
-          <img (click)="rotate($event)" src="{{product.image}}" width="100%" height="100%">
-        </div>
-        <div class="col-md-8">
-          <h2>{{product.title}}</h2>
-          <p>{{product.price_range}}</p>
-          <div class="product_description" [innerHTML]="product.description"></div>
-          <div class="accordion">
-            <div class="accordion-item" *ngFor="let item of productFeatures; index as i;">
-              <h2 class="accordion-header">
-                <button class="accordion-button" (click)="panelExpanded = !panelExpanded" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapseOne'+i" aria-expanded="true" [attr.aria-controls]="'collapseOne'+i">
-                  {{item.title}}
-                </button>
-              </h2>
-              <div [attr.id]="'collapseOne'+i" class="accordion-collapse collapse">
-                <div class="accordion-body">
-                  {{item.description}}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-4">
+            <img (click)="rotate($event)" src="{{product.image}}" width="100%" height="100%">
+          </div>
+          <div class="col-md-8">
+            <h2>{{product.title}}</h2>
+            <p>{{product.price_range}}</p>
+            <div class="product_description" [innerHTML]="product.description"></div>
+            <div class="accordion">
+              <div class="accordion-item" *ngFor="let item of productFeatures; index as i;">
+                <h2 class="accordion-header">
+                  <button class="accordion-button" (click)="panelExpanded = !panelExpanded" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapseOne'+i" aria-expanded="true" [attr.aria-controls]="'collapseOne'+i">
+                    {{item.title}}
+                  </button>
+                </h2>
+                <div [attr.id]="'collapseOne'+i" class="accordion-collapse collapse">
+                  <div class="accordion-body">
+                    {{item.description}}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <p (click)="showallcolors()">Colors</p>
-        <div *ngIf="showcolors">
-        <ul *ngFor="let variation of productVariation">
-          <li (click)="variantProduct(variation.variant_id)">{{variation.attribute1}}</li>
-        </ul>
+        <div class="row">
+          <p (click)="showallcolors()">Colors</p>
+          <div *ngIf="showcolors">
+          <ul *ngFor="let variation of productVariation">
+            <li (click)="variantProduct(variation.variant_id)">{{variation.attribute1}}</li>
+          </ul>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <p (click)="showallcolors()">Size</p>
-        <div *ngIf="showcolors">
-        <ul *ngFor="let variation of productVariation">
-          <li (click)="variantProduct(variation.variant_id)">{{ variation.attribute2}}</li>
-        </ul>
+        <div class="row">
+          <p (click)="showallcolors()">Size</p>
+          <div *ngIf="showcolors">
+          <ul *ngFor="let variation of productVariation">
+            <li (click)="variantProduct(variation.variant_id)">{{ variation.attribute2}}</li>
+          </ul>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
---->
+  --->
 <!----------Breadcrumb Starts---------->
 <section class="py-2">
-	<div class="container">
-		<div aria-label="breadcrumb" class="breadcrumbs large-font">
+  <div class="container">
+    <div aria-label="breadcrumb" class="breadcrumbs large-font">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a routerLink = "" role="button" tabindex="0">Home</a></li>
         <li><i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -59,9 +59,8 @@
         <li class="breadcrumb-item active" aria-current="page">{{product.title}}</li>
       </ol>
     </div>
-	</div>
+  </div>
 </section>
-
 <!----------Breadcrumb end---------->
 <!----------Product Details Section Starts---------->
 <section id = "product-details">
@@ -94,6 +93,39 @@
                 <h3>{{product.price_range}}</h3>
               </div>
             </div>
+          </div>
+          <!-----Choose Colors---->
+          <div class = "color_choose py-2">
+            <h6 class = "mb-1">Color Options</h6>
+            <div class = "d-flex gap-2">
+              <button *ngFor = "let color of colors" class = "btn rounded-circle" [style.background]="color" (click) = "selectedColor = color" [ngClass] ="{'selected' : selectedColor === color}"></button>
+            </div>
+          </div>
+          <!-----Choose Sizes---->
+          <div class = "choose_size py-2">
+            <h6 class = "mb-1">Sizes</h6>
+            <ul class = "button_list ">
+              <li *ngFor = "let size of sizes" class = "btn float-left" [style.background]="size" (click) = "selectedSize = size" [ngClass] ="{'selected' : selectedSize === size}">{{size}}</li>
+            </ul>
+          </div>
+          <!-----Choose tassels---->
+          <div class = "choose_tassels py-2">
+            <h6 class = "mb-1">Choose Tassels</h6>
+            <ul class = "d-flex gap-4">
+              <li>
+                <input type="radio" id="test1" name="radio-group" checked>
+                <label for="test1">Tassels</label>
+              </li>
+              <li>
+                <input type="radio" id="test2" name="radio-group">
+                <label for="test2">No Tassels</label>
+              </li>
+            </ul>
+          </div>
+          <div class = 'text-center'>
+            <button class = "btn blue-btn">Add to Cart</button>
+          </div>
+          <!-------
             <div class="accordion" id="accordionExample">
               <div class="accordion-item">
                 <h2 class="accordion-header" id="headingOne">
@@ -156,14 +188,211 @@
                 </div>
               </div>
             </div>
-          <div>
-            <div class = "product_button pt-3">
-              <a type="button" class="btn product_button1" href = "">ADD TO CART</a>
-            </div>
-          </div>
+            --->
+        </div>
+      </div>
+      <nav>
+        <div class="nav nav-tabs gap-2" id="nav-tab" role="tablist">
+          <button class="nav-link active" id="nav-materials-tab" data-bs-toggle="tab" data-bs-target="#nav-materials"
+            type="button" role="tab" aria-controls="materials" aria-selected="true">Materials</button>
+          <button class="nav-link" id="nav-tassels-tab" data-bs-toggle="tab" data-bs-target="#nav-tassels"
+            type="button" role="tab" aria-controls="nav-tassels" aria-selected="false">Tassels</button>
+          <button class="nav-link" id="nav-lead-time-tab" data-bs-toggle="tab" data-bs-target="#nav-lead-time"
+            type="button" role="tab" aria-controls="nav-lead-time" aria-selected="true">Lead Time</button>
+          <button class="nav-link" id="nav-returns-tab" data-bs-toggle="tab" data-bs-target="#nav-returns"
+            type="button" role="tab" aria-controls="nav-returns" aria-selected="false">Returns</button>
+          <button class="nav-link" id="nav-size-tab" data-bs-toggle="tab" data-bs-target="#nav-size"
+            type="button" role="tab" aria-controls="nav-size" aria-selected="true">What does 3' x 5' look like?</button>
+        </div>
+      </nav>
+      <div class="tab-content pt-4" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-materials" role="tabpanel" aria-labelledby="nav-materials-tab">
+          <p>Your order is made entirely by hand from 100% natural wool, which means there will be natural (and beautiful) variations in pattern and color. Wool shrinks! While we do our best, final sizes can vary by 1-4"</p>
+        </div>
+        <div class="tab-pane fade" id="nav-tassels" role="tabpanel" aria-labelledby="nav-tassels-tab">
+          <p>Traditional Moroccan rugs feature tassels just on one side. You can toggle them on and off below, as you prefer! Tassel length is normally in the range of 4–6".</p>
+        </div>
+        <div class="tab-pane fade" id="nav-lead-time" role="tabpanel" aria-labelledby="nav-lead-time-tab">
+          <p>Each and every Beni rug is woven entirely by hand and then washed and dried in the mountain air. Lead times are in the range of 12-14 weeks. For rugs 9'x12' and larger, please allow an additional 2 weeks.</p>
+        </div>
+        <div class="tab-pane fade" id="nav-returns" role="tabpanel" aria-labelledby="nav-returns-tab">
+          <h6 class = "mb-0">Can I return my rug?</h6>
+          <p >All orders are final and we cannot accept returns. Please ensure all measurements, colors, and design are correct before submitting your order!</p>
+          <h6 class = "mb-0">What if I don't like what I ordered?</h6>
+          <p>We certainly hope that never happens! We're here to answer whatever questions you've got before you place an order to ensure you're 100% happy with your one-of-a-kind design.</p>
+        </div>
+        <div class="tab-pane fade" id="nav-size" role="tabpanel" aria-labelledby="nav-size-tab">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, expedita!</p>
+        </div>
+      </div>
+    </div>
+  <div class = "container-fluid">
+  </div>
+</section>
+<!----------Product Details Section Ends---------->
+<!----------Product Swatch Section Ends---------->
+<section id = "product_swatch">
+  <div class = "container">
+    <div class = "row">
+      <div class = "col-lg-6 col-12">
+        <div>
+          <img src = "assets/img/product/product_swatch.jpg">
+        </div>
+      </div>
+      <div class ="col-lg-6 col-12">
+        <div class ="text-center">
+          <a href = "#">
+            <h1>Plush Texture</h1>
+          </a>
+          <a href = "#">
+            <h1>100% Natural Wool</h1>
+          </a>
+          <a href = "#">
+            <h1>Handwoven</h1>
+          </a>
+        </div>
+        <div class = "text-center pt-4">
+          <button class = "btn blue-btn">Request a Swatch</button>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!----------Product Details Section Ends---------->
+<!----------Product Swatch Section Ends---------->
+<!----------Product slider Section Starts---------->
+<section id = "product-detail-slider">
+  <div class = "container">
+    <div class = "text-center">
+      <h2>You May Also Like</h2>
+    </div>
+    <ngx-slick-carousel class="carousel"
+    #slickModal="slick-carousel"
+    [config]="slideConfigProduct">
+    <div ngxSlickItem  class="slide slider_content">
+      <a href = "#">
+        <div class = "product-card">
+          <div>
+            <img src="assets/img/product/product-slide1-1.png"/>
+          </div>
+          <div>
+            <h5>Resolute Runner</h5>
+            <p>$954 — $2547 </p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div ngxSlickItem  class="slide slider_content" >
+      <a href = "#">
+        <div class = "product-card">
+          <div>
+            <img src="assets/img/product/product-slide1-2.png"/>
+          </div>
+          <div>
+            <h5>Resolute Runner</h5>
+            <p>$954 — $2547 </p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div ngxSlickItem  class="slide slider_content">
+      <a href = "#">
+        <div class = "product-card">
+          <div>
+            <img src="assets/img/product/product-slide2-1.png"/>
+          </div>
+          <div>
+            <h5>Resolute Runner</h5>
+            <p>$954 — $2547 </p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div ngxSlickItem  class="slide slider_content">
+      <a href = "#">
+        <div class = "product-card">
+          <div>
+            <img   src="assets/img/product/product-slide2-2.png"/>
+          </div>
+          <div>
+            <h5>Resolute Runner</h5>
+            <p>$954 — $2547 </p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div ngxSlickItem  class="slide slider_content">
+      <a href = "#">
+        <div class = "product-card">
+          <div>
+            <img   src="assets/img/product/product-slide3-1.png"/>
+          </div>
+          <div>
+            <h5>Resolute Runner</h5>
+            <p>$954 — $2547 </p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div ngxSlickItem  class="slide slider_content">
+      <a href = "#">
+        <div class = "product-card">
+          <div>
+            <img   src="assets/img/product/product-slide3-2.png"/>
+          </div>
+          <div>
+            <h5>Resolute Runner</h5>
+            <p>$954 — $2547 </p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div ngxSlickItem  class="slide slider_content">
+      <a href = "#">
+        <div class = "product-card">
+          <div>
+            <img src="assets/img/product/product-slide4-1.png"/>
+          </div>
+          <div>
+            <h5>Resolute Runner</h5>
+            <p>$954 — $2547 </p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div ngxSlickItem  class="slide slider_content">
+      <a href = "#">
+        <div class = "product-card">
+          <div>
+            <img  src="assets/img/product/product-slide4-2.png"/>
+          </div>
+          <div>
+            <h5>Resolute Runner</h5>
+            <p>$954 — $2547 </p>
+          </div>
+        </div>
+      </a>
+    </div>
+    </ngx-slick-carousel>
+  </div>
+</section>
+<!----------Product slider Section Ends---------->
+<!----------Product Our process  CSS Starts---------->
+<section id = "prooduct_our_process">
+  <div class = "container">
+    <div>
+    </div>
+  </div>
+</section>
+<!-----------Product Our process  CSS  Ends---------->
+<!----------Product Contact CSS  Starts---------->
+<section id = "product-contact">
+  <div class = "container">
+    <div class = "text-center">
+      <h2>Have something else in mind? Let us know, we're here to make it happen</h2>
+    </div>
+    <div class = 'text-center pt-2'>
+      <button type = "button" class = "btn blue-btn">Contact Us</button>
+    </div>
+  </div>
+</section>
+<!----------Product Contact CSS  Ends---------->

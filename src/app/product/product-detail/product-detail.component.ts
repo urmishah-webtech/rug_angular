@@ -48,6 +48,50 @@ export class ProductDetailComponent implements OnInit {
     }
   }
 
+  /**********Color Picker button **********/
+  colors: string[] = ["#fa0000","#c49f66","#68c466","#66b7c4","#0066ff","#607d8b","#c0b298"]
+  selectedColor = this.colors[0];
+
+
+  /*********Select Size***********/
+  sizes: string[] = ["3 X 6","3 X 7","3 X 8","4 X 5","4 X 6","5 X 6","5 X 7","6 X 6","6 X 7","7 X 7"]
+  selectedSize = this.sizes[0];
+    /*****Product Slider*****/
+  slideConfigProduct = {"slidesToShow": 4, 
+  "slidesToScroll": 1,
+    "dots":false,
+    "autoplay":true,
+    "speed":1000,
+    "infinite": true,
+    "arrows":true,
+    "prevArrow": '<img class = "arrow_left" src = "assets/img/product/left.svg">',
+    "nextArrow": '<img class = "arrow_right" src = "assets/img/product/right.svg">',
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3
+        }
+      },
+      {
+        breakpoint: 700,
+        settings: {
+          slidesToShow: 2
+        }
+      },
+      {
+        breakpoint: 400,
+        settings: {
+          slidesToShow: 1
+        }
+      }
+    ]
+  
+
+
+  };
+
+  
   productFeatures = [
     {title: 'Materials', description: 'Materials123456'},
     {title: 'Tassels', description: 'Description'},
