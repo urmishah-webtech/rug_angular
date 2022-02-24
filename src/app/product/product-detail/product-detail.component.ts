@@ -16,6 +16,7 @@ export class ProductDetailComponent implements OnInit {
   rotateImg: any;
   degrees = 90;
   showcolors: boolean = false;
+  cartProduct: any = []
 
   constructor(public productService: ProductService, private route: ActivatedRoute) { }
 
@@ -57,7 +58,7 @@ export class ProductDetailComponent implements OnInit {
   sizes: string[] = ["3 X 6","3 X 7","3 X 8","4 X 5","4 X 6","5 X 6","5 X 7","6 X 6","6 X 7","7 X 7"]
   selectedSize = this.sizes[0];
     /*****Product Slider*****/
-  slideConfigProduct = {"slidesToShow": 4, 
+  slideConfigProduct = {"slidesToShow": 4,
   "slidesToScroll": 1,
     "dots":false,
     "autoplay":true,
@@ -86,12 +87,8 @@ export class ProductDetailComponent implements OnInit {
         }
       }
     ]
-  
-
-
   };
 
-  
   productFeatures = [
     {title: 'Materials', description: 'Materials123456'},
     {title: 'Tassels', description: 'Description'},
@@ -118,12 +115,24 @@ export class ProductDetailComponent implements OnInit {
       event.target.style.transform='rotate('+this.degrees+'deg)';
       this.degrees+=90;
   }
-  showallcolors(){
-    this.showcolors = !this.showcolors;
-  }
+
   variantProduct(variantId: string){
     console.log(variantId);
     console.log(this.product.image);
     this.product.image = this.productVariation[0].image;
   }
+
+  addtoCart(){
+    console.log('addtocart');
+    this.cartProduct= {
+      'product_id': this.productId,
+      'stock': this.quantity,
+      'user_id': localStorage.getItem('id')
+    }
+    this.productService.addtocart(this.cartProduct).subscribe(response =>{
+      console.log(response);
+      alert('Product added to cart successfully');
+    });
+  }
+
 }

@@ -85,7 +85,7 @@
             <div class = "d-flex justify-content-between py-2">
 
               <div class = "product-quantity">
-                <button type = "button"class = "minus" (click) = minus()>-</button>
+                <button type = "button" class = "minus" (click) = minus()>-</button>
                   <input type = "text" [value] ="quantity">
                 <button type = "button" (click) = plus()>+</button>
               </div>
@@ -94,19 +94,22 @@
               </div>
             </div>
           </div>
-          <!-----Choose Colors---->
-          <div class = "color_choose py-2">
-            <h6 class = "mb-1">Color Options</h6>
-            <div class = "d-flex gap-2">
-              <button *ngFor = "let color of colors" class = "btn rounded-circle" [style.background]="color" (click) = "selectedColor = color" [ngClass] ="{'selected' : selectedColor === color}"></button>
+          <!-----Product Variation---->
+          <div class="variation" *ngIf="productVariation != ''">
+            <!-----Choose Colors---->
+            <div class = "color_choose py-2">
+              <h6 class = "mb-1">Color Options</h6>
+              <div class = "d-flex gap-2">
+                <button *ngFor = "let color of colors" class = "btn rounded-circle" [style.background]="color" (click) = "selectedColor = color" [ngClass] ="{'selected' : selectedColor === color}"></button>
+              </div>
             </div>
-          </div>
-          <!-----Choose Sizes---->
-          <div class = "choose_size py-2">
-            <h6 class = "mb-1">Sizes</h6>
-            <ul class = "button_list ">
-              <li *ngFor = "let size of sizes" class = "btn float-left" [style.background]="size" (click) = "selectedSize = size" [ngClass] ="{'selected' : selectedSize === size}">{{size}}</li>
-            </ul>
+            <!-----Choose Sizes---->
+            <div class = "choose_size py-2">
+              <h6 class = "mb-1">Sizes</h6>
+              <ul class = "button_list ">
+                <li *ngFor = "let size of sizes" class = "btn float-left" [style.background]="size" (click) = "selectedSize = size" [ngClass] ="{'selected' : selectedSize === size}">{{size}}</li>
+              </ul>
+            </div>
           </div>
           <!-----Choose tassels---->
           <div class = "choose_tassels py-2">
@@ -122,8 +125,9 @@
               </li>
             </ul>
           </div>
+          <!-----Product Variation End---->
           <div class = 'text-center'>
-            <button class = "btn blue-btn">Add to Cart</button>
+            <button class = "btn blue-btn" (click)="addtoCart()">Add to Cart</button>
           </div>
           <!-------
             <div class="accordion" id="accordionExample">
