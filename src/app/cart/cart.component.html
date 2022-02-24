@@ -1,0 +1,113 @@
+<!----------Breadcrumb Starts---------->
+<section class="py-2 breadcrumb_section">
+    <div class="container">
+      <div aria-label="breadcrumb" class="breadcrumbs large-font">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a routerLink = "" role="button" tabindex="0">Home</a></li>
+          <li><i class="fa fa-angle-right" aria-hidden="true"></i>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">Cart</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+  <!----------Breadcrumb end---------->
+
+  <!---------Cart Section--------->
+<section id = "cart-section">
+   <div class = "container">
+     <div class = "text-center mb-4">
+         <h2>Your Cart</h2>
+     </div>
+     <div class = "row">
+        <div class = "col-lg-7 col-12">
+             <div>
+                <div class="cart-item">
+                  <table>
+                      <tbody>
+                          <tr>
+                              <td><img src = "assets/img/product/product.png"></td>
+                              <td><h5 class = "mb-0">Resolute</h5>
+                                   <p  class = "mb-0"><span>Fawn + Natural </span> / <span>3' x 5'</span> / <span>Tassels</span></p>
+                                   <div class = "product-quantity">
+                                    <button type = "button"class = "minus" (click) = minus()>-</button>
+                                    <input type = "text" [value] ="quantity">   
+                                    <button type = "button" (click) = plus()>+</button>
+                                  </div>
+                            </td>
+                            <td class = "text-center"><h4>$639</h4></td>
+                            
+                           
+                            <td  class = "text-end"><button><i class="fa fa-trash-o" aria-hidden="true"></i></button></td>
+                          </tr>
+                          <tr>
+                              <td colspan="4"><hr></td>
+                          </tr>
+                          <tr>
+                            <td><img src = "assets/img/product/product.png"></td>
+                            <td><h5 class = "mb-0">Resolute</h5>
+                                 <p  class = "mb-0"><span>Fawn + Natural </span> / <span>3' x 5'</span> / <span>Tassels</span></p>
+                                 <div class = "product-quantity">
+                                  <button type = "button"class = "minus" (click) = minus()>-</button>
+                                  <input type = "text" [value] ="quantity">   
+                                  <button type = "button" (click) = plus()>+</button>
+                                </div>
+                          </td>
+                          <td class = "text-center"><h4>$639</h4></td>
+                          
+                         
+                          <td  class = "text-end"><button><i class="fa fa-trash-o" aria-hidden="true"></i></button></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5"><hr></td>
+                        </tr>
+                        <tr>
+                          <td class = "cart-product-img"><img src = "assets/img/product/product.png"></td>
+                          <td><h5 class = "mb-0">Resolute</h5>
+                               <p  class = "mb-0"><span>Fawn + Natural </span> / <span>3' x 5'</span> / <span>Tassels</span></p>
+                               <div class = "product-quantity">
+                                <button type = "button"class = "minus" (click) = minus()>-</button>
+                                <input type = "text" [value] ="quantity">   
+                                <button type = "button" (click) = plus()>+</button>
+                              </div>
+                        </td>
+                        <td class = "text-center"><h4>$639</h4></td>
+                        
+                       
+                        <td  class = "text-end"><button><i class="fa fa-trash-o" aria-hidden="true"></i></button></td>
+                      </tr>
+                      </tbody>
+                  </table>
+                </div> 
+             </div>
+        </div>
+        <div class = "col-lg-5 col-12">
+            <div class = "cart-checkout">
+                <ul>
+                    <hr>
+                <li class = "d-flex justify-content-between py-2">
+                    <p>Subtotal</p>
+                    <p><span>$639</span></p>
+                </li>
+                <hr>
+                <li class = "d-flex justify-content-between py-2">
+                    <p>Standard Shipping</p>
+                    <p><span>$10</span></p>
+                </li>
+                <hr>
+                <li class = "d-flex justify-content-between py-2">
+                    <h5 class = "mb-0">Total</h5>
+                    <h5 class = "mb-0"><span>$649</span></h5>
+                </li>
+                <hr>
+                </ul>
+                <div>
+                    <button type = "button" class = "btn cart-btn">Continue to Checkout</button>
+                </div>
+                
+                
+            </div>
+        </div>
+     </div>
+   </div>
+</section>

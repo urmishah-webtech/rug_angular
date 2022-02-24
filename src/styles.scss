@@ -211,6 +211,11 @@ section .blue-btn:hover{
 
 }
 
+hr{
+	background-color: #0000001f !important;
+	opacity: 1 !important;
+}
+
 
 /*================(Main CSS Start)=============*/
 /*************Page 404 CSS Starts**********/
@@ -296,7 +301,8 @@ section .blue-btn:hover{
 /***************Footer Css Starts*******/
 .top-footer {
 	background-color: #e7e3dc;
-	padding: 4rem 0rem;
+	padding-top: 4rem;
+	padding-bottom: 4rem;
 	.navbar-nav {
 		.nav-item {
 			.nav-link {
@@ -1175,12 +1181,27 @@ section .blue-btn:hover{
 
 /**************Product Swatch*********/
 #product_swatch {
+	background: linear-gradient(230deg, #fff 55% , #e8e4dd 0);
 	img {
 		width: 100%;
 	}
-	.col-lg-6 {
+	h2{
+		&:after{
+			content: "";
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: #627b80;
+    bottom: 0;
+    left: calc(48% - 20px);
+    text-align: center;
+    margin-top: 10px;
+		}
+	}
+	.col-lg-5 {
 		&:last-child {
-			padding-top: 8rem;
+			padding-top: 4rem;
 		}
 	}
 	button.blue-btn {
@@ -1263,7 +1284,7 @@ section .blue-btn:hover{
 	padding-top: 10rem;
 	padding-bottom: 10rem;
 	.container {
-		width: 830px !important;
+		width: 750px !important;
 		max-width: 100% !important;
 		.blue-btn {
 			width: 300px;
@@ -1273,9 +1294,45 @@ section .blue-btn:hover{
 	}
 }
 
+/******Product our process CSS****/
+#product_our_process{
+	background-image: linear-gradient(-45deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(assets/img/product/product-our-process.jpg);
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    background-attachment: fixed;
+	background-size: cover;
+	background-repeat: no-repeat;
+	
+}
+
+#product_our_process .container{
+	max-width: 750px !important;
+}
+
+#product_our_process .container h2{
+	color: #fff;
+}
+
+#product_our_process .container p{
+	color: #fff;
+}
+
+#product_our_process .blue-btn{
+	width: 300px;
+	padding: 2rem 1rem;
+	font-size: 20px;
+	
+}
+
 /**************Product Page scss Ends*********/
 
 /************Breadcrumb scss starts********/
+
+.breadcrumb_section{
+border-top:1px solid #e8e4dd;
+border-bottom: 1px solid #e8e4dd;
+}
+
 .breadcrumbs {
 	ol {
 		margin-top: 4px;
@@ -1305,6 +1362,121 @@ section .blue-btn:hover{
 }
 
 /***********Breadcrumb scss ends***********/
+
+/*===========Cart Page CSS Starts============*/
+#cart-section{
+	background-color: #f0f0f0;
+}
+
+#cart-section h2:after{
+
+}
+#cart-section .col-lg-7{
+	border-right: 1px solid ;
+	border-color:#0000001f;
+	
+}
+
+#cart-section .cart-item{
+	padding:2rem;
+}
+#cart-section .cart-item table{
+	width: 100%;
+}
+#cart-section .cart-item img{
+	width: 100px;
+	height: 100px;
+	object-fit: contain;
+}
+
+#cart-section .cart-item button{
+	border:none;
+	background-color: transparent;
+	padding: 0px;
+}
+
+#cart-section .cart-product-img{
+	width: 120px;
+}
+
+#cart-section .cart-item p{
+	font-size: 13px;
+}
+#cart-section .cart-item button i{
+	font-size: 22px;
+	color: #667e8494;
+}
+
+#cart-section .cart-checkout{
+	padding:2rem;
+	padding-top: 5rem;
+}
+#cart-section .cart-checkout p{
+	margin-bottom: 0rem;
+}
+
+#cart-section .cart-checkout p span{
+font-weight: 600;
+font-size: 22px;
+}
+
+#cart-section .cart-checkout h5 span{
+	font-size: 28px;
+}
+
+
+#cart-section .cart-checkout .cart-btn{
+	margin-top: 1rem;
+	width: 100%;
+	text-align: center;
+	background-color: #667e84;
+	color: #fff;
+	border-radius: 0px;
+	padding:1rem;
+}
+
+#cart-section hr{
+	margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+}
+
+#cart-section .product-quantity {
+	input {
+		height: 40px;
+    width: 40px;
+    text-align: center;
+    font-size: 30px !important;
+    vertical-align: middle;
+    padding: 0px !important;
+    border: none;
+    background: transparent;
+	}
+	button {
+		width: 25px;
+		height: 25px;
+		background: #fff;
+		padding: 0px 8px 8px 5px !important;
+		border: 2px solid rgb(29, 29, 29);
+		display: inline-block;
+		vertical-align: middle;
+		text-align: center;
+		border-radius: 25px;
+		font-size: 18px;
+		background: transparent;
+		line-height: 22px;
+
+	}
+
+	.minus{
+		line-height:20px;
+		padding-left: 7px;
+	}
+}
+
+
+
+
+
 
 /****=============(Responsive SCSS)============******/
 
@@ -1374,6 +1546,23 @@ section .blue-btn:hover{
 	#section6 .hover-effect {
 		position: relative;
 		margin: 0.7rem 0rem;
+	}
+
+	#cart-section .cart-item {
+		padding: 0rem;
+	}
+
+	#cart-section .cart-item {
+		padding: 0rem;
+	}
+
+	#cart-section .cart-checkout{
+		padding:0rem;
+		padding-top: 3rem;
+	}
+
+	#cart-section .col-lg-7{
+		border:none;
 	}
 
   }
@@ -1461,6 +1650,14 @@ section .blue-btn:hover{
 		width: 100px;
 	}
 
+	#product-detail-slider .arrow_left.slick-arrow {
+		left: 0px;
+	}
+
+	#product-detail-slider .arrow_right.slick-arrow {
+		right: 0px;
+	}
+
   }
 
   @media(max-width:576px) {
@@ -1516,6 +1713,17 @@ section .blue-btn:hover{
 
 		#section3{
 			margin-top: -20rem;
+		}
+		#cart-section .cart-item img {
+			width: 70px;
+			height: 70px;
+		}
+		#cart-section .cart-product-img{
+			width: 80px;
+		}
+		#cart-section .cart-item p {
+			font-size: 11px;
+			line-height: 15px;
 		}
 
   }

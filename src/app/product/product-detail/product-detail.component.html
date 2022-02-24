@@ -49,7 +49,7 @@
 
   --->
 <!----------Breadcrumb Starts---------->
-<section class="py-2">
+<section class="py-2 breadcrumb_section">
   <div class="container">
     <div aria-label="breadcrumb" class="breadcrumbs large-font">
       <ol class="breadcrumb">
@@ -66,7 +66,7 @@
 <section id = "product-details">
   <div class="container product_container ">
     <div class="row">
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-7 product_detail_left-col p-0">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-7 product_detail_left-col">
         <div class="product">
           <div class = "img-container">
             <img id = "imageBox" (click)="rotate($event)" [src]="product.image" alt="{{product.image}}" width="100%">
@@ -195,7 +195,7 @@
             --->
         </div>
       </div>
-      <nav>
+      <nav class = "pt-3">
         <div class="nav nav-tabs gap-2" id="nav-tab" role="tablist">
           <button class="nav-link active" id="nav-materials-tab" data-bs-toggle="tab" data-bs-target="#nav-materials"
             type="button" role="tab" aria-controls="materials" aria-selected="true">Materials</button>
@@ -234,35 +234,6 @@
   </div>
 </section>
 <!----------Product Details Section Ends---------->
-<!----------Product Swatch Section Ends---------->
-<section id = "product_swatch">
-  <div class = "container">
-    <div class = "row">
-      <div class = "col-lg-6 col-12">
-        <div>
-          <img src = "assets/img/product/product_swatch.jpg">
-        </div>
-      </div>
-      <div class ="col-lg-6 col-12">
-        <div class ="text-center">
-          <a href = "#">
-            <h1>Plush Texture</h1>
-          </a>
-          <a href = "#">
-            <h1>100% Natural Wool</h1>
-          </a>
-          <a href = "#">
-            <h1>Handwoven</h1>
-          </a>
-        </div>
-        <div class = "text-center pt-4">
-          <button class = "btn blue-btn">Request a Swatch</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!----------Product Swatch Section Ends---------->
 <!----------Product slider Section Starts---------->
 <section id = "product-detail-slider">
   <div class = "container">
@@ -380,23 +351,86 @@
   </div>
 </section>
 <!----------Product slider Section Ends---------->
-<!----------Product Our process  CSS Starts---------->
-<section id = "prooduct_our_process">
+<!----------Product Swatch Section Ends---------->
+<section id = "product_swatch">
   <div class = "container">
-    <div>
+    <div class = "row">
+      
+      <div class = "col-lg-7 col-12">
+        <div>
+          <ngx-slick-carousel class="carousel" 
+    #slickModal="slick-carousel" 
+    [config]="slideConfigSwatch">
+    <div ngxSlickItem  class="slide slider_content">
+    
+        <div class = "product-card">
+          <div>
+            <img src="assets/img/product/swatch-slider1.png"/>
+          </div>
+          <div class = 'text-center'>
+            <h3>Plush Texture</h3>
+          </div>
+        </div>
+      
+    </div>
+    <div ngxSlickItem  class="slide slider_content" >
+     
+        <div class = "product-card">
+          <div>
+            <img src="assets/img/product/swatch-slider2.png"/>
+          </div>
+          <div class = 'text-center'>
+            <h3>100% Natural Wool</h3>
+          </div>
+        </div>
+    
+    </div>
+    <div ngxSlickItem  class="slide slider_content">
+      
+        <div class = "product-card">
+          <div>
+            <img src="assets/img/product/swatch-slider3.png"/>
+          </div>
+          <div class = 'text-center'>
+            <h3>Handwoven</h3>
+          </div>
+        </div>
+     
+    </div>
+  </ngx-slick-carousel>
+        </div>
+      </div>
+      <div class ="col-lg-5 col-12">
+        <div class ="text-center swatch_set">
+           <h2>Swatch Set</h2>
+           <p class = "py-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente perspiciatis inventore, dicta eligendi dolore neque rem. Suscipit reprehenderit ipsam dicta sequi, deleniti minus itaque sint vitae consequatur, rerum, ratione unde consectetur perferendis eum natus! Distinctio ducimus quis quisquam, nobis dolorem quasi iusto sapiente obcaecati quaerat aperiam tempora perferendis, deleniti iure?</p>
+        </div>
+        <div class = "text-center">
+          <button class = "btn blue-btn">Request a Swatch</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+<!----------Product Swatch Section Ends---------->
+
+<!----------Product Our process  CSS Starts---------->
+<section id = "product_our_process">
+  <div class = "container">
+    <div class = "text-center">
+      <h2 class = "mb-0">Handwoven in the Atlas—customized by you.</h2>
+      <p class = "py-4 mb-0">When you place your one-of-a-kind order, we pass it along to the same community of shepherds, dyers, and weavers that have been creating rugs together for generations.</p>
+    
+    </div>
+    <div class ="text-center">
+      <button type = "button" class = "btn blue-btn">Our Process</button>
     </div>
   </div>
 </section>
 <!-----------Product Our process  CSS  Ends---------->
+
 <!----------Product Contact CSS  Starts---------->
-<section id = "product-contact">
-  <div class = "container">
-    <div class = "text-center">
-      <h2>Have something else in mind? Let us know, we're here to make it happen</h2>
-    </div>
-    <div class = 'text-center pt-2'>
-      <button type = "button" class = "btn blue-btn">Contact Us</button>
-    </div>
-  </div>
-</section>
-<!----------Product Contact CSS  Ends---------->
+
+
+
