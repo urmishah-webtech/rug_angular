@@ -11,11 +11,13 @@ import { ProductlistComponent } from './productlist/productlist.component';
 import { HomeComponent } from './home/home.component';
 import { NodataComponent } from './nodata/nodata.component';
 import { CartComponent } from './cart/cart.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 const routes: Routes = [
     {path:'', component:HomeComponent},
     {path: 'footer', component: FooterContactComponent},
     {path: 'cart', component: CartComponent},
+    {path: 'checkout', component: CheckoutComponent},
     // {
     //   path: 'pages',
     //   children: [

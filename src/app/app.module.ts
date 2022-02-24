@@ -24,6 +24,7 @@ import { HomeComponent } from './home/home.component';
 import { NodataComponent } from './nodata/nodata.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { CartComponent } from './cart/cart.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { CartComponent } from './cart/cart.component';
     HomeComponent,
     NodataComponent,
     CartComponent,
+    CheckoutComponent,
   
   ],
   imports: [

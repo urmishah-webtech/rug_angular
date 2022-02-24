@@ -1,0 +1,216 @@
+<section id = "checkout_section">
+    <div class ="container">
+        <div class = "text-center">
+            <h2>Checkout</h2>
+        </div>
+        <div class = "row">
+            <div class = "col-lg-6 col-12">
+                <nav>
+                    <ul class = "nav nav-tabs justify-content-center" id = "nav-tab" role = "tablist">
+                        <li class="nav-link"><a class="nav-item active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
+                            type="button" role="tab" aria-controls="nav-home" aria-selected="true">Information</a></li>
+                        <span>|</span>
+                       <li class="nav-link"><a class="nav-item" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
+                        type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Payment</a></li>
+                    </ul>
+                    
+                </nav>
+                <div class="tab-content pt-4" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                        <div class="contact_form_heading">
+                            <div class="row">
+                              <div class="col-lg-6 col-md-6 col-12 heading_contact">
+                                <h4>Contact Information</h4>
+                              </div>
+                              <div class="col-lg-6 col-md-6 col-12 already_login_heading">
+                                <p>Already have an account? <a routerLink = "/login">Log in</a></p>
+                              </div>
+                              <form class="needs-validation" novalidate="">
+                              <div>
+                                <input class="form-control " type="email" placeholder="Email" id="validationCustom01" required="">
+                              </div>
+                         </form>
+                             
+                              <div class="information_check_box">
+                                
+                                <label class="contant">Keep me up to date on news and exclusive offers
+                                   <input type="checkbox" class = "input-checkbox">
+                                    <span class="checkmark"></span>
+                              </label>
+                
+                              </div>
+                                
+                            </div>
+                          </div>
+                        <div class = "pt-4">
+                            <h4>Shipping Address</h4>
+                            <div class = "ship_address">
+                               
+                                 <form>
+                                     <div class = "row">
+                                         <div class = "col-md-6 col-12">
+                                             <div class="form-group py-2">
+                                                 <input type="text" name="first_name" formControlName="first_name" class="form-control" placeholder = "First name">
+                                             </div>
+                                         </div>
+                                         <div class = "col-md-6 col-12">
+                                             <div class="form-group py-2">
+                                                 <input type="text" name="last_name" formControlName="last_name" class="form-control" placeholder  = "Last name">
+                                             </div>
+                                         </div>
+                                         <div class = "col-md-6 col-12">
+                                             <div class="form-group py-2">
+                                                 <input type="text"  name="email" formControlName="email" class="form-control" placeholder = "Email">
+                                             </div>
+                                         </div>
+                                         <div class = "col-md-6 col-12">
+                                             <div class="form-group py-2">
+                                                 <input type="text"  name="mobile" formControlName="mobile" class="form-control" placeholder = "Mobile">
+                                             </div>
+         
+                                         </div>
+                                         <div class = "col-md-12 col-12">
+                                             <div class="form-group py-2">
+                                                 <input type="text"  name="address" formControlName="address" class="form-control" placeholder = "Address">
+                                             </div>
+                                         </div>
+                                         <div class = "col-md-4 col-12">
+                                             <div class="form-group py-2">
+                                                 <select class="form-select select_country">
+                                                     <option selected="">Country</option>
+                                                     <option value="1">India</option>
+                                                     <option value="2">Australia</option>
+                                                     <option value="3">USA</option>
+                                                  </select>
+                                             </div>
+                                         </div>
+                                         <div class = "col-md-4 col-12">
+                                             <div class="form-group py-2">
+                                                 <select class="form-select select_country">
+                                                     <option selected="">City</option>
+                                                     <option value="1">Florida</option>
+                                                     <option value="2">Delhi</option>
+                                                     <option value="3">Mumbai</option>
+                                                  </select>
+                                             </div>
+                                         </div>
+                                         <div class = "col-md-4 col-12">
+                                             <div class="form-group py-2">
+                                                 <input type="text"  name="code" formControlName="code" class="form-control" placeholder = "zip code">
+                                             </div>
+                                         </div>
+         
+                                     </div>
+                                           
+                                   
+                                 </form>
+                             
+                            </div>
+                            <div>
+                                <button type = "button" class = "btn checkout-btn">Continue to Payment</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                        <div>
+                            <div>
+                             <h3>Payment Method</h3>
+                            </div>      
+                       
+                        <div class="payment_method">
+                     
+                         <div class="db_card">
+                           <label class="check_box ">Credit Card/Dabit Card
+                                <input type="radio" checked="checked" name="radio">
+                                <span class = "float-right"> <img src="assets/img/checkout/american-express.png">
+                                 <img src="assets/img/checkout/visa.png"></span>
+                                
+                                
+                                <span class="checkmark"></span>
+                           </label>
+           
+                         </div>
+                         <form>
+                             <div class = "row">
+                                 <div class = "col-md-12 col-12">
+                                     <div class="form-group py-2">
+                                         <input type="text"  name="cardnumber" formControlName="cardnumber" class="form-control" placeholder = "Card number">
+                                     </div>
+                                 </div>
+                                 <div class = "col-md-12 col-12">
+                                     <div class="form-group py-2">
+                                         <input type="text"  name="cardname" formControlName="cardname" class="form-control" placeholder = "Card holder name">
+                                     </div>
+                                 </div>
+                                 <div class = "col-md-6 col-12">
+                                     <div class="form-group py-2">
+                                         <input type="text"  name="cvv" formControlName="cvv" class="form-control" placeholder = "Cvv">
+                                     </div>
+                                 </div>
+                                 <div class = "col-md-6 col-12">
+                                     <div class="form-group py-2">
+                                         <input type="text"  name="expirydate" formControlName="expirydate" class="form-control" placeholder = "Expiry date">
+                                     </div>
+         
+                                 </div>
+                               
+                             </div>
+                              
+                         </form>
+                        <div class="payment_option">
+                            <ul class = "pt-2">
+                                <li>
+                                 <label class="check_box ">Google Pay UPI
+                                     <img class="gpay_img" src="assets/img/checkout/google-pay.png">
+                                      
+                                          <input type="radio" checked="checked" name="radio">
+                                          <span class="checkmark"></span>
+                                 </label>
+                                </li>
+                                <li>
+                                 <label class="check_box ">Paypal
+                                     <img class="paypal_img" src="assets/img/checkout/paypal.png">
+                                        <input type="radio" name="radio">
+                                         <span class="checkmark"></span>
+                                    </label>
+                                </li>
+                                <li>
+                                 <label class="check_box ">Amazon Pay
+                                     <img class="amazon_img" src="assets/img/checkout/amazon-pay.png">
+                                         <input type="radio" name="radio">
+                                          <span class="checkmark"></span>
+                                     </label>
+                                </li>
+                                <li>
+                                 <label class="check_box ">Case On Delivery
+                                     <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                                        <input type="radio" name="radio">
+                                         <span class="checkmark"></span>
+                                    </label>
+                                </li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                          
+                         </div>
+                         
+                         
+                      
+                     </div>
+                 </div>
+                    </div>
+        
+                </div>
+        
+               
+               
+            </div>
+            <div class = "col-lg-6 col-12">
+
+            </div>
+
+
+        </div>
+    </div>
+</section>
