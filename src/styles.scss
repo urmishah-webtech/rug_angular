@@ -211,6 +211,11 @@ section .blue-btn:hover{
 
 }
 
+hr{
+	background-color: #0000001f !important;
+	opacity: 1 !important;
+}
+
 
 /*================(Main CSS Start)=============*/
 /*************Page 404 CSS Starts**********/
@@ -1325,6 +1330,7 @@ section .blue-btn:hover{
 
 .breadcrumb_section{
 border-top:1px solid #e8e4dd;
+border-bottom: 1px solid #e8e4dd;
 }
 
 .breadcrumbs {
@@ -1359,7 +1365,20 @@ border-top:1px solid #e8e4dd;
 
 /*===========Cart Page CSS Starts============*/
 #cart-section{
-	background-color: #e8e4dd;
+	background-color: #f0f0f0;
+}
+
+#cart-section h2:after{
+
+}
+#cart-section .col-lg-7{
+	border-right: 1px solid ;
+	border-color:#0000001f;
+	
+}
+
+#cart-section .cart-item{
+	padding:2rem;
 }
 #cart-section .cart-item table{
 	width: 100%;
@@ -1373,10 +1392,19 @@ border-top:1px solid #e8e4dd;
 #cart-section .cart-item button{
 	border:none;
 	background-color: transparent;
+	padding: 0px;
+}
+
+#cart-section .cart-product-img{
+	width: 120px;
+}
+
+#cart-section .cart-item p{
+	font-size: 13px;
 }
 #cart-section .cart-item button i{
 	font-size: 22px;
-	color: #667e84;
+	color: #667e8494;
 }
 
 #cart-section .cart-checkout{
@@ -1407,6 +1435,11 @@ font-size: 22px;
 	padding:1rem;
 }
 
+#cart-section hr{
+	margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+}
+
 #cart-section .product-quantity {
 	input {
 		height: 40px;
@@ -1422,7 +1455,7 @@ font-size: 22px;
 		width: 25px;
 		height: 25px;
 		background: #fff;
-		padding: 0px 8px 8px 5px;
+		padding: 0px 8px 8px 5px !important;
 		border: 2px solid rgb(29, 29, 29);
 		display: inline-block;
 		vertical-align: middle;
@@ -1513,6 +1546,23 @@ font-size: 22px;
 	#section6 .hover-effect {
 		position: relative;
 		margin: 0.7rem 0rem;
+	}
+
+	#cart-section .cart-item {
+		padding: 0rem;
+	}
+
+	#cart-section .cart-item {
+		padding: 0rem;
+	}
+
+	#cart-section .cart-checkout{
+		padding:0rem;
+		padding-top: 3rem;
+	}
+
+	#cart-section .col-lg-7{
+		border:none;
 	}
 
   }
@@ -1663,6 +1713,17 @@ font-size: 22px;
 
 		#section3{
 			margin-top: -20rem;
+		}
+		#cart-section .cart-item img {
+			width: 70px;
+			height: 70px;
+		}
+		#cart-section .cart-product-img{
+			width: 80px;
+		}
+		#cart-section .cart-item p {
+			font-size: 11px;
+			line-height: 15px;
 		}
 
   }
