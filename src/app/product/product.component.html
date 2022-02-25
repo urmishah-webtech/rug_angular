@@ -1,21 +1,44 @@
-<div class="container">
+<!----------Breadcrumb Starts---------->
+<section class="py-2 breadcrumb_section">
+  <div class="container">
+    <div aria-label="breadcrumb" class="breadcrumbs large-font">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink = "" role="button" tabindex="0">Home</a></li>
+        <li><i class="fa fa-angle-right" aria-hidden="true"></i>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">Products</li>
+      </ol>
+    </div>
+  </div>
+</section>
+<!----------Breadcrumb end---------->
+<!----------Product List end---------->
+<section id = "product-listing">
+  <div class="container">
     <div class="row">
       <div class="col-md-12">
         <div class="row">
-          <div class="col-md-4" *ngFor="let product of product">
-            <img style="height:50%;width: 50%;" src="{{product['image']}}" alt="Hover">
-             <div class="">
-                <a [routerLink]="['/product-detail', product.id]"><span class="">{{ product['title'] }}</span></a>
-                  <br>
-                  {{ product['descripation']  }}
-                <br>
-                  {{  product['price_range'] }}
-                
+          <div class="col-md-3" *ngFor="let product of product">
+            <a [routerLink]="['/product-detail', product.id]">
+              <div class = "card card-body p-0">
+                <div class="content-overlay"></div>
+                <img  src="{{product['image']}}" alt="Hover">
+              <div class="product_content text-center">
+                <h5 class="">{{ product['title'] }}</h5>
+                 <p> {{ product['descripation']  }}</p>
+                 <h6> {{  product['price_range'] }} </h6>    
+              </div>  
               </div>
+            </a>   
           </div>
         </div>
       </div>
     </div>
   </div>
+
+</section>
+
+<!----------Product List end---------->
+
       
   

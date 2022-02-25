@@ -8,7 +8,7 @@
       <span class="navbar-toggler-icon"><i class = "fa fa-bars"></i></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-md-auto  gap-2 nav-pills" >
+        <ul class="navbar-nav ms-md-auto me-md-auto  gap-2 nav-pills" >
         <!---- <li class="nav-item rounded" *ngFor="let menu of menu">
             <div *ngIf="!menu.children; else parentMenu">
             <a class="nav-link"  [routerLink]="menu.link" routerLinkActive = "active" [routerLinkActiveOptions] = "{exact : true}">{{menu.menu_title}}</a>
@@ -38,6 +38,11 @@
           <li class="nav-item rounded">
             <a class="nav-link" routerLink = "contact" (click)="logout()">Logout</a>
           </li>
+        </ul>
+        <ul class = "d-flex login_signup_btn">
+          <li><a routerLink = "login">Login</a></li>
+          <li><span> | </span></li>
+          <li><a routerLink = "signup">Signup</a></li>
         </ul>
         <div  class = "ms-4">
           <a routerLink="/cart">
