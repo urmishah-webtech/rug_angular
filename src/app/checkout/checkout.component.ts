@@ -8,8 +8,21 @@ import { Component, OnInit } from '@angular/core';
 export class CheckoutComponent implements OnInit {
 
   constructor() { }
+  payment: boolean = false
+  shipping: boolean = true
 
   ngOnInit(): void {
   }
 
+  showpayment(){
+    this.payment = true
+    console.log(this.payment)
+  }
+
+  showshipping(){
+    this.shipping = false
+    console.log(this.shipping)
+  }
+
+ 
 }

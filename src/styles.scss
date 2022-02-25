@@ -189,6 +189,16 @@ section{
 	color:#fff;
 }
 
+.green-btn{
+  background-color: #627b80;
+  color: #fff;
+}
+
+.green-btn:hover{
+	background-color: #506b71;
+	color: #fff;
+  }
+
 .blue-btn{
   font-weight: 800;
   color: #000;
@@ -1450,6 +1460,8 @@ border-bottom: 1px solid #e8e4dd;
 	
 }
 
+
+
 #cart-section .cart-item{
 	padding:2rem;
 }
@@ -1502,8 +1514,6 @@ font-size: 22px;
 	margin-top: 1rem;
 	width: 100%;
 	text-align: center;
-	background-color: #667e84;
-	color: #fff;
 	border-radius: 0px;
 	padding:1rem;
 }
@@ -1555,6 +1565,21 @@ font-size: 22px;
 	background:#f0f0f0;
 }
 
+
+#checkout_section .nav-tabs{
+	border:none;
+}
+
+#checkout_section .nav-item.active{
+	font-weight: 600;
+}
+#checkout_section .col1{
+	padding:0rem 2rem;
+}
+
+#checkout_section .col1 h5{
+	margin-bottom: 0.5rem;
+}
 
 #checkout_section nav span {
     padding-top: 10px;
@@ -1652,9 +1677,15 @@ background-color: #627b8061;
   #checkout_section .already_login_heading p {
     margin-bottom: 0px;
     float: right;
-    padding-top: 10px;
+    
     font-size: 12px;
     font-weight: 600;
+}
+
+#checkout_section .already_login_heading p a{
+	color: #627b80 !important;
+	font-size: 14px;
+	font-weight: 700;
 }
 
 #checkout_section .checkout-btn{
@@ -1662,23 +1693,187 @@ background-color: #627b8061;
 	margin-top: 1rem;
 	width: 100%;
 	text-align: center;
-	background-color: #667e84;
-	color: #fff;
 	border-radius: 0px;
 	padding:1rem;
 
 }
 
-#checkout_section .checkout-btn:hover{
 
+#checkout_section .payment_method .check_box {
+	display: block;
+	position: relative;
+	padding-left: 30px;
+	margin-bottom: 1rem;
+	cursor: pointer;
+	font-size: 14px;
+	color:#0c1011b8;
+	font-weight: 600;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+  
+  }
+  
+
+  #checkout_section .payment_method label img{
+	  width: 50px;
+	  float: right;
+  }
+
+  #checkout_section .payment_method label i{
+	font-size: 20px;
+	float: right;
+}
+  /* Hide the browser's default radio button */
+  #checkout_section .payment_method .check_box  input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+  }
+  
+  /* Create a custom radio button */
+  #checkout_section .payment_method .checkmark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 18px;
+	width: 18px;
+	border-radius: 50%;
+	border: 1px solid #888888;
+  }
+  
+  #checkout_section .payment_method .check_box  input:checked ~ .checkmark {
+	background-color: #406372;
+  }
+  
+  #checkout_section .payment_method .checkmark:after {
+	content: "";
+	position: absolute;
+	display: none;
+  }
+  
+  #checkout_section .payment_method  .check_box  input:checked ~ .checkmark:after {
+	display: block;
+  }
+  
+  /* Style the indicator (dot/circle) */
+  #checkout_section .payment_method .check_box  .checkmark:after {
+	top: 5px;
+	left: 5px;
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: white;
+  }
+
+
+.ship_add{
+padding:1rem;
+border:1px solid #888888;
+border-radius: 10px;
+}
+
+.ship_add table{
+		width: 100%;
+	}
+
+.ship_add table  td:last-child a{
+	font-size: 14px;
+	font-weight: 700;
+	color: #627b80 !important;
+}
+
+
+.pay_btn .btn1{
+	margin-top: 1rem;
+	width: 55%;
+	text-align: center;
+	border-radius: 0px;
+	padding:1rem;
+}
+
+.pay_btn .btn2{
+	margin-top: 1rem;
+   text-align: center;
+   padding: 1rem;
+   width: 45%;
+   color: #667e84;
+   font-weight: 700;
+}
+
+.checkout_product{
+	height: 300px;
+	overflow-y: scroll;
 	
-	background-color: #667e84;
-	color: #fff;
+}
+.checkout_product::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+.checkout_product::-webkit-scrollbar
+{
+	width:0px;
+	background-color: #F5F5F5;
 	
+}
+
+.checkout_product::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
 
 }
 
 
+.checkout_product table{
+	width: 100%;
+}
+
+.checkout_product table tr td:first-child{
+	width: 110px;
+}
+
+.checkout_product table tr td img{
+	width: 100px;
+	height: 100px;
+	object-fit: contain;
+}
+
+.checkout_product table tr td p{
+	font-size: 13px;
+}
+
+.checkout_product table tr td:last-child button{
+	border: none;
+    background-color: transparent;
+    padding: 0px;
+}
+.checkout_product table tr td:last-child button i{
+	font-size: 22px;
+    color: #667e8494;
+}
+
+
+.checkout_payment{
+	padding:1rem  0rem;
+}
+
+.checkout_payment button{margin-top: 1rem;
+	width: 100%;
+	text-align: center;
+	border-radius: 0px;
+	padding:1rem;
+}
+
+
+
+
+
+ 
+     
 
 
 

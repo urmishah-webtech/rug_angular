@@ -4,23 +4,23 @@
             <h2>Checkout</h2>
         </div>
         <div class = "row">
-            <div class = "col-lg-6 col-12">
+            <div class = "col-lg-6 col-12 col1">
                 <nav>
                     <ul class = "nav nav-tabs justify-content-center" id = "nav-tab" role = "tablist">
-                        <li class="nav-link"><a class="nav-item active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
-                            type="button" role="tab" aria-controls="nav-home" aria-selected="true">Information</a></li>
+                        <li class="nav-link"><a class="nav-item active" id="nav-shipping-tab" data-bs-toggle="tab" data-bs-target="#nav-shipping"
+                            type="button" role="tab" aria-controls="nav-shipping" aria-selected="true" (click) = "showshipping()">Information</a></li>
                         <span>|</span>
-                       <li class="nav-link"><a class="nav-item" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
-                        type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Payment</a></li>
+                       <li class="nav-link"><a class="nav-item" id="nav-payment-tab" data-bs-toggle="tab" data-bs-target="#nav-payment"
+                        type="button" role="tab" aria-controls="nav-payment" aria-selected="false" (click)="showpayment()">Payment</a></li>
                     </ul>
                     
                 </nav>
                 <div class="tab-content pt-4" id="nav-tabContent">
-                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class="tab-pane fade show active" id="nav-shipping" role="tabpanel" aria-labelledby="nav-shipping-tab" *ngIf="!payment || shipping">
                         <div class="contact_form_heading">
                             <div class="row">
                               <div class="col-lg-6 col-md-6 col-12 heading_contact">
-                                <h4>Contact Information</h4>
+                                <h5>Contact Information</h5>
                               </div>
                               <div class="col-lg-6 col-md-6 col-12 already_login_heading">
                                 <p>Already have an account? <a routerLink = "/login">Log in</a></p>
@@ -43,7 +43,7 @@
                             </div>
                           </div>
                         <div class = "pt-4">
-                            <h4>Shipping Address</h4>
+                            <h5>Shipping Address</h5>
                             <div class = "ship_address">
                                
                                  <form>
@@ -106,15 +106,35 @@
                                  </form>
                              
                             </div>
-                            <div>
-                                <button type = "button" class = "btn checkout-btn">Continue to Payment</button>
+                            <div  class = "pay_btn nav nav-tabs" id = "nav-tab" role = "tablist">
+                                <button type = "button" class = "btn checkout-btn green-btn" id="nav-payment-tab" data-bs-toggle="tab" data-bs-target="#nav-payment"
+                                type="button" role="tab" aria-controls="nav-payment" aria-selected="false" (click)="showpayment()">Continue to Payment</button>
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                    <div class="tab-pane fade show active" id="nav-payment" role="tabpanel" aria-labelledby="nav-payment-tab" *ngIf = "payment || !shipping">
                         <div>
+                           <div class = "ship_add">
+                               <table>
+                                   <tbody>
+                                       <tr>
+                                           <td>Email</td>
+                                           <td>loremipsum123@gmail.com</td>
+                                           <td class = "text-end"><a href = "#">Change</a></td>
+                                       </tr>
+                                       <tr><td colspan = "3"><hr class = "my-2"></td></tr>
+                                       <tr>
+                                        <td>Ship to</td>
+                                        <td>A/7 main street , tempa , Florida 345627 (USA)</td>
+                                        <td class = "text-end"><a href = "#">Change</a></td>
+                                    </tr>
+                                   </tbody>
+                               </table>
+                           </div>
+                        </div>
+                        <div class = "pt-4">
                             <div>
-                             <h3>Payment Method</h3>
+                             <h5>Payment Method</h5>
                             </div>      
                        
                         <div class="payment_method">
@@ -188,27 +208,382 @@
                                          <span class="checkmark"></span>
                                     </label>
                                 </li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
+                                
                             </ul>
                           
                          </div>
-                         
-                         
                       
+                     </div>
+                     <div class = "pay_btn nav nav-tabs" id = "nav-tab" role = "tablist">
+                        <button type = "button" class = "btn btn1 green-btn">Pay Now</button>
+                        <button type = "button" class = "btn btn2" id="nav-shipping-tab" data-bs-toggle="tab" data-bs-target="#nav-shipping"
+                        type="button" role="tab" aria-controls="nav-shipping" aria-selected="true" (click) = "showshipping()">Return to Shipping</button>
                      </div>
                  </div>
                     </div>
-        
                 </div>
         
                
                
             </div>
-            <div class = "col-lg-6 col-12">
 
+            <div class = "col-lg-6 col-12 col1">
+               <div class = "checkout_product">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><img src = "assets/img/product/product.png"></td>
+                            <td><h5 class = "mb-0">Resolute</h5>
+                                 <p  class = "mb-0"><span>Fawn + Natural </span> / <span>3' x 5'</span> / <span>Tassels</span></p>
+                                 
+                          </td>
+                          <td class = "text-center"><h4>$639</h4></td>
+                          
+                         
+                          <td  class = "text-end"><button><i class="fa fa-trash-o" aria-hidden="true"></i></button></td>
+                        </tr>
+                        <tr>
+                            <td><img src = "assets/img/product/product.png"></td>
+                            <td><h5 class = "mb-0">Resolute</h5>
+                                 <p  class = "mb-0"><span>Fawn + Natural </span> / <span>3' x 5'</span> / <span>Tassels</span></p>
+                                 
+                          </td>
+                          <td class = "text-center"><h4>$639</h4></td>
+                          
+                         
+                          <td  class = "text-end"><button><i class="fa fa-trash-o" aria-hidden="true"></i></button></td>
+                        </tr>
+                        <tr>
+                            <td><img src = "assets/img/product/product.png"></td>
+                            <td><h5 class = "mb-0">Resolute</h5>
+                                 <p  class = "mb-0"><span>Fawn + Natural </span> / <span>3' x 5'</span> / <span>Tassels</span></p>
+                                 
+                          </td>
+                          <td class = "text-center"><h4>$639</h4></td>
+                          
+                         
+                          <td  class = "text-end"><button><i class="fa fa-trash-o" aria-hidden="true"></i></button></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><hr></td>
+                        </tr>
+                        <tr>
+                          <td><img src = "assets/img/product/product.png"></td>
+                          <td><h5 class = "mb-0">Resolute</h5>
+                               <p  class = "mb-0"><span>Fawn + Natural </span> / <span>3' x 5'</span> / <span>Tassels</span></p>
+                              
+                        </td>
+                        <td class = "text-center"><h4>$639</h4></td>
+                        
+                       
+                        <td  class = "text-end"><button><i class="fa fa-trash-o" aria-hidden="true"></i></button></td>
+                      </tr>
+                      <tr>
+                          <td colspan="5"><hr></td>
+                      </tr>
+                      <tr>
+                        <td class = "cart-product-img"><img src = "assets/img/product/product.png"></td>
+                        <td><h5 class = "mb-0">Resolute</h5>
+                             <p  class = "mb-0"><span>Fawn + Natural </span> / <span>3' x 5'</span> / <span>Tassels</span></p>
+                           
+                      </td>
+                      <td class = "text-center"><h4>$639</h4></td>
+                      
+                     
+                      <td  class = "text-end"><button><i class="fa fa-trash-o" aria-hidden="true"></i></button></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+               </div>
+               <div class  = "checkout_payment">
+                <ul>
+                    <hr>
+                <li class = "d-flex justify-content-between py-2">
+                    <p class = "mb-0">Subtotal</p>
+                    <p class = "mb-0"><span>$639</span></p>
+                </li>
+                <hr>
+                <li class = "d-flex justify-content-between py-2">
+                    <p class = "mb-0">Standard Shipping</p>
+                    <p class = "mb-0"><span>$10</span></p>
+                </li>
+                <hr>
+                <li class = "d-flex justify-content-between py-2">
+                    <h5 class = "mb-0">Total</h5>
+                    <h5 class = "mb-0"><span>$649</span></h5>
+                </li>
+                <hr>
+                </ul>
+                <div>
+                    <button type = "button" class = "btn cart-btn green-btn">Continue to Checkout</button>
+                </div>
+
+               </div>
             </div>
+
+         <!----  <div class="col-6">
+                <div class="accordion" id="accordionExample">
+                    <div class="steps d-flex">
+                        <progress id="progress" value=0 max=100></progress>
+                        <div class="step-item">
+                            <button class="step-button text-center" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                1
+                            </button>
+                            <div class="step-title">
+                                First Step
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <button class="step-button text-center collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                2
+                            </button>
+                            <div class="step-title">
+                                Second Step
+                            </div>
+                        </div>
+                       
+                    </div>
+    
+                    <div class="card">
+                        <div id="headingOne">
+                        </div>
+    
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                            data-bs-parent="#accordionExample">
+                            <div class="contact_form_heading">
+                                <div class="row">
+                                  <div class="col-lg-6 col-md-6 col-12 heading_contact">
+                                    <h4>Contact Information</h4>
+                                  </div>
+                                  <div class="col-lg-6 col-md-6 col-12 already_login_heading">
+                                    <p>Already have an account? <a routerLink = "/login">Log in</a></p>
+                                  </div>
+                                  <form class="needs-validation" novalidate="">
+                                  <div>
+                                    <input class="form-control " type="email" placeholder="Email" id="validationCustom01" required="">
+                                  </div>
+                             </form>
+                                 
+                                  <div class="information_check_box">
+                                    
+                                    <label class="contant">Keep me up to date on news and exclusive offers
+                                       <input type="checkbox" class = "input-checkbox">
+                                        <span class="checkmark"></span>
+                                  </label>
+                    
+                                  </div>
+                                    
+                                </div>
+                              </div>
+                            <div class = "pt-4">
+                                <h4>Shipping Address</h4>
+                                <div class = "ship_address">
+                                   
+                                     <form>
+                                         <div class = "row">
+                                             <div class = "col-md-6 col-12">
+                                                 <div class="form-group py-2">
+                                                     <input type="text" name="first_name" formControlName="first_name" class="form-control" placeholder = "First name">
+                                                 </div>
+                                             </div>
+                                             <div class = "col-md-6 col-12">
+                                                 <div class="form-group py-2">
+                                                     <input type="text" name="last_name" formControlName="last_name" class="form-control" placeholder  = "Last name">
+                                                 </div>
+                                             </div>
+                                             <div class = "col-md-6 col-12">
+                                                 <div class="form-group py-2">
+                                                     <input type="text"  name="email" formControlName="email" class="form-control" placeholder = "Email">
+                                                 </div>
+                                             </div>
+                                             <div class = "col-md-6 col-12">
+                                                 <div class="form-group py-2">
+                                                     <input type="text"  name="mobile" formControlName="mobile" class="form-control" placeholder = "Mobile">
+                                                 </div>
+             
+                                             </div>
+                                             <div class = "col-md-12 col-12">
+                                                 <div class="form-group py-2">
+                                                     <input type="text"  name="address" formControlName="address" class="form-control" placeholder = "Address">
+                                                 </div>
+                                             </div>
+                                             <div class = "col-md-4 col-12">
+                                                 <div class="form-group py-2">
+                                                     <select class="form-select select_country">
+                                                         <option selected="">Country</option>
+                                                         <option value="1">India</option>
+                                                         <option value="2">Australia</option>
+                                                         <option value="3">USA</option>
+                                                      </select>
+                                                 </div>
+                                             </div>
+                                             <div class = "col-md-4 col-12">
+                                                 <div class="form-group py-2">
+                                                     <select class="form-select select_country">
+                                                         <option selected="">City</option>
+                                                         <option value="1">Florida</option>
+                                                         <option value="2">Delhi</option>
+                                                         <option value="3">Mumbai</option>
+                                                      </select>
+                                                 </div>
+                                             </div>
+                                             <div class = "col-md-4 col-12">
+                                                 <div class="form-group py-2">
+                                                     <input type="text"  name="code" formControlName="code" class="form-control" placeholder = "zip code">
+                                                 </div>
+                                             </div>
+             
+                                         </div>
+                                               
+                                       
+                                     </form>
+                                 
+                                </div>
+                                <div  class = "pay_btn nav nav-tabs" id = "nav-tab" role = "tablist">
+                                    <button type = "button" class = "btn checkout-btn" id="nav-payment-tab" data-bs-toggle="tab" data-bs-target="#nav-payment"
+                                    type="button" role="tab" aria-controls="nav-payment" aria-selected="false">Continue to Payment</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="card">
+                        <div id="headingTwo">
+    
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                            data-bs-parent="#accordionExample">
+                            <div>
+                                <div class = "ship_add">
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td>Email</td>
+                                                <td>loremipsum123@gmail.com</td>
+                                                <td class = "text-end"><a href = "#">Change</a></td>
+                                            </tr>
+                                            <tr><td colspan = "3"><hr class = "my-2"></td></tr>
+                                            <tr>
+                                             <td>Ship to</td>
+                                             <td>A/7 main street , tempa , Florida 345627 (USA)</td>
+                                             <td class = "text-end"><a href = "#">Change</a></td>
+                                         </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                             </div>
+                             <div class = "pt-4">
+                                 <div>
+                                  <h4>Payment Method</h4>
+                                 </div>      
+                            
+                             <div class="payment_method">
+                          
+                              <div class="db_card">
+                                <label class="check_box ">Credit Card/Dabit Card
+                                     <input type="radio" checked="checked" name="radio">
+                                     <span class = "float-right"> <img src="assets/img/checkout/american-express.png">
+                                      <img src="assets/img/checkout/visa.png"></span>
+                                     
+                                     
+                                     <span class="checkmark"></span>
+                                </label>
+                
+                              </div>
+                              <form>
+                                  <div class = "row">
+                                      <div class = "col-md-12 col-12">
+                                          <div class="form-group py-2">
+                                              <input type="text"  name="cardnumber" formControlName="cardnumber" class="form-control" placeholder = "Card number">
+                                          </div>
+                                      </div>
+                                      <div class = "col-md-12 col-12">
+                                          <div class="form-group py-2">
+                                              <input type="text"  name="cardname" formControlName="cardname" class="form-control" placeholder = "Card holder name">
+                                          </div>
+                                      </div>
+                                      <div class = "col-md-6 col-12">
+                                          <div class="form-group py-2">
+                                              <input type="text"  name="cvv" formControlName="cvv" class="form-control" placeholder = "Cvv">
+                                          </div>
+                                      </div>
+                                      <div class = "col-md-6 col-12">
+                                          <div class="form-group py-2">
+                                              <input type="text"  name="expirydate" formControlName="expirydate" class="form-control" placeholder = "Expiry date">
+                                          </div>
+              
+                                      </div>
+                                    
+                                  </div>
+                                   
+                              </form>
+                             <div class="payment_option">
+                                 <ul class = "pt-2">
+                                     <li>
+                                      <label class="check_box ">Google Pay UPI
+                                          <img class="gpay_img" src="assets/img/checkout/google-pay.png">
+                                           
+                                               <input type="radio" checked="checked" name="radio">
+                                               <span class="checkmark"></span>
+                                      </label>
+                                     </li>
+                                     <li>
+                                      <label class="check_box ">Paypal
+                                          <img class="paypal_img" src="assets/img/checkout/paypal.png">
+                                             <input type="radio" name="radio">
+                                              <span class="checkmark"></span>
+                                         </label>
+                                     </li>
+                                     <li>
+                                      <label class="check_box ">Amazon Pay
+                                          <img class="amazon_img" src="assets/img/checkout/amazon-pay.png">
+                                              <input type="radio" name="radio">
+                                               <span class="checkmark"></span>
+                                          </label>
+                                     </li>
+                                     <li>
+                                      <label class="check_box ">Case On Delivery
+                                          <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                                             <input type="radio" name="radio">
+                                              <span class="checkmark"></span>
+                                         </label>
+                                     </li>
+                                     
+                                 </ul>
+                               
+                              </div>
+                           
+                          </div>
+                          <div class = "pay_btn nav nav-tabs" id = "nav-tab" role = "tablist">
+                             <button type = "button" class = "btn btn1">Pay Now</button>
+                             <button type = "button" class = "btn btn2" id="nav-shipping-tab" data-bs-toggle="tab" data-bs-target="#nav-shipping"
+                             type="button" role="tab" aria-controls="nav-shipping" aria-selected="true">Return to Shipping</button>
+                          </div>
+                      </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div id="headingThree">
+    
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                            data-bs-parent="#accordionExample">
+                            <div class="card-body">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+                                squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
+                                nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+                                single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
+                                beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
+                                lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you
+                                probably haven't heard of them accusamus labore sustainable VHS.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>  --->
 
 
         </div>
