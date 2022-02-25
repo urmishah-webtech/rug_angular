@@ -11,6 +11,7 @@ import { ProductlistComponent } from './productlist/productlist.component';
 import { HomeComponent } from './home/home.component';
 import { NodataComponent } from './nodata/nodata.component';
 import { CartComponent } from './cart/cart.component';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
     {path:'', component:HomeComponent},
@@ -28,7 +29,7 @@ const routes: Routes = [
     {path: 'pages/:pageId', component: PageComponent},
     {path: 'products', component: ProductComponent},
     {path: 'product-detail/:productId', component: ProductDetailComponent},
-    {path: 'signup', component: SignupComponent},
+    {path: 'signup', component: SignupComponent, canActivate: [AuthGuard]},
     {path: 'login', component: LoginComponent},
     {path: 'faq', component: FaqComponent},
     {path: '**', component:NodataComponent}
