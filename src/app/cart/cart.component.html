@@ -19,17 +19,18 @@
      <div class = "text-center mb-4">
          <h2>Your Cart</h2>
      </div>
-     <div class = "row">
+     <div class = "row" >
         <div class = "col-lg-7 col-12">
              <div>
                 <div class="cart-item">
                   <table>
                       <tbody>
                           <tr *ngFor="let cart of cart.cartitem">
-                              <td><img src = "assets/img/product/product.png"></td>
-                              <!-- <td><img src = "{{cart.media_product[0].image}}"></td> -->
+                              <!-- <td><img src = "assets/img/product/product.png"></td> -->
+                              <!-- <div class="" *ngIf="cart.length != 0"> -->
+                              <td><img src = "{{cart.image}}"></td>
                               <td><h5 class = "mb-0">{{cart.product_detail.title}}</h5>
-                                   <!-- <p  class = "mb-0"><span>Fawn + Natural </span> / <span>3' x 5'</span> / <span>Tassels</span></p> -->
+                                   <p  class = "mb-0"><span>Fawn + Natural </span> / <span>3' x 5'</span> / <span>Tassels</span></p>
                                    <div class = "product-quantity">
                                     <!-- <button type = "button" class = "minus" (click) = minus()>-</button> -->
                                     Qty:<input type = "text" [value] ="cart.stock">
@@ -38,6 +39,7 @@
                             </td>
                             <td class = "text-center"><h4>${{cart.price}}</h4></td>
                             <td  class = "text-end"><button type="button" (click)="deleteCartItem(cart.id)"><i class="fa fa-trash-o" aria-hidden="true"></i></button></td>
+                            <!-- </div> -->
                           </tr>
                       </tbody>
                   </table>
@@ -45,7 +47,7 @@
              </div>
         </div>
         <div class = "col-lg-5 col-12">
-            <div class = "cart-checkout">
+            <div class = "cart-checkout" *ngIf="cart.length != 0">
                 <ul>
                     <hr>
                 <li class = "d-flex justify-content-between py-2">
@@ -65,7 +67,7 @@
                 <hr>
                 </ul>
                 <div>
-                    <button type = "button" class = "btn cart-btn green-btn">Continue to Checkout</button>
+                    <button type = "button" class = "btn cart-btn green-btn" routerLink="/checkout">Continue to Checkout</button>
                 </div>
             </div>
         </div>
