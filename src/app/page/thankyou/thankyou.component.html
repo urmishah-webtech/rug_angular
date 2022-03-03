@@ -1,0 +1,56 @@
+<section class="">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+
+      </div>
+      <div class = "col-lg-6 col-12 offset-md-3">
+        <h1 class="text-center">Thank You!</h1>
+        <p class="order_text">Your order has been placed</p>
+        <h5>Order ID: {{order.orders.id}}</h5>
+        <div class = "checkout_product cart-item">
+         <table>
+             <tbody>
+                 <tr *ngFor="let cart of order.order_item">
+                     <td><img src = "{{cart.image}}"></td>
+                     <td><h4 class = "mb-0">{{cart.product_detail.title}}</h4>
+                       Qty: {{cart.stock}}
+                          <!-- <p  class = "mb-0"><span>Fawn + Natural </span> / <span>3' x 5'</span> / <span>Tassels</span></p> -->
+                   </td>
+                   <td class = "text-center"><h4>${{cart.total}}</h4></td>
+
+                 </tr>
+
+             </tbody>
+         </table>
+
+        </div>
+        <div class  = "checkout_payment">
+         <ul>
+             <hr>
+         <li class = "d-flex justify-content-between py-2">
+             <p class = "mb-0">Subtotal</p>
+             <p class = "mb-0"><span>${{order.orders.netamout}}</span></p>
+         </li>
+         <hr>
+         <li class = "d-flex justify-content-between py-2">
+             <p class = "mb-0">Standard Shipping</p>
+             <p class = "mb-0"><span>$10</span></p>
+         </li>
+         <hr>
+         <li class = "d-flex justify-content-between py-2">
+             <h5 class = "mb-0">Total</h5>
+             <h5 class = "mb-0"><span>${{order.orders.netamout+10}}</span></h5>
+         </li>
+         <hr>
+         </ul>
+        </div>
+        <p>
+          <button type = "button" class="btn cart-btn green-btn text-center" routerLink="/">Continue Shopping</button>
+        </p>
+     </div>
+    </div>
+  </div>
+
+</section>

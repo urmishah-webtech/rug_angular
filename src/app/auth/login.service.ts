@@ -11,6 +11,6 @@ export class LoginService {
 
   constructor(private http:HttpClient) { }
   login(data: any){
-    return this.http.post(environment.register_api+'login',data);
+    return this.http.post(environment.api+'login',data);
   }
 }

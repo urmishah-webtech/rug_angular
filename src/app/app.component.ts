@@ -13,7 +13,7 @@ export class AppComponent {
   ngOnInit(){
     this.router.events.subscribe(url =>{
       if(url instanceof NavigationEnd){
-       this.showHeaderFooter = url.url === '/login' || url.url === '/signup' ? false: true
+       this.showHeaderFooter = url.url === '/login' || url.url === '/signup' || url.url === '/thankyou' ? false: true
       }
     })
   }

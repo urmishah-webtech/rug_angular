@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../auth/auth.service';
+import { CartService } from '../services/cart.service';
 import { HeaderService } from '../services/header.service';
 
 @Component({
@@ -11,10 +14,21 @@ export class HeaderComponent implements OnInit {
   submenu: any = [];
   menuId: number = 80;
   openDropdown = false
+  login: boolean = false
+  loggedUser: any;
+  cart: any = [];
+  cartCount: number =0
 
-  constructor(private headerService: HeaderService) { }
+  constructor(
+    private headerService: HeaderService,
+    private authService: AuthService,
+    private router: Router,
+    private cartService: CartService) { }
 
   ngOnInit(): void {
+    this.loggedUser = this.authService.getToken()
+    this.isLogged();
+    this.getCartCount();
     this.getmenu();
     this.getSubmenu(this.menuId);
   }
@@ -30,8 +44,29 @@ export class HeaderComponent implements OnInit {
       this.submenu = data;
     })
   }
+  isLogged(){
+    if(this.loggedUser.token == null){
+      this.login = false
+    }else{
+      this.login = true
+    }
+    return this.login
+  }
+  logout() {
+    this.authService.logout();
+    this.login = false
+    //this.router.navigate(['/']);
+  }
   dropdown(){
     this.openDropdown = !this.openDropdown;
+  }
+
+  getCartCount(){
+    this.cartService.getCart(this.loggedUser.id).subscribe(res=>{
+      this.cart = res;
+      console.log(this.cart.cartitem);
+      this.cartCount = this.cart.cartitem.length
+    })
   }
 
 }
