@@ -26,6 +26,9 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ContactComponent } from './contact/contact.component';
+import { ThankyouComponent } from './page/thankyou/thankyou.component';
+import { OrderHistoryComponent } from './account/order-history/order-history.component';
+import { AccountComponent } from './account/account/account.component';
 
 
 @NgModule({
@@ -46,8 +49,11 @@ import { ContactComponent } from './contact/contact.component';
     HomeComponent,
     NodataComponent,
     CartComponent,
-    CheckoutComponent,
     ContactComponent,
+    CheckoutComponent,
+    ThankyouComponent,
+    OrderHistoryComponent,
+    AccountComponent,
   
   ],
   imports: [
