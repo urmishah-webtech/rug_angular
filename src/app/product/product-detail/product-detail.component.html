@@ -53,9 +53,10 @@
   <div class="container">
     <div aria-label="breadcrumb" class="breadcrumbs large-font">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a routerLink = "" role="button" tabindex="0">Home</a></li>
-        <li><i class="fa fa-angle-right" aria-hidden="true"></i>
-        </li>
+        <li class="breadcrumb-item"><a routerLink="/" role="button" tabindex="0">Home</a></li>
+        <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+        <li class="breadcrumb-item"><a routerLink="/products" role="button" tabindex="0">Products</a></li>
+        <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
         <li class="breadcrumb-item active" aria-current="page">{{product.title}}</li>
       </ol>
     </div>
@@ -95,7 +96,8 @@
             </div>
           </div>
           <!-----Product Variation---->
-          <div class="variation" *ngIf="productVariation != ''">
+          <!-- <div class="variation" *ngIf="productVariation != ''"> -->
+            <div class="variation">
             <!-----Choose Colors---->
             <div class = "color_choose py-2">
               <h6 class = "mb-1">Color Options</h6>
@@ -355,14 +357,14 @@
 <section id = "product_swatch">
   <div class = "container">
     <div class = "row">
-      
+
       <div class = "col-lg-7 col-12">
         <div>
-          <ngx-slick-carousel class="carousel" 
-    #slickModal="slick-carousel" 
+          <ngx-slick-carousel class="carousel"
+    #slickModal="slick-carousel"
     [config]="slideConfigSwatch">
     <div ngxSlickItem  class="slide slider_content">
-    
+
         <div class = "product-card">
           <div>
             <img src="assets/img/product/swatch-slider1.png"/>
@@ -371,10 +373,10 @@
             <h3>Plush Texture</h3>
           </div>
         </div>
-      
+
     </div>
     <div ngxSlickItem  class="slide slider_content" >
-     
+
         <div class = "product-card">
           <div>
             <img src="assets/img/product/swatch-slider2.png"/>
@@ -383,10 +385,10 @@
             <h3>100% Natural Wool</h3>
           </div>
         </div>
-    
+
     </div>
     <div ngxSlickItem  class="slide slider_content">
-      
+
         <div class = "product-card">
           <div>
             <img src="assets/img/product/swatch-slider3.png"/>
@@ -395,7 +397,7 @@
             <h3>Handwoven</h3>
           </div>
         </div>
-     
+
     </div>
   </ngx-slick-carousel>
         </div>
@@ -409,7 +411,7 @@
           <button class = "btn blue-btn">Request a Swatch</button>
         </div>
       </div>
-      
+
     </div>
   </div>
 </section>
@@ -421,7 +423,7 @@
     <div class = "text-center">
       <h2 class = "mb-0">Handwoven in the Atlas—customized by you.</h2>
       <p class = "py-4 mb-0">When you place your one-of-a-kind order, we pass it along to the same community of shepherds, dyers, and weavers that have been creating rugs together for generations.</p>
-    
+
     </div>
     <div class ="text-center">
       <button type = "button" class = "btn blue-btn">Our Process</button>

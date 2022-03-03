@@ -13,12 +13,13 @@ import { NodataComponent } from './nodata/nodata.component';
 import { CartComponent } from './cart/cart.component';
 import { AuthGuard } from './auth/auth.guard';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { ThankyouComponent } from './page/thankyou/thankyou.component';
 
 const routes: Routes = [
     {path:'', component:HomeComponent},
     {path: 'footer', component: FooterContactComponent},
     {path: 'cart', component: CartComponent},
-    {path: 'checkout', component: CheckoutComponent},
+    {path: 'checkout', component: CheckoutComponent, canActivate: [AuthGuard]},
     // {
     //   path: 'pages',
     //   children: [
@@ -31,9 +32,11 @@ const routes: Routes = [
     {path: 'pages/:pageId', component: PageComponent},
     {path: 'products', component: ProductComponent},
     {path: 'product-detail/:productId', component: ProductDetailComponent},
-    {path: 'signup', component: SignupComponent, canActivate: [AuthGuard]},
+    {path: 'signup', component: SignupComponent},
     {path: 'login', component: LoginComponent},
     {path: 'faq', component: FaqComponent},
+    {path: 'thankyou', component: ThankyouComponent, canActivate: [AuthGuard]},
+    {path: 'account/order-history', component: ThankyouComponent, canActivate: [AuthGuard]},
     {path: '**', component:NodataComponent}
 ];
 
