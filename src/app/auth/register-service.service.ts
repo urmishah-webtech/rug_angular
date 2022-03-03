@@ -12,6 +12,6 @@ export class RegisterServiceService {
 
   register(reg: any){
     // console.log(fname);
-    return this.http.post(environment.register_api+'signup',reg);
+    return this.http.post(environment.api+'signup',reg);
   }
 }

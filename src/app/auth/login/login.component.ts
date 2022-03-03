@@ -4,7 +4,7 @@ import { Validators } from '@angular/forms';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NotificationService } from 'src/app/notification.service';
-import { LoginService } from '../login.service';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login',
@@ -14,10 +14,11 @@ import { LoginService } from '../login.service';
 export class LoginComponent implements OnInit {
   response_data: any;
   error_data: any;
+  isLogged: boolean = false
 
-  constructor(private __routeService:Router,private __loginService:LoginService,private notifyService:NotificationService,private fb: FormBuilder) { }
+  constructor(private __routeService:Router,private __loginService:AuthService,private notifyService:NotificationService,private fb: FormBuilder) { }
   formValidate:boolean=true;
-  isLoaderVisible:boolean=false;   
+  isLoaderVisible:boolean=false;
   ngOnInit(): void {
   }
   loginForm = this.fb.group({
@@ -31,7 +32,10 @@ export class LoginComponent implements OnInit {
         this.notifyService.showSuccess("Success",response.message)
         this.response_data=response;
         this.isLoaderVisible=false;
-        localStorage.setItem('token',this.response_data.user.token)
+        localStorage.setItem('id', this.response_data.user.id)
+        localStorage.setItem('name', this.response_data.user.first_name+' '+ this.response_data.user.last_name)
+        localStorage.setItem('token',this.response_data.access_token)
+        this.isLogged = true;
         this.__routeService.navigate(['/']);
       },
       err => {
@@ -47,11 +51,11 @@ export class LoginComponent implements OnInit {
           }
         }
       }
-       
+
       )
     }
     else{
       this.formValidate=false;
     }
-  } 
+  }
 }

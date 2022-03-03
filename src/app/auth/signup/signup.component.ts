@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NotificationService } from 'src/app/notification.service';
-import { RegisterServiceService } from '../register-service.service';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-signup',
@@ -11,6 +11,7 @@ import { RegisterServiceService } from '../register-service.service';
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit {
+  registerForm: any = FormGroup;
   formValidate:boolean=true;
   response_data:any;
   email_error:any;
@@ -22,21 +23,21 @@ export class SignupComponent implements OnInit {
   message: any;
   isLoaderVisible:boolean=false;
 
-  constructor(private __registerService:RegisterServiceService,
+  constructor(private __registerService:AuthService,
   private notifyService:NotificationService,private fb: FormBuilder,
   private __routeService:Router) { }
 
   ngOnInit(): void {
-
+    this.registerForm = this.fb.group({
+      first_name: ['',Validators.required],
+      last_name: ['',Validators.required],
+      email: ['',[Validators.required,Validators.email]],
+      password: ['',[Validators.required,Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')]
+    ],
+    })
   }
 
-  registerForm = this.fb.group({
-    first_name: ['',Validators.required],
-    last_name: ['',Validators.required],
-    email: ['',[Validators.required,Validators.email]],
-    password: ['',[Validators.required,Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')]
-  ],
-  })
+
   onSubmit() {
       if(this.registerForm.valid){
           this.isLoaderVisible=true;
@@ -44,6 +45,8 @@ export class SignupComponent implements OnInit {
           this.response_data=response;
           this.notifyService.showSuccess("Success",response.message)
           this.isLoaderVisible=false;
+          localStorage.setItem('id', this.response_data.user.id)
+          localStorage.setItem('name', this.response_data.user.first_name+' '+ this.response_data.user.last_name)
           localStorage.setItem('token',this.response_data.user.token)
           this.__routeService.navigate(['/']);
         },
@@ -103,8 +106,10 @@ export class SignupComponent implements OnInit {
         this.formValidate=false;
       }
     }
+
+    // function validationErrors(validationErrors: any) {
+    //   throw new Error('Function not implemented.');
+    // }
 }
-function validationErrors(validationErrors: any) {
-  throw new Error('Function not implemented.');
-}
+
 
