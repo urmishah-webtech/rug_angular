@@ -1447,439 +1447,564 @@ border-bottom: 1px solid #e8e4dd;
 /***********Breadcrumb scss ends***********/
 
 /*===========Cart Page CSS Starts============*/
-#cart-section{
+#cart-section {
 	background-color: #f0f0f0;
-}
-
-
-#cart-section .col-lg-7{
-	border-right: 1px solid ;
-	border-color:#0000001f;
-	
-}
-
-
-
-#cart-section .cart-item{
-	padding:2rem;
-}
-#cart-section .cart-item table{
-	width: 100%;
-}
-#cart-section .cart-item img{
-	width: 100px;
-	height: 100px;
-	object-fit: contain;
-}
-
-#cart-section .cart-item button{
-	border:none;
-	background-color: transparent;
-	padding: 0px;
-}
-
-#cart-section .cart-product-img{
-	width: 120px;
-}
-
-#cart-section .cart-item p{
-	font-size: 13px;
-}
-#cart-section .cart-item button i{
-	font-size: 22px;
-	color: #667e8494;
-}
-
-#cart-section .cart-checkout{
-	padding:2rem;
-	padding-top: 5rem;
-}
-#cart-section .cart-checkout p{
-	margin-bottom: 0rem;
-}
-
-#cart-section .cart-checkout p span{
-font-weight: 600;
-font-size: 22px;
-}
-
-#cart-section .cart-checkout h5 span{
-	font-size: 28px;
-}
-
-
-#cart-section .cart-checkout .cart-btn{
-	margin-top: 1rem;
-	width: 100%;
-	text-align: center;
-	border-radius: 0px;
-	padding:1rem;
-}
-
-#cart-section hr{
-	margin-top: 0.5rem !important;
-    margin-bottom: 0.5rem !important;
-}
-
-#cart-section .product-quantity {
-	input {
-		height: 40px;
-    width: 40px;
-    text-align: center;
-    font-size: 30px !important;
-    vertical-align: middle;
-    padding: 0px !important;
-    border: none;
-    background: transparent;
+	.col-lg-7 {
+		border-right: 1px solid;
+		border-color: #0000001f;
 	}
-	button {
-		width: 25px;
-		height: 25px;
-		background: #fff;
-		padding: 0px 8px 8px 5px !important;
-		border: 2px solid rgb(29, 29, 29);
-		display: inline-block;
-		vertical-align: middle;
-		text-align: center;
-		border-radius: 25px;
-		font-size: 18px;
-		background: transparent;
-		line-height: 22px;
-
+	.cart-item {
+		padding: 2rem;
+		table {
+			width: 100%;
+		}
+		img {
+			width: 100px;
+			height: 100px;
+			object-fit: contain;
+		}
+		button {
+			border: none;
+			background-color: transparent;
+			padding: 0px;
+			i {
+				font-size: 22px;
+				color: #667e8494;
+			}
+		}
+		p {
+			font-size: 13px;
+		}
 	}
-
-	.minus{
-		line-height:20px;
-		padding-left: 7px;
+	.cart-product-img {
+		width: 120px;
+	}
+	.cart-checkout {
+		padding: 2rem;
+		padding-top: 5rem;
+		p {
+			margin-bottom: 0rem;
+			span {
+				font-weight: 600;
+				font-size: 22px;
+			}
+		}
+		h5 {
+			span {
+				font-size: 28px;
+			}
+		}
+		.cart-btn {
+			margin-top: 1rem;
+			width: 100%;
+			text-align: center;
+			border-radius: 0px;
+			padding: 1rem;
+		}
+	}
+	hr {
+		margin-top: 0.5rem !important;
+		margin-bottom: 0.5rem !important;
+	}
+	.product-quantity {
+		input {
+			height: 40px;
+			width: 40px;
+			text-align: center;
+			font-size: 30px !important;
+			vertical-align: middle;
+			padding: 0px !important;
+			border: none;
+			background: transparent;
+		}
+		button {
+			width: 25px;
+			height: 25px;
+			background: #fff;
+			padding: 0px 8px 8px 5px !important;
+			border: 2px solid rgb(29, 29, 29);
+			display: inline-block;
+			vertical-align: middle;
+			text-align: center;
+			border-radius: 25px;
+			font-size: 18px;
+			background: transparent;
+			line-height: 22px;
+		}
+		.minus {
+			line-height: 20px;
+			padding-left: 7px;
+		}
 	}
 }
+
 
 
 /***===============Checkout Page Scss===========***/
 
-#checkout_section{
+#checkout_section {
 	padding-top: 2rem;
 	padding-bottom: 2rem;
-	background:#f0f0f0;
-}
-
-
-#checkout_section .nav-tabs{
-	border:none;
-}
-
-#checkout_section .nav-item.active{
-	font-weight: 600;
-}
-#checkout_section .col1{
-	padding:0rem 2rem;
-}
-
-#checkout_section .col1 h5{
-	margin-bottom: 0.5rem;
-}
-
-#checkout_section nav span {
-    padding-top: 10px;
-}
-#checkout_section .ship_address{
-	border-radius: 10px;
-	padding:1rem;
-border:1px solid #888888;
-background-color: #627b8061;
-}
-
-#checkout_section input.form-control{
-	height: 35px !important;
-}
-
-#checkout_section .payment_method{
-	border-radius: 10px;
-	padding:1rem;
-border:1px solid #888888;
-background-color: #627b8061;
-}
-
-
-
-#checkout_section .information_check_box{
-	padding-top:10px;
-  }
-  #checkout_section  .information_check_box .contant {
-	display: block;
-	position: relative;
-	padding-left: 33px;
-	padding-top: 5px;
-	cursor: pointer;
-	font-weight: 500;
-	font-size: 0.74rem;
-	color: #adadad;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-  }
-  
-  /* Hide the browser's default checkbox */
-  #checkout_section .information_check_box .contant input {
-	position: absolute;
-	opacity: 0;
-	cursor: pointer;
-	height: 0;
-	width: 0;
-  }
-  /* Create a custom checkbox */
-  #checkout_section  .information_check_box .checkmark {
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 22px;
-	width: 22px;
-	background-color: #fff;
-	border-radius:5px !important;
-	border: 1px solid #888888;
-  }
-  /* On mouse-over, add a grey background color */
-  #checkout_section .information_check_box .contant:hover input ~ .checkmark {
-		background-color: transparent;
-  }
-  /* When the checkbox is checked, add a blue background */
-  #checkout_section  .information_check_box .contant input:checked ~ .checkmark {
-	background-color: #627b80;
-  }
-  /* Create the checkmark/indicator (hidden when not checked) */
-  #checkout_section .information_check_box .checkmark:after {
-	content: "";
-	position: absolute;
-	display: none;
-  }
-  /* Show the checkmark when checked */
-  #checkout_section  .information_check_box .contant input:checked ~ .checkmark:after {
-	display: block;
-  }
-  /* Style the checkmark/indicator */
-  #checkout_section .information_check_box .contant .checkmark:after {
-	left: 6px;
-    top: 2px;
-    width: 7px;
-    height: 14px;
-	border: solid white;
-	border-width: 0 3px 3px 0;
-	-webkit-transform: rotate(45deg);
-	-ms-transform: rotate(45deg);
-	transform: rotate(45deg);
-  }
-
-
-
-  #checkout_section .already_login_heading p {
-    margin-bottom: 0px;
-    float: right;
-    
-    font-size: 12px;
-    font-weight: 600;
-}
-
-#checkout_section .already_login_heading p a{
-	color: #627b80 !important;
-	font-size: 14px;
-	font-weight: 700;
-}
-
-#checkout_section .checkout-btn{
-
-	margin-top: 1rem;
-	width: 100%;
-	text-align: center;
-	border-radius: 0px;
-	padding:1rem;
-
-}
-
-
-#checkout_section .payment_method .check_box {
-	display: block;
-	position: relative;
-	padding-left: 30px;
-	margin-bottom: 1rem;
-	cursor: pointer;
-	font-size: 14px;
-	color:#0c1011b8;
-	font-weight: 600;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-  
-  }
-  
-
-  #checkout_section .payment_method label img{
-	  width: 50px;
-	  float: right;
-  }
-
-  #checkout_section .payment_method label i{
-	font-size: 20px;
-	float: right;
-}
-  /* Hide the browser's default radio button */
-  #checkout_section .payment_method .check_box  input {
-	position: absolute;
-	opacity: 0;
-	cursor: pointer;
-  }
-  
-  /* Create a custom radio button */
-  #checkout_section .payment_method .checkmark {
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 18px;
-	width: 18px;
-	border-radius: 50%;
-	border: 1px solid #888888;
-  }
-  
-  #checkout_section .payment_method .check_box  input:checked ~ .checkmark {
-	background-color: #406372;
-  }
-  
-  #checkout_section .payment_method .checkmark:after {
-	content: "";
-	position: absolute;
-	display: none;
-  }
-  
-  #checkout_section .payment_method  .check_box  input:checked ~ .checkmark:after {
-	display: block;
-  }
-  
-  /* Style the indicator (dot/circle) */
-  #checkout_section .payment_method .check_box  .checkmark:after {
-	top: 5px;
-	left: 5px;
-	width: 6px;
-	height: 6px;
-	border-radius: 50%;
-	background: white;
-  }
-
-
-.ship_add{
-padding:1rem;
-border:1px solid #888888;
-border-radius: 10px;
-}
-
-.ship_add table{
-		width: 100%;
+	background: #f0f0f0;
+	h2 {
+		&:after {
+			content: "";
+			position: relative;
+			display: block;
+			width: 40px;
+			height: 3px;
+			background: #627b80;
+			bottom: 0;
+			left: calc(50% - 20px);
+			text-align: center;
+			margin-top: 5px;
+		}
 	}
+	.nav-tabs {
+		border: none;
+		.nav-link {
+			&:hover {
+				border-color: transparent !important;
+			}
+		}
+	}
+	.nav-item.active {
+		font-weight: 600;
+	}
+	.col1 {
+		padding: 0rem 2rem;
+		h5 {
+			margin-bottom: 0.5rem;
+		}
+	}
+	nav {
+		span {
+			padding-top: 10px;
+			color: #627b80;
+		}
+	}
+	.ship_address {
+		border-radius: 10px;
+		padding: 1rem;
+		border: 1px solid #888888;
+		background-color: #627b8061;
+	}
+	input.form-control {
+		height: 35px !important;
+	}
+	.payment_method {
+		border-radius: 10px;
+		padding: 1rem;
+		border: 1px solid #888888;
+		background-color: #627b8061;
+		.check_box {
+			display: block;
+			position: relative;
+			padding-left: 30px;
+			margin-bottom: 1rem;
+			cursor: pointer;
+			font-size: 14px;
+			color: #0c1011b8;
+			font-weight: 600;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			input {
+				position: absolute;
+				opacity: 0;
+				cursor: pointer;
+				&:checked {
+					~ {
+						.checkmark {
+							background-color: #406372;
+							&:after {
+								display: block;
+							}
+						}
+					}
+				}
+			}
+			.checkmark {
+				&:after {
+					top: 5px;
+					left: 5px;
+					width: 6px;
+					height: 6px;
+					border-radius: 50%;
+					background: white;
+				}
+			}
+		}
+		label {
+			img {
+				width: 50px;
+				float: right;
+			}
+			i {
+				font-size: 20px;
+				float: right;
+			}
+		}
+		.checkmark {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 18px;
+			width: 18px;
+			border-radius: 50%;
+			border: 1px solid #888888;
+			&:after {
+				content: "";
+				position: absolute;
+				display: none;
+			}
+		}
+	}
+	.information_check_box {
+		padding-top: 10px;
+		.contant {
+			display: block;
+			position: relative;
+			padding-left: 33px;
+			padding-top: 5px;
+			cursor: pointer;
+			font-weight: 500;
+			font-size: 0.74rem;
+			color: #888888;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			input {
+				position: absolute;
+				opacity: 0;
+				cursor: pointer;
+				height: 0;
+				width: 0;
+				&:checked {
+					~ {
+						.checkmark {
+							background-color: #627b80;
+							&:after {
+								display: block;
+							}
+						}
+					}
+				}
+			}
+			&:hover {
+				input {
+					~ {
+						.checkmark {
+							background-color: transparent;
+						}
+					}
+				}
+			}
+			.checkmark {
+				&:after {
+					left: 6px;
+					top: 2px;
+					width: 7px;
+					height: 14px;
+					border: solid white;
+					border-width: 0 3px 3px 0;
+					-webkit-transform: rotate(45deg);
+					-ms-transform: rotate(45deg);
+					transform: rotate(45deg);
+				}
+			}
+		}
+		.checkmark {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 22px;
+			width: 22px;
+			background-color: #fff;
+			border-radius: 5px !important;
+			border: 1px solid #888888;
+			&:after {
+				content: "";
+				position: absolute;
+				display: none;
+			}
+		}
+	}
+	.already_login_heading {
+		p {
+			margin-bottom: 0px;
+			float: right;
+			font-size: 12px;
+			font-weight: 600;
+			a {
+				color: #627b80 !important;
+				font-size: 14px;
+				font-weight: 700;
+			}
+		}
+	}
+	.checkout-btn {
+		margin-top: 1rem;
+		width: 100%;
+		text-align: center;
+		border-radius: 0px;
+		padding: 1rem;
+	}
+	.ship_add {
+		padding: 1rem;
+		border: 1px solid #888888;
+		border-radius: 10px;
+		table {
+			width: 100%;
+			td {
+				&:first-child {
+					width: 60px;
+					font-weight: 600;
+				}
+				&:last-child {
+					width: 60px;
+					a {
+						font-size: 14px;
+						font-weight: 700;
+						color: #627b80 !important;
+					}
+				}
+			}
+		}
+	}
+	.pay_btn {
+		.btn1 {
+			margin-top: 1rem;
+			width: 55%;
+			text-align: center;
+			border-radius: 0px;
+			padding: 1rem;
+		}
+		.btn2 {
+			margin-top: 1rem;
+			text-align: center;
+			padding: 1rem;
+			width: 45%;
+			color: #667e84;
+			font-weight: 700;
+		}
+	}
+	.checkout_product {
+		height: 300px;
+		overflow-y: scroll;
+		&::-webkit-scrollbar-track {
+			-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+			border-radius: 10px;
+			background-color: #F5F5F5;
+		}
+		&::-webkit-scrollbar {
+			width: 0px;
+			background-color: #F5F5F5;
+		}
+		&::-webkit-scrollbar-thumb {
+			border-radius: 10px;
+		}
+		table {
+			width: 100%;
+			tr {
+				td {
+					&:first-child {
+						width: 110px;
+					}
+					.checkout_product_img{
+						background-color: #fff;
+						border-radius: 10px;
+						width: 100px;
+						height: 100px;
+						padding:0.4rem;
+						margin:0.5rem 0rem;
+						text-align: center;
+					}
+					img {
+						width: 100%;
+						height: 100%;
+						object-fit: contain;
+					}
+					p {
+						font-size: 13px;
+					}
+					&:last-child {
+						button {
+							border: none;
+							background-color: transparent;
+							padding: 0px;
+							i {
+								font-size: 22px;
+								color: #667e8494;
+							}
+						}
+					}
+				}
+				border-bottom: 1px solid #0000001f;
+				&:last-child {
+					border-bottom: unset !important;
+				}
+			}
+		}
+	}
+	.checkout_payment {
+		padding: 1rem 0rem;
+		button {
+			margin-top: 1rem;
+			width: 100%;
+			text-align: center;
+			border-radius: 0px;
+			padding: 1rem;
+		}
+	}
+}
 
-.ship_add table  td:last-child a{
+
+
+/******===========Contact Page Scss Start ===========*******/
+#contact_section{
+	background-image: linear-gradient(-45deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("assets/img/contact-bg.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#contact_section h2{
+	color: #fff;
+}
+
+#contact_section .col-lg-6{
+	padding:0px
+}
+
+#contact_section .container{
+	max-width: 1000px !important;
+}
+
+#contact_section .contact-detail{
+	height: 100%;
+}
+
+#contact_section  h3{
+	color: #fff;
+}
+
+#contact_section p{
+	color: #fff;
 	font-size: 14px;
-	font-weight: 700;
-	color: #627b80 !important;
+}
+
+#contact_section ul li p{
+	font-size: 16px;
+	font-weight: 600;
+	color: #fff;
 }
 
 
-.pay_btn .btn1{
+
+#contact_section .col-lg-6 i{
+	padding: 1rem;
+	font-size: 25px;
+
+}
+
+#contact_section .col-lg-6 li{
+	color: #fff;
 	margin-top: 1rem;
-	width: 55%;
-	text-align: center;
-	border-radius: 0px;
-	padding:1rem;
+	margin-bottom: 1rem;
 }
 
-.pay_btn .btn2{
-	margin-top: 1rem;
-   text-align: center;
-   padding: 1rem;
-   width: 45%;
-   color: #667e84;
-   font-weight: 700;
+.col1-contact svg{
+	width: 30px;
+	height: 30px;
 }
 
-.checkout_product{
-	height: 300px;
-	overflow-y: scroll;
+.col1-contact svg:hover path ,.col1-contact rect:hover path{
+	fill:#627b80;
+}
+
+.col1-contact svg:hover {
+	cursor: pointer;
+    transform: scale(1) rotate(360deg);
+    transition: 0.5s;
+}
+
+.col2-contact{
+	padding:2rem;
+	margin-top: -30px;
+	margin-bottom: -30px;
+	background-color:#627b80;
 	
 }
-.checkout_product::-webkit-scrollbar-track
-{
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	border-radius: 10px;
-	background-color: #F5F5F5;
-}
 
-.checkout_product::-webkit-scrollbar
-{
-	width:0px;
-	background-color: #F5F5F5;
-	
-}
-
-.checkout_product::-webkit-scrollbar-thumb
-{
-	border-radius: 10px;
-
-}
-
-
-.checkout_product table{
-	width: 100%;
-}
-
-.checkout_product table tr td:first-child{
-	width: 110px;
-}
-
-.checkout_product table tr td img{
-	width: 100px;
-	height: 100px;
-	object-fit: contain;
-}
-
-.checkout_product table tr td p{
-	font-size: 13px;
-}
-
-.checkout_product table tr td:last-child button{
-	border: none;
-    background-color: transparent;
-    padding: 0px;
-}
-.checkout_product table tr td:last-child button i{
-	font-size: 22px;
-    color: #667e8494;
-}
-
-
-.checkout_payment{
-	padding:1rem  0rem;
-}
-
-.checkout_payment button{margin-top: 1rem;
-	width: 100%;
-	text-align: center;
-	border-radius: 0px;
-	padding:1rem;
+.col1-contact{
+	padding:2rem;
+	height: 100%;
+	background-color: #627b8096;
 }
 
 
 
+.dbox {
+    padding: 0rem 2rem;
+}
 
+ .dbox .icon {
+	display: inline-block;
+    margin-right: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #e9e5db;
+    padding: 10px;
+}
 
- 
-     
+.dbox .icon i{
+	color: #000 ;
+}
 
+.contact-form form input{
+	color:#e9e5db !important ;
+	background-color: transparent;
+    border: none !important;
+    border-bottom: 1px solid #e9e5db !important;
+    border-radius: 0px;
+    padding-left: 0px;
+    height: 35px;
+}
 
+.contact-form form input:focus{
+	background: transparent !important;
+	border-color: #e9e5db  !important;
+}
 
-  
+.contact-form form input::placeholder{
+	color: #e9e5db65 !important;
+}
 
+.contact-form form textarea{
+	color:#e9e5db !important ;
+	background-color: transparent;
+    border: none !important;
+    border-bottom: 1px solid #e9e5db !important;
+    border-radius: 0px;
+    padding-left: 0px;
+    
+}
 
+.contact-form form textarea:focus{
+	background: transparent !important;
+	border-color: #e9e5db  !important;
+}
 
-
+.contact-form form textarea::placeholder{
+	color: #e9e5db65 !important;
+}
+.contact-form form label{
+	color:#e9e5db;
+	margin-bottom: 0px;
+}
 
 
 /****=============(Responsive SCSS)============******/
@@ -2062,6 +2187,10 @@ border-radius: 10px;
 		right: 0px;
 	}
 
+	#checkout_section .col1{
+		padding:0.75rem;
+	}
+
   }
 
   @media(max-width:576px) {
@@ -2089,14 +2218,18 @@ border-radius: 10px;
 		font-size: 16px !important;
 		line-height: 23px !important;
 	  }
-	footer .top-footer .col-lg-3.col-md-6.col-sm-6.col-12:first-child{
-		width: 100%;
+	  footer {
+		.top-footer {
+			.col-lg-3.col-md-6.col-sm-6.col-12 {
+				&:first-child {
+					width: 100%;
+				}
+				width: 100%;
+				padding: 16px 12px;
+			}
+		}
 	}
-
-	footer .top-footer .col-lg-3.col-md-6.col-sm-6.col-12{
-		width: 100%;
-		padding:16px 12px;
-	}
+	
 
 
 
@@ -2118,18 +2251,80 @@ border-radius: 10px;
 		#section3{
 			margin-top: -20rem;
 		}
-		#cart-section .cart-item img {
-			width: 70px;
-			height: 70px;
+		#cart-section {
+			.cart-item {
+				img {
+					width: 70px;
+					height: 70px;
+				}
+				p {
+					font-size: 11px;
+					line-height: 15px;
+				}
+			}
+			.cart-product-img {
+				width: 80px;
+			}
 		}
-		#cart-section .cart-product-img{
-			width: 80px;
+		
+		#checkout_section {
+			.checkout_product {
+				table {
+					tr {
+						td {
+							&:first-child {
+								width: 90px;
+							}
+							img {
+								width: 80px;
+								height: 80px;
+							}
+							p {
+								font-size: 10px;
+							}
+						}
+					}
+				}
+			}
+			.already_login_heading {
+				width: 100%;
+				p {
+					float: left;
+					font-size: 10px;
+					a {
+						font-size: 12px;
+					}
+				}
+			}
+			.heading_contact {
+				width: 100%;
+			}
+			.ship_add {
+				table {
+					td {
+						font-size: 12px;
+						&:last-child {
+							a {
+								font-size: 12px;
+							}
+						}
+					}
+				}
+			}
+			padding-top: 1rem;
+			padding-bottom: 1rem;
+			.pay_btn {
+				.btn1 {
+					width: 100%;
+				}
+				.btn2 {
+					width: 100%;
+				}
+			}
 		}
-		#cart-section .cart-item p {
-			font-size: 11px;
-			line-height: 15px;
-		}
-
+		
+	
+	
   }
 
   @media(max-width:470px) {
@@ -2200,14 +2395,76 @@ border-radius: 10px;
 	  font-size: 15px !important;
 	  line-height: 22px !important;
 	}
+   p{
+     font-size: 12px;
+   }
+   input.form-control {
+	font-size: 12px !important;
+	&::placeholder {
+		font-size: 12px !important;
+	}
+}
+
+ .form-select{
+	 font-size: 12px !important;
+ }
 
 	#banner-section {
 		padding-top: 4rem;
 		padding-bottom: 4rem;
 		}
-
-
-
+		#checkout_section {
+			.checkout_product {
+				table {
+					tr {
+						td {
+							&:first-child {
+								width: 75px;
+							}
+							img {
+								width: 70px;
+								height: 70px;
+							}
+							&:last-child {
+								button {
+									i {
+										font-size: 18px;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			.information_check_box {
+				.contant {
+					font-size: 0.60rem;
+				}
+			}
+			.payment_method {
+				label {
+					img {
+						width: 40px;
+					}
+				}
+				.check_box {
+					font-size: 12px;
+				}
+			}
+			.ship_add {
+				table {
+					td {
+						&:first-child {
+							width: 50px;
+						}
+						&:last-child {
+							width: 50px;
+						}
+					}
+				}
+			}
+		}
+		
 
   }
 

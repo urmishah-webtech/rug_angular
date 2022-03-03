@@ -12,9 +12,11 @@ import { HomeComponent } from './home/home.component';
 import { NodataComponent } from './nodata/nodata.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes = [
     {path:'', component:HomeComponent},
+    {path: 'contact', component: ContactComponent},
     {path: 'footer', component: FooterContactComponent},
     {path: 'cart', component: CartComponent},
     {path: 'checkout', component: CheckoutComponent},
