@@ -15,6 +15,8 @@ import { ContactComponent } from './contact/contact.component';
 import { AuthGuard } from './auth/auth.guard';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ThankyouComponent } from './page/thankyou/thankyou.component';
+import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
+
 
 const routes: Routes = [
     {path:'', component:HomeComponent},
@@ -36,7 +38,8 @@ const routes: Routes = [
     {path: 'product-detail/:productId', component: ProductDetailComponent},
     {path: 'signup', component: SignupComponent},
     {path: 'login', component: LoginComponent},
-    {path: 'faq', component: FaqComponent},
+    {path: 'faqs', component: FaqComponent},
+    {path: 'terms-and-conditions', component: TermsAndConditionsComponent},
     {path: 'thankyou', component: ThankyouComponent, canActivate: [AuthGuard]},
     {path: 'account/order-history', component: ThankyouComponent, canActivate: [AuthGuard]},
     {path: '**', component:NodataComponent}

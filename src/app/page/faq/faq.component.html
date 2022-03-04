@@ -1,27 +1,40 @@
-<div class="container">
-    <app-loader *ngIf="isLoaderVisible"></app-loader>
-    <div class="row">
-       
-            <div class="section-faq">
-                <div class="questions-wrapper">
-                    <div class="questions"  *ngFor="let categories of categories">
-                     <div [ngClass]="categories['id'] == selected_cat ? 'active question' : 'question'"
-                     (click)="getFaq(categories['id'],categories['category'])">
-                           <span class="title">{{ categories['category'] }}</span>
-                           <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16.8" height="32" viewBox="0 0 16.8 32">
-                              <path stroke="currentColor" stroke-width="1.13" fill="none" d="M.7.6c0 11.7 15.5 15.3 15.5 15.3v.1S.7 19.6.7 31.3"></path>
-                           </svg>
-                        </div>
-                    </div>
-                 </div>
-                 <div class="answers">
-                     <h3><b>{{ title }}</b></h3>
-                     <div class="answer"  *ngFor="let faqs of faqs"> 
-                        <b>{{ faqs['title'] }}</b>
-                        <div [innerHTML]="faqs['description']"></div>
-                     </div>
-                  </div>
-            </div>
-       
+<!--------------Product List banner Start------------->
+<section id = "faq_banner">
+   <div class = "container">
+    <div class = "text-center">
+      <h2>Frequently Asked Questions</h2>
     </div>
- </div>
+   </div>
+  </section>
+  <!--------------Product List banner End------------->
+
+  <section id  = "faq-section"> 
+   <div class="container">
+      <app-loader *ngIf="isLoaderVisible"></app-loader>
+  
+         
+              <div class="row">
+                  <div class=" col-lg-3 col-md-3 col-12">
+                      <ul class="questions mb-0"  *ngFor="let categories of categories">
+                       <li [ngClass]="categories['id'] == selected_cat ? 'active question' : 'question'"
+                       (click)="getFaq(categories['id'],categories['category'])">
+                            <div> <span class="title">{{ categories['category'] }}</span></div>
+                           <div>  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16.8" height="32" viewBox="0 0 16.8 32">
+                                <path stroke="currentColor" stroke-width="1.13" fill="none" d="M.7.6c0 11.7 15.5 15.3 15.5 15.3v.1S.7 19.6.7 31.3"></path>
+                             </svg>
+                             </div>
+                           </li>
+                        </ul>
+                   </div>
+                   <div class=" col-lg-9 col-md-9 col-12">
+                       <h2>{{ title }}</h2>
+                       <div class="answer"  *ngFor="let faqs of faqs"> 
+                          <h6 class = "mb-1 pt-3">{{ faqs['title'] }}</h6>
+                          <div [innerHTML]="faqs['description']"></div>
+                       </div>
+                    </div>
+              </div>
+         
+     
+   </div>
+  </section>

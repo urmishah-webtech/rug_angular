@@ -12,12 +12,6 @@ import { CartService } from '../services/cart.service';
 })
 export class CheckoutComponent implements OnInit {
 
-<<<<<<< HEAD
-  constructor() { }
-  shipping: boolean = false
-  payment: boolean = false
-  
-=======
   constructor(private cartService: CartService,
     private authService: AuthService,
     private notifyService:NotificationService,
@@ -31,7 +25,6 @@ export class CheckoutComponent implements OnInit {
   payment: boolean = false
   shipping: boolean = true
   loggedUser: any
->>>>>>> 18a6752b412b1a5f5f5dc2835d5f8eb3de74ce04
 
   ngOnInit(): void {
     this.loggedUser = this.authService.getToken()
@@ -92,25 +85,6 @@ export class CheckoutComponent implements OnInit {
     })
   }
 
-<<<<<<< HEAD
-  showshipping(){
-    this.shipping = true
-    this.payment = false
-    console.log(this.shipping)
-   
-  }
-
-  showpayment(){
-    this.payment = true
-    this.shipping = false
-    console.log(this.payment)
-   
-  }
-
-  
-
- 
-=======
   showpayment(){
     this.payment = true
     this.shipping = false
@@ -122,5 +96,4 @@ export class CheckoutComponent implements OnInit {
   }
 
 
->>>>>>> 18a6752b412b1a5f5f5dc2835d5f8eb3de74ce04
 }

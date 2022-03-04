@@ -27,13 +27,16 @@
           <a class="nav-link "  routerLink = "" routerLinkActive = "active"[routerLinkActiveOptions] = "{exact : true}">Home</a>
         </li>
          <li class="nav-item rounded">
-            <a class="nav-link" routerLink = "about" routerLinkActive = "active">Visit Us</a>
+            <a class="nav-link" routerLink = " " routerLinkActive = "active">Visit Us</a>
           </li>
           <li class="nav-item rounded">
             <a class="nav-link" routerLink = "/products" routerLinkActive = "active">Our Products</a>
           </li>
           <li class="nav-item rounded">
-            <a class="nav-link" routerLink = "contact" routerLinkActive = "active">Our Story</a>
+            <a class="nav-link" routerLink = "ourstroy" routerLinkActive = "active">Our Story</a>
+          </li>
+          <li class="nav-item rounded">
+            <a class="nav-link" routerLink = "contact" routerLinkActive = "active">Contact Us</a>
           </li>
         </ul>
         <ul class = "d-flex login_signup_btn" *ngIf="!login; else logoutbtn">
@@ -69,7 +72,10 @@
             <path d="M 15.893 23.157 c -0.919 0 -1.747 -0.637 -1.952 -1.572 l -0.566 -2.582 c -0.848 -3.862 -4.333 -6.666 -8.287 -6.666 H 2 c -1.104 0 -2 -0.896 -2 -2 s 0.896 -2 2 -2 h 3.087 c 5.818 0 10.947 4.125 12.194 9.808 l 0.566 2.582 c 0.237 1.079 -0.446 2.146 -1.525 2.382 C 16.179 23.142 16.035 23.157 15.893 23.157 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(98,123,128); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
           </g>
           </g>
-            </svg><span>{{cartCount}}</span>
+            </svg>
+             
+              <span class="badge bg-secondary">{{cartCount}}</span>
+           
           </a>
         </div>
       </div>

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { AuthService } from 'src/app/auth/auth.service';
 import { NotificationService } from 'src/app/notification.service';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -78,8 +78,8 @@ export class ProductDetailComponent implements OnInit {
     "speed":1000,
     "infinite": true,
     "arrows":true,
-    "prevArrow": '<img class = "arrow_left" src = "assets/img/product/left.svg">',
-    "nextArrow": '<img class = "arrow_right" src = "assets/img/product/right.svg">',
+    "prevArrow": '<img class = "arrow_left" src = "assets/img/left.svg">',
+    "nextArrow": '<img class = "arrow_right" src = "assets/img/right.svg">',
     responsive: [
       {
         breakpoint: 1024,

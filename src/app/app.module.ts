@@ -15,7 +15,6 @@ import { ToastrModule } from 'ngx-toastr';
 import { LoginComponent } from './auth/login/login.component';
 import { FaqComponent } from './page/faq/faq.component';
 import { LoaderComponent } from './general/loader/loader.component';
-  
 import { HeaderComponent } from './header/header.component';
 import { FooterContactComponent } from './page/footer-contact/footer-contact.component';
 import { PageComponent } from './page/page.component';
@@ -29,6 +28,7 @@ import { ContactComponent } from './contact/contact.component';
 import { ThankyouComponent } from './page/thankyou/thankyou.component';
 import { OrderHistoryComponent } from './account/order-history/order-history.component';
 import { AccountComponent } from './account/account/account.component';
+import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
 
 
 @NgModule({
@@ -54,6 +54,7 @@ import { AccountComponent } from './account/account/account.component';
     ThankyouComponent,
     OrderHistoryComponent,
     AccountComponent,
+    TermsAndConditionsComponent,
   
   ],
   imports: [
