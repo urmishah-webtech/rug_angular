@@ -16,6 +16,7 @@ import { AuthGuard } from './auth/auth.guard';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ThankyouComponent } from './page/thankyou/thankyou.component';
 import { TermsAndConditionsComponent } from './page/terms-and-conditions/terms-and-conditions.component';
+import { PrivacyPolicyComponent } from './page/privacy-policy/privacy-policy.component';
 
 
 const routes: Routes = [
@@ -40,6 +41,7 @@ const routes: Routes = [
     {path: 'login', component: LoginComponent},
     {path: 'faqs', component: FaqComponent},
     {path: 'terms-and-conditions', component: TermsAndConditionsComponent},
+    {path: 'privacy-policy', component: PrivacyPolicyComponent},
     {path: 'thankyou', component: ThankyouComponent, canActivate: [AuthGuard]},
     {path: 'account/order-history', component: ThankyouComponent, canActivate: [AuthGuard]},
     {path: '**', component:NodataComponent}

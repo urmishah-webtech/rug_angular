@@ -29,6 +29,7 @@ import { ThankyouComponent } from './page/thankyou/thankyou.component';
 import { OrderHistoryComponent } from './account/order-history/order-history.component';
 import { AccountComponent } from './account/account/account.component';
 import { TermsAndConditionsComponent } from './page/terms-and-conditions/terms-and-conditions.component';
+import { PrivacyPolicyComponent } from './page/privacy-policy/privacy-policy.component';
 
 
 @NgModule({
@@ -55,6 +56,7 @@ import { TermsAndConditionsComponent } from './page/terms-and-conditions/terms-a
     OrderHistoryComponent,
     AccountComponent,
     TermsAndConditionsComponent,
+    PrivacyPolicyComponent,
   
   ],
   imports: [
