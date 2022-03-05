@@ -15,15 +15,19 @@ export class LoginComponent implements OnInit {
   response_data: any;
   error_data: any;
   isLogged: boolean = false
+  session_id = localStorage.getItem('session_id')
 
   constructor(private __routeService:Router,private __loginService:AuthService,private notifyService:NotificationService,private fb: FormBuilder) { }
   formValidate:boolean=true;
   isLoaderVisible:boolean=false;
   ngOnInit(): void {
+
   }
+
   loginForm = this.fb.group({
     email: ['',[Validators.required,Validators.email]],
-    password: ['',[Validators.required]]
+    password: ['',[Validators.required]],
+    session_id: [this.session_id]
   })
   onSubmit() {
     if(this.loginForm.valid){
@@ -32,6 +36,7 @@ export class LoginComponent implements OnInit {
         this.notifyService.showSuccess("Success",response.message)
         this.response_data=response;
         this.isLoaderVisible=false;
+        localStorage.clear();
         localStorage.setItem('id', this.response_data.user.id)
         localStorage.setItem('name', this.response_data.user.first_name+' '+ this.response_data.user.last_name)
         localStorage.setItem('token',this.response_data.access_token)

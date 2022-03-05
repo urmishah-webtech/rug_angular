@@ -20,6 +20,7 @@ export class CheckoutComponent implements OnInit {
 
   cart: any = [];
   addressForm: any = FormGroup
+  checkoutForm: any = FormGroup
   address: any
   ad: any
   payment: boolean = false
@@ -41,6 +42,9 @@ export class CheckoutComponent implements OnInit {
       city: ['',Validators.required],
       postal_code: ['',[Validators.required]
     ],
+    })
+    this.checkoutForm = this.fb.group({
+      user_id: [this.loggedUser.id]
     })
   }
 
@@ -65,7 +69,7 @@ export class CheckoutComponent implements OnInit {
     })
   }
   onPayment(){
-    this.cartService.placeOrder(this.loggedUser.id).subscribe(res=>{
+    this.cartService.placeOrder(this.checkoutForm.value).subscribe(res=>{
       this.router.navigate(['/thankyou']);
     })
   }

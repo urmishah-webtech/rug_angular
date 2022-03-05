@@ -23,7 +23,16 @@ export class ProductService {
   getproductVariation(id: any){
     return this.http.get(environment.api+'product-variant/'+id,{ headers: this.headers });
   }
+
   addtocart(product:any){
     return this.http.post(environment.api+'cart', product);
+  }
+
+  getRelatedProducts(id:number){
+    return this.http.get(environment.api+'related-product/'+id, { headers: this.headers});
+  }
+
+  variationProduct(variation: any){
+    return this.http.post(environment.api+'varientData', variation);
   }
 }

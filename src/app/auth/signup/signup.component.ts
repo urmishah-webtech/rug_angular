@@ -22,6 +22,7 @@ export class SignupComponent implements OnInit {
   title: any;
   message: any;
   isLoaderVisible:boolean=false;
+  session_id = localStorage.getItem('session_id')
 
   constructor(private __registerService:AuthService,
   private notifyService:NotificationService,private fb: FormBuilder,
@@ -34,6 +35,7 @@ export class SignupComponent implements OnInit {
       email: ['',[Validators.required,Validators.email]],
       password: ['',[Validators.required,Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')]
     ],
+      session_id: [this.session_id]
     })
   }
 
@@ -45,6 +47,7 @@ export class SignupComponent implements OnInit {
           this.response_data=response;
           this.notifyService.showSuccess("Success",response.message)
           this.isLoaderVisible=false;
+          localStorage.clear();
           localStorage.setItem('id', this.response_data.user.id)
           localStorage.setItem('name', this.response_data.user.first_name+' '+ this.response_data.user.last_name)
           localStorage.setItem('token',this.response_data.user.token)

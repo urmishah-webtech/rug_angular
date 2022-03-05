@@ -97,20 +97,38 @@
           </div>
           <!-----Product Variation---->
           <!-- <div class="variation" *ngIf="productVariation != ''"> -->
-            <div class="variation">
+            <div class="variation" *ngIf="productVariation != ''">
+              <div class="variations" *ngFor="let data of productVariation.data; let i = index">
+                <div class="" *ngIf="i<=0">
             <!-----Choose Colors---->
-            <div class = "color_choose py-2">
-              <h6 class = "mb-1">Color Options</h6>
-              <div class = "d-flex gap-2">
-                <button *ngFor = "let color of colors" class = "btn rounded-circle" [style.background]="color" (click) = "selectedColor = color" [ngClass] ="{'selected' : selectedColor === color}"></button>
+                <div class="choose_size py-2" *ngIf="data.varient1 != null">
+                  <h6 class="mb-1" *ngFor="let tagname of variantTag">{{data.varient1}}</h6>
+                  <div class="d-flex gap-2">
+                    <!-- <div *ngFor="let varient1 of productVariation.data;let i = index" #varient1>
+                      <label (click)="changeVariation($event,varient1, i)">{{ varient1.attribute1 }}</label>
+                    </div> -->
+                    <select (change)="changeVariation()" #varient1>
+                      <option [ngValue]="varient1.attribute1" *ngFor="let varient1 of productVariation.data;let i = index">{{ varient1.attribute1 }}</option>
+                    </select>
+                    <!-- <button id="varient1" *ngFor="let varient1 of productVariation.data" class="btn float-left" [style.background]="varient1" (click)="changeVariation()" [ngClass] ="{'selected' : selectedColor === varient1}">{{varient1.attribute1}}</button> -->
+                  </div>
+                </div>
+                <!-----Choose Sizes---->
+                <div class = "choose_size py-2" *ngIf="data.varient2 != null">
+                  <h6 class = "mb-1">Sizes</h6>
+                  <select (change)="changeVariation()" #varient2>
+                    <option [ngValue]="varient2.attribute2" *ngFor="let varient2 of productVariation.data;let i = index">{{ varient2.attribute2 }}</option>
+                  </select>
+                  <!-- <div *ngFor="let varient2 of productVariation.data;let i = index" #varient2>
+                    <label (click)="changeVariation($event,varient2, i)">{{ varient2.attribute2 }}</label>
+                  </div> -->
+                  <!-- <select class="button_list">
+                    <option id="varient2" *ngFor="let varient2 of productVariation.data" class="btn float-left"
+                    [style.background]="varient2" (click)="changeVariation()" [ngClass] ="{'selected' : selectedSize === varient2}">
+                    {{varient2.attribute2}}</option>
+                  </select> -->
+                </div>
               </div>
-            </div>
-            <!-----Choose Sizes---->
-            <div class = "choose_size py-2">
-              <h6 class = "mb-1">Sizes</h6>
-              <ul class = "button_list ">
-                <li *ngFor = "let size of sizes" class = "btn float-left" [style.background]="size" (click) = "selectedSize = size" [ngClass] ="{'selected' : selectedSize === size}">{{size}}</li>
-              </ul>
             </div>
           </div>
           <!-----Choose tassels---->
@@ -245,106 +263,15 @@
     <ngx-slick-carousel class="carousel"
     #slickModal="slick-carousel"
     [config]="slideConfigProduct">
-    <div ngxSlickItem  class="slide slider_content">
+    <div ngxSlickItem  class="slide slider_content" *ngFor="let relProducts of relatedProducts">
       <a href = "#">
         <div class = "product-card">
           <div>
-            <img src="assets/img/product/product-slide1-1.png"/>
+            <img src="{{relProducts.image}}"/>
           </div>
           <div>
-            <h5>Resolute Runner</h5>
-            <p>$954 — $2547 </p>
-          </div>
-        </div>
-      </a>
-    </div>
-    <div ngxSlickItem  class="slide slider_content" >
-      <a href = "#">
-        <div class = "product-card">
-          <div>
-            <img src="assets/img/product/product-slide1-2.png"/>
-          </div>
-          <div>
-            <h5>Resolute Runner</h5>
-            <p>$954 — $2547 </p>
-          </div>
-        </div>
-      </a>
-    </div>
-    <div ngxSlickItem  class="slide slider_content">
-      <a href = "#">
-        <div class = "product-card">
-          <div>
-            <img src="assets/img/product/product-slide2-1.png"/>
-          </div>
-          <div>
-            <h5>Resolute Runner</h5>
-            <p>$954 — $2547 </p>
-          </div>
-        </div>
-      </a>
-    </div>
-    <div ngxSlickItem  class="slide slider_content">
-      <a href = "#">
-        <div class = "product-card">
-          <div>
-            <img   src="assets/img/product/product-slide2-2.png"/>
-          </div>
-          <div>
-            <h5>Resolute Runner</h5>
-            <p>$954 — $2547 </p>
-          </div>
-        </div>
-      </a>
-    </div>
-    <div ngxSlickItem  class="slide slider_content">
-      <a href = "#">
-        <div class = "product-card">
-          <div>
-            <img   src="assets/img/product/product-slide3-1.png"/>
-          </div>
-          <div>
-            <h5>Resolute Runner</h5>
-            <p>$954 — $2547 </p>
-          </div>
-        </div>
-      </a>
-    </div>
-    <div ngxSlickItem  class="slide slider_content">
-      <a href = "#">
-        <div class = "product-card">
-          <div>
-            <img   src="assets/img/product/product-slide3-2.png"/>
-          </div>
-          <div>
-            <h5>Resolute Runner</h5>
-            <p>$954 — $2547 </p>
-          </div>
-        </div>
-      </a>
-    </div>
-    <div ngxSlickItem  class="slide slider_content">
-      <a href = "#">
-        <div class = "product-card">
-          <div>
-            <img src="assets/img/product/product-slide4-1.png"/>
-          </div>
-          <div>
-            <h5>Resolute Runner</h5>
-            <p>$954 — $2547 </p>
-          </div>
-        </div>
-      </a>
-    </div>
-    <div ngxSlickItem  class="slide slider_content">
-      <a href = "#">
-        <div class = "product-card">
-          <div>
-            <img  src="assets/img/product/product-slide4-2.png"/>
-          </div>
-          <div>
-            <h5>Resolute Runner</h5>
-            <p>$954 — $2547 </p>
+            <h5>{{relProducts.title}}</h5>
+            <p>{{relProducts.price_range}}</p>
           </div>
         </div>
       </a>
@@ -436,3 +363,17 @@
 
 
 
+<!-- <div class="variation">
+  <div class = "color_choose py-2">
+    <h6 class = "mb-1">Color Options</h6>
+    <div class = "d-flex gap-2">
+      <button *ngFor = "let color of colors" class = "btn rounded-circle" [style.background]="color" (click) = "selectedColor = color" [ngClass] ="{'selected' : selectedColor === color}"></button>
+    </div>
+  </div>
+  <div class = "choose_size py-2">
+    <h6 class = "mb-1">Sizes</h6>
+    <ul class = "button_list ">
+      <li *ngFor = "let size of sizes" class = "btn float-left" [style.background]="size" (click) = "selectedSize = size" [ngClass] ="{'selected' : selectedSize === size}">{{size}}</li>
+    </ul>
+  </div>
+</div> -->
