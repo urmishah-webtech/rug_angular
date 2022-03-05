@@ -1,15 +1,96 @@
-h5{
-  text-transform: uppercase;
-  color: #627b80db;
-  text-decoration: underline;
+#thank-you .container{
+  max-width: 700px !important;
 }
-.order_text {
+.order-thank svg{
+  width: 60px;
+  height: 60px;
+  margin:1rem 0rem;
+ 
+}
+
+.order-thank svg path{
+  fill:#10a64a;
+}
+
+
+.order_status{
+  border:1px solid #0000001f;
+ 
+ 
+}
+
+.order_status .checkout_product{
+  padding:1rem 2rem;
+}
+
+.order_status .checkout_payment{
+  padding:1rem 2rem;
+}
+.order_status h5 span{
+  font-size: 28px;
+}
+.order_status .checkout_payment p span{
+  font-size: 20px;
+  font-weight: 600;
+}
+
+
+.order_status .order_id_strip{
+  background-color: #627b803b;
+  padding:0.7rem 1rem;
+
+  h6{
+    line-height: 22px !important;
+  }
+}
+
+#thank-you button{
+  margin:0.5rem;
+  padding:0.8rem;
+}
+
+#thank-you button svg{
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+ 
+}
+#thank-you button:hover svg{
+  transform: rotate(360deg);
+  transition: 0.3s;
+}
+
+#thank-you .btn_secondary{
+  background: linear-gradient(164deg, #627b80 50%, #fff 0%);
+  border: 1px solid #627b80;
+  border-radius: 0px !important;
+}
+
+#thank-you .btn_secondary:hover{
+  background: linear-gradient(164deg, #fff 50%, #627b80 0%);
+ 
+}
+
+#thank-you table td:first-child{
+  width: 85px;
+  
+}
+#thank-you table td .checkout_product_img{
+  background-color: #fff;
+  width: 70px;
+  height: 70px;
+  padding: 0.4rem;
+  margin: 0.5rem 0rem;
   text-align: center;
-  background-color: #788e92;
-  padding: 10px;
-  color: #fff;
-  font-size: 21px;
+  border: 1px solid #0000001f;
 }
-.checkout_product {
-  height: auto;
+
+#thank-you table td .checkout_product_img img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+#thank-you table td p{
+  font-size: 12px;
 }

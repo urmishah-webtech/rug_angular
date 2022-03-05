@@ -15,7 +15,7 @@ import { ContactComponent } from './contact/contact.component';
 import { AuthGuard } from './auth/auth.guard';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ThankyouComponent } from './page/thankyou/thankyou.component';
-import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
+import { TermsAndConditionsComponent } from './page/terms-and-conditions/terms-and-conditions.component';
 
 
 const routes: Routes = [
