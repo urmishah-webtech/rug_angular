@@ -15,7 +15,6 @@ import { ToastrModule } from 'ngx-toastr';
 import { LoginComponent } from './auth/login/login.component';
 import { FaqComponent } from './page/faq/faq.component';
 import { LoaderComponent } from './general/loader/loader.component';
-  
 import { HeaderComponent } from './header/header.component';
 import { FooterContactComponent } from './page/footer-contact/footer-contact.component';
 import { PageComponent } from './page/page.component';
@@ -25,9 +24,11 @@ import { NodataComponent } from './nodata/nodata.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { ContactComponent } from './contact/contact.component';
 import { ThankyouComponent } from './page/thankyou/thankyou.component';
 import { OrderHistoryComponent } from './account/order-history/order-history.component';
 import { AccountComponent } from './account/account/account.component';
+import { TermsAndConditionsComponent } from './page/terms-and-conditions/terms-and-conditions.component';
 
 
 @NgModule({
@@ -48,10 +49,12 @@ import { AccountComponent } from './account/account/account.component';
     HomeComponent,
     NodataComponent,
     CartComponent,
+    ContactComponent,
     CheckoutComponent,
     ThankyouComponent,
     OrderHistoryComponent,
     AccountComponent,
+    TermsAndConditionsComponent,
   
   ],
   imports: [

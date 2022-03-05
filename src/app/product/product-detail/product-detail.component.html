@@ -80,7 +80,7 @@
           <!-- <h6>Available in 100 colorways</h6> -->
 
             <div class = "pt-2">
-              <h4>Description</h4>
+              <h6 class = "mb-0">Description</h6>
               <p [innerHTML]="product.description"></p>
             </div>
             <div class = "d-flex justify-content-between py-2">
@@ -149,70 +149,7 @@
           <div class = 'text-center'>
             <button class = "btn blue-btn" (click)="addtoCart()">Add to Cart</button>
           </div>
-          <!-------
-            <div class="accordion" id="accordionExample">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingOne">
-                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    Materials
-                  </button>
-                </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, totam? Fuga hic cumque ipsa debitis officiis vero beatae dolores modi optio at, tempora corporis iure in, exercitationem cupiditate! Incidunt, dolore?</p>
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingTwo">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    Tassels
-                  </button>
-                </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, totam? Fuga hic cumque ipsa debitis officiis vero beatae dolores modi optio at, tempora corporis iure in, exercitationem cupiditate! Incidunt, dolore?</p>
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingThree">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    Lead Time
-                  </button>
-                </h2>
-                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, totam? Fuga hic cumque ipsa debitis officiis vero beatae dolores modi optio at, tempora corporis iure in, exercitationem cupiditate! Incidunt, dolore?</p>
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingFour">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
-                    Returns
-                  </button>
-                </h2>
-                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, totam? Fuga hic cumque ipsa debitis officiis vero beatae dolores modi optio at, tempora corporis iure in, exercitationem cupiditate! Incidunt, dolore?</p>
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingFive">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseThree">
-                    What does 3' x 5' look like?
-                  </button>
-                </h2>
-                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, totam? Fuga hic cumque ipsa debitis officiis vero beatae dolores modi optio at, tempora corporis iure in, exercitationem cupiditate! Incidunt, dolore?</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            --->
+
         </div>
       </div>
       <nav class = "pt-3">
@@ -254,6 +191,7 @@
   </div>
 </section>
 <!----------Product Details Section Ends---------->
+<hr class = "section_hr">
 <!----------Product slider Section Starts---------->
 <section id = "product-detail-slider">
   <div class = "container">
@@ -280,13 +218,15 @@
   </div>
 </section>
 <!----------Product slider Section Ends---------->
+<hr class = "section_hr">
 <!----------Product Swatch Section Ends---------->
 <section id = "product_swatch">
   <div class = "container">
     <div class = "row">
 
       <div class = "col-lg-7 col-12">
-        <div>
+        <div class = "slider_sec">
+
           <ngx-slick-carousel class="carousel"
     #slickModal="slick-carousel"
     [config]="slideConfigSwatch">
@@ -343,7 +283,7 @@
   </div>
 </section>
 <!----------Product Swatch Section Ends---------->
-
+<hr class = "section_hr">
 <!----------Product Our process  CSS Starts---------->
 <section id = "product_our_process">
   <div class = "container">
@@ -358,7 +298,7 @@
   </div>
 </section>
 <!-----------Product Our process  CSS  Ends---------->
-
+<hr class = "section_hr">
 <!----------Product Contact CSS  Starts---------->
 
 

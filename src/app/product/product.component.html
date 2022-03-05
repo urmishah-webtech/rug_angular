@@ -12,21 +12,54 @@
   </div>
 </section>
 <!----------Breadcrumb end---------->
+
+<!--------------Product List banner Start------------->
+<section id = "product_list_banner">
+ <div class = "container">
+  <div class = "text-center">
+    <h2>All Products</h2>
+  </div>
+ </div>
+</section>
+<!--------------Product List banner End------------->
+<hr class = "section_hr">
 <!----------Product List end---------->
 <section id = "product-listing">
   <div class="container">
-    <div class="row">
+    
+    <div class = "d-flex justify-content-between">
+      <div>
+        <select class="form-select" aria-label="Default select example">
+          <option selected>Weave</option>
+          <option value="knotted">Knotted</option>
+          <option value="flat">Flat</option>
+        </select>
+      </div>
+      <div>
+        <select class="form-select" aria-label="Default select example" >
+          <option selected>Sort By: Featured</option>
+          <option value="price">Newest</option>
+          <option value="price">Top Rated</option>
+          <option value="price">Price, Low to High</option>
+          <option value="price">Price, High to Low</option>
+        </select>
+      </div>
+
+    </div>
+    <div class="row pt-3">
       <div class="col-md-12">
         <div class="row">
           <div class="col-md-3" *ngFor="let product of product">
             <a [routerLink]="['/product-detail', product.id]">
               <div class = "card card-body p-0">
                 <div class="content-overlay"></div>
+                <hr class = "section_hr">
                 <img  src="{{product['image']}}" alt="Hover">
+                <hr class = "section_hr">
               <div class="product_content text-center">
-                <h5 class="">{{ product['title'] }}</h5>
+                <h6 class="">{{ product['title'] }}</h6>
                  <p> {{ product['descripation']  }}</p>
-                 <h6> {{  product['price_range'] }} </h6>    
+                 <h5> {{  product['price_range'] }} </h5>    
               </div>  
               </div>
             </a>   
@@ -37,7 +70,7 @@
   </div>
 
 </section>
-
+<hr class = "section_hr">
 <!----------Product List end---------->
 
       

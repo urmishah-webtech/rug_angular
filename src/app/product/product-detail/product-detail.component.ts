@@ -1,9 +1,8 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ProductService } from '../product.service';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { AuthService } from 'src/app/auth/auth.service';
 import { NotificationService } from 'src/app/notification.service';
-import { FormBuilder, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -39,8 +38,7 @@ export class ProductDetailComponent implements OnInit, AfterViewInit  {
     private route: ActivatedRoute,
     private router: Router,
     private authService: AuthService,
-    private notifyService:NotificationService,
-    private fb: FormBuilder) { }
+    private notifyService:NotificationService) { }
 
 
   ngOnInit(): void {
