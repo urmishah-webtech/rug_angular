@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
@@ -16,6 +16,9 @@ import { AuthGuard } from './auth/auth.guard';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ThankyouComponent } from './page/thankyou/thankyou.component';
 import { TermsAndConditionsComponent } from './page/terms-and-conditions/terms-and-conditions.component';
+import { PrivacyPolicyComponent } from './page/privacy-policy/privacy-policy.component';
+import { TheStudioComponent } from './page/visit-us/the-studio/the-studio.component';
+import { TheApartmentComponent } from './page/visit-us/the-apartment/the-apartment.component';
 
 
 const routes: Routes = [
@@ -40,6 +43,9 @@ const routes: Routes = [
     {path: 'login', component: LoginComponent},
     {path: 'faqs', component: FaqComponent},
     {path: 'terms-and-conditions', component: TermsAndConditionsComponent},
+    {path: 'privacy-policy', component: PrivacyPolicyComponent},
+    {path: 'studio', component: TheStudioComponent},
+    {path: 'apartment', component: TheStudioComponent},
     {path: 'thankyou', component: ThankyouComponent, canActivate: [AuthGuard]},
     {path: 'account/order-history', component: ThankyouComponent, canActivate: [AuthGuard]},
     {path: '**', component:NodataComponent}
