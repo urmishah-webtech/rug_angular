@@ -38,4 +38,7 @@ export class CartService {
   getOrder(id: number){
     return this.http.get(this.url+'thankyou/'+id, {headers: this.headers});
   }
+  updateCart(cart: any){
+    return this.http.post(this.url+'cartupdate', cart, {headers: this.headers});
+  }
 }

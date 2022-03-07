@@ -9,11 +9,12 @@ import { AuthService } from 'src/app/auth/auth.service';
   templateUrl: './product-detail.component.html',
   styleUrls: ['./product-detail.component.scss']
 })
-export class ProductDetailComponent implements OnInit, AfterViewInit  {
+export class ProductDetailComponent implements OnInit  {
 
   private productId: any = '';
   panelExpanded = true;
   product: any = [];
+  cart: any = [];
   productVariation: any = [];
   relatedProducts: any = [];
   variantTag: any = [];
@@ -25,18 +26,13 @@ export class ProductDetailComponent implements OnInit, AfterViewInit  {
   variantId: number | undefined
   cartcount: any = 0;
   session_id: any
-  varientForm: any = FormData
+  variationValidation:boolean = false;
 
   @ViewChild('varient1') varient1!: ElementRef;
   @ViewChild('varient2') varient2!: ElementRef;
 
-  possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890,./;'[]\=-)(*&^%$#@!~`";
-  lengthOfCode = 40;
-
-
   constructor(public productService: ProductService,
     private route: ActivatedRoute,
-    private router: Router,
     private authService: AuthService,
     private notifyService:NotificationService) { }
 
@@ -45,18 +41,12 @@ export class ProductDetailComponent implements OnInit, AfterViewInit  {
     this.route.paramMap.subscribe((paramMap: ParamMap)=>{
       if(paramMap.has('productId')){
         this.productId = paramMap.get('productId');
-        //console.log(this.productId);
       }
     })
     this.getSingleProduct(this.productId)
     this.getproductVariation(this.productId)
     this.getRelatedProducts(this.productId)
-    this.makeRandom(this.lengthOfCode, this.possible)
-    // console.log(this.makeRandom());
-  }
-
-  ngAfterViewInit() {
-    //this.changeVariation();
+    this.variationValidation
   }
 
   getSingleProduct(id: number){
@@ -77,17 +67,22 @@ export class ProductDetailComponent implements OnInit, AfterViewInit  {
   }
 
   changeVariation(){
-    const varient1 = this.varient1.nativeElement.value;
-    const varient2 = this.varient2.nativeElement.value
-    console.log(varient1)
-    console.log(varient2)
+    let varient1 = this.varient1.nativeElement.value;
+    let varient2 = '';
+    if(this.productVariation.data[0].varient2 != null){
+      varient2 = this.varient2.nativeElement.value
+    }else {
+      varient2 = '';
+    }
+    if(varient1 != '' || varient2 != ''){
+      this.variationValidation = true;
+    }
     let variation = {
       'text1': varient1,
       'text2': varient2,
       'text3': '',
-      'product_id': 171
+      'product_id': this.productId
     }
-    console.log(this.product.price_range);
     this.productService.variationProduct(variation).subscribe(
       data =>{
         console.log(data);
@@ -97,10 +92,6 @@ export class ProductDetailComponent implements OnInit, AfterViewInit  {
         this.variantId = this.variationProduct.variant.id
       }
     )
-    // console.log('item clicked : ', varient1.attribute1);
-    // let varient1 = $('#varient1').value();
-    // console.log(this.varient1.nativeElement.value);
-    // console.log(this.varient2.nativeElement.value);
   }
 
   getRelatedProducts(id: number){
@@ -120,23 +111,12 @@ export class ProductDetailComponent implements OnInit, AfterViewInit  {
     this.showcolors = !this.showcolors;
   }
 
-  variantProduct(variantId: string){
-    console.log(variantId);
-    console.log(this.product.image);
-    this.product.image = this.productVariation[0].image;
-  }
-
   addtoCart(){
     let loggedUser = this.authService.getToken()
-    //console.log(loggedUser.token);
-
-    if(this.variantId != 0){
-      this.productId = this.variantId
-    }
-    console.log(this.productId);
     if(loggedUser.token == null){
       if(localStorage.getItem('session_id') == null){
-        this.session_id = 'abc'
+        this.session_id = this.randomString(6);
+        console.log(this.session_id)
         localStorage.setItem('session_id', this.session_id)
       }else {
         this.session_id = localStorage.getItem('session_id')
@@ -145,41 +125,36 @@ export class ProductDetailComponent implements OnInit, AfterViewInit  {
       this.cartProduct= {
         'product_id': this.productId,
         'stock': this.quantity,
-        'session_id': this.session_id
+        'session_id': this.session_id,
+        'variation': this.variantId
       }
-      // this.notifyService.showError("Error", "Kindly Login!");
-      // setTimeout(()=>{
-      //     this.router.navigate(['/login']);
-      // }, 2000);
     }else {
       this.cartProduct= {
         'product_id': this.productId,
         'stock': this.quantity,
-        'user_id': localStorage.getItem('id')
+        'user_id': localStorage.getItem('id'),
+        'variation': this.variantId
       }
     }
-    this.cartcount++;
     this.productService.addtocart(this.cartProduct).subscribe(response =>{
       console.log(response);
-
-      // let currentUrl = this.router.url;
-      // this.router.routeReuseStrategy.shouldReuseRoute = () => false;
-      // this.router.onSameUrlNavigation = 'reload';
-      // this.router.navigate([currentUrl]);
+      this.cart = response
+      this.cartcount = this.cart.cartitem.length
       this.notifyService.showSuccess("Success", "Product Added Successfully!");
       localStorage.setItem('cart', this.cartcount)
     },err=>{
       this.notifyService.showError("Error", "Something went wrong!");
-    });
-    //console.log('addtocart');
+    })
 
 }
-makeRandom(lengthOfCode: number, possible: string) {
-  let text = "";
-  for (let i = 0; i < lengthOfCode; i++) {
-    text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+randomString(length: number) {
+  var randomChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  var result = '';
+  for ( var i = 0; i < length; i++ ) {
+      result += randomChars.charAt(Math.floor(Math.random() * randomChars.length));
   }
-    return text;
+  return result;
 }
 
 /********plus minus Quantity ****/
@@ -246,8 +221,8 @@ slideConfigProduct = {"slidesToShow": 4,
  "slidesToScroll": 1,
    "dots":false,
    "arrows": false,
-"infinite": true,
-"speed": 1000,
+  "infinite": true,
+  "speed": 1000,
 "autoplay": true,
 "autoplaySpeed": 2000,
 
