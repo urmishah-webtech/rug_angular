@@ -44,8 +44,8 @@ const routes: Routes = [
     {path: 'faqs', component: FaqComponent},
     {path: 'terms-and-conditions', component: TermsAndConditionsComponent},
     {path: 'privacy-policy', component: PrivacyPolicyComponent},
-    {path: 'studio', component: TheStudioComponent},
-    {path: 'apartment', component: TheStudioComponent},
+    {path: 'visit/studio', component: TheStudioComponent},
+    {path: 'visit/apartment', component: TheApartmentComponent},
     {path: 'thankyou', component: ThankyouComponent, canActivate: [AuthGuard]},
     {path: 'account/order-history', component: ThankyouComponent, canActivate: [AuthGuard]},
     {path: '**', component:NodataComponent}
