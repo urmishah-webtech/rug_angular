@@ -216,9 +216,6 @@ slideConfigProduct = {"slidesToShow": 4,
       }
     }
   ]
-
-
-
 };
 
  /*****Product Slider*****/

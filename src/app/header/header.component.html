@@ -24,21 +24,20 @@
           </li>
         -->
         <li class="nav-item rounded">
-          <a class="nav-link "  routerLink = "" routerLinkActive = "active"[routerLinkActiveOptions] = "{exact : true}">Home</a>
+          <a class="nav-link "  routerLink = "visit" routerLinkActive = "active"[routerLinkActiveOptions] = "{exact : true}">Home</a>
         </li>
         <li class="dropdown nav-item">
-          <a class="dropbtn nav-link">Visit Us
+          <a class="dropbtn nav-link" routerLinkActive = "active">Visit Us
             <i class="fa fa-caret-down"></i>
           </a>
-
           <div class=" dropdown-content">
               <hr class = "section_hr">
           <div class = "p-3">
             <div class="row">
-              <div class="col-md-6">
-                <a href = "#">
+              <div class="col-6">
+                <a routerLink = "visit/studio">
                <div class = "card card-body">
-                 <img src = "assets/img/dropdown-img1.jpg">
+                 <img src = "assets/img/dropdown-img1.jpg" width="100%" alt = "img">
                  <h6>The Studio,Marrakesh</h6>
                  <a href = "#">Explore
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16.8" height="32" viewBox="0 0 16.8 32">
@@ -49,10 +48,10 @@
                </div>
                </a>
               </div>
-              <div class="col-md-6">
-                <a href = "#">
+              <div class="col-6">
+                <a routerLink = "visit/apartment">
                   <div class = "card card-body">
-                    <img src = "assets/img/dropdown-img2.jpg">
+                    <img src = "assets/img/dropdown-img2.jpg" width="100%" alt = "img">
                     <h6>The Apartment , NYC</h6>
                     <a href = "#">Explore
                       <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16.8" height="32" viewBox="0 0 16.8 32">
