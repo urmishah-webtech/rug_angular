@@ -60,6 +60,7 @@ export class ProductDetailComponent implements OnInit  {
     this.productService.getproductVariation(id).subscribe(
       data => {
         this.productVariation = data;
+        console.log(this.productVariation.data)
         this.variantTag = this.productVariation.varianttag
         console.log(this.variantTag = this.productVariation.varianttag)
       }
@@ -74,6 +75,8 @@ export class ProductDetailComponent implements OnInit  {
     }else {
       varient2 = '';
     }
+    console.log(varient1)
+    console.log(varient2)
     if(varient1 != '' || varient2 != ''){
       this.variationValidation = true;
     }
@@ -139,7 +142,9 @@ export class ProductDetailComponent implements OnInit  {
     this.productService.addtocart(this.cartProduct).subscribe(response =>{
       console.log(response);
       this.cart = response
-      this.cartcount = this.cart.cartitem.length
+      this.cartcount = this.cart.cartcount
+      this.authService.cartSubject.next(this.cartcount);
+      console.log(this.cartcount);
       this.notifyService.showSuccess("Success", "Product Added Successfully!");
       localStorage.setItem('cart', this.cartcount)
     },err=>{

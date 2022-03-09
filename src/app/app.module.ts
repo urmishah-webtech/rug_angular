@@ -62,8 +62,6 @@ import { TheApartmentComponent } from './page/visit-us/the-apartment/the-apartme
     PrivacyPolicyComponent,
     TheStudioComponent,
     TheApartmentComponent,
-   
-  
   ],
   imports: [
     BrowserModule,

@@ -10,7 +10,7 @@ import { CartService } from '../services/cart.service';
 export class CartComponent implements OnInit {
   cart: any = [];
   userId: any
-  cartCount: number | undefined;
+  cartCount: any;
   countSub: any;
 
   constructor(private cartService: CartService,
@@ -30,6 +30,8 @@ export class CartComponent implements OnInit {
     console.log(this.userId)
     this.cartService.getCart(this.userId).subscribe(res=>{
       this.cart = res;
+      this.cartCount = this.cart.cartcount
+      localStorage.setItem('cart', this.cartCount)
     })
   }
 
@@ -73,8 +75,9 @@ export class CartComponent implements OnInit {
       'price': price
     }
     this.cartService.updateCart(cartProduct).subscribe(response =>{
-      console.log(response);
       this.notifyService.showSuccess("Success", "Product Updated Successfully!");
+      this.cartCount = response
+      localStorage.setItem('cart', this.cartCount.cartcount)
       this.getCart()
     },err=>{
       this.notifyService.showError("Error", "Something went wrong!");
