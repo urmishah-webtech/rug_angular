@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NotificationService } from '../notification.service';
 import { CartService } from '../services/cart.service';
 
@@ -7,19 +7,14 @@ import { CartService } from '../services/cart.service';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss']
 })
-export class CartComponent implements OnInit, OnDestroy {
+export class CartComponent implements OnInit {
   cart: any = [];
   userId: any
   cartCount: number | undefined;
   countSub: any;
 
-  constructor(private cartService: CartService,private notifyService:NotificationService) {
-    // this.countSub = this.cartService.cartCount$.subscribe(
-    //   count => {
-    //     // this runs everytime the count changes
-    //     this.cartCount = count;
-    //   })
-    //   this.cartService.setCartCount(0);
+  constructor(private cartService: CartService,
+    private notifyService:NotificationService) {
   }
   ngOnInit(): void {
     if(localStorage.getItem('id') !== null)
@@ -28,7 +23,6 @@ export class CartComponent implements OnInit, OnDestroy {
     }else {
       this.userId = localStorage.getItem('session_id');
     }
-    //console.log(this.quantity);
     this.getCart();
   }
 
@@ -36,7 +30,6 @@ export class CartComponent implements OnInit, OnDestroy {
     console.log(this.userId)
     this.cartService.getCart(this.userId).subscribe(res=>{
       this.cart = res;
-      console.log(this.cart.cartitem);
     })
   }
 
@@ -44,7 +37,6 @@ export class CartComponent implements OnInit, OnDestroy {
     this.cartService.deleteCartItem(id).subscribe(res=>{
       this.cart = res;
       this.notifyService.showSuccess("Success", "Product deleted Successfully!");
-      // alert('Cart Item deleted');
       this.getCart()
     })
   }
@@ -52,21 +44,41 @@ export class CartComponent implements OnInit, OnDestroy {
    /********plus minus Quantity ****/
    quantity:number =1;
    i=1
-   plus(){
+   plus(id: number, price: number){
      if(this.i !=20){
        this.i++;
        this.quantity = this.i;
      }
+      let cartProduct= {
+        'cartid': id,
+        'stock': this.quantity,
+        'price': price
+      }
+      this.cartService.updateCart(cartProduct).subscribe(response =>{
+        console.log(response);
+        this.notifyService.showSuccess("Success", "Product Updated Successfully!");
+        this.getCart()
+      },err=>{
+        this.notifyService.showError("Error", "Something went wrong!");
+      });
    }
-   minus(){
+   minus(id: number, price: number){
      if(this.i !=1){
        this.i--;
        this.quantity = this.i;
      }
-   }
-
-   ngOnDestroy(): void {
-    //this.countSub.unsubscribe();
+     let cartProduct= {
+      'cartid': id,
+      'stock': this.quantity,
+      'price': price
+    }
+    this.cartService.updateCart(cartProduct).subscribe(response =>{
+      console.log(response);
+      this.notifyService.showSuccess("Success", "Product Updated Successfully!");
+      this.getCart()
+    },err=>{
+      this.notifyService.showError("Error", "Something went wrong!");
+    });
    }
 
 }

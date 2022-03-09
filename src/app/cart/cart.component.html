@@ -31,15 +31,15 @@
                               <!-- <div class="" *ngIf="cart.length != 0"> -->
                               <td><div class = "cart_product_img"><img src = "{{cart.image}}"></div></td>
                               <td><h6 class = "mb-0">{{cart.product_detail.title}}</h6>
-                                   <p  class = "mb-0"><span>Fawn + Natural </span> / <span>3' x 5'</span> / <span>Tassels</span></p>
-                                   
+                                   <p  class = "mb-0"><span>{{cart.product_variant[0].attribute1}} </span> / <span>{{cart.product_variant[0].attribute2}}</span> / <span>Tassels</span></p>
+
                             </td>
                             <td class = "text-center"><div class = "product-quantity">
-                              <button type = "button" class = "minus" (click) = minus()>-</button>
-                              <input type = "text" [value] ="cart.stock">
-                             <button type = "button" (click) = plus()>+</button> 
+                              <button type="button" class = "minus" (click)="minus(cart.id, cart.price)">-</button>
+                              <input type="text" #quantity>{{cart.stock}}
+                             <button type = "button" (click)="plus(cart.id, cart.price)">+</button>
                             </div></td>
-                            <td class = "text-center"><h5>${{cart.price}}</h5></td>
+                            <td class = "text-center"><h5>${{cart.price*cart.stock}}</h5></td>
                             <td  class = "text-end"><button type="button" (click)="deleteCartItem(cart.id)">&#10005;</button></td>
                             <!-- </div> -->
                           </tr>
@@ -71,7 +71,7 @@
                 </li>
                 <hr>
                 </ul>
-                
+
                 <div>
                     <button type = "button" class = "btn cart-btn green-btn" routerLink="/checkout">Continue to Checkout</button>
                 </div>

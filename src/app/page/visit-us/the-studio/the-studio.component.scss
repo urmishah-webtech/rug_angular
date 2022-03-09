@@ -98,11 +98,67 @@ h2{
 
 /******Studio section2******/
 #studio-section2{
+
+	.col1{
+		padding-top: 10rem;
+		text-align: right;
+	}
 	
 	h2{
 		text-transform: capitalize;
 		&:after{  
 				left: calc(100% - 45px);
+		}
+	}
+
+	p{
+		padding-top: 1rem;
+	}
+   .studio-img{
+		overflow: hidden;
+		position: relative;
+		img{
+			width: 100%;
+			height: auto;
+			object-fit: cover;
+		}
+	
+		&:before{
+			content: "";
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(45deg,rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.6) 50%);
+			position: absolute;
+			top: -100%;
+			left: 50%;
+			opacity: 0;
+			transform: translateX(-50%) rotate(45deg);
+			transition: all 0.3s steps(4);
+		}
+	
+		&:after{
+			content: "";
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(45deg,rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.6) 50%);
+			position: absolute;
+			top: -100%;
+			left: 50%;
+			opacity: 0;
+			transform: translateX(-50%) rotate(45deg);
+			transition: all 0.3s steps(4);
+		}
+	
+		&:hover{
+			&:before{
+				top: -70%;
+				opacity: 1;
+			}
+	
+			&:after{
+				top: 70%;
+				opacity: 1;
+			}
 		}
 	}
 }
@@ -159,6 +215,7 @@ h2{
 		img {
 			width: 100%;
 			height: 100%;
+			object-fit: cover;
 		}
 		.content {
 			position: absolute;
@@ -210,13 +267,18 @@ h2{
 		
 	}
 
+	p{
+		padding-top: 1rem;
+	}
+
 	
 .studio-img{
     overflow: hidden;
     position: relative;
 	img{
 		width: 100%;
-		height: auto;
+		height: 100%;
+		object-fit: cover;
 	}
 
 	&:before{
@@ -265,13 +327,15 @@ h2{
 	
 	.col2{
 		padding-top: 10rem;
-	}
-	h2{
-		text-transform: capitalize;
-		&:after{
-					left: calc(100% - 45px);	
+		text-align: end;
+		h2{
+			text-transform: capitalize;
+			&:after{
+						left: calc(100% - 45px);	
+			}
 		}
 	}
+	
 	
 	.studio-img{
 		overflow: hidden;
@@ -371,6 +435,8 @@ h2{
 			opacity: 0;
 		}
 	}
+
+	
 	  
 }
 /**============(Studio Section8)===========**/
@@ -422,3 +488,112 @@ h2{
 		margin-left: 0rem;
 	  }
 }
+
+/**==========++++++(Responsive SCSS)++++++++++============*/
+@media(max-width:991px) {
+
+#studio-section2{
+	.col1{
+		padding-top: 0rem;
+		text-align: left;
+
+		h2{
+			&:after{
+				left: 0;
+			}
+		}
+		p{
+			padding-top: 0.5rem;
+		}
+	}
+}
+
+#studio-section3{
+
+	.card{
+		margin-top: 1rem;
+	}
+}
+
+#studio-section4{
+	.col2{
+		padding-top: 0rem;
+
+		p{
+			padding-top: 0.5rem;
+		}
+	}
+}
+
+#studio-section5{
+	.col2{
+		padding-top: 0rem;
+		text-align:left;
+		h2{
+			
+			&:after{
+						left:0;	
+			}
+		}
+
+		p{
+			padding-top: 0.5rem;
+		}
+	}
+	
+}
+#studio-slider{
+	.slick-center{
+		.overlay{
+			opacity: 0;
+		}
+		img {
+			transform: scale(1);
+	
+		}
+	}
+
+	
+}
+	
+}
+
+  @media(max-width:768px) {
+p{
+	font-size: 16px;
+	line-height: 24px;
+}
+	#studio-banner{
+		padding-top: 8rem;
+		padding-bottom: 8rem;
+	}
+
+#studio-section1{
+     .container{
+		 .box{
+			 padding:1.5rem;
+		 }
+	 }
+}
+	
+}
+
+  @media(max-width:576px) {
+    #studio-banner{
+		padding-top: 6rem;
+		padding-bottom: 6rem;
+	}
+  }
+
+  @media(max-width:470px) {	
+    #studio-banner{
+		padding-top: 4rem;
+		padding-bottom: 4rem;
+	}
+
+  }
+
+  @media(max-width:360px) {
+	
+  }
+

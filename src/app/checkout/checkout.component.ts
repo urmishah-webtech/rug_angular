@@ -26,6 +26,8 @@ export class CheckoutComponent implements OnInit {
   payment: boolean = false
   shipping: boolean = true
   loggedUser: any
+  showPaymentBtn: boolean = false
+  cartCount: number = 0
 
   ngOnInit(): void {
     this.loggedUser = this.authService.getToken()
@@ -43,9 +45,6 @@ export class CheckoutComponent implements OnInit {
       postal_code: ['',[Validators.required]
     ],
     })
-    this.checkoutForm = this.fb.group({
-      user_id: [this.loggedUser.id]
-    })
   }
 
   onSubmit(){
@@ -53,23 +52,26 @@ export class CheckoutComponent implements OnInit {
       console.log(this.addressForm.value)
       this.cartService.addaddress(this.addressForm.value).subscribe(res=>{
         this.address = res;
-        console.log(this.address);
+        //console.log(this.address);
         this.payment = true
         this.shipping = false
+        this.showPaymentBtn = true
       })
     }
   }
   getAddress(){
-    let user_id = ({
-      user_id: this.loggedUser.id
-    });
     this.cartService.getAddress(this.loggedUser.id).subscribe(res=>{
       this.ad = res;
-      console.log(this.ad.data)
+      //console.log(this.ad.data)
     })
   }
   onPayment(){
-    this.cartService.placeOrder(this.checkoutForm.value).subscribe(res=>{
+    this.checkoutForm = {
+      'user_id': this.loggedUser.id,
+      'total': this.cart.Totalamount+10
+    }
+    console.log(this.checkoutForm);
+    this.cartService.placeOrder(this.checkoutForm).subscribe(res=>{
       this.router.navigate(['/thankyou']);
     })
   }
@@ -77,14 +79,13 @@ export class CheckoutComponent implements OnInit {
   getCart(){
     this.cartService.getCart(this.loggedUser.id).subscribe(res=>{
       this.cart = res;
-      //console.log(this.cart.cartitem);
+      this.cartCount = this.cart.cartitem.length
     })
   }
   deleteCartItem(id: number){
     this.cartService.deleteCartItem(id).subscribe(res=>{
       this.cart = res;
       this.notifyService.showSuccess("Success", "Product deleted Successfully!");
-      // alert('Cart Item deleted');
       this.getCart()
     })
   }

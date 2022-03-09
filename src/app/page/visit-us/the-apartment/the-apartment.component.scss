@@ -56,6 +56,8 @@ h2{
 	}
 	h6 {
 		color: #fff;
+        padding-top: 1rem;
+        padding-bottom:1rem;
 	}
 	button {
 		padding: 0.8rem;
@@ -381,3 +383,82 @@ h2{
 		margin-left: 0rem;
 	  }
 }
+
+
+
+/**==========++++++(Responsive SCSS)++++++++++============*/
+@media(max-width:991px) {
+
+    #apartment-section2{
+        .col1{
+            padding-top: 0rem;
+            text-align: left;
+    
+            h2{
+                &:after{
+                    left: 0;
+                }
+            }
+            p{
+                padding-top: 0.5rem;
+            }
+        }
+    }
+    
+    #apartment-section3{
+    
+        .card{
+            margin-top: 1rem;
+        }
+    }
+    
+    #apartment-section4{
+        .col2{
+            padding-top: 0rem;
+    
+            p{
+                padding-top: 0.5rem;
+            }
+        }
+    }
+        
+    }
+    
+      @media(max-width:768px) {
+    p{
+        font-size: 16px;
+        line-height: 24px;
+    }
+    #apartment-banner{
+            padding-top: 8rem;
+            padding-bottom: 8rem;
+        }
+    
+    #apartment-section1{
+         .container{
+             .box{
+                 padding:1.5rem;
+             }
+         }
+    }
+        
+    }
+    
+      @media(max-width:576px) {
+        #apartment-banner{
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
+      }
+    
+      @media(max-width:470px) {	
+        #apartment-banner{
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+        }
+    
+      }
+    
+      @media(max-width:360px) {
+        
+      }

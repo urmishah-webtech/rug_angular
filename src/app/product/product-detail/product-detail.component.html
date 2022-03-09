@@ -96,6 +96,16 @@
             </div>
           </div>
           <!-----Product Variation---->
+                  <!-----Choose Size----->
+          <div class ="choose_color mb-3">
+            <h6>Choose Color</h6>
+             <input type = "button" *ngFor = "let color of colors" class = "w-8 h-8 btn" [style.background]="color" (click) = "selectedColor = color" [ngClass] = "{'selected':selectedColor === color}" >
+          </div>
+                 <!-----Choose Size----->
+          <div class ="choose_size mb-3">
+            <h6>Choose Size</h6>
+             <input type = "button" *ngFor = "let size of sizes" class = "" [style.background]="size" (click) = "selectedSize = size" [ngClass] = "{'selected':selectedSize === size}" [value] = "size">
+          </div>
           <!-- <div class="variation" *ngIf="productVariation != ''"> -->
             <div class="variation" *ngIf="productVariation != ''">
               <div class="variations" *ngFor="let data of productVariation.data; let i = index">
@@ -108,7 +118,7 @@
                     <!-- <div *ngFor="let varient1 of productVariation.data;let i = index" #varient1>
                       <label (click)="changeVariation($event,varient1, i)">{{ varient1.attribute1 }}</label>
                     </div> -->
-                   
+
                     <select (change)="changeVariation()" #varient1 class = "form-select">
                       <option selected>-- Choose an Option --</option>
                       <option [ngValue]="varient1.attribute1" *ngFor="let varient1 of productVariation.data;let i = index">{{ varient1.attribute1 }}</option>
@@ -117,20 +127,23 @@
                   </div>
                 </div>
                 <!-----Choose Sizes---->
+                
+               
                 <div class = "choose_size py-2" *ngIf="data.varient2 != null">
                   <h6 class = "mb-1">Sizes</h6>
-                  <select (change)="changeVariation()" #varient2 class = "form-select">
+                  
+                  <!--<select (change)="changeVariation()" #varient2 class = "form-select">
                     <option selected>-- Choose an Option --</option>
                     <option [ngValue]="varient2.attribute2" *ngFor="let varient2 of productVariation.data;let i = index">{{ varient2.attribute2 }}</option>
-                  </select>
-                  <!-- <div *ngFor="let varient2 of productVariation.data;let i = index" #varient2>
+                  </select>    --->
+              <!-----  <div *ngFor="let varient2 of productVariation.data;let i = index" #varient2>
                     <label (click)="changeVariation($event,varient2, i)">{{ varient2.attribute2 }}</label>
                   </div> -->
-                  <!-- <select class="button_list">
+                <!----<select class="button_list">
                     <option id="varient2" *ngFor="let varient2 of productVariation.data" class="btn float-left"
                     [style.background]="varient2" (click)="changeVariation()" [ngClass] ="{'selected' : selectedSize === varient2}">
                     {{varient2.attribute2}}</option>
-                  </select> -->
+                  </select> --->
                 </div>
               </div>
             </div>
@@ -149,9 +162,11 @@
               </li>
             </ul>
           </div>
+
+         
           <!-----Product Variation End---->
           <div class = 'text-center'>
-            <button class = "btn blue-btn " (click)="addtoCart()">Add to Cart</button>
+            <button class = "btn blue-btn" (click)="addtoCart()" [disabled]="!variationValidation">Add to Cart</button>
           </div>
 
         </div>
@@ -197,7 +212,7 @@
 <!----------Product Details Section Ends---------->
 <hr class = "section_hr">
 <!----------Product slider Section Starts---------->
-<section id = "product-detail-slider">
+<section id = "product-detail-slider" *ngIf="relatedProducts != ''">
   <div class = "container">
     <div class = "text-center">
       <h2>You May Also Like</h2>
@@ -206,7 +221,7 @@
     #slickModal="slick-carousel"
     [config]="slideConfigProduct">
     <div ngxSlickItem  class="slide slider_content" *ngFor="let relProducts of relatedProducts">
-      <a href = "#">
+      <a [routerLink]="['/product-detail', relProducts.id]">
         <div class = "product-card">
           <div>
             <img src="{{relProducts.image}}"/>

@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit {
   login: boolean = false
   loggedUser: any;
   cart: any = [];
-  cartCount: number =0
+  cartCount: any =0
 
   constructor(
     private headerService: HeaderService,
@@ -31,6 +31,7 @@ export class HeaderComponent implements OnInit {
     this.getCartCount();
     this.getmenu();
     this.getSubmenu(this.menuId);
+    this.cartCount = localStorage.getItem('cart')
   }
 
   getmenu(){
@@ -64,7 +65,7 @@ export class HeaderComponent implements OnInit {
   getCartCount(){
     this.cartService.getCart(this.loggedUser.id).subscribe(res=>{
       this.cart = res;
-      console.log(this.cart.cartitem);
+      // console.log(this.cart.cartitem);
       this.cartCount = this.cart.cartitem.length
     })
   }

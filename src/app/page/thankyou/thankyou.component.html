@@ -22,9 +22,9 @@
                         <td><div class = "checkout_product_img"><img src = "{{cart.image}}"></div></td>
                         <td><h4 class = "mb-0">{{cart.title}}</h4>
                           Qty: {{cart.stock}}
-                            <p  class = "mb-0"><span>Fawn + Natural </span> / <span>3' x 5'</span> / <span>Tassels</span></p>
+                            <p *ngIf="cart.varition_id != null" class = "mb-0"><span>{{cart.variant_product[0].attribute1}} </span> / <span>{{cart.variant_product[0].attribute2}}</span> / <span>Tassels</span></p>
                       </td>
-                      <td class = "text-center"><h4>${{cart.total}}</h4></td>
+                      <td class = "text-center"><h4>${{cart.price*cart.stock}}</h4></td>
 
                     </tr>
 

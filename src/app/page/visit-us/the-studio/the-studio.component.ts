@@ -29,17 +29,15 @@ export class TheStudioComponent implements OnInit {
         breakpoint: 991,
         settings: {
           "arrows": true,
-          "centerMode": false,
-          "centerPadding": '40px',
-          "slidesToShow": 2
+          "centerPadding": '100px',
+          "slidesToShow": 1
         }
       },
       {
         breakpoint: 600,
         settings: {
           "arrows": true,
-          "centerMode": false,
-          "centerPadding": '40px',
+          "centerPadding": '70px',
           "slidesToShow": 1
         }
       }
