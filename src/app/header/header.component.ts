@@ -23,7 +23,11 @@ export class HeaderComponent implements OnInit {
     private headerService: HeaderService,
     private authService: AuthService,
     private router: Router,
-    private cartService: CartService) { }
+    private cartService: CartService) {
+      this.authService.cartSubject.subscribe(count=>{
+        this.cartCount = count;
+      })
+     }
 
   ngOnInit(): void {
     this.loggedUser = this.authService.getToken()
@@ -31,7 +35,7 @@ export class HeaderComponent implements OnInit {
     this.getCartCount();
     this.getmenu();
     this.getSubmenu(this.menuId);
-    this.cartCount = localStorage.getItem('cart')
+    //this.cartCount = localStorage.getItem('cart')
   }
 
   getmenu(){
@@ -63,11 +67,12 @@ export class HeaderComponent implements OnInit {
   }
 
   getCartCount(){
-    this.cartService.getCart(this.loggedUser.id).subscribe(res=>{
-      this.cart = res;
-      // console.log(this.cart.cartitem);
-      this.cartCount = this.cart.cartitem.length
-    })
+    // this.cartService.getCart(this.loggedUser.id).subscribe(res=>{
+    //   this.cart = res;
+    //   console.log(this.cart);
+    //   this.cartCount = this.cart.cartitem.length
+    // })
+    this.cartCount = localStorage.getItem('cart')
   }
 
 }

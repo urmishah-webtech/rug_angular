@@ -63,9 +63,7 @@ import { OurStoryComponent } from './page/our-story/our-story.component';
     PrivacyPolicyComponent,
     TheStudioComponent,
     TheApartmentComponent,
-    OurStoryComponent,
-   
-  
+    OurStoryComponent
   ],
   imports: [
     BrowserModule,

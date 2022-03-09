@@ -122,7 +122,7 @@
                 <div class="" *ngIf="i<=0">
             <!-----Choose Colors---->
                 <div class="choose_size py-2" *ngIf="data.varient1 != null">
-                  <h6 class="mb-1" *ngFor="let tagname of variantTag">{{data.varient1}}</h6>
+                  <!-- <h6 class="mb-1" *ngFor="let tagname of variantTag">{{data.varient1}}</h6> -->
                   <h6 class = "mb-1">Colors</h6>
                   <div class="d-flex gap-2">
                     <!-- <div *ngFor="let varient1 of productVariation.data;let i = index" #varient1>
@@ -131,7 +131,7 @@
 
                     <select (change)="changeVariation()" #varient1 class = "form-select">
                       <option selected>-- Choose an Option --</option>
-                      <option [ngValue]="varient1.attribute1" *ngFor="let varient1 of productVariation.data;let i = index">{{ varient1.attribute1 }}</option>
+                      <option [ngValue]="varient1.attribute1" *ngFor="let varient1 of productVariation.data"><span>{{ varient1.attribute1 }}</span></option>
                     </select>
                     <!-- <button id="varient1" *ngFor="let varient1 of productVariation.data" class="btn float-left" [style.background]="varient1" (click)="changeVariation()" [ngClass] ="{'selected' : selectedColor === varient1}">{{varient1.attribute1}}</button> -->
                   </div>

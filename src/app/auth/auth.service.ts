@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpClientModule } from "@angular/common/http";
-import { BehaviorSubject, map, Observable, of } from "rxjs";
+import { BehaviorSubject, map, Observable, of, Subject } from "rxjs";
 import { environment } from "src/environments/environment";
 import { Params, Router } from '@angular/router';
 import { User } from './auth.model';
@@ -12,6 +12,7 @@ export class AuthService {
   //private userSubject= new BehaviorSubject<any>('dikshita');
   private userSubject: BehaviorSubject<User>;
   public user: Observable<User>;
+  cartSubject = new Subject<any>()
 
   constructor(private http:HttpClient, private router: Router) {
     // this.userSubject.next("Jain")
@@ -55,4 +56,6 @@ export class AuthService {
     }
     return user;
   }
+
+
 }
