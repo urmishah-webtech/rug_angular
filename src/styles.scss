@@ -1251,18 +1251,19 @@ hr{
 	}
 	.choose_color{
 		input {
-			width: 30px;
-			height: 30px;
-			border-radius: 50%;
 			margin:2px;
-			
-			
-			&:hover {
-				opacity: 0.5;
+			border:1px solid #000;		
+			border-radius: 0px;
+			font-size: 12px;
+
+			&:focus{
+				border-color:#000 !important;
 			}
 		}
-		.selected {
+		.active{
 			border: 2px solid #000 !important;
+			border-style:inset;
+
 		}
 	}
 	.choose_size {
@@ -1282,10 +1283,15 @@ hr{
 			width: 60px;
 			height: 35px;
 			color: #000 !important;
-			font-size: 13px;
+			font-size: 12px;
+
+			&:focus{
+				border-color:#000 !important;
+			}
 		}
-		.selected {
+		.active {
 			border: 2px solid #000 !important;
+			border-style:inset;
 		}
 	}
 	.button_list {

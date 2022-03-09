@@ -57,6 +57,8 @@ h2{
 	}
 	h6 {
 		color: #fff;
+		padding:1rem;
+		padding-bottom: 1rem;
 	}
 	button {
 		padding: 0.8rem;
@@ -343,6 +345,8 @@ h2{
 		img{
 			width: 100%;
 			height: auto;
+			object-fit: cover;
+
 		}
 	
 		&:before{
@@ -448,7 +452,7 @@ h2{
 	}
 	h2{
 		text-transform: capitalize;
-		
+		margin-bottom: 1.5rem;	
 	}
 	.studio-img{
 		text-align: center;
@@ -477,8 +481,8 @@ h2{
 
 		img{
 			width: 100%;
-			height: auto;
 			height: 480px;
+			object-fit: cover;
 		}
 		
 	}
@@ -542,6 +546,8 @@ h2{
 	}
 	
 }
+
+
 #studio-slider{
 	.slick-center{
 		.overlay{
@@ -553,7 +559,23 @@ h2{
 		}
 	}
 
-	
+	h2{
+		margin-bottom: 0.5rem;
+	}	
+}
+
+#studio-section8 {
+	button{
+		width: 250px;
+	}
+  .col2{
+	  padding-top: 1rem;
+
+	  h2{
+		  margin-bottom: 0.5rem;
+	  }
+  }
+  
 }
 	
 }

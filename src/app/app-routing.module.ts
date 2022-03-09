@@ -19,6 +19,7 @@ import { TermsAndConditionsComponent } from './page/terms-and-conditions/terms-a
 import { PrivacyPolicyComponent } from './page/privacy-policy/privacy-policy.component';
 import { TheStudioComponent } from './page/visit-us/the-studio/the-studio.component';
 import { TheApartmentComponent } from './page/visit-us/the-apartment/the-apartment.component';
+import { OurStoryComponent } from './page/our-story/our-story.component';
 
 
 const routes: Routes = [
@@ -46,6 +47,7 @@ const routes: Routes = [
     {path: 'privacy-policy', component: PrivacyPolicyComponent},
     {path: 'visit/studio', component: TheStudioComponent},
     {path: 'visit/apartment', component: TheApartmentComponent},
+    {path: 'our-story', component: OurStoryComponent},
     {path: 'thankyou', component: ThankyouComponent, canActivate: [AuthGuard]},
     {path: 'account/order-history', component: ThankyouComponent, canActivate: [AuthGuard]},
     {path: '**', component:NodataComponent}

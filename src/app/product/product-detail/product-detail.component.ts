@@ -174,7 +174,7 @@ minus(){
 }
 
 /**********Color Picker button **********/
-colors: string[] = ["#fa0000","#c49f66","#68c466","#66b7c4","#0066ff","#607d8b","#c0b298"]
+colors: string[] = ["Natural Wool","Azure Blue","Light Gray","Sahara Brown","Scarlet Red","Saffron Yellow"]
 selectedColor = this.colors[0];
 
 

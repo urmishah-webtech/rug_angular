@@ -32,6 +32,7 @@ import { TermsAndConditionsComponent } from './page/terms-and-conditions/terms-a
 import { PrivacyPolicyComponent } from './page/privacy-policy/privacy-policy.component';
 import { TheStudioComponent } from './page/visit-us/the-studio/the-studio.component';
 import { TheApartmentComponent } from './page/visit-us/the-apartment/the-apartment.component';
+import { OurStoryComponent } from './page/our-story/our-story.component';
 
 
 
@@ -62,6 +63,7 @@ import { TheApartmentComponent } from './page/visit-us/the-apartment/the-apartme
     PrivacyPolicyComponent,
     TheStudioComponent,
     TheApartmentComponent,
+    OurStoryComponent,
    
   
   ],
