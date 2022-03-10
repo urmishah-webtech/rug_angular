@@ -262,14 +262,16 @@ hr{
 			.nav-link {
 				color: #627b80;
 				font-weight: 600;
+				padding-left: 0rem;
+				padding-right: 0rem;
 			}
 			.nav-link.active {
 				background-color: transparent !important;
 				border-bottom: 2px solid #627b80;
 				border-radius: 0px;
 			}
-			padding-left: 0.5rem;
-			padding-right: 0.5rem;
+			padding-left: 0.8rem;
+			padding-right: 0.8rem;
 		}
 		.navbar-toggler-icon{
 			width: 1em;
