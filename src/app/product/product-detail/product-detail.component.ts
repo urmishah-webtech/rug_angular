@@ -3,6 +3,7 @@ import { ProductService } from '../product.service';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { NotificationService } from 'src/app/notification.service';
 import { AuthService } from 'src/app/auth/auth.service';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-product-detail',
@@ -27,8 +28,11 @@ export class ProductDetailComponent implements OnInit  {
   cartcount: any = 0;
   session_id: any
   variationValidation:boolean = false;
+  variantForm: any
+  v1: string = ''
+  v2: string = ''
 
-  @ViewChild('varient1') varient1!: ElementRef;
+  @ViewChild('varient1', {static: true}) varient1!: ElementRef;
   @ViewChild('varient2') varient2!: ElementRef;
 
   constructor(public productService: ProductService,
@@ -47,6 +51,14 @@ export class ProductDetailComponent implements OnInit  {
     this.getproductVariation(this.productId)
     this.getRelatedProducts(this.productId)
     this.variationValidation
+
+    this.variantForm = new FormGroup({
+      variant1: new FormControl('', Validators.required),
+      variant2: new FormControl('', Validators.required),
+      variant3: new FormControl('', Validators.required),
+      tassels: new FormControl('')
+    });
+
   }
 
   getSingleProduct(id: number){
@@ -62,22 +74,27 @@ export class ProductDetailComponent implements OnInit  {
         this.productVariation = data;
         console.log(this.productVariation.data)
         this.variantTag = this.productVariation.varianttag
-        console.log(this.variantTag = this.productVariation.varianttag)
+        console.log(this.variantTag)
       }
     )
   }
 
   changeVariation(){
-    let varient1 = this.varient1.nativeElement.value;
-    let varient2 = '';
-    if(this.productVariation.data[0].varient2 != null){
-      varient2 = this.varient2.nativeElement.value
-    }else {
-      varient2 = '';
-    }
+    console.log(this.variantForm.value.variant1)
+    console.log(this.variantForm.value.variant2)
+    console.log(this.variantForm.value.tassels)
+    let varient1 = this.variantForm.value.variant1;
+    let varient2 = this.variantForm.value.variant2;
+    let varient3 = this.variantForm.value.variant3;
+    let tassels = this.variantForm.value.tassels
+    // if(this.productVariation.data[0].varient2 != null){
+    //   varient2 = this.varient2.nativeElement.value
+    // }else {
+    //   varient2 = '';
+    // }
     console.log(varient1)
     console.log(varient2)
-    if(varient1 != '' || varient2 != ''){
+    if(varient1 != '' || varient2 != '' || varient3 != ''){
       this.variationValidation = true;
     }
     let variation = {

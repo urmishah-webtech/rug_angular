@@ -97,25 +97,57 @@
           </div>
           <!-----Product Variation---->
                   <!-----Choose Size----->
-                  <div class="preview">
-                    
+            <div class="preview" *ngIf="productVariation != ''">
+              <form [formGroup]="variantForm">
+                <div *ngIf="productVariation.attribute1 != '' && productVariation.attribute2[1].variantnumber != 41">
+                  <label for="variant1" [ngSwitch]="productVariation.attribute1[1].variantnumber">
+                    <span *ngSwitchCase="variantTag"></span>
+                  </label>
+                  <div *ngFor="let varient1 of productVariation.attribute1[0]">
+                    <input type="radio" value="{{varient1}}" name="variant1" formControlName="variant1" (change)="changeVariation()">
+                    <label for="male">{{varient1}}</label>
                   </div>
-          <div class ="choose_color mb-3">
-
-            <h6>Choose Color</h6>
-                   <input class = "btn active" name='color' type='button' value= "light grey"/>
-                    <input class = "btn"  name='color' type='button' value = "red" />
-                    <input class = "btn"  name='color' type='button' value = "blue"/>
-                    <input class = "btn"  name='color' type='button' value = "grey" /> 
-          </div>
-                 <!-----Choose Size----->
-          <div class ="choose_size mb-3">
-            <h6>Choose Size</h6>
-            <input class = "btn active" name='size' type='button' value= "4 X 5"/>
-                    <input class = "btn"  name='size' type='button' value = "3 X 5" />
-                    <input class = "btn"  name='size' type='button' value = "5 X 5"/>
-                    <input class = "btn"  name='size' type='button' value = "3 X 4" /> 
-          </div>
+                </div>
+                <div *ngIf="productVariation.attribute2[0] != '' && productVariation.attribute2[1].variantnumber != 41">
+                  <label for="variant2">Size:</label>
+                  <div *ngFor="let varient2 of productVariation.attribute2[0]">
+                    <input type="radio" value="{{varient2}}" name="variant2" formControlName="variant2" (change)="changeVariation()">
+                    <label for="male">{{varient1}}</label>
+                  </div>
+                </div>
+                <div *ngIf="productVariation.attribute3[0] != '' && productVariation.attribute2[1].variantnumber != 41">
+                  <label for="variant2">Size:</label>
+                  <div *ngFor="let varient3 of productVariation.attribute3[0]">
+                    <input type="radio" value="{{varient3}}" name="variant3" formControlName="variant3" (change)="changeVariation()">
+                    <label for="male">{{varient3}}</label>
+                  </div>
+                </div>
+                <div *ngIf="productVariation.attribute4[0] != '' && productVariation.attribute2[1].variantnumber != 41">
+                  <label for="variant2">Size:</label>
+                  <div *ngFor="let varient4 of productVariation.attribute4[0]">
+                    <input type="radio" value="{{varient4}}" name="variant4" formControlName="variant4" (change)="changeVariation()">
+                    <label for="male">{{varient4}}</label>
+                  </div>
+                </div>
+                <!-----Choose tassels---->
+                <div class = "choose_tassels py-2" *ngIf="productVariation.attribute1[1].variantnumber==41 ||
+                productVariation.attribute2[1].variantnumber== 41 ||
+                productVariation.attribute3[1].variantnumber== 41 ||
+                productVariation.attribute4[1].variantnumber== 41">
+                  <h6 class = "mb-1">Choose Tassels </h6>
+                  <ul class = "d-flex gap-4">
+                    <li>
+                      <input type="radio" id="test1" name="tassels" checked>
+                      <label for="test1">Tassels</label>
+                    </li>
+                    <li>
+                      <input type="radio" id="test2" name="tassels">
+                      <label for="test2">No Tassels</label>
+                    </li>
+                  </ul>
+                </div>
+              </form>
+            </div>
           <!-- <div class="variation" *ngIf="productVariation != ''"> -->
             <div class="variation" *ngIf="productVariation != ''">
               <div class="variations" *ngFor="let data of productVariation.data; let i = index">
@@ -129,7 +161,7 @@
                       <label (click)="changeVariation($event,varient1, i)">{{ varient1.attribute1 }}</label>
                     </div> -->
 
-                    <select (change)="changeVariation()" #varient1 class = "form-select">
+                    <select class = "form-select">
                       <option selected>-- Choose an Option --</option>
                       <option [ngValue]="varient1.attribute1" *ngFor="let varient1 of productVariation.data"><span>{{ varient1.attribute1 }}</span></option>
                     </select>
@@ -137,11 +169,11 @@
                   </div>
                 </div>
                 <!-----Choose Sizes---->
-                
-               
+
+
                 <div class = "choose_size py-2" *ngIf="data.varient2 != null">
                   <h6 class = "mb-1">Sizes</h6>
-                  
+
                   <!--<select (change)="changeVariation()" #varient2 class = "form-select">
                     <option selected>-- Choose an Option --</option>
                     <option [ngValue]="varient2.attribute2" *ngFor="let varient2 of productVariation.data;let i = index">{{ varient2.attribute2 }}</option>
@@ -158,22 +190,8 @@
               </div>
             </div>
           </div>
-          <!-----Choose tassels---->
-          <div class = "choose_tassels py-2">
-            <h6 class = "mb-1">Choose Tassels</h6>
-            <ul class = "d-flex gap-4">
-              <li>
-                <input type="radio" id="test1" name="radio-group" checked>
-                <label for="test1">Tassels</label>
-              </li>
-              <li>
-                <input type="radio" id="test2" name="radio-group">
-                <label for="test2">No Tassels</label>
-              </li>
-            </ul>
-          </div>
 
-         
+
           <!-----Product Variation End---->
           <div class = 'text-center'>
             <button class = "btn blue-btn" (click)="addtoCart()" [disabled]="!variationValidation">Add to Cart</button>
