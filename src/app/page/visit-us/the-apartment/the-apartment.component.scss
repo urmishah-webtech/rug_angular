@@ -21,7 +21,7 @@ h2{
 #apartment-banner{
 	padding-top: 10rem;
     padding-bottom: 10rem;
-    background: linear-gradient(-45deg, #38494dcc, #38494dcc), url("/assets/img/visit/studio-banner1.jpg");
+    background: linear-gradient(-45deg, #38494d99, #38494d99), url("/assets/img/visit/studio-banner1.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 	background-position: center;
@@ -30,19 +30,19 @@ h2{
 
 	@keyframes change {
 		0%{
-			background-image:  linear-gradient(-45deg, #38494dcc, #38494dcc),url("/assets/img/visit/studio-banner1.jpg");
+			background-image:  linear-gradient(-45deg, #38494d99, #38494d99),url("/assets/img/visit/studio-banner1.jpg");
 		}
 		25%{
-			background-image:  linear-gradient(-45deg, #38494dcc, #38494dcc),url("/assets/img/visit/studio-banner2.jpg");
+			background-image:  linear-gradient(-45deg, #38494d99, #38494d99),url("/assets/img/visit/studio-banner2.jpg");
 		}
 		50%{
-			background-image:  linear-gradient(-45deg, #38494dcc, #38494dcc),url("/assets/img/visit/studio-banner3.jpg");
+			background-image:  linear-gradient(-45deg, #38494d99, #38494d99),url("/assets/img/visit/studio-banner3.jpg");
 		}
 		75%{
-			background-image:  linear-gradient(-45deg, #38494dcc, #38494dcc),url("/assets/img/visit/studio-banner4.jpg");
+			background-image:  linear-gradient(-45deg, #38494d99, #38494d99),url("/assets/img/visit/studio-banner4.jpg");
 		}
 		100%{
-			background-image:  linear-gradient(-45deg, #38494dcc, #38494dcc),url("/assets/img/visit/studio-banner5.jpg");
+			background-image:  linear-gradient(-45deg, #38494d99, #38494d99),url("/assets/img/visit/studio-banner5.jpg");
 		}
 		
 	}
@@ -102,6 +102,7 @@ h2{
     background:linear-gradient(154deg, #e7e3dc 50%, #fff 0);
     .col2{
       padding-top: 10rem;
+      padding-left: 2rem;
 
       p{
         padding-top: 1rem;
@@ -172,6 +173,8 @@ h2{
 
 	.col2{
 		padding-top: 10rem;
+        text-align: right;
+        padding-right: 2rem;
         p{
             padding-top: 1rem;
         }
@@ -281,15 +284,19 @@ h2{
 	.col2{
 		padding-top: 10rem;
         text-align: center;
+        h2{
+            text-transform: capitalize;
+            &:after{
+                left: calc(48% - 20px);
+                
+            }	
+        }
+        p{
+            padding-top: 1rem;
+        }
 	}
 			
-	h2{
-		text-transform: capitalize;
-        &:after{
-            left: calc(48% - 20px);
-            
-        }	
-	}
+	
 	.apartment-img{
         overflow: hidden;
         position: relative;
@@ -348,13 +355,14 @@ h2{
     background-repeat: no-repeat;
 }
 /**============(Studio Section8)===========**/
-#studio-section8{
+#apartment-section8{
 	background:#f0f0f0;
 	
 	.col2{
 		padding-top: 5rem;
+        padding-left: 2rem;
         p{
-            padding:1rem;
+            padding-top:1rem;
         }
         h2{
             text-transform: capitalize;    
@@ -389,7 +397,7 @@ h2{
 		img{
 			width: 100%;
 			object-fit: cover;
-			height: 480px;
+			height: 100%;
 		}
 		
 	}
@@ -404,14 +412,16 @@ h2{
 
 /**==========++++++(Responsive SCSS)++++++++++============*/
 @media(max-width:991px) {
-   p{
-       font-size: 16px;
-       line-height:24px;
+   h2{
+       &:after{
+        margin-top: 5px
+       }
    }
     #apartment-section2{
         .col2{
             padding-top: 0rem;
             text-align: left;
+            padding-left: 0rem;
     
             h2{
                 &:after{
@@ -427,11 +437,15 @@ h2{
     #apartment-section3{
         .col2{
             padding-top: 0rem;
-
+            padding-left: 0rem;
+            text-align: left;
             h2{
                 &:after{
                     left: 0;
                 }
+            }
+            p{
+                padding-top: 0.5rem;
             }
         }
         
@@ -451,6 +465,20 @@ h2{
         .col2{
             padding-top: 0rem;
             text-align: center;
+
+            p{
+                padding-top: 0.5rem;
+            }
+        }
+    }
+
+    #apartment-section8{
+        .col2{
+            padding-left: 0rem;
+
+            p{
+                padding-top: 0.5rem;
+            }
         }
     }
         
@@ -459,7 +487,7 @@ h2{
 @media(max-width:768px) {
     p{
         font-size: 16px;
-        line-height: 24px;
+        line-height:24px;
     }
     #apartment-banner{
             padding-top: 8rem;
@@ -478,12 +506,16 @@ h2{
         bottom: -15px;
     }
 
-    #studio-section8 
+    #apartment-section8 
     .col2{
         padding-top: 1rem;
     }
     button{
         width: 250px;
+    }
+
+    #apartment-section6{
+        height: 700px;
     }
         
 }
