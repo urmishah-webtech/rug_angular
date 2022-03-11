@@ -253,11 +253,11 @@ h2{
 
 /*********Section5 SCSS*********/
 #story-section5{
-    background-image:url("/assets/img/our-story/story6.jpg");
+    background-image:linear-gradient(#ffffff59 0 , #0000 100%),url("/assets/img/our-story/story6.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    height:1000px;
-    background-position: bottom;
+    height: 600px;
+    background-position: top;
 
     .container{
         max-width: 700px !important;
@@ -329,7 +329,7 @@ h2{
         }
     }
     #story-section5{
-        height: 800px;
+        height: 600px;
     }
 }
     
@@ -344,7 +344,7 @@ h2{
       }
     
       #story-section5{
-          height: 600px;
+          height: 500px;
       }
       #story-section3{
           padding:4rem 0rem; 

@@ -369,7 +369,14 @@ h2{
         }
 	}
 	
-	.studio-img{
+	
+	button{
+		width: 300px;
+		padding:2rem 1rem;
+		margin-left: 0rem;
+	  }
+    
+      .apartment-img{
 		text-align: center;
 		overflow: hidden;
 		position: relative;
@@ -396,17 +403,161 @@ h2{
 
 		img{
 			width: 100%;
-			object-fit: cover;
 			height: 100%;
+			object-fit: cover;
 		}
 		
 	}
-	button{
-		width: 300px;
-		padding:2rem 1rem;
-		margin-left: 0rem;
-	  }
 }
+
+/******Request Modal SCSS****/
+.modal-content{
+    background-color:  #f6f5f3;
+
+    .modal-body{
+      height: 450px;
+      overflow-y: scroll;
+        &::-webkit-scrollbar-track
+      {
+	      -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.2);
+			border-radius: 10px;
+			background-color: #e7e3dc;
+       }
+
+ &::-webkit-scrollbar
+    {
+       width: 10px;
+       background-color: #e7e3dc;
+    }
+
+&::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: #627b80;
+}
+        h2{
+            &:after{
+                left: calc(50% - 20px);
+            }
+        }
+        [type="radio"] {
+            &:checked {
+                position: absolute;
+                left: -9999px;
+                + {
+                    label {
+                        position: relative;
+                        padding-left: 35px;
+                        cursor: pointer;
+                        line-height: 26px;
+                        display: inline-block;
+                        color: #000;
+                        &:before {
+                            content: "";
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            width: 25px;
+                            height: 25px;
+                            border: 1px solid #000;
+                            background: #fff;
+                        }
+                        &:after {
+                            content: " ";
+                            position: absolute;
+                            left: 9px;
+                            top: 4px;
+                            width: 8px;
+                            height: 15px;
+                            border: solid #627b80;
+                            border-width: 0 3px 3px 0;
+                            transform: rotate(50deg) !important;
+                            opacity: 1;
+                            transform: scale(1);
+                        }
+                    }
+                }
+            }
+            &:not(:checked) {
+                position: absolute;
+                left: -9999px;
+                + {
+                    label {
+                        position: relative;
+                        padding-left: 35px;
+                        cursor: pointer;
+                        line-height: 26px;
+                        display: inline-block;
+                        color: #000;
+                        &:before {
+                            content: '';
+                            content: "";
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            width: 25px;
+                            height: 25px;
+                            border: 1px solid #000;
+                            background: #fff;
+                        }
+                        &:after {
+                            content: '';
+                            position: absolute;
+                            left: 9px;
+                            top: 4px;
+                            width: 8px;
+                            height: 15px;
+                            border: solid #627b80;
+                            border-width: 0 3px 3px 0;
+                            transform: rotate(50deg) !important;
+                            opacity: 0;
+                            -webkit-transform: scale(0);
+                            transform: scale(0);
+                        }
+                    }
+                }
+            }
+        }
+        .request_checkbox{
+            padding:0rem 1rem;
+        }
+
+        .request_form{
+            padding:0rem 1rem;
+        }
+    
+        form {
+            .form-label{
+                margin-bottom: 0.3rem;
+            }
+            input{
+                height: 40px;
+            
+            }
+
+            button{
+                padding: 1rem;
+
+                &:hover{
+                    transform: translateX(10px);
+                }
+            }
+        }
+    
+    }
+
+    p{
+        
+        a{
+            text-decoration: underline;
+            font-weight: 600;
+            
+        }
+    }
+
+
+}
+
 
 
 
@@ -506,13 +657,30 @@ h2{
         bottom: -15px;
     }
 
-    #apartment-section8 
-    .col2{
-        padding-top: 1rem;
+    #apartment-section8 {
+        .col2{
+            padding-top: 1rem;
+        }
+        .blue-btn{
+            width: 250px;
+        }
     }
-    button{
-        width: 250px;
-    }
+  .modal-content{
+      .modal-body{
+        
+        .request_checkbox{
+            padding:0rem 0.5rem;
+        }
+        .request_form {
+           padding:0rem 0.5rem;
+            .blue-btn{
+                width: 180px;
+            }
+        }
+      }
+  }
+   
+    
 
     #apartment-section6{
         height: 700px;
@@ -534,8 +702,27 @@ h2{
         padding-top: 4rem;
         padding-bottom: 4rem;
     }
+
+    .modal-content{
+        .modal-body{
+          
+          .request_checkbox{
+             .col-6{
+                 padding-top: 5px;
+                 width: 100%;
+             }
+          }
+        }
+    }
     
 }
 @media(max-width:360px) {
         
+}
+
+
+@media(min-width:576px){
+    .modal-dialog{
+        max-width: 550px !important;
+    }
 }

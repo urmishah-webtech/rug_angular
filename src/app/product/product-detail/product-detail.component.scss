@@ -24,13 +24,11 @@
     text-align: center;
     cursor:pointer;
     overflow: hidden;
-    transition: linear 0.3s;
     color: #000;
 }
 
 .size_radio input[type="radio"]:checked + label {
     border:  2px solid #000;
-    transition: 0.3s;
     color:#000;
 }
 

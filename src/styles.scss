@@ -425,8 +425,15 @@ hr{
 	}
 	svg {
 		margin-right: 10px;
-		width: 20px;
-		height: 20px;
+		width: 25px;
+		height: 25px;
+		path{
+			fill: #627b80;
+		}
+
+		rect{
+			fill: #627b80;;
+		}
 	}
 	.contact_details h6{
     padding-top: 0.5rem;
@@ -2585,6 +2592,7 @@ border-bottom: 1px solid #e8e4dd;
 
     .row{
 		padding-left: 2rem;
+		padding-top: 2rem;
 	}
 	ul{
 		padding-left: 2rem !important;
@@ -2737,6 +2745,20 @@ border-bottom: 1px solid #e8e4dd;
 	#cart-section .col-lg-7{
 		border:none;
 	}
+	#privacy_section{
+	.row{
+		padding-left: 0rem;
+		padding-top: 2rem;
+	}
+
+    }
+
+	#terms_section{
+		ul {
+			padding-left: 0rem !important;
+		}
+	} 
+	
 
   }
 
@@ -2853,9 +2875,51 @@ border-bottom: 1px solid #e8e4dd;
 	} 
   }
 
-
-
+  #terms_banner{
+	  padding-top: 6rem;
+	  padding-bottom: 6rem;
   }
+
+  #privacy_banner{
+	padding-top: 6rem;
+	padding-bottom: 6rem;
+  }
+
+  #faq-section {
+	.col-lg-9.col-md-9.col-12{
+		padding-top: 1rem;
+	}
+	.question{
+		float: left;
+		margin:8px 3px;
+	}
+
+	.answer {
+		padding-left: 0rem;
+	}
+  }
+  #product_list_banner{
+	  padding-top: 6rem;
+	  padding-bottom: 6rem;
+  }
+
+
+
+footer {
+	.top-footer {
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+		.col-lg-3.col-md-6.col-12 {
+			&:first-child {
+				width: 100%;
+			}
+			width: 100%;
+			padding: 12px;
+		}
+	}
+}
+  
+}
 
   @media(max-width:576px) {
 	h1, .h1 {
@@ -2882,17 +2946,7 @@ border-bottom: 1px solid #e8e4dd;
 		font-size: 16px !important;
 		line-height: 23px !important;
 	  }
-	  footer {
-		.top-footer {
-			.col-lg-3.col-md-6.col-sm-6.col-12 {
-				&:first-child {
-					width: 100%;
-				}
-				width: 100%;
-				padding: 16px 12px;
-			}
-		}
-	}
+	 
 
 	#banner-section {
 		padding-top: 6rem;
@@ -2995,8 +3049,21 @@ border-bottom: 1px solid #e8e4dd;
 		.right_arrow{
 			right: 10px;
 		}
-	}	
+	}
+	
+	#terms_banner{
+		padding-top: 4rem;
+		padding-bottom: 4rem;
+	}
 
+	#privacy_banner{
+		padding-top: 4rem;
+		padding-bottom: 4rem;
+	  }
+	  #product_list_banner{
+		padding-top: 4rem;
+		padding-bottom: 4rem;
+	}
 
   }
 
