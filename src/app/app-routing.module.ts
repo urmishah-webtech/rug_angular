@@ -20,6 +20,7 @@ import { PrivacyPolicyComponent } from './page/privacy-policy/privacy-policy.com
 import { TheStudioComponent } from './page/visit-us/the-studio/the-studio.component';
 import { TheApartmentComponent } from './page/visit-us/the-apartment/the-apartment.component';
 import { OurStoryComponent } from './page/our-story/our-story.component';
+import { OurProcessComponent } from './page/our-process/our-process.component';
 
 
 const routes: Routes = [
@@ -48,6 +49,7 @@ const routes: Routes = [
     {path: 'visit/studio', component: TheStudioComponent},
     {path: 'visit/apartment', component: TheApartmentComponent},
     {path: 'our-story', component: OurStoryComponent},
+    {path: 'our-process', component: OurProcessComponent},
     {path: 'thankyou', component: ThankyouComponent, canActivate: [AuthGuard]},
     {path: 'account/order-history', component: ThankyouComponent, canActivate: [AuthGuard]},
     {path: '**', component:NodataComponent}

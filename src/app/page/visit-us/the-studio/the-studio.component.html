@@ -4,7 +4,7 @@
       <div class = "text-center">
         <h1 class = "mb-0">The Studio, Marrakech</h1>
         <h6 class = " mb-0">Rug shopping, reimagined. Witness how Moroccan rugs are woven and washed, design your own, and top it all off with an espresso (or rosé) from our Milan-inspired bar.</h6>
-        <button type = "button" class= "btn black-btn">Request Appointment</button>  
+        <button type = "button" class= "btn black-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Request Appointment</button>  
     </div>
     </div>
 </section>
@@ -277,3 +277,86 @@
 <!----------------(Studio-section8 Start)---------------->
 <hr class = "section_hr">
 
+ <!-- Request Appointment Modal -->
+ <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class = "p-0 text-end">
+        <button type="button" class="close btn" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="19" height="17" viewBox="0 0 19 17">
+              <g fill="none" fill-rule="evenodd" stroke="#1B2121" stroke-linecap="square">
+                <path d="M1.472 16.528L17.528.472M17.528 16.528L1.472.472"></path>
+              </g>
+            </svg></span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <div class = "text-center">
+              <h2  id="exampleModalLabel">Request an Appointment</h2>
+              <h6>See Beni for yourself</h6>
+          </div>
+          <div class ="row request_checkbox mt-4">
+              <div class = "col-6">
+                    <div>
+                      <input type="radio" id="test1" name="radio-group" checked>
+                      <label for="test1">The Studio, Marrakech</label>
+                    </div>
+              </div>
+              <div class = "col-6">
+                  <div>
+                      <input type="radio" id="test2" name="radio-group">
+                      <label for="test2">The Apartment, NYC</label>
+                    </div>
+              </div>
+          </div>
+          <div class = "request_form mt-3">
+              <form>
+                  <div class = "row">
+                      <div class = "col-6 pt-3">
+                          <div class = "form-group">
+                              <label for="exampleFormControlInput1" class="form-label">First Name</label>
+                              <input type="text" class="form-control" placeholder="John" name = "firstname"  id="exampleFormControlInput1" >
+                          </div>
+                      </div>
+                      <div class = "col-6 pt-3">
+                          <div class = "form-group">
+                              <label class="form-label">Last Name</label>
+                              <input type="text" class="form-control" placeholder="doe" name = "lastname">
+                          </div>
+                      </div>
+                      <div class = "col-6 pt-3">
+                          <div class = "form-group">
+                              <label class="form-label">Email</label>
+                            <input type="email" class="form-control" name = "email"   aria-describedby="emailHelp" placeholder="lorem123@gmail.com">
+                          </div>
+                      </div>
+                      <div class = "col-6 pt-3">
+                          <div class = "form-group">
+                              <label class="form-label">Mobile</label>
+                              <input type="text" class="form-control" placeholder="1234567890" name = "firstname"  >
+                          </div>
+                      </div>
+                      <div class = "col-12 pt-3">
+                          <div class="form-group">
+                              <label class="form-label">Comments</label>
+                              <textarea class="form-control"  name = "textarea" placeholder = "Type your message here!" rows="3" ></textarea>
+                            </div>
+                      </div>
+
+                  </div>
+                  <div class = "my-3 text-center">
+                      <button type = "submit" class="btn blue-btn">Send Enquiry</button>
+                  </div>
+              </form>
+              
+          </div>
+         
+      </div>
+      <div class = "text-center p-2">
+          <p class = "mb-1">
+              If you have any questions, email us at<br> <a href = "#">nyc@benirugs.com</a> or <a href = "#">marrakech@benirugs.com.</a>
+          </p>
+      </div>  
+    </div>
+  </div>
+</div>

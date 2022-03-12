@@ -1,12 +1,65 @@
-.form-control{
-    padding: 5px 10px;
-    background-color: DodgerBlue;
-    color: white;
-    border-color: black;
-    width: 100px;
-    height: 30px;
-  }
-  option:hover{
-    background-color: white;
-    color: dodgerblue;
-  }
+/***=============(Privacy Policy SCSS)=========***/
+#privacy_banner{
+	background-image: linear-gradient(-45deg, rgba(56, 73, 77, 0.5), rgba(56, 73, 77, 0.5)),url(/assets/img/product/banner1.jpg);
+    padding-top: 8rem;
+	padding-bottom: 8rem;
+
+	h2{
+		color: #fff;
+	}
+
+}
+
+#privacy_section{
+	background: linear-gradient(160deg , #e7e3dc 10%,#fff 10%,#fff 20%,#e7e3dc 20%,#e7e3dc 30%,#fff 30% , #fff 40% ,#e7e3dc 40% , #e7e3dc 50%,#fff 50% , #fff 60% ,#e7e3dc 60% , #e7e3dc 70%,#fff 70% , #fff 80% ,#e7e3dc 80% , #e7e3dc 90%,#fff 90% , #fff 100%);
+
+    .row{
+		padding-left: 2rem;
+		padding-top: 2rem;
+	}
+	ul{
+		padding-left: 2rem !important;
+		li{
+			list-style: outside;
+			padding:0.2rem 0rem;
+		}
+	}
+	h2{
+		&:after{
+			content: "";
+            position: relative;
+            display: block;
+            width: 40px;
+            height: 3px;
+            background: #627b80;
+            bottom: 0;
+            margin-top: 5px;
+		}
+	}
+
+	h6{
+		font-size: 18px !important;
+		font-weight: 600 !important;
+		margin-top: 2rem !important;
+	}
+	p{
+		font-size: 14px;
+		line-height: 21px;
+
+		a{
+			font-weight: 600;
+			text-decoration: underline;
+			color: #627b80 !important;
+		}
+
+	}
+	span {
+		font-size: 14px;
+		color: #000;
+		font-weight: 600;
+	}
+
+	.category_list li{
+		list-style: inherit;
+	}
+}
