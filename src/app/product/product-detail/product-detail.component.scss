@@ -2,33 +2,47 @@
     transform: rotate(90deg);
 }
 
-.size_radio{
-    display: contents;  
+.varient_label{
+    display: block;
+    margin-right: 10px;
+    margin-top: 6px;
+}
+.sizes{
+    margin: 0.5rem;
+    margin-left: 0rem;
+  display: flow-root;
 }
 
-.size_radio .varients{
+.size_list{
     float: left;
     width: auto;
+    margin: 3px;
     position: relative;
-}
-.size_radio input[type="radio"] {
-    appearance: none;
-    display: none;
+
+    label{
+        padding: 4px 10px;
+    }
 }
 
-.size_radio label {
-    margin:3px;
-    border:  1px solid #000;
-    padding:0.5rem 1rem;
-    height: 40px;
-    text-align: center;
-    cursor:pointer;
-    overflow: hidden;
-    color: #000;
+.preview input {
+    position: absolute;
+	width:100%;
+	appearance: none;
+	outline: none;
+	cursor: pointer;
+	background:transparent;
+	color: #bdbdbdbd;
+    border:1px solid #000 !important;
+	transition: all 100ms linear;
 }
 
-.size_radio input[type="radio"]:checked + label {
-    border:  2px solid #000;
-    color:#000;
+.preview input:checked {
+	border: 2px solid #000 !important;
 }
 
+.preview input:before {
+	content: attr(label);
+	display: inline-block;
+	text-align: center;
+	width: 100%;
+}
