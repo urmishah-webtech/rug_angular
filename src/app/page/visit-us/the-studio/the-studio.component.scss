@@ -452,7 +452,7 @@ h2{
 	background:#f6f5f3;
 	
 	.col2{
-		padding-top: 6rem;
+		padding-top: 8rem;
 		padding-left: 2rem;
 	}
 	h2{
@@ -517,7 +517,7 @@ h2{
 
  &::-webkit-scrollbar
     {
-       width: 10px;
+       width: 12px;
        background-color: #e7e3dc;
     }
 
@@ -805,6 +805,13 @@ p{
   }
 
   @media(max-width:360px) {
+
+	#studio-slider{
+		.box{
+          margin: 0.2rem;
+		  box-shadow: unset;
+		}
+	}
 	
   }
 

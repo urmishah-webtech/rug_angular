@@ -40,6 +40,14 @@ export class TheStudioComponent implements OnInit {
           "centerPadding": '70px',
           "slidesToShow": 1
         }
+      },
+      {
+        breakpoint: 360,
+        settings: {
+          "arrows": true,
+          "centerPadding": '40px',
+          "slidesToShow": 1
+        }
       }
     ]
  
