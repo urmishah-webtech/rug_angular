@@ -21,6 +21,7 @@ import { TheStudioComponent } from './page/visit-us/the-studio/the-studio.compon
 import { TheApartmentComponent } from './page/visit-us/the-apartment/the-apartment.component';
 import { OurStoryComponent } from './page/our-story/our-story.component';
 import { OurProcessComponent } from './page/our-process/our-process.component';
+import { CartGuard } from './cart/cartGuard';
 
 
 const routes: Routes = [
@@ -28,7 +29,7 @@ const routes: Routes = [
     {path: 'contact', component: ContactComponent},
     {path: 'footer', component: FooterContactComponent},
     {path: 'cart', component: CartComponent},
-    {path: 'checkout', component: CheckoutComponent, canActivate: [AuthGuard]},
+    {path: 'checkout', component: CheckoutComponent, canActivate: [AuthGuard, CartGuard]},
     // {
     //   path: 'pages',
     //   children: [

@@ -74,7 +74,7 @@ export class ProductDetailComponent implements OnInit  {
       data => {
         this.productVariation = data;
         console.log(this.productVariation.data)
-        this.variantTag = this.productVariation.varianttag
+        this.variantTag = this.productVariation.data[0].detail[0].title
         console.log(this.variantTag)
       }
     )
@@ -89,16 +89,11 @@ export class ProductDetailComponent implements OnInit  {
     let varient3 = this.variantForm.value.variant3;
     let varient4 = this.variantForm.value.variant4;
     let tassels = this.variantForm.value.tassels
-    // if(this.productVariation.data[0].varient2 != null){
-    //   varient2 = this.varient2.nativeElement.value
-    // }else {
-    //   varient2 = '';
-    // }
-    console.log(varient1)
-    console.log(varient2)
-    console.log(varient3)
-    console.log(varient4)
-    if(varient1 != '' || varient2 != '' || varient3 != ''){
+    // console.log(varient1)
+    // console.log(varient2)
+    // console.log(varient3)
+    // console.log(varient4)
+    if(varient1 != '' || varient2 != '' || varient3 != '' || varient4 != ''){
       this.variationValidation = true;
     }
     let variation = {

@@ -1,48 +1,44 @@
-.rotate {
-    transform: rotate(90deg);
-}
-
 .varient_label{
-    display: block;
-    margin-right: 10px;
-    margin-top: 6px;
+  display: block;
+  margin-right: 10px;
+  margin-top: 6px;
 }
 .sizes{
-    margin: 0.5rem;
-    margin-left: 0rem;
-  display: flow-root;
+  margin: 0.5rem;
+  margin-left: 0rem;
+display: flow-root;
 }
 
 .size_list{
-    float: left;
-    width: auto;
-    margin: 3px;
-    position: relative;
+  float: left;
+  width: auto;
+  margin: 3px;
+  position: relative;
 
-    label{
-        padding: 4px 10px;
-    }
+  label{
+      padding: 4px 10px;
+  }
 }
 
 .preview input {
-    position: absolute;
-	width:100%;
-	appearance: none;
-	outline: none;
-	cursor: pointer;
-	background:transparent;
-	color: #bdbdbdbd;
-    border:1px solid #000 !important;
-	transition: all 100ms linear;
+  position: absolute;
+width:100%;
+appearance: none;
+outline: none;
+cursor: pointer;
+background:transparent;
+color: #bdbdbdbd;
+  border:1px solid #000 !important;
+transition: all 100ms linear;
 }
 
 .preview input:checked {
-	border: 2px solid #000 !important;
+border: 2px solid #000 !important;
 }
 
 .preview input:before {
-	content: attr(label);
-	display: inline-block;
-	text-align: center;
-	width: 100%;
+content: attr(label);
+display: inline-block;
+text-align: center;
+width: 100%;
 }
