@@ -3,7 +3,6 @@ p{
     font-size: 18px;
     line-height: 28px;
 }
-
 h2{
     &:after{
         content: "";
@@ -17,122 +16,74 @@ h2{
         margin-top: 10px;
     }
 }
-
+.card {
+    position: relative;
+    transition: transform 4s ease-in;
+    overflow: hidden;
+    border: unset !important;
+    border-radius: 0px !important;
+    img {
+        width: 100%;
+        height: 100%;
+        transition: transform 1s ease-in;
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+    &:before {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "";
+        transform: translateY(-100%);
+        background-color: rgba(188, 143, 143, 0.137);
+        transition: transform .4s ease-in;
+        border: 2px solid white;
+    }
+    &:after {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: " ";
+        transform: translateY(100%);
+        background-color: rgba(188, 143, 143, 0.137);
+        transition: transform .4s ease-in;
+        border: 2px solid white;
+    }
+    &:hover {
+        &::before {
+            transform: translateY(0%);
+        }
+        &::after {
+            transform: translateY(0%);
+        }
+    }
+}
 /*******Banner SCSS*********/
 #story-banner{
 	background-image: linear-gradient(-45deg, #38494d99, #38494d99),url("/assets/img/product/banner1.jpg");
-	padding-top: 8rem;
-    padding-bottom: 8rem;
-
-    h1{
-        color: #fff;
-    }
-
-
+	padding: 8rem 0rem;
 }
-
 /*******Section1 SCSS*********/
-#story-section1{
-	background: linear-gradient(180deg ,#e7e3dc 50% , #fff 0);
-
-	&:hover{
-		background: linear-gradient(180deg ,#fff 50% , #e7e3dc 0);
-		.container{
-			.box{
-				background: linear-gradient(180deg, #e7e3dc 50% , #fff 0 );
-			}
-		}
-		
-	}
-	
-	.container{
-		max-width: 700px !important;
-		width: 100%;
-
-		.box{
-			background: linear-gradient(180deg, #fff 50% , #e7e3dc 0 );
-            padding: 3rem;
-
-            h2{
-                text-transform: capitalize;
-                &:after{  
-                    left: calc(48% - 20px);
-                }
-            }
-
-		}
-	}
-}
 
 /**********Section2 SCSS********/
 #story-section2{
-
     .col2{
-        padding-top: 8rem;
-        padding-left: 2rem;
-
+        padding: 8rem 0rem 0rem 2rem;
         button{
             margin-left: 0rem;
         }
-    }
-
-    .card {
-        position: relative;
-        transition: transform 4s ease-in;
-        overflow: hidden;
-        border: unset !important;
-        border-radius: 0px !important;
-        img {
-            width: 100%;
-            height: 100%;
-            transition: transform 1s ease-in;
-            &:hover {
-                transform: scale(1.2);
-            }
-        }
-        &:before {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            content: "";
-            transform: translateY(-100%);
-            background-color: rgba(188, 143, 143, 0.137);
-            transition: transform .4s ease-in;
-            border: 2px solid white;
-        }
-        &:after {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            content: " ";
-            transform: translateY(100%);
-            background-color: rgba(188, 143, 143, 0.137);
-            transition: transform .4s ease-in;
-            border: 2px solid white;
-        }
-        &:hover {
-            &::before {
-                transform: translateY(0%);
-            }
-            &::after {
-                transform: translateY(0%);
-            }
-        }
-    }
+    }  
 }
-
 /*******Section3 SCSS********/ 
-
 #story-section3{
-    padding: 7rem 0rem;
     background:linear-gradient(-45deg, #38494d99, #38494d99), url('/assets/img/our-story/story2.jpg') no-repeat 0% 0px, url('/assets/img/our-story/story3.jpg') no-repeat 50% 0px, url('/assets/img/our-story/story4.jpg') no-repeat 100% 0px;
     background-size: contain;
     animation: change 10s infinite ease-in-out;
-
     @keyframes change {
 		0%{
             background:linear-gradient(-45deg, #38494d99, #38494d99), url('/assets/img/our-story/story2.jpg') no-repeat 0% 0px, url('/assets/img/our-story/story3.jpg') no-repeat 50% 0px, url('/assets/img/our-story/story4.jpg') no-repeat 100% 0px;
@@ -142,115 +93,40 @@ h2{
 		}
 		100%{
             background:linear-gradient(-45deg, #38494d99, #38494d99), url('/assets/img/our-story/story4.jpg') no-repeat 0% 0px, url('/assets/img/our-story/story2.jpg') no-repeat 50% 0px, url('/assets/img/our-story/story3.jpg') no-repeat 100% 0px;
-		}
-		
-
+		}	
 	}
-
     .container{
      max-width: 700px !important;
-
      .box{
         padding: 4rem;
          background: #38494d99;
          clip-path: polygon(100% 0%, 90% 100%, 50% 100%, 0% 100%, 10% 0);
-
          h2{
-             color: #fff;
-
              &:after{
                  background-color: #e7e3dc;
                  left:calc(50% - 20px);
              }
          }
-
-         p{
-             color: #fff;
-         }
-
          button{
-             color: #fff;
-
              &:hover{
                  color: #fff !important;
              }
          }
      }
-    }   
+ }   
 }
-
-
 /**********Section4 SCSS********/
 #story-section4{
-
     .col1{
-        padding-top: 10rem;
+        padding: 10rem 2rem 0rem 0rem;
         text-align: right;
-        padding-right: 2rem;
-    
-     
     h2{
         &:after{
             left: calc(100% - 45px);
         }
     }
-
-        button{
-            margin-left: 0rem;
-        }
-    }
-
-    .card {
-        position: relative;
-        transition: transform 4s ease-in;
-        overflow: hidden;
-        border: unset !important;
-        border-radius: 0px !important;
-        img {
-            width: 100%;
-            height: 100%;
-            transition: transform 1s ease-in;
-            &:hover {
-                transform: scale(1.2);
-            }
-        }
-        &:before {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            content: "";
-            transform: translateY(-100%);
-            background-color: rgba(188, 143, 143, 0.137);
-            transition: transform .4s ease-in;
-            border: 2px solid white;
-        }
-        &:after {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            content: " ";
-            transform: translateY(100%);
-            background-color: rgba(188, 143, 143, 0.137);
-            transition: transform .4s ease-in;
-            border: 2px solid white;
-        }
-        &:hover {
-            &::before {
-                transform: translateY(0%);
-            }
-            &::after {
-                transform: translateY(0%);
-            }
-        }
-    }
-    
-    
+  }      
 }
-
 /*********Section5 SCSS*********/
 #story-section5{
     background-image:linear-gradient(#ffffff59 0 , #0000 100%),url("/assets/img/our-story/story6.jpg");
@@ -258,10 +134,8 @@ h2{
     background-size: cover;
     height: 600px;
     background-position: top;
-
     .container{
         max-width: 800px !important;
-
         .box{
             text-align: center;
             h2{
@@ -272,15 +146,11 @@ h2{
         }
     }
 }
-
-
-
-
 /**==========++++++(Responsive SCSS)++++++++++============*/
 @media(max-width:991px) {
     h2{
         &:after{
-         margin-top: 5px
+         margin-top: 5px;
         }
     }
     #story-section2{
@@ -289,13 +159,7 @@ h2{
         }
     }
     #story-section3{
-        padding: 7rem 0rem;
-        background:linear-gradient(-45deg, #38494d99, #38494d99),  url('/assets/img/our-story/story4.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
         animation: change 10s infinite ease-in-out;
-        
-    
         @keyframes change {
             0%{
                 background:linear-gradient(-45deg, #38494d99, #38494d99), url('/assets/img/our-story/story4.jpg');
@@ -312,15 +176,12 @@ h2{
                 background-size: cover;
                 background-repeat: no-repeat;
             }
-            
-    
         }
     }
     #story-section4{
         .col1{
             text-align: left;
             padding: 0rem 0rem 1rem 0rem;
-
             h2{
                 &:after{
                     left: 0;
@@ -331,18 +192,15 @@ h2{
     #story-section5{
         height: 600px;
     }
-}
-    
+}   
 @media(max-width:768px) {
     p{
       font-size: 16px;
       line-height: 24px;
     }
     #story-banner{
-        padding-top: 6rem;
-        padding-bottom: 6rem;
+        padding: 6rem 0rem;    
       }
-    
       #story-section5{
           height: 500px;
       }
@@ -350,20 +208,15 @@ h2{
           padding:4rem 0rem; 
         .container{
             .box{
-                padding:1.5rem 3rem;
+                padding:1.5rem;
             }
         }
-
-    }    
-        
-}
-    
+    }          
+}   
 @media(max-width:576px) {
     #story-banner{
-        padding-top: 4rem;
-        padding-bottom: 4rem;
+        padding: 4rem 0rem;
     }
-
     #story-section1{
         .container{
             .box{
@@ -371,22 +224,7 @@ h2{
                img{
                    width: 200px;
                }
-   
            }
-        }
-
-        
-       
-    }
-       
+        }   
+    }      
 }
-    
-@media(max-width:470px) {	
-
-}
-    
-@media(max-width:360px) {
-        
-}
-    
-    

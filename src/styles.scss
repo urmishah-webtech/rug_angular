@@ -262,7 +262,87 @@ hr{
 	height: 100%;
 }
 
+.radio_checkbox{
 
+	[type="radio"] {
+		&:checked {
+		  position:absolute;
+		  left:-9999px;
+		  + {
+			label {
+			  position:relative;
+			  padding-left:35px;
+			  cursor:pointer;
+			  line-height:26px;
+			  display:inline-block;
+			  color:#000;
+			  &:before{
+				content:"";
+				position:absolute;
+				left:0;
+				top:0;
+				width:25px;
+				height:25px;
+				border:1px solid #000;
+				background:#fff;
+			  }
+			  &:after {
+				content: " ";
+				position:absolute;
+				left:9px;
+				top:4px;
+				width:8px;
+				height:15px;
+				border:solid #627b80;
+				border-width:0 3px 3px 0;
+				transform:rotate(50deg) !important;
+				opacity:1;
+				transform: scale(1);
+			  }
+			}
+		  }
+		}
+		&:not(:checked) {
+		  position: absolute;
+		  left: -9999px;
+		  + {
+			label {
+			  position: relative;
+			  padding-left: 35px;
+			  cursor: pointer;
+			  line-height: 26px;
+			  display: inline-block;
+			  color: #000;
+			  &:before {
+				content: "";
+				content: "";
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 25px;
+				height: 25px;
+				border: 1px solid #000;
+				background: #fff;
+			  }
+			  &:after {
+				content: "";
+				position: absolute;
+				left: 9px;
+				top: 4px;
+				width: 8px;
+				height: 15px;
+				border: solid #627b80;
+				border-width: 0 3px 3px 0;
+				transform: rotate(50deg) !important;
+				opacity: 0;
+				-webkit-transform: scale(0);
+				transform: scale(0);
+			  }
+			}
+		  }
+		}
+	  }
+}
 /*================(Main CSS Start)============*/
 /*************Page 404 CSS Starts**********/
 #page_404{
@@ -1229,7 +1309,7 @@ hr{
 	   }
    }
 
-   .col-md-3{
+   .col-lg-3.col-md-6.col-sm-6.col12{
 	margin-top: 0.75rem;
 	margin-bottom: 0.75rem;
   }
@@ -1241,8 +1321,7 @@ hr{
 	.img-container {
 		height: 600px !important;
 		background: transparent;
-
-			height: 100%;
+		height: 100%;
 		img{
 			width: 100%;
 			height: 100%;
@@ -1322,6 +1401,11 @@ hr{
 		}
 	}
 
+	h3{
+		margin-bottom: 0px;
+        padding-top: 7px;
+	}
+
 
 	.product-dropdown{
 		.dropdown{
@@ -1332,8 +1416,7 @@ hr{
 		}
 
 	}
-
-	.add_cart {
+  .add_cart {
 		background-color: #000;
 		padding: 16px;
 		font-size: 16px;
@@ -2670,6 +2753,167 @@ border-bottom: 1px solid #e8e4dd;
 	right: 25px;
 }
 
+/********Inner Section  Section1 SCSS************/
+.inner_sec1{
+	background: linear-gradient(180deg ,#e7e3dc 50% , #fff 0);
+	&:hover{
+		background: linear-gradient(180deg ,#fff 50% , #e7e3dc 0);
+		.container{
+			.box{
+				background: linear-gradient(180deg, #e7e3dc 50% , #fff 0 );
+			}
+		}	
+	}	
+	.container{
+		max-width: 700px !important;
+		width: 100%;
+		.box{
+			background: linear-gradient(180deg, #fff 50% , #e7e3dc 0 );
+            padding: 3rem;
+            h2{
+                text-transform: capitalize;
+                &:after{  
+                    left: calc(48% - 20px);
+                }
+            }
+		}
+	}
+}
+
+/***********Visit US Comman SCSS ************/
+.visit-img {
+	overflow: hidden;
+	position: relative;
+	img {
+	  width: 100%;
+	  height: auto;
+	  object-fit: cover;
+	}
+	&:before {
+	  content: "";
+	  width: 100%;
+	  height: 100%;
+	  background: linear-gradient(
+		45deg,
+		rgba(0, 0, 0, 0.3) 50%,
+		rgba(0, 0, 0, 0.6) 50%
+	  );
+	  position: absolute;
+	  top: -100%;
+	  left: 50%;
+	  opacity: 0;
+	  transform: translateX(-50%) rotate(45deg);
+	  transition: all 0.3s steps(4);
+	}
+	&:after {
+	  content: "";
+	  width: 100%;
+	  height: 100%;
+	  background: linear-gradient(45deg,rgba(0, 0, 0, 0.3) 50%,rgba(0, 0, 0, 0.6) 50%);
+	  position: absolute;
+	  top: -100%;
+	  left: 50%;
+	  opacity: 0;
+	  transform: translateX(-50%) rotate(45deg);
+	  transition: all 0.3s steps(4);
+	}
+	&:hover {
+	  &:before {
+		top: -70%;
+		opacity: 1;
+	  }
+	  &:after {
+		top: 70%;
+		opacity: 1;
+	  }
+	}
+  }
+  .visit-img1{
+	text-align: center;
+	overflow: hidden;
+	position: relative;
+	&:before{
+		content: "";
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.1);
+		background-image: linear-gradient(45deg, transparent 0%, #627b808c 100%);
+		background-size: 33.33% 33.33%;
+		position: absolute;
+		top: 0;
+		left: 50%;
+		opacity: 0;
+		transform: translateX(-50%) scale(0);
+		transition: transform 0.5s cubic-bezier(0.815, 1.650, 0.400, 0.680);
+	}
+	&:hover:before{
+		opacity: 1;
+		transform: translateX(-50%) scale(1);
+	}
+	img{
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+/******Request Modal SCSS****/
+#requestModal{
+	.modal-content {
+		background-color:#f6f5f3;
+		.modal-body {
+		  height: 450px;
+		  overflow-y: scroll;
+		  &::-webkit-scrollbar-track {
+			-webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.2);
+			border-radius: 10px;
+			background-color: #e7e3dc;
+		  }
+		  &::-webkit-scrollbar {
+			width: 12px;
+			background-color: #e7e3dc;
+		  }
+		  &::-webkit-scrollbar-thumb {
+			border-radius: 10px;
+			background-color: #627b80;
+		  }
+		  h2 {
+			&:after {
+			  left: calc(50% - 20px);
+			}
+		  }
+		  
+		
+		  .request_checkbox {
+			padding:0rem 1rem;	
+		  }
+		  .request_form {
+			padding:0rem 1rem;
+		  }
+		  form {
+			.form-label {
+			  margin-bottom:0.3rem;
+			}
+			input {
+			  height: 40px;
+			}
+			button {
+			  padding:1rem;
+	  
+			  &:hover {
+				transform:translateX(10px);
+			  }
+			}
+		  }
+		}
+		p {
+		  a {
+			text-decoration: underline;
+			font-weight:600;
+		  }
+		}
+	  }
+}
+
 
 /****=============(Responsive SCSS)============******/
 
@@ -2952,6 +3196,17 @@ footer {
 		}
 	}
 }
+
+#product-listing{
+	.col-md-6{
+		display: flex;
+		justify-content: center;
+
+		.card{
+			width: 260px;
+		}
+	}
+} 
   
 }
 
@@ -3264,10 +3519,16 @@ footer {
 				margin-top: 0rem;
 			}	
 		} 
-		#studio-slider .slick-arrow{
-			width: 25px;
-		}
+		#studio-slider{
+			.box {
+				margin: 0.2rem !important;
+				box-shadow: unset;
+			  }
 
+			  .slick-arrow{
+				width: 25px;
+			}
+		} 
   }
 
   @media (min-width: 768px) {
@@ -3283,7 +3544,11 @@ footer {
 
 
   @media (min-width: 576px) {
-
+	#requestModal{
+		.modal-dialog {
+			max-width: 550px !important;
+		  }
+	}
 
   }
 
