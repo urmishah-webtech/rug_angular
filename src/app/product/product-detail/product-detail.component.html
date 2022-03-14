@@ -99,39 +99,35 @@
                   <!-----Choose Size----->
             <div class="preview" *ngIf="productVariation != ''">
               <form [formGroup]="variantForm">
-               <div>
-              <!----  <div *ngIf="productVariation.attribute1 != '' && productVariation.attribute2[1].variantnumber != 41" class = "sizes">
-                  <label for="variant1" [ngSwitch]="productVariation.attribute1[1].variantnumber">
-                    <span *ngSwitchCase="variantTag"></span>
-                  </label>
-                  <div *ngFor="let varient1 of productVariation.attribute1[0]" class  ="size_list">
-                    <input type="radio"  value="{{varient1}}" name="variant1" formControlName="variant1" (change)="changeVariation()">
-                    <label for="varient1">{{varient1}}</label>
+                <div *ngIf="productVariation.attribute1 != '' && productVariation.attribute2[1].variantnumber != 41" class = "sizes">
+                  <label for="variant1">{{productVariation.attribute1[1].variant_tag}}</label>
+                  <div *ngFor="let varient1 of productVariation.attribute1[0]" class="size_list">
+                    <input type="radio" value="{{varient1}}" name="variant1" formControlName="variant1" (change)="changeVariation()">
+                    <label for="male">{{varient1}}</label>
                   </div>
-                </div>  -->
+                </div>
                 <div *ngIf="productVariation.attribute2[0] != '' && productVariation.attribute2[1].variantnumber != 41" class = "sizes">
-                  <label for="variant2"  class = "varient_label"><h6 class = "mb-1">Choose Colors:</h6></label>
-                  <div *ngFor="let varient2 of productVariation.attribute2[0]"class  ="size_list">
-                    <input type="radio"  checked   value="{{varient2}}" name="variant2" formControlName="variant2" (change)="changeVariation()">
-                    <label for="varient2">{{varient2}}</label>
+                  <label for="variant2">{{productVariation.attribute2[1].variant_tag}}:</label>
+                  <div *ngFor="let varient2 of productVariation.attribute2[0]" class="size_list">
+                    <input type="radio" value="{{varient2}}" name="variant2" formControlName="variant2" (change)="changeVariation()">
+                    <label for="male">{{varient2}}</label>
                   </div>
                 </div>
                 <div *ngIf="productVariation.attribute3[0] != '' && productVariation.attribute2[1].variantnumber != 41" class = "sizes">
-                  <label for="variant2" class = "varient_label"><h6 class = "mb-1">Choose Tassels:</h6></label>
-                  <div *ngFor="let varient3 of productVariation.attribute3[0]" class  ="size_list">
-                    <input type="radio"    value="{{varient3}}" name="variant3" formControlName="variant3" (change)="changeVariation()">
-                    <label for="varient3">{{varient3}}</label>
+                  <label for="variant3">{{productVariation.attribute3[1].variant_tag}}:</label>
+                  <div *ngFor="let varient3 of productVariation.attribute3[0]" class="size_list">
+                    <input type="radio" value="{{varient3}}" name="variant3" formControlName="variant3" (change)="changeVariation()">
+                    <label for="male">{{varient3}}</label>
                   </div>
                 </div>
                 <div *ngIf="productVariation.attribute4[0] != '' && productVariation.attribute2[1].variantnumber != 41" class = "sizes">
-                  <label for="variant2"  class = "varient_label"><h6 class = "mb-1">Choose Sizes:</h6></label>
-                  <div *ngFor="let varient4 of productVariation.attribute4[0]" class  ="size_list">
-                    <input type="radio"  value="{{varient4}}" name="variant4" formControlName="variant4" (change)="changeVariation()">
-                    <label for="varient4">{{varient4}}</label>
+                  <label for="variant4">{{productVariation.attribute4[1].variant_tag}}:</label>
+                  <div *ngFor="let varient4 of productVariation.attribute4[0]" class="size_list">
+                    <input type="radio" value="{{varient4}}" name="variant4" formControlName="variant4" (change)="changeVariation()">
+                    <label for="male">{{varient4}}</label>
                   </div>
                 </div>
-               </div>
-               
+
                 <!-----Choose tassels---->
               <!--- <div class = "choose_tassels py-2 d-block" *ngIf="productVariation.attribute1[1].variantnumber==41 ||
                 productVariation.attribute2[1].variantnumber== 41 ||
@@ -151,7 +147,7 @@
                 </div>  --->
               </form>
             </div>
-       
+
             <!---------Static Radio Sizes -->
           <!-- <div class="variation" *ngIf="productVariation != ''"> -->
             <div class="variation" *ngIf="productVariation != ''">

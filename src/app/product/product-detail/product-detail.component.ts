@@ -56,6 +56,7 @@ export class ProductDetailComponent implements OnInit  {
       variant1: new FormControl('', Validators.required),
       variant2: new FormControl('', Validators.required),
       variant3: new FormControl('', Validators.required),
+      variant4: new FormControl(''),
       tassels: new FormControl('')
     });
 
@@ -86,6 +87,7 @@ export class ProductDetailComponent implements OnInit  {
     let varient1 = this.variantForm.value.variant1;
     let varient2 = this.variantForm.value.variant2;
     let varient3 = this.variantForm.value.variant3;
+    let varient4 = this.variantForm.value.variant4;
     let tassels = this.variantForm.value.tassels
     // if(this.productVariation.data[0].varient2 != null){
     //   varient2 = this.varient2.nativeElement.value
@@ -94,6 +96,8 @@ export class ProductDetailComponent implements OnInit  {
     // }
     console.log(varient1)
     console.log(varient2)
+    console.log(varient3)
+    console.log(varient4)
     if(varient1 != '' || varient2 != '' || varient3 != ''){
       this.variationValidation = true;
     }
