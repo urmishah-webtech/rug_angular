@@ -21,6 +21,9 @@ import { TheStudioComponent } from './page/visit-us/the-studio/the-studio.compon
 import { TheApartmentComponent } from './page/visit-us/the-apartment/the-apartment.component';
 import { OurStoryComponent } from './page/our-story/our-story.component';
 import { OurProcessComponent } from './page/our-process/our-process.component';
+import { SwatchesComponent } from './page/swatches/swatches.component';
+import { GiftCardComponent } from './page/gift-card/gift-card.component';
+import { SizeGuideComponent } from './page/size-guide/size-guide.component';
 
 
 const routes: Routes = [
@@ -50,6 +53,9 @@ const routes: Routes = [
     {path: 'visit/apartment', component: TheApartmentComponent},
     {path: 'our-story', component: OurStoryComponent},
     {path: 'our-process', component: OurProcessComponent},
+    {path: 'swatches', component: SwatchesComponent},
+    {path: 'gift-card', component: GiftCardComponent},
+    {path: 'size-guide', component:SizeGuideComponent},
     {path: 'thankyou', component: ThankyouComponent, canActivate: [AuthGuard]},
     {path: 'account/order-history', component: ThankyouComponent, canActivate: [AuthGuard]},
     {path: '**', component:NodataComponent}

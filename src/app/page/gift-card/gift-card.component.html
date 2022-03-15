@@ -1,0 +1,187 @@
+<!-----Section1 Start----->
+<section id = "swatch-section1">
+    <div class = "container">
+      <div class = "row">
+          <div class = "col-lg-7 col-12">
+           <div class = "img-container">
+            <img src = "assets/img/gift-card/gift-card.png" alt = "img" width="100%" height="100%">
+           </div>
+          </div>
+          <div class = "col-lg-5 col-12">
+            <div>
+                <div>
+                  <h2>Gift Card</h2>
+                </div>
+                <div class = "pt-4">
+                  <p>Want to share the Beni love with someone you know? Give them the gift of a one-of-a-kind rug.</p>
+                  <p>Beni gift cards are delivered by email and contain instructions to redeem them at checkout. Our gift cards have no additional processing fees.</p>
+                  <p>For online use only.</p>
+                </div>
+                <div>
+                  <!-----<button *ngFor = "let size of sizes" class = "btn" [style.background] = "size" (click) = "selectedSize = size" [ngClass]="{selected:selectedSize === size}" value = {{}}>{{size}}</button>  --->
+                   
+                </div>
+                <div>
+                  
+                </div>
+                <div class = "text-center pt-4 mt-4">
+                    <button type = "button" class = "btn blue-btn">Add to Cart</button>
+                </div>
+  
+              </div>
+          </div>
+      </div>
+    </div>
+  </section>
+  <!-----Section1 End----->
+  <hr class = "section_hr">
+  <!-----Section2 Start----->
+  <section id = "swatch-section2">
+      <div class = "container">
+        <div class = "row">
+            
+            <div class = "col-lg-5 col-12">
+              <div class = "col1 text-center">
+                  <div>
+                    <h2>Pick a Color</h2>
+                   <p>Every sample swatch also ships with a card of our in stock colors. If you have another shade in mind, just let us know!</p>
+                  </div>
+                </div>
+            </div>
+            <div class = "col-lg-7 col-12">
+              <div class = "img-container">
+               <img src = "assets/img/swatches/swatch1.png" alt = "img" width="100%" height="100%">
+              </div>
+             </div>
+        </div>
+      </div>
+    </section>
+  <!-----Section2 End----->
+  <hr class = "section_hr">
+  <!-----Section3 Start----->
+  <section id = "swatch-section3">
+      <div class = "container">
+        <div class = "row">
+          <div class = "col-3">
+  
+          </div>
+            <div class = "col-6">
+               <div class = "text-center">
+                   <h2>Knotted vs. Flat</h2>
+                   <p>Knotted rugs are sumptuous, warm, and incredibly soft underfoot. The pile for these rugs ranges from 1" - 1.5".  Flat rugs are the breezier, more casual cousin to full pile. A different weaving technique means these rugs keep a lower profile.</p>
+               </div>
+            </div>
+            <div class = "col-3">
+  
+            </div>
+            <div class = "col-lg-6 col-12 pt-">
+                <a routerLink = "/products" class = "box">
+                    <div>
+                      <div class = "img-container">
+                        <img src = "assets/img/swatches/swatch2.jpg" alt = "img" width="100%" height="100%">
+                      </div>
+                      <h6  class = "pt-3">Knotted Weave</h6>
+                    </div>
+                   </a>
+             </div>
+             <div class = "col-lg-6 col-12">
+                <a routerLink = "/products" class = "box">
+                    <div>
+                      <div class = "img-container">
+                        <img src = "assets/img/swatches/swatch3.jpg" alt = "img" width="100%" height="100%">
+                      </div>
+                      <h6  class = "pt-3">Flat Weave</h6>
+                    </div>
+                   </a>
+             </div>
+        </div>
+      </div>
+    </section>
+  <!-----Section3 End----->
+  <hr class = "section_hr">
+  <!-----Section4 Start----->
+  <section id = "swatch-slider">
+    <div class = "container">
+      <div class = "row">
+        <div class = "col-3">
+  
+        </div>
+          <div class = "col-6">
+             <div class = "text-center">
+                 <h2>The Beni difference</h2>
+                 <p>Beni's proprietary washing technique creates a super soft, luxe texture and finish. Each finished rug is washed and dried up to 5 times.</p>
+             </div>
+          </div>
+          <div class = "col-3">
+  
+          </div> 
+      </div>
+      <ngx-slick-carousel class="carousel"
+      #slickModal="slick-carousel"
+      [config]="swatchSlideConfig">
+      <div ngxSlickItem  class="slide slider_content">
+        <div class = "box">
+          <img src = "assets/img/swatches/swatch-slider1.jpg" width="100%">
+          <div class = "overlay"></div>
+        </div>
+      </div>
+      <div ngxSlickItem  class="slide slider_content" >
+        <div class = "box">
+          <img src = "assets/img/swatches/swatch-slider2.jpg" width="100%">
+          <div class = "overlay"></div>
+        </div>
+      </div>
+      <div ngxSlickItem  class="slide slider_content">
+        <div class = "box">
+          <img src = "assets/img/swatches/swatch-slider3.jpg" width="100%">
+          <div class = "overlay"></div>
+        </div>
+      </div>
+      <div ngxSlickItem  class="slide slider_content">
+        <div class = "box">
+          <img src = "assets/img/swatches/swatch-slider4.jpg" width="100%">
+          <div class = "overlay"></div>
+        </div>
+      </div>
+      <div ngxSlickItem  class="slide slider_content">
+        <div class = "box">
+          <img src = "assets/img/swatches/swatch-slider5.jpg" width="100%">
+          <div class = "overlay"></div>
+        </div>
+      </div>
+      <div ngxSlickItem  class="slide slider_content">
+        <div class = "box">
+          <img src = "assets/img/swatches/swatch-slider6.jpg" width="100%">
+          <div class = "overlay"></div>
+        </div>
+      </div>
+      <div ngxSlickItem  class="slide slider_content">
+        <div class = "box">
+          <img src = "assets/img/swatches/swatch-slider7.jpg" width="100%">
+          <div class = "overlay"></div>
+        </div>
+      </div>
+      <div ngxSlickItem  class="slide slider_content">
+        <div class = "box">
+          <img src = "assets/img/swatches/swatch-slider8.jpg" width="100%">
+          <div class = "overlay"></div>
+        </div>
+      </div>
+      </ngx-slick-carousel>
+    </div>
+  </section>
+  <!-----Section4 End----->
+  <hr class = "section_hr">
+  <!-----Section5 Start----->
+  <section class = "swatch-section5">
+    <div class = "container">
+    <video autoplay muted loop id="myVideo" width="100%">
+        <source src="assets/video/our-process.mp4" type="video/mp4" width = >  
+    </video>
+    <div class = "banner-content">
+        <h1 class = "text-light">10,000 Years of Tradition.</h1>
+    </div>
+    </div> 
+  </section>
+  <!-----Section5 End----->
+  

@@ -1,0 +1,72 @@
+p{
+    font-size: 18px;
+    line-height: 28px;
+}
+
+h2{
+    &:after{
+     content: "";
+     position: relative;
+     display: block;
+     width: 40px;
+     height: 3px;
+     background: #627b80;
+     bottom: 0;
+     text-align: center;
+     margin-top: 10px;
+     left:calc(50% - 20px) ;
+    }
+}
+/********Size Guide1 SCSS********/
+#size-guide1{
+    background-color: #f6f5f3;
+    .container1{
+        max-width: 700px !important;
+       h2{
+           &:after{
+            content: "";
+            position: relative;
+            display: block;
+            width: 40px;
+            height: 3px;
+            background: #627b80;
+            bottom: 0;
+            text-align: center;
+            margin-top: 10px;
+            left:calc(50% - 20px) ;
+           }
+       }
+       p{
+           font-weight: 500 !important;
+           padding:0rem 4rem;
+            a{
+                font-size: 18px;
+                text-decoration: underline;
+            }
+        }
+    }
+    .nav-tabs{
+        .nav-link{
+            color: #000;
+            border-radius: 0px !important;
+            border:1px solid  #dee2e6 !important;  
+        }
+        .nav-link.active{
+           border-color: #dee2e6 #dee2e6 #fff !important;
+        }
+    }
+
+    .card{
+        border-radius: 0px;
+    }
+}  
+/********Size Guide2 SCSS********/
+#size-guide2{
+   background:#f6f5f3;
+    .container{
+        max-width: 700px !important;
+        table{
+            background-color: #fff;
+        }
+    }
+}

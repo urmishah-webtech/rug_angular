@@ -34,8 +34,9 @@ import { TheStudioComponent } from './page/visit-us/the-studio/the-studio.compon
 import { TheApartmentComponent } from './page/visit-us/the-apartment/the-apartment.component';
 import { OurStoryComponent } from './page/our-story/our-story.component';
 import { OurProcessComponent } from './page/our-process/our-process.component';
-
-
+import { SwatchesComponent } from './page/swatches/swatches.component';
+import { GiftCardComponent } from './page/gift-card/gift-card.component';
+import { SizeGuideComponent } from './page/size-guide/size-guide.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,10 @@ import { OurProcessComponent } from './page/our-process/our-process.component';
     TheStudioComponent,
     TheApartmentComponent,
     OurStoryComponent,
-    OurProcessComponent
+    OurProcessComponent,
+    SwatchesComponent,
+    GiftCardComponent,
+    SizeGuideComponent
   ],
   imports: [
     BrowserModule,
