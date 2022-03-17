@@ -22,6 +22,11 @@ import { TheApartmentComponent } from './page/visit-us/the-apartment/the-apartme
 import { OurStoryComponent } from './page/our-story/our-story.component';
 import { OurProcessComponent } from './page/our-process/our-process.component';
 import { CartGuard } from './cart/cartGuard';
+import { SwatchesComponent } from './page/swatches/swatches.component';
+import { GiftCardComponent } from './page/gift-card/gift-card.component';
+import { SizeGuideComponent } from './page/size-guide/size-guide.component';
+import { TradeProgramComponent } from './page/trade-program/trade-program.component';
+import { ReturnComponent } from './page/return/return.component';
 
 
 const routes: Routes = [
@@ -54,6 +59,8 @@ const routes: Routes = [
     {path: 'swatches', component: SwatchesComponent},
     {path: 'gift-card', component: GiftCardComponent},
     {path: 'size-guide', component:SizeGuideComponent},
+    {path: 'trade-program', component:TradeProgramComponent},
+    {path: 'return', component:ReturnComponent},
     {path: 'thankyou', component: ThankyouComponent, canActivate: [AuthGuard]},
     {path: 'account/order-history', component: ThankyouComponent, canActivate: [AuthGuard]},
     {path: '**', component:NodataComponent}

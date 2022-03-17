@@ -37,6 +37,8 @@ import { OurProcessComponent } from './page/our-process/our-process.component';
 import { SwatchesComponent } from './page/swatches/swatches.component';
 import { GiftCardComponent } from './page/gift-card/gift-card.component';
 import { SizeGuideComponent } from './page/size-guide/size-guide.component';
+import { TradeProgramComponent } from './page/trade-program/trade-program.component';
+import { ReturnComponent } from './page/return/return.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +71,9 @@ import { SizeGuideComponent } from './page/size-guide/size-guide.component';
     OurProcessComponent,
     SwatchesComponent,
     GiftCardComponent,
-    SizeGuideComponent
+    SizeGuideComponent,
+    TradeProgramComponent,
+    ReturnComponent
   ],
   imports: [
     BrowserModule,

@@ -1917,11 +1917,7 @@ border-bottom: 1px solid #e8e4dd;
 		}
 	}
 }
-
-
-
 /***===============Checkout Page Scss===========***/
-
 #checkout_section {
 	background: #f0f0f0;
 	h2 {
@@ -2433,8 +2429,6 @@ border-bottom: 1px solid #e8e4dd;
 		}
 	}
 }
-
-
 /***============(Faq SCSS)==============****/
 #faq_banner{
 	background-image: linear-gradient(-45deg, rgba(56, 73, 77, 0.5), rgba(56, 73, 77, 0.5)),url(assets/img/product/banner1.jpg);
@@ -2499,8 +2493,6 @@ border-bottom: 1px solid #e8e4dd;
 		margin-bottom: 0rem;
 	}
 }
-
-
 /***============Terms & Conditions ===========***/
 #terms_banner{
 	background-image: linear-gradient(-45deg, rgba(56, 73, 77, 0.5), rgba(56, 73, 77, 0.5)),url(assets/img/product/banner1.jpg);
@@ -2515,8 +2507,6 @@ border-bottom: 1px solid #e8e4dd;
 
 #terms_section{
 	background: linear-gradient(160deg , #e7e3dc 17%,#fff 17%,#fff 34%,#e7e3dc 34%,#e7e3dc 51%,#fff 51% , #fff 68%,#e7e3dc 68%,#e7e3dc 85%,#fff 85% );
-
-
 	ul{
 		padding-left: 2rem !important;
 	}
@@ -2609,13 +2599,13 @@ border-bottom: 1px solid #e8e4dd;
   }
 
   #thank-you .btn_secondary{
-	background: linear-gradient(164deg, #627b80 50%, #fff 0%);
+	background:transparent;
 	border: 1px solid #627b80;
 	border-radius: 0px !important;
   }
 
   #thank-you .btn_secondary:hover{
-	background: linear-gradient(164deg, #fff 50%, #627b80 0%);
+	background:#627b80;
 
   }
 

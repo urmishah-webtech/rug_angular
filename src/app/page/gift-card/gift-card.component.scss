@@ -4,7 +4,7 @@ p{
     font-size: 18px;
 }
 /******Section1 SCSS*****/
-#swatch-section1{
+#gift-section1{
     background:linear-gradient(-152deg, #e8e4dd 50%, #f6f5f3 0);
     .img-container{
         width: 100%;
@@ -23,7 +23,7 @@ p{
 }
 
 /******Section2 SCSS*****/
-#swatch-section2{
+#gift-section2{
     background:linear-gradient(-152deg, #e8e4dd 50%, #f6f5f3 0);
    .col1{
     padding: 10rem 4rem 0rem 4rem;
@@ -48,9 +48,8 @@ p{
 }
 
 /******Section2 SCSS*****/
-#swatch-section3{
+#gift-section3{
     background-image:linear-gradient(#e7e3dc,#f6f5f3);
-
     .box{
 		&:hover{
 			h6{
@@ -121,7 +120,7 @@ p{
     }
 }
 /*****Section4 SCSS********/
-#swatch-slider {
+#gift-slider {
     background-image:linear-gradient( #f6f5f3,  #e7e3dc);
 	h2{
 	  &:after{
@@ -157,7 +156,7 @@ p{
   }
 
   /*********Section 5 SCSS*****/
-  .swatch-section5{
+  .gift-section5{
     background-image:linear-gradient(#e7e3dc 0%, #f6f5f3 50%);
     .container{
         position: relative;
