@@ -18,14 +18,11 @@
               <li class = "nav-item">
                 <a href = "#" class = "nav-link">Home</a>
               </li>
-              <li class = "nav-item">
-                <a class = "nav-link">Visit  
-                <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 17'><path fill='none' stroke='#1B2121' d='M31.393.75C19.645.75 16 16.278 16 16.278h-.107S12.248.75.5.75'/></svg>
-                </a>
-                <ul class="dropdown">
-                  <li><a routerLink = "/visit/studio">The Studio, Marrakech</a></li>
-                  <li><a routerLink = "/visit/apartment">The Apartment, NYC</a></li>
-                </ul>
+              <li class = "nav-item"> 
+                <a routerLink = "/visit/studio" class = "nav-link">The Studio, Marrakech</a>
+              </li>
+              <li  class = "nav-item">
+                <a routerLink = "/visit/apartment" class = "nav-link">The Apartment, NYC</a>
               </li>
 
               <li class = "nav-item">
@@ -38,11 +35,9 @@
                 <a routerLink = "/our-story" class = "nav-link">Our Story</a>
               </li>
               <li class = "nav-item">
-                <a routerLink = "contact" class = "nav-link">Contact Us</a>
+                <a routerLink = "/contact" class = "nav-link">Contact Us</a>
               </li>
-              <li class = "nav-item">
-                <a routerLink = "/swatches" class = "nav-link">Swatches</a>
-              </li>
+              
             </ul>
           </div>
         </div>
@@ -53,9 +48,9 @@
               <!---- <li class = "nav-item" *ngFor="let supportLinks of support">
                 <a [routerLink]="['pages', supportLinks.seo_title]" class = "nav-link">{{supportLinks.title}}</a>
                 </li>  -->
-              <li class = "nav-item">
-                <a routerLink = "/return" class = "nav-link">Return</a>
-              </li>
+                <li class = "nav-item">
+                  <a routerLink = "/swatches" class = "nav-link">Swatches</a>
+                </li>
               <li class = "nav-item">
                 <a routerLink = "/size-guide" class = "nav-link">Size Guide</a>
               </li>

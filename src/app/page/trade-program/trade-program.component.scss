@@ -83,28 +83,51 @@ h2{
 }
 
 /********section2*****/
-.accordion-item{
-    background-color: transparent !important;
-.accordion-button {
-    background-color: transparent !important;
-    padding: 0rem 1rem !important;
-    &:not(.collapsed) {
-        color: #000;
-        background-color: #e8e4dd;
-        box-shadow: inset 0 -1px 0 rgb(0 0 0 / 13%);
-        &::after {
-            background-image: url("/assets/img/product/minus.svg") !important;
-            transform: rotate(0deg) !important;
+
+#trade-section2{
+    background:#f0f0f0;
+    .container{
+        max-width: 700px !important;
+        .accordion-item{
+            background-color: transparent !important;
+            border-radius: 0px;
+        .accordion-button {
+            background-color: transparent !important;
+            padding:1rem !important;
+
+            h6{
+                font-size: 18px !important;
+                font-weight: 600 !important;
+            }
+            &:not(.collapsed) {
+                color: #000;
+                background-color: #e8e4dd;
+                
+                &::after {
+                    background-image: url("/assets/img/product/minus.svg") !important;
+                    transform: rotate(0deg) !important;
+                }
+            }
+            &::after {
+                background-image: url("/assets/img/product/plus.svg") !important;
+                width: 1rem;
+                height: 1rem;
+               background-size: 1rem;    
+            }
+            &:focus {
+                z-index: 3;
+                border-color: #000;
+                outline: 0;
+                box-shadow: unset !important;
+            }
+        }
+        }
+        .accordion-body{
+            padding: 0rem 1rem !important;
+        }
+        .accordion-button:not(.collapsed){
+            box-shadow: unset !important;
         }
     }
-    &::after {
-        background-image: url("/assets/img/product/plus.svg") !important;
-    }
-    &:focus {
-        z-index: 3;
-        border-color: #000;
-        outline: 0;
-        box-shadow: unset !important;
-    }
 }
-}
+

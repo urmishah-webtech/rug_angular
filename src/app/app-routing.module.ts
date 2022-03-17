@@ -29,6 +29,7 @@ import { TradeProgramComponent } from './page/trade-program/trade-program.compon
 import { ReturnComponent } from './page/return/return.component';
 
 
+
 const routes: Routes = [
     {path:'', component:HomeComponent},
     {path: 'contact', component: ContactComponent},
@@ -58,8 +59,8 @@ const routes: Routes = [
     {path: 'our-process', component: OurProcessComponent},
     {path: 'swatches', component: SwatchesComponent},
     {path: 'gift-card', component: GiftCardComponent},
-    {path: 'size-guide', component:SizeGuideComponent},
-    {path: 'trade-program', component:TradeProgramComponent},
+    {path: 'size-guide', component: SizeGuideComponent},
+    {path: 'trade-program', component: TradeProgramComponent},
     {path: 'return', component:ReturnComponent},
     {path: 'thankyou', component: ThankyouComponent, canActivate: [AuthGuard]},
     {path: 'account/order-history', component: ThankyouComponent, canActivate: [AuthGuard]},
