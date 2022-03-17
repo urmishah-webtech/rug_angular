@@ -93,7 +93,17 @@ export class ProductDetailComponent implements OnInit  {
     // console.log(varient2)
     // console.log(varient3)
     // console.log(varient4)
-    if(varient1 != '' || varient2 != '' || varient3 != '' || varient4 != ''){
+
+    if(varient1 != ''){
+      this.variationValidation = true;
+    }
+    if(varient1 != '' && varient2 != ''){
+      this.variationValidation = true;
+    }
+    if(varient1 != '' && varient2 != '' && varient3 != ''){
+      this.variationValidation = true;
+    }
+    if(varient1 != '' && varient2 != '' && varient3 != '' && varient4 != ''){
       this.variationValidation = true;
     }
     let variation = {

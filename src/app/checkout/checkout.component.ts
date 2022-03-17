@@ -28,6 +28,7 @@ export class CheckoutComponent implements OnInit {
   loggedUser: any
   showPaymentBtn: boolean = false
   cartCount: number = 0
+  paymentsuccess: any
 
   ngOnInit(): void {
     this.loggedUser = this.authService.getToken()
@@ -66,13 +67,22 @@ export class CheckoutComponent implements OnInit {
     })
   }
   onPayment(){
+    let amount = this.cart.Totalamount+10
+    let newamount = amount.toString()
     this.checkoutForm = {
       'user_id': this.loggedUser.id,
-      'total': this.cart.Totalamount+10
+      'amount': parseFloat(this.cart.Totalamount+10).toFixed(2)
     }
-    console.log(this.checkoutForm);
+    // console.log(typeof(this.checkoutForm.amount));
     this.cartService.placeOrder(this.checkoutForm).subscribe(res=>{
-      this.router.navigate(['/thankyou']);
+      console.log(res)
+      localStorage.removeItem('cart');
+    })
+    this.cartService.payment(this.checkoutForm).subscribe(res=>{
+      this.paymentsuccess = res;
+      console.log(this.paymentsuccess.message._links.checkout.href)
+      //this.router.navigate(['/thankyou']);
+      window.location.href=this.paymentsuccess.message._links.checkout.href;
     })
   }
 
