@@ -40,6 +40,7 @@ import { SizeGuideComponent } from './page/size-guide/size-guide.component';
 import { TradeProgramComponent } from './page/trade-program/trade-program.component';
 import { ReturnComponent } from './page/return/return.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -74,6 +75,7 @@ import { ReturnComponent } from './page/return/return.component';
     SizeGuideComponent,
     TradeProgramComponent,
     ReturnComponent
+  
   ],
   imports: [
     BrowserModule,
