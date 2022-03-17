@@ -1,0 +1,20 @@
+#return_banner{
+    background-image: linear-gradient(-45deg, rgba(56, 73, 77, 0.5), rgba(56, 73, 77, 0.5)), url(/assets/img/product/banner1.jpg);
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    
+}
+
+#return-section1{
+    background-color: #f0f0f0;
+    .container{
+        max-width: 700px !important;
+        h6{
+            font-size: 18px !important;
+            font-weight: 600 !important;
+        }
+    }
+}

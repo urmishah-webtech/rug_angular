@@ -12,7 +12,6 @@ p{
         img{
             object-fit: cover;
             &:hover{
-                transform: rotate(-360deg);
                 transition: 1.3s;
             }
         }
@@ -40,7 +39,6 @@ p{
         img{
             object-fit: cover;
             &:hover{
-                transform: rotate(-360deg);
                 transition: 1.3s;
             }
         }
