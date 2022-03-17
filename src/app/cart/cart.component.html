@@ -31,7 +31,7 @@
                               <!-- <div class="" *ngIf="cart.length != 0"> -->
                               <td><div class = "cart_product_img"><img src = "{{cart.image}}"></div></td>
                               <td><h6 class = "mb-0">{{cart.product_detail.title}}</h6>
-                                   <p  class = "mb-0"><span>{{cart.product_variant[0].attribute1}} </span> / <span>{{cart.product_variant[0].attribute2}}</span> / <span>Tassels</span></p>
+                                   <p  class = "mb-0"><span *ngIf="cart.product_variant[0].attribute1">{{cart.product_variant[0].attribute1}} </span> / <span *ngIf="cart.product_variant[0].attribute2">{{cart.product_variant[0].attribute2}}</span> / <span *ngIf="cart.product_variant[0].attribute3">{{cart.product_variant[0].attribute3}}</span></p>
 
                             </td>
                             <td class = "text-center"><div class = "product-quantity">

@@ -15,7 +15,7 @@ export class CartGuard implements CanActivate {
 
   public iscartItem(){
     let cartcount = false;
-    if(localStorage.getItem('cart') != '' && localStorage.getItem('cart')){
+    if(localStorage.getItem('cart') != '' && localStorage.getItem('cart') || localStorage.getItem('cart') == '0' ){
       cartcount = true;
     }else {
       cartcount = false;
