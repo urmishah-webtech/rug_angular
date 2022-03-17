@@ -41,4 +41,7 @@ export class CartService {
   updateCart(cart: any){
     return this.http.post(this.url+'cartupdate', cart, {headers: this.headers});
   }
+  payment(payform: any){
+    return this.http.post(this.url+'payment', payform, {headers: this.headers})
+  }
 }
