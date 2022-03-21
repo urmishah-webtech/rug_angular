@@ -171,4 +171,30 @@ p{
   .selected{
       border:2px solid #000;
   }
+
+/*****===========Responsive=============***/
+  @media(max-width:991px) {
+         
+ }
+     
+ @media(max-width:768px) {
+	#size-guide1{
+		.container1{
+			p{
+				padding: 0rem !important;
+			}
+		}
+	}
+ }
+     
+ @media(max-width:576px) {
+
+ }
+  @media(max-width:470px) {	
+  
+ }
+ @media(max-width:360px) {
+         
+ }
+
  
