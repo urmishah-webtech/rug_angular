@@ -46,6 +46,12 @@ export class CheckoutComponent implements OnInit {
       postal_code: ['',[Validators.required]
     ],
     })
+    this.checkoutForm = this.fb.group({
+      user_id: [this.loggedUser.id],
+      amount: [parseFloat(this.cart.Totalamount+10).toFixed(2)],
+      payment_type: ['']
+    })
+
   }
 
   onSubmit(){
@@ -71,13 +77,14 @@ export class CheckoutComponent implements OnInit {
     let newamount = amount.toString()
     this.checkoutForm = {
       'user_id': this.loggedUser.id,
-      'amount': parseFloat(this.cart.Totalamount+10).toFixed(2)
+      'amount': parseFloat(this.cart.Totalamount+10).toFixed(2),
+      'payment_type': 1
     }
     // console.log(typeof(this.checkoutForm.amount));
-    this.cartService.placeOrder(this.checkoutForm).subscribe(res=>{
-      console.log(res)
-      localStorage.removeItem('cart');
-    })
+    // this.cartService.placeOrder(this.checkoutForm).subscribe(res=>{
+    //   console.log(res)
+    //   localStorage.removeItem('cart');
+    // })
     this.cartService.payment(this.checkoutForm).subscribe(res=>{
       this.paymentsuccess = res;
       console.log(this.paymentsuccess.message._links.checkout.href)
