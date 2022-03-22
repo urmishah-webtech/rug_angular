@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth/auth.service';
 import { NotificationService } from '../notification.service';
@@ -117,6 +117,8 @@ export class CheckoutComponent implements OnInit {
     this.shipping = true
     this.payment = false
   }
+
+ 
 
 
 }

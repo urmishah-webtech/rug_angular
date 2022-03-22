@@ -67,6 +67,58 @@ h2{
         max-width: 700px !important;
         table{
             background-color: #fff;
+            margin-bottom: 0rem;
         }
     }
 }
+/*****===========Responsive=============***/
+@media(max-width:991px) {
+    p{
+        font-size: 16px;
+        line-height: 24px;
+    }      
+}
+    
+@media(max-width:768px) {
+   #size-guide1{
+       .container1{
+           p{
+               padding: 0rem !important;
+           }
+       }
+   }
+}
+    
+@media(max-width:576px) {
+
+}
+ @media(max-width:470px) {	
+    #size-guide1{
+        .nav-tabs{
+            .nav-link{
+                padding: 0.5rem;
+                font-size: 12px;
+            }
+        }
+    }  
+}
+@media(max-width:360px) {
+    h5, .h5 {
+        font-size: 13px !important;
+        line-height: 19px !important;
+    } 
+
+    #size-guide2{
+        table{
+            tr{
+                th{
+                    font-size: 12px;
+                }
+                td{
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
+
