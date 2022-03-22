@@ -90,6 +90,7 @@ export class CheckoutComponent implements OnInit {
       console.log(this.paymentsuccess.message._links.checkout.href)
       //this.router.navigate(['/thankyou']);
       window.location.href=this.paymentsuccess.message._links.checkout.href;
+      localStorage.removeItem('cart');
     })
   }
 
