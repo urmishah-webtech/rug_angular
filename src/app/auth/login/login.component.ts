@@ -36,7 +36,9 @@ export class LoginComponent implements OnInit {
         this.notifyService.showSuccess("Success",response.message)
         this.response_data=response;
         this.isLoaderVisible=false;
-        localStorage.clear();
+        localStorage.removeItem('id');
+        localStorage.removeItem('name');
+        localStorage.removeItem('token');
         localStorage.setItem('id', this.response_data.user.id)
         localStorage.setItem('name', this.response_data.user.first_name+' '+ this.response_data.user.last_name)
         localStorage.setItem('token',this.response_data.access_token)

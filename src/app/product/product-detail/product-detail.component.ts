@@ -83,7 +83,7 @@ export class ProductDetailComponent implements OnInit  {
   changeVariation(){
     console.log(this.variantForm.value.variant1)
     console.log(this.variantForm.value.variant2)
-    console.log(this.variantForm.value.tassels)
+    console.log(this.variantForm.value.variant3)
     let varient1 = this.variantForm.value.variant1;
     let varient2 = this.variantForm.value.variant2;
     let varient3 = this.variantForm.value.variant3;
@@ -109,7 +109,8 @@ export class ProductDetailComponent implements OnInit  {
     let variation = {
       'text1': varient1,
       'text2': varient2,
-      'text3': '',
+      'text3': varient3,
+      'text4': varient4,
       'product_id': this.productId
     }
     this.productService.variationProduct(variation).subscribe(
