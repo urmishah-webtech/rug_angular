@@ -376,6 +376,7 @@ hr{
 		.navbar-toggler-icon{
 			width: 1em;
 			height: 1em;
+			color: #627b80;
 		}
 
 		.navbar-toggler{
@@ -704,6 +705,7 @@ hr{
     height: 100vh;
     overflow: hidden;
     z-index: -1;
+	padding-top: 0rem;
 }
 /******Section3 css Ends***********/
 /******Section3 css start***********/
@@ -1858,7 +1860,7 @@ border-bottom: 1px solid #e8e4dd;
 		background: linear-gradient(135deg, #f0f0f0  30%, #fff 30% , #fff 70% , #f0f0f0  70%);
         margin: 0 0 0 2.2rem;
         box-shadow: 0 0 5px #d5caca;
-		height: 374px;
+		height: 100%;
 
 		p {
 			margin-bottom: 0rem;
@@ -1918,6 +1920,15 @@ border-bottom: 1px solid #e8e4dd;
 	}
 }
 /***===============Checkout Page Scss===========***/
+
+#login {
+	.box {
+	  button.btn {
+		font-weight: 800
+	  }
+	  
+	}
+  }
 #checkout_section {
 	background: #f0f0f0;
 	h2 {
@@ -1969,6 +1980,7 @@ border-bottom: 1px solid #e8e4dd;
 		h5 {
 			margin-bottom: 0.5rem;
 			font-weight: 500 !important;
+			margin-bottom: 0px;
 		}
 		p{
 			font-size: 14px;
@@ -2264,6 +2276,16 @@ border-bottom: 1px solid #e8e4dd;
 
 			}
 		}
+	}
+
+	form{
+		.alert-danger {
+			background-color: transparent !important;
+			border: unset !important;
+			color: #ff0017;
+			padding: 0.5rem 0rem 0rem 0rem !important;
+			margin-bottom:0rem !important;
+		  }
 	}
 	.checkout_payment {
 		padding:4.2rem 0rem 0rem 0rem;
@@ -3025,6 +3047,40 @@ border-bottom: 1px solid #e8e4dd;
 		}
 		
 	} 
+	#cart-section {
+		.col-lg-8{
+			width: 100%;
+			border:unset;
+		}
+
+		.col-lg-4{
+			margin-top: 2rem;
+			width: 100% !important;
+
+			.cart-checkout{
+				padding: 2rem;
+				margin-left: 0rem;
+
+			}
+		}
+	}
+	#checkout_section .col2 {
+		padding: 0 12px;
+	}
+    
+	#product-details .product-detail-section{
+		padding-top: 1rem;
+	}
+
+	#product_swatch{
+		.col-lg-5{
+			&:last-child {
+				padding-top: 0rem;
+			}
+		}
+	} 
+
+	
 
   }
 
@@ -3140,6 +3196,19 @@ border-bottom: 1px solid #e8e4dd;
 		}
 	} 
   }
+  #product_swatch{
+    button.blue-btn{
+		width: 250px;
+        font-size: 16px;
+	}
+  } 
+
+  #product_our_process{
+    .blue-btn{
+		width: 250px;
+        font-size: 16px;
+	}
+  } 
 
   #terms_banner{
 	  padding-top: 6rem;
@@ -3262,18 +3331,26 @@ footer {
 			.checkout_product {
 				table {
 					tr {
-						td {
-							&:first-child {
-								width: 90px;
+						td{
+							&:first-child{
+								width: 70px;
 							}
-							img {
-								width: 80px;
-								height: 80px;
+							&:last-child{
+								button{
+									width: 14px;
+									height: 14px;
+									font-size: 9px;
+								}
 							}
-							p {
-								font-size: 10px;
-							}
+						.checkout_product_img{
+							width: 55px;
+							height: 55px;
+						  }
+						  p {
+							font-size: 10px;
 						}
+					  }
+					
 					}
 				}
 			}
@@ -3327,6 +3404,34 @@ footer {
 			right: 10px;
 		}
 	}
+	#swatch-slider{
+		.slick-arrow{
+			top:45%;
+			width: 35px;
+		}
+
+		.left_arrow{
+			left: 10px;
+		}
+
+		.right_arrow{
+			right: 10px;
+		}
+	}
+	#gift-slider{
+		.slick-arrow{
+			top:45%;
+			width: 35px;
+		}
+
+		.left_arrow{
+			left: 10px;
+		}
+
+		.right_arrow{
+			right: 10px;
+		}
+	}
 	
 	#terms_banner{
 		padding-top: 4rem;
@@ -3342,12 +3447,69 @@ footer {
 		padding-bottom: 4rem;
 	}
 
+	#cart-section{
+		.cart-item{
+			table{
+				tr{
+                   td{
+					   &:first-child{
+						   width: 70px;
+					   }
+
+					   &:last-child{
+						   button{
+							   width: 14px;
+							   height: 14px;
+							   font-size: 9px;
+						   }
+					   }
+				   }
+				} 
+				.product_name{
+                 width: 140px;
+				}
+				.cart_product_img{
+					width: 55px;
+					height: 55px;
+				}
+				.product_quant{
+					width: 75px;
+
+					.product-quantity{
+						input{
+							width: 30px;
+							height: 30px;
+							font-size: 20px !important;
+						}
+						button{
+							width: 20px;
+							height: 20px;
+							padding: 0px 8px 8px 6px !important;
+							line-height: 15px;
+							font-size: 16px;
+							border:1px solid #000 !important;
+						}
+						button.plus {
+							line-height: 17px !important;
+							padding: 0px 8px 8px 4px !important;
+						}
+					 }
+				}
+				 
+
+
+			}
+			
+		}
+	}
+	 
+
   }
 
   @media(max-width:470px) {
 	h1, .h1 {
-		font-size: 36px !important;
-		line-height: 44px !important;
+		font-size: 34px !important;
+		line-height: 42px !important;
 	  }
 	  h2, .h2 {
 		font-size: 28px !important;
@@ -3393,12 +3555,53 @@ footer {
 		line-height: 22px !important;
 	}
 
+	#studio-slider{
+		.box {
+			margin: 0.5rem !important;
+			box-shadow: unset !important;
+		  }
+
+		  .slick-arrow{
+			width: 40px;
+		}
+	} 
+    #swatch-slider{
+		.box {
+			margin: 0.5rem !important;
+			box-shadow: unset !important;
+		  }
+
+		  .slick-arrow{
+		  width: 40px;
+		}
+	} 
+	#gift-slider{
+		.box {
+			margin: 0.5rem !important;
+			box-shadow: unset !important;
+		  }
+
+		  .slick-arrow{
+		  width: 40px;
+		}
+	} 
+
+	#cart-section{
+        .cart-item{
+			table{
+                .product_name {
+					width: 100px;
+				}
+			}
+		}
+	}   
+
   }
 
   @media(max-width:360px) {
 	h1, .h1 {
-	  font-size: 36px !important;
-	  line-height: 44px !important;
+	  font-size: 32px !important;
+	  line-height: 40px !important;
 	}
 	h2, .h2 {
 	  font-size: 28px !important;
@@ -3439,17 +3642,12 @@ footer {
 		padding-bottom: 4rem;
 		}
 		#checkout_section {
+			
 			.checkout_product {
 				table {
 					tr {
 						td {
-							&:first-child {
-								width: 75px;
-							}
-							img {
-								width: 70px;
-								height: 70px;
-							}
+							
 							&:last-child {
 								button {
 									i {
@@ -3462,8 +3660,21 @@ footer {
 				}
 			}
 			.information_check_box {
+				
 				.contant {
 					font-size: 0.60rem;
+					padding-left: 25px;
+					.checkmark{
+						width: 20px;
+						height: 20px;
+	
+						&:after{
+							left: 6px;
+							top: 1px;
+							width: 7px;
+							height: 13px;
+						}
+					}
 				}
 			}
 			.payment_method {
@@ -3508,6 +3719,28 @@ footer {
 			}	
 		} 
 		#studio-slider{
+			.box {
+				margin: 0.2rem !important;
+				box-shadow: unset;
+			  }
+
+			  .slick-arrow{
+				width: 25px;
+			}
+		} 
+	
+		#swatch-slider{
+			.box {
+				margin: 0.2rem !important;
+				box-shadow: unset;
+			  }
+
+			  .slick-arrow{
+				width: 25px;
+			}
+		}
+		
+		#gift-slider{
 			.box {
 				margin: 0.2rem !important;
 				box-shadow: unset;

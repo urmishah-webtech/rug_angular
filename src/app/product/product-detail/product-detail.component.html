@@ -24,7 +24,7 @@
                 </div>
               </div>
             </div>
-
+  
           </div>
         </div>
         <div class="row">
@@ -46,9 +46,8 @@
       </div>
     </div>
   </div>
-
+  
   --->
-
 <!----------Breadcrumb Starts---------->
 <section class="py-2 breadcrumb_section">
   <div class="container">
@@ -65,31 +64,29 @@
 </section>
 <!----------Breadcrumb end---------->
 <div class="" *ngIf="product">
-<!----------Product Details Section Starts---------->
-<section id = "product-details">
-  <div class="container product_container ">
-    <div class="row">
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-7 product_detail_left-col">
-        <div class="product">
-          <div class = "img-container">
-            <img id = "imageBox" (click)="rotate($event)" [src]="product.image" alt="{{product.image}}" width="100%">
+  <!----------Product Details Section Starts---------->
+  <section id = "product-details">
+    <div class="container product_container ">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-7 product_detail_left-col">
+          <div class="product">
+            <div class = "img-container">
+              <img id = "imageBox" (click)="rotate($event)" [src]="product.image" alt="{{product.image}}" width="100%">
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-5 product_col">
-        <div class="product-detail-section">
-          <h2 class = "mb-0">{{product.title}}</h2>
-          <!-- <h6>Available in 100 colorways</h6> -->
-
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-5 product_col">
+          <div class="product-detail-section">
+            <h2 class = "mb-0">{{product.title}}</h2>
+            <!-- <h6>Available in 100 colorways</h6> -->
             <div class = "pt-2">
               <h6 class = "mb-0">Description</h6>
               <p [innerHTML]="product.description"></p>
             </div>
             <div class = "d-flex justify-content-between py-2">
-
               <div class = "product-quantity">
                 <button type = "button" class = "minus" (click) = minus()>-</button>
-                  <input type = "text" [value] ="quantity">
+                <input type = "text" [value] ="quantity">
                 <button type = "button" (click) = plus()>+</button>
               </div>
               <div>
@@ -98,39 +95,46 @@
             </div>
           </div>
           <!-----Product Variation---->
-                  <!-----Choose Size----->
-            <div class="preview" *ngIf="productVariation != ''">
-              <form [formGroup]="variantForm">
-                <div *ngIf="productVariation.attribute1 != '' && productVariation.attribute2[1].variantnumber != 41" class = "sizes">
-                  <label for="variant2"  class = "varient_label"><h6 class = "mb-1">{{productVariation.attribute1[1].variant_tag}}:</h6></label>
-                  <div *ngFor="let varient1 of productVariation.attribute1[0]" class="size_list">
-                    <input type="radio" value="{{varient1}}" name="variant1" formControlName="variant1" (change)="changeVariation()">
-                    <label for="male">{{varient1}}</label>
-                  </div>
+          <!-----Choose Size----->
+          <div class="preview" *ngIf="productVariation != ''">
+            <form [formGroup]="variantForm">
+              <div *ngIf="productVariation.attribute1 != '' && productVariation.attribute2[1].variantnumber != 41" class = "sizes">
+                <label for="variant2"  class = "varient_label">
+                  <h6 class = "mb-1">{{productVariation.attribute1[1].variant_tag}}:</h6>
+                </label>
+                <div *ngFor="let varient1 of productVariation.attribute1[0]" class="size_list">
+                  <input type="radio" value="{{varient1}}" name="variant1" formControlName="variant1" (change)="changeVariation()">
+                  <label for="male">{{varient1}}</label>
                 </div>
-                <div *ngIf="productVariation.attribute2[0] != '' && productVariation.attribute2[1].variantnumber != 41" class = "sizes">
-                  <label for="variant2"  class = "varient_label"><h6 class = "mb-1">{{productVariation.attribute2[1].variant_tag}}:</h6></label>
-                  <div *ngFor="let varient2 of productVariation.attribute2[0]" class="size_list">
-                    <input type="radio" value="{{varient2}}" name="variant2" formControlName="variant2" (change)="changeVariation()">
-                    <label for="male">{{varient2}}</label>
-                  </div>
+              </div>
+              <div *ngIf="productVariation.attribute2[0] != '' && productVariation.attribute2[1].variantnumber != 41" class = "sizes">
+                <label for="variant2"  class = "varient_label">
+                  <h6 class = "mb-1">{{productVariation.attribute2[1].variant_tag}}:</h6>
+                </label>
+                <div *ngFor="let varient2 of productVariation.attribute2[0]" class="size_list">
+                  <input type="radio" value="{{varient2}}" name="variant2" formControlName="variant2" (change)="changeVariation()">
+                  <label for="male">{{varient2}}</label>
                 </div>
-                <div *ngIf="productVariation.attribute3[0] != '' && productVariation.attribute2[1].variantnumber != 41" class = "sizes">
-                  <label for="variant2"  class = "varient_label"><h6 class = "mb-1">{{productVariation.attribute3[1].variant_tag}}:</h6></label>
-                  <div *ngFor="let varient3 of productVariation.attribute3[0]" class="size_list">
-                    <input type="radio" value="{{varient3}}" name="variant3" formControlName="variant3" (change)="changeVariation()">
-                    <label for="male">{{varient3}}</label>
-                  </div>
+              </div>
+              <div *ngIf="productVariation.attribute3[0] != '' && productVariation.attribute2[1].variantnumber != 41" class = "sizes">
+                <label for="variant2"  class = "varient_label">
+                  <h6 class = "mb-1">{{productVariation.attribute3[1].variant_tag}}:</h6>
+                </label>
+                <div *ngFor="let varient3 of productVariation.attribute3[0]" class="size_list">
+                  <input type="radio" value="{{varient3}}" name="variant3" formControlName="variant3" (change)="changeVariation()">
+                  <label for="male">{{varient3}}</label>
                 </div>
-                <div *ngIf="productVariation.attribute4[0] != '' && productVariation.attribute2[1].variantnumber != 41" class = "sizes">
-                  <label for="variant2"  class = "varient_label"><h6 class = "mb-1">{{productVariation.attribute4[1].variant_tag}}:</h6></label>
-                  <div *ngFor="let varient4 of productVariation.attribute4[0]" class="size_list">
-                    <input type="radio" value="{{varient4}}" name="variant4" formControlName="variant4" (change)="changeVariation()">
-                    <label for="male">{{varient4}}</label>
-                  </div>
+              </div>
+              <div *ngIf="productVariation.attribute4[0] != '' && productVariation.attribute2[1].variantnumber != 41" class = "sizes">
+                <label for="variant2"  class = "varient_label">
+                  <h6 class = "mb-1">{{productVariation.attribute4[1].variant_tag}}:</h6>
+                </label>
+                <div *ngFor="let varient4 of productVariation.attribute4[0]" class="size_list">
+                  <input type="radio" value="{{varient4}}" name="variant4" formControlName="variant4" (change)="changeVariation()">
+                  <label for="male">{{varient4}}</label>
                 </div>
-
-                <!-----Choose tassels---->
+              </div>
+              <!-----Choose tassels---->
               <!--- <div class = "choose_tassels py-2 d-block" *ngIf="productVariation.attribute1[1].variantnumber==41 ||
                 productVariation.attribute2[1].variantnumber== 41 ||
                 productVariation.attribute3[1].variantnumber== 41 ||
@@ -147,23 +151,21 @@
                     </li>
                   </ul>
                 </div>  --->
-              </form>
-            </div>
-
-            <!---------Static Radio Sizes -->
+            </form>
+          </div>
+          <!---------Static Radio Sizes -->
           <!-- <div class="variation" *ngIf="productVariation != ''"> -->
-            <div class="variation" *ngIf="productVariation != ''">
-              <div class="variations" *ngFor="let data of productVariation.data; let i = index">
-                <div class="" *ngIf="i<=0">
-            <!-----Choose Colors---->
+          <div class="variation" *ngIf="productVariation != ''">
+            <div class="variations" *ngFor="let data of productVariation.data; let i = index">
+              <div class="" *ngIf="i<=0">
+                <!-----Choose Colors---->
                 <div class="choose_size py-2" *ngIf="data.varient1 != null">
                   <!-- <h6 class="mb-1" *ngFor="let tagname of variantTag">{{data.varient1}}</h6> -->
                   <h6 class = "mb-1">Colors</h6>
                   <div class="d-flex gap-2">
                     <!-- <div *ngFor="let varient1 of productVariation.data;let i = index" #varient1>
                       <label (click)="changeVariation($event,varient1, i)">{{ varient1.attribute1 }}</label>
-                    </div> -->
-
+                      </div> -->
                     <select class = "form-select">
                       <option selected>-- Choose an Option --</option>
                       <option [ngValue]="varient1.attribute1" *ngFor="let varient1 of productVariation.data"><span>{{ varient1.attribute1 }}</span></option>
@@ -172,50 +174,44 @@
                   </div>
                 </div>
                 <!-----Choose Sizes---->
-
-
                 <div class = "choose_size py-2" *ngIf="data.varient2 != null">
                   <h6 class = "mb-1">Sizes</h6>
-
                   <!--<select (change)="changeVariation()" #varient2 class = "form-select">
                     <option selected>-- Choose an Option --</option>
                     <option [ngValue]="varient2.attribute2" *ngFor="let varient2 of productVariation.data;let i = index">{{ varient2.attribute2 }}</option>
-                  </select>    --->
-              <!-----  <div *ngFor="let varient2 of productVariation.data;let i = index" #varient2>
+                    </select>    --->
+                  <!-----  <div *ngFor="let varient2 of productVariation.data;let i = index" #varient2>
                     <label (click)="changeVariation($event,varient2, i)">{{ varient2.attribute2 }}</label>
-                  </div> -->
-                <!----<select class="button_list">
+                    </div> -->
+                  <!----<select class="button_list">
                     <option id="varient2" *ngFor="let varient2 of productVariation.data" class="btn float-left"
                     [style.background]="varient2" (click)="changeVariation()" [ngClass] ="{'selected' : selectedSize === varient2}">
                     {{varient2.attribute2}}</option>
-                  </select> --->
+                    </select> --->
                 </div>
               </div>
             </div>
           </div>
-
-
           <!-----Product Variation End---->
           <div class = 'text-center'>
             <button class="btn blue-btn" (click)="addtoCart()" [disabled]="!variationValidation">Add to Cart</button>
           </div>
-
         </div>
       </div>
       <div class="product_detail" *ngIf="productVariation.data.detail != ''">
         <nav class = "pt-3">
-        <div class="nav nav-tabs gap-2" id="nav-tab" role="tablist">
-          <button class="nav-link active" id="nav-materials-tab" data-bs-toggle="tab" data-bs-target="#nav-materials"
-            type="button" role="tab" aria-controls="materials" aria-selected="true" *ngFor="let detail of productVariation.data.detail">Materials</button>
-          <button class="nav-link" id="nav-tassels-tab" data-bs-toggle="tab" data-bs-target="#nav-tassels"
-            type="button" role="tab" aria-controls="nav-tassels" aria-selected="false">Tassels</button>
-          <button class="nav-link" id="nav-lead-time-tab" data-bs-toggle="tab" data-bs-target="#nav-lead-time"
-            type="button" role="tab" aria-controls="nav-lead-time" aria-selected="true">Lead Time</button>
-          <button class="nav-link" id="nav-returns-tab" data-bs-toggle="tab" data-bs-target="#nav-returns"
-            type="button" role="tab" aria-controls="nav-returns" aria-selected="false">Returns</button>
-          <button class="nav-link" id="nav-size-tab" data-bs-toggle="tab" data-bs-target="#nav-size"
-            type="button" role="tab" aria-controls="nav-size" aria-selected="true">What does 3' x 5' look like?</button>
-        </div>
+          <div class="nav nav-tabs gap-2" id="nav-tab" role="tablist">
+            <button class="nav-link active" id="nav-materials-tab" data-bs-toggle="tab" data-bs-target="#nav-materials"
+              type="button" role="tab" aria-controls="materials" aria-selected="true" *ngFor="let detail of productVariation.data.detail">Materials</button>
+            <button class="nav-link" id="nav-tassels-tab" data-bs-toggle="tab" data-bs-target="#nav-tassels"
+              type="button" role="tab" aria-controls="nav-tassels" aria-selected="false">Tassels</button>
+            <button class="nav-link" id="nav-lead-time-tab" data-bs-toggle="tab" data-bs-target="#nav-lead-time"
+              type="button" role="tab" aria-controls="nav-lead-time" aria-selected="true">Lead Time</button>
+            <button class="nav-link" id="nav-returns-tab" data-bs-toggle="tab" data-bs-target="#nav-returns"
+              type="button" role="tab" aria-controls="nav-returns" aria-selected="false">Returns</button>
+            <button class="nav-link" id="nav-size-tab" data-bs-toggle="tab" data-bs-target="#nav-size"
+              type="button" role="tab" aria-controls="nav-size" aria-selected="true">What does 3' x 5' look like?</button>
+          </div>
         </nav>
         <div class="tab-content pt-4" id="nav-tabContent">
           <div class="tab-pane fade show active" id="nav-materials" role="tabpanel" aria-labelledby="nav-materials-tab">
@@ -238,124 +234,110 @@
           </div>
         </div>
       </div>
-
     </div>
-  <div class = "container-fluid">
-  </div>
-</section>
-<!----------Product Details Section Ends---------->
-<hr class = "section_hr">
-<!----------Product slider Section Starts---------->
-<section id = "product-detail-slider" *ngIf="relatedProducts != ''">
-  <div class = "container">
-    <div class = "text-center">
-      <h2>You May Also Like</h2>
+    <div class = "container-fluid">
     </div>
-    <ngx-slick-carousel class="carousel"
-    #slickModal="slick-carousel"
-    [config]="slideConfigProduct">
-    <div ngxSlickItem  class="slide slider_content" *ngFor="let relProducts of relatedProducts">
-      <a [routerLink]="['/product-detail', relProducts.id]">
-        <div class = "product-card">
-          <div>
-            <img src="{{relProducts.image}}"/>
+  </section>
+  <!----------Product Details Section Ends---------->
+  <!----------Product slider Section Starts---------->
+  <section id = "product-detail-slider" *ngIf="relatedProducts != ''">
+    <div class = "container">
+      <div class = "text-center">
+        <h2>You May Also Like</h2>
+      </div>
+      <ngx-slick-carousel class="carousel"
+      #slickModal="slick-carousel"
+      [config]="slideConfigProduct">
+      <div ngxSlickItem  class="slide slider_content" *ngFor="let relProducts of relatedProducts">
+        <a [routerLink]="['/product-detail', relProducts.id]">
+          <div class = "product-card">
+            <div>
+              <img src="{{relProducts.image}}"/>
+            </div>
+            <div class = "mt-2">
+              <h6>{{relProducts.title}}</h6>
+              <h5>{{relProducts.price_range}}</h5>
+            </div>
           </div>
-          <div class = "mt-2">
-            <h6>{{relProducts.title}}</h6>
-            <h5>{{relProducts.price_range}}</h5>
+        </a>
+      </div>
+      </ngx-slick-carousel>
+    </div>
+  </section>
+  <!----------Product slider Section Ends---------->
+  <hr class = "section_hr">
+  <!----------Product Swatch Section Ends---------->
+  <section id = "product_swatch">
+    <div class = "container">
+      <div class = "row flex-column-reverse flex-lg-row">
+        <div class = "col-lg-7 col-12">
+          <div class = "slider_sec">
+            <ngx-slick-carousel class="carousel"
+            #slickModal="slick-carousel"
+            [config]="slideConfigSwatch">
+            <div ngxSlickItem  class="slide slider_content">
+              <div class = "product-card">
+                <div>
+                  <img src="assets/img/product/swatch-slider1.png"/>
+                </div>
+                <div class = 'text-center'>
+                  <h3>Plush Texture</h3>
+                </div>
+              </div>
+            </div>
+            <div ngxSlickItem  class="slide slider_content" >
+              <div class = "product-card">
+                <div>
+                  <img src="assets/img/product/swatch-slider2.png"/>
+                </div>
+                <div class = 'text-center'>
+                  <h3>100% Natural Wool</h3>
+                </div>
+              </div>
+            </div>
+            <div ngxSlickItem  class="slide slider_content">
+              <div class = "product-card">
+                <div>
+                  <img src="assets/img/product/swatch-slider3.png"/>
+                </div>
+                <div class = 'text-center'>
+                  <h3>Handwoven</h3>
+                </div>
+              </div>
+            </div>
+            </ngx-slick-carousel>
           </div>
         </div>
-      </a>
-    </div>
-    </ngx-slick-carousel>
-  </div>
-</section>
-<!----------Product slider Section Ends---------->
-<hr class = "section_hr">
-<!----------Product Swatch Section Ends---------->
-<section id = "product_swatch">
-  <div class = "container">
-    <div class = "row">
-
-      <div class = "col-lg-7 col-12">
-        <div class = "slider_sec">
-
-          <ngx-slick-carousel class="carousel"
-    #slickModal="slick-carousel"
-    [config]="slideConfigSwatch">
-    <div ngxSlickItem  class="slide slider_content">
-
-        <div class = "product-card">
-          <div>
-            <img src="assets/img/product/swatch-slider1.png"/>
+        <div class ="col-lg-5 col-12">
+          <div class ="text-center swatch_set">
+            <h2>Swatch Set</h2>
+            <p class = "py-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente perspiciatis inventore, dicta eligendi dolore neque rem. Suscipit reprehenderit ipsam dicta sequi, deleniti minus itaque sint vitae consequatur, rerum, ratione unde consectetur perferendis eum natus! Distinctio ducimus quis quisquam, nobis dolorem quasi iusto sapiente obcaecati quaerat aperiam tempora perferendis, deleniti iure?</p>
           </div>
-          <div class = 'text-center'>
-            <h3>Plush Texture</h3>
+          <div class = "text-center">
+            <button class = "btn blue-btn" routerLink="/swatches">Request a Swatch</button>
           </div>
-        </div>
-
-    </div>
-    <div ngxSlickItem  class="slide slider_content" >
-
-        <div class = "product-card">
-          <div>
-            <img src="assets/img/product/swatch-slider2.png"/>
-          </div>
-          <div class = 'text-center'>
-            <h3>100% Natural Wool</h3>
-          </div>
-        </div>
-
-    </div>
-    <div ngxSlickItem  class="slide slider_content">
-
-        <div class = "product-card">
-          <div>
-            <img src="assets/img/product/swatch-slider3.png"/>
-          </div>
-          <div class = 'text-center'>
-            <h3>Handwoven</h3>
-          </div>
-        </div>
-
-    </div>
-  </ngx-slick-carousel>
         </div>
       </div>
-      <div class ="col-lg-5 col-12">
-        <div class ="text-center swatch_set">
-           <h2>Swatch Set</h2>
-           <p class = "py-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente perspiciatis inventore, dicta eligendi dolore neque rem. Suscipit reprehenderit ipsam dicta sequi, deleniti minus itaque sint vitae consequatur, rerum, ratione unde consectetur perferendis eum natus! Distinctio ducimus quis quisquam, nobis dolorem quasi iusto sapiente obcaecati quaerat aperiam tempora perferendis, deleniti iure?</p>
-        </div>
-        <div class = "text-center">
-          <button class = "btn blue-btn" routerLink="/swatches">Request a Swatch</button>
-        </div>
+    </div>
+  </section>
+  <!----------Product Swatch Section Ends---------->
+  <hr class = "section_hr">
+  <!----------Product Our process  CSS Starts---------->
+  <section id = "product_our_process">
+    <div class = "container">
+      <div class = "text-center">
+        <h2 class = "mb-0">Handwoven in the Atlas—customized by you.</h2>
+        <p class = "py-4 mb-0">When you place your one-of-a-kind order, we pass it along to the same community of shepherds, dyers, and weavers that have been creating rugs together for generations.</p>
       </div>
-
+      <div class ="text-center">
+        <button type = "button" class = "btn blue-btn" routerLink="/our-process">Our Process</button>
+      </div>
     </div>
-  </div>
-</section>
-<!----------Product Swatch Section Ends---------->
-<hr class = "section_hr">
-<!----------Product Our process  CSS Starts---------->
-<section id = "product_our_process">
-  <div class = "container">
-    <div class = "text-center">
-      <h2 class = "mb-0">Handwoven in the Atlas—customized by you.</h2>
-      <p class = "py-4 mb-0">When you place your one-of-a-kind order, we pass it along to the same community of shepherds, dyers, and weavers that have been creating rugs together for generations.</p>
-
-    </div>
-    <div class ="text-center">
-      <button type = "button" class = "btn blue-btn" routerLink="/our-process">Our Process</button>
-    </div>
-  </div>
-</section>
-<!-----------Product Our process  CSS  Ends---------->
-<hr class = "section_hr">
-<!----------Product Contact CSS  Starts---------->
+  </section>
+  <!-----------Product Our process  CSS  Ends---------->
+  <hr class = "section_hr">
+  <!----------Product Contact CSS  Starts---------->
 </div>
-
-
 <!-- <div class="variation">
   <div class = "color_choose py-2">
     <h6 class = "mb-1">Color Options</h6>
@@ -369,4 +351,4 @@
       <li *ngFor = "let size of sizes" class = "btn float-left" [style.background]="size" (click) = "selectedSize = size" [ngClass] ="{'selected' : selectedSize === size}">{{size}}</li>
     </ul>
   </div>
-</div> -->
+  </div> -->

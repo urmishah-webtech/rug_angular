@@ -12,6 +12,11 @@ h2{
     }
 }
 
+section .blue-btn{
+    margin-left: 0rem;
+    
+}
+
 /*****Main SCSS Start*****/ 
 
 /**********Banner*******/
@@ -91,6 +96,8 @@ h2{
         .accordion-item{
             background-color: transparent !important;
             border-radius: 0px;
+            border: 1px solid #0000001f !important;
+            margin-top: 1rem;
         .accordion-button {
             background-color: transparent !important;
             padding:1rem !important;
@@ -130,4 +137,77 @@ h2{
         }
     }
 }
+
+
+
+  
+  /**==========++++++(Responsive SCSS)++++++++++============*/
+  @media (max-width: 991px) {
+	h2{
+	  &:after{
+		margin-top:5px;
+	  }
+	}	
+	#trade-banner{
+        padding-top: 10rem;
+        padding-bottom: 10rem;
+    }
+
+  
+}
+  @media (max-width: 768px) {
+	p {
+	  font-size:16px !important;
+	  line-height:24px !important;
+	}
+
+    .blue-btn{
+        width: 200px;
+        margin-top: 0rem !important;
+        
+    }
+
+    #trade-banner{
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+
+    #trade-section1{
+        .container{
+            .box{
+                padding: 1rem;
+            }
+        } 
+    }
+    
+    #trade-section2{
+        .container{
+            .accordion-item{
+                .accordion-button {
+                    h6{
+                        font-size: 16px !important;
+                      
+                    }
+                }
+            }
+        }
+    }
+   
+    
+	
+  }
+  @media (max-width: 576px) {
+
+    #trade-banner{
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+	
+  }  
+  @media (max-width: 470px) {
+	
+  }
+  
+
+ 
 

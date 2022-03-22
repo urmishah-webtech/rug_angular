@@ -4,7 +4,7 @@
         <div class = "text-center">
             <h2>Checkout</h2>
         </div>
-        <div class = "row flex-column-reverse flex-lg-row flex-md-row pt-4 mt-5">
+        <div class = "row flex-column-reverse flex-lg-row pt-4 mt-5">
             <div class = "col-lg-6 col-12 col1">
                 <nav>
                     <ul class = "nav nav-tabs justify-content-center" id = "nav-tab" role = "tablist">
@@ -58,28 +58,42 @@
                                          <div class = "col-md-6 col-12">
                                              <div class="form-group py-2">
                                                  <input type="text" name="first_name" formControlName="first_name" class="form-control" placeholder = "First name" value="">
-                                             </div>
+                                                 <div *ngIf="addressForm.controls['first_name'].invalid && (addressForm.controls['first_name'].dirty || addressForm.controls['first_name'].touched)"
+                            class="alert alert-danger"> First name is required.
+                                                </div>
+                                                </div>
                                          </div>
                                          <div class = "col-md-6 col-12">
                                              <div class="form-group py-2">
                                                  <input type="text" name="last_name" formControlName="last_name" class="form-control" placeholder  = "Last name">
-                                             </div>
+                                                 <div *ngIf="addressForm.controls['last_name'].invalid && (addressForm.controls['last_name'].dirty || addressForm.controls['last_name'].touched)"
+                                                 class="alert alert-danger"> Last name is required.
+                                                </div>
+                                                </div>
                                          </div>
                                          <div class = "col-md-6 col-12">
                                              <div class="form-group py-2">
                                                  <input type="text"  name="email" formControlName="email" class="form-control" placeholder = "Email">
-                                             </div>
+                                                 <div *ngIf="addressForm.controls['email'].invalid && (addressForm.controls['email'].dirty || addressForm.controls['email'].touched)"
+                                                 class="alert alert-danger"> Email is required.
+                                                </div>
+                                                </div>
                                          </div>
                                          <div class = "col-md-6 col-12">
                                              <div class="form-group py-2">
                                                  <input type="text"  name="mobile" formControlName="mobile_no" class="form-control" placeholder = "Mobile">
-                                             </div>
-
+                                                 <div *ngIf="addressForm.controls['mobile_no'].invalid && (addressForm.controls['mobile_no'].dirty || addressForm.controls['mobile_no'].touched)"
+                                                 class="alert alert-danger"> Mobile number is required.
+                                                </div>
+                                                </div>
                                          </div>
                                          <div class = "col-md-12 col-12">
                                              <div class="form-group py-2">
                                                  <input type="text"  name="address" formControlName="address" class="form-control" placeholder = "Address">
-                                             </div>
+                                                 <div *ngIf="addressForm.controls['address'].invalid && (addressForm.controls['address'].dirty || addressForm.controls['address'].touched)"
+                                                 class="alert alert-danger"> Address is required.
+                                                </div>
+                                                </div>
                                          </div>
                                          <div class = "col-md-4 col-12">
                                              <div class="form-group py-2">
@@ -89,6 +103,9 @@
                                                      <option value="2">Australia</option>
                                                      <option value="3">USA</option>
                                                   </select>
+                                                  <div *ngIf="addressForm.controls['country'].invalid && (addressForm.controls['country'].dirty || addressForm.controls['country'].touched)"
+                                                  class="alert alert-danger"> Country is required.
+                                                 </div>
                                              </div>
                                          </div>
                                          <div class = "col-md-4 col-12">
@@ -99,12 +116,18 @@
                                                      <option value="2">Delhi</option>
                                                      <option value="3">Mumbai</option>
                                                   </select>
+                                                  <div *ngIf="addressForm.controls['city'].invalid && (addressForm.controls['city'].dirty || addressForm.controls['city'].touched)"
+                                                  class="alert alert-danger"> City is required.
+                                                 </div>
                                              </div>
                                          </div>
                                          <div class = "col-md-4 col-12">
                                              <div class="form-group py-2">
-                                                 <input type="text"  name="code" formControlName="postal_code" class="form-control" placeholder = "zip code">
-                                             </div>
+                                                 <input type="text"  name="code" formControlName="postal_code" class="form-control" placeholder = "Postal code">
+                                                 <div *ngIf="addressForm.controls['postal_code'].invalid && (addressForm.controls['postal_code'].dirty || addressForm.controls['postal_code'].touched)"
+                                                 class="alert alert-danger"> Postal code is required.
+                                                </div>
+                                                </div>
                                          </div>
 
                                      </div>
