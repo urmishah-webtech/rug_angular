@@ -22,7 +22,7 @@
                         <td class = "product_content"><h4 class = "mb-0">{{cart.title}}</h4>
                             <p *ngIf="cart.varition_id != null" class = "mb-0"><span>{{cart.variant_product[0].attribute1}} </span> / <span>{{cart.variant_product[0].attribute2}}</span> / <span>Tassels</span></p>
                       </td>
-                     
+
                       <td class = "text-center"><h5> <span>Qty: </span>{{cart.stock}}</h5></td>
                       <td class = "text-end"><h4>€{{cart.price*cart.stock}}</h4></td>
 
@@ -37,7 +37,7 @@
                 <hr>
          <li class="d-flex justify-content-between py-2">
                 <p class="mb-0">Subtotal</p>
-                <p class="mb-0"><span>€{{order.orders.netamout}}</span></p>
+                <p class="mb-0"><span>${{order.product_amount}}</span></p>
             </li>
             <hr>
             <li class = "d-flex justify-content-between py-2">
