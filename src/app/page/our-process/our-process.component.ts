@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PageService } from '../page.service';
 
 @Component({
   selector: 'app-our-process',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OurProcessComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private pageService: PageService) { }
+  page: any
   ngOnInit(): void {
+    this.process()
+  }
+
+  process(){
+    this.pageService.process().subscribe(res=>{
+      this.page = res
+    })
   }
 
 }

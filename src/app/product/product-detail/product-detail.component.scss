@@ -42,3 +42,27 @@ display: inline-block;
 text-align: center;
 width: 100%;
 }
+
+.product_size {
+  display: flex;
+  font-size: 12px;
+  line-height: 1.5;
+  margin: 0 0 20px;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  padding: 5px 0 0;
+  .size-square{
+    border-right: 1px solid;
+    border-top: 1px solid;
+    display: -ms-grid;
+    display: grid;
+    margin-right: 15px;
+      div{
+        border-bottom: 1px solid;
+        border-left: 1px solid;
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+      }
+  }
+}

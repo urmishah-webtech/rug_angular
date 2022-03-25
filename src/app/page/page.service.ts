@@ -1,4 +1,4 @@
-import { HttpClient, HttpClientModule } from "@angular/common/http";
+import { HttpClient, HttpClientModule, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { of } from "rxjs";
 import { environment } from "src/environments/environment";
@@ -7,9 +7,9 @@ import { environment } from "src/environments/environment";
   providedIn: 'root'
 })
 export class PageService {
-
+  headers = new HttpHeaders({'Content-Type': 'application/json','Access-Control-Allow-Origin': '*'});
   constructor(private http:HttpClient) { }
-
+  url = environment.api;
   getpage(page: string){
     return this.http.get(environment.api+'pages/'+page);
   }
@@ -25,5 +25,14 @@ export class PageService {
   }
   terms_condition(){
     return this.http.get(environment.terms_condition_api);
+  }
+  studio(){
+    return this.http.get(this.url+'studiopage', {headers: this.headers});
+  }
+  apartment(){
+    return this.http.get(this.url+'apartmentpage', {headers: this.headers});
+  }
+  process(){
+    return this.http.get(this.url+'proceesspage', {headers: this.headers});
   }
 }

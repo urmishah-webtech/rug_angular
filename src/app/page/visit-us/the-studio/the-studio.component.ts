@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PageService } from '../../page.service';
 
 @Component({
   selector: 'app-the-studio',
@@ -7,12 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TheStudioComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private pageService: PageService) { }
+  page: any
   ngOnInit(): void {
+    this.getPage()
   }
 
-  studioSlideConfig = {"slidesToShow": 3, 
+  getPage(){
+    this.pageService.studio().subscribe(res =>{
+      this.page = res;
+    });
+  }
+
+  studioSlideConfig = {"slidesToShow": 3,
   "slidesToScroll": 1,
    "centerMode": true,
   "centerPadding": '100px',
@@ -22,7 +30,7 @@ export class TheStudioComponent implements OnInit {
   "arrow":true,
   "prevArrow": '<img src = "assets/img/visit/slider/long-arrow-left.svg" class = "left_arrow">',
    "nextArrow": '<img src = "assets/img/visit/slider/long-arrow-right.svg" class = "right_arrow">',
-  
+
 
     responsive: [
       {
@@ -50,7 +58,7 @@ export class TheStudioComponent implements OnInit {
         }
       }
     ]
- 
+
   };
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HomeService } from '../services/home.service';
 
 @Component({
   selector: 'app-home',
@@ -7,12 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private homeService: HomeService) { }
+  home: any;
+  featureProduct: any = []
   ngOnInit(): void {
+    this.getHome()
+    this.featureProducts()
   }
 
-  slideConfig = {"slidesToShow": 4, 
+  getHome(){
+    this.homeService.getHome().subscribe(res =>{
+      this.home = res;
+    });
+  }
+
+  featureProducts(){
+    this.homeService.getfeaturedProduct().subscribe(res =>{
+      this.featureProduct = res
+    })
+  }
+
+  slideConfig = {"slidesToShow": 4,
   "slidesToScroll": 1,
     "autoplay":true,
     "speed":1000,

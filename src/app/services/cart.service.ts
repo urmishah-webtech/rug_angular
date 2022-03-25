@@ -17,7 +17,7 @@ export class CartService {
   //   localStorage.setItem("cart_count", JSON.stringify(count));
   //   this.cartCount.next(count);
   // }
-  headers = new HttpHeaders({'Content-Type': 'application/json','Authorization': "Bearer null",'Access-Control-Allow-Origin': '*'});
+  headers = new HttpHeaders({'Content-Type': 'application/json','Access-Control-Allow-Origin': '*'});
   constructor(private http: HttpClient) {
   }
   getCart(id: string){
