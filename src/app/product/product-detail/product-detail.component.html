@@ -24,7 +24,7 @@
                 </div>
               </div>
             </div>
-  
+
           </div>
         </div>
         <div class="row">
@@ -46,7 +46,7 @@
       </div>
     </div>
   </div>
-  
+
   --->
 <!----------Breadcrumb Starts---------->
 <section class="py-2 breadcrumb_section">
@@ -98,42 +98,85 @@
           <!-----Choose Size----->
           <div class="preview" *ngIf="productVariation != ''">
             <form [formGroup]="variantForm">
-              <div *ngIf="productVariation.attribute1 != '' && productVariation.attribute2[1].variantnumber != 41" class = "sizes">
+              <div *ngIf="productVariation.attribute1 != '' && productVariation.attribute1[1].variantnumber != 38" class = "sizes">
                 <label for="variant2"  class = "varient_label">
                   <h6 class = "mb-1">{{productVariation.attribute1[1].variant_tag}}:</h6>
                 </label>
                 <div *ngFor="let varient1 of productVariation.attribute1[0]" class="size_list">
                   <input type="radio" value="{{varient1}}" name="variant1" formControlName="variant1" (change)="changeVariation()">
-                  <label for="male">{{varient1}}</label>
+                  <label for="varient">{{varient1}}</label>
                 </div>
               </div>
-              <div *ngIf="productVariation.attribute2[0] != '' && productVariation.attribute2[1].variantnumber != 41" class = "sizes">
+              <div *ngIf="productVariation.attribute2[0] != '' && productVariation.attribute2[1].variantnumber != 38" class = "sizes">
                 <label for="variant2"  class = "varient_label">
                   <h6 class = "mb-1">{{productVariation.attribute2[1].variant_tag}}:</h6>
                 </label>
                 <div *ngFor="let varient2 of productVariation.attribute2[0]" class="size_list">
                   <input type="radio" value="{{varient2}}" name="variant2" formControlName="variant2" (change)="changeVariation()">
-                  <label for="male">{{varient2}}</label>
+                  <label for="varient">{{varient2}}</label>
                 </div>
               </div>
-              <div *ngIf="productVariation.attribute3[0] != '' && productVariation.attribute2[1].variantnumber != 41" class = "sizes">
+              <div *ngIf="productVariation.attribute3[0] != '' && productVariation.attribute3[1].variantnumber != 38" class = "sizes">
                 <label for="variant2"  class = "varient_label">
                   <h6 class = "mb-1">{{productVariation.attribute3[1].variant_tag}}:</h6>
                 </label>
                 <div *ngFor="let varient3 of productVariation.attribute3[0]" class="size_list">
                   <input type="radio" value="{{varient3}}" name="variant3" formControlName="variant3" (change)="changeVariation()">
-                  <label for="male">{{varient3}}</label>
+                  <label for="varient">{{varient3}}</label>
                 </div>
               </div>
-              <div *ngIf="productVariation.attribute4[0] != '' && productVariation.attribute2[1].variantnumber != 41" class = "sizes">
+              <div *ngIf="productVariation.attribute4[0] != '' && productVariation.attribute4[1].variantnumber != 38" class = "sizes">
                 <label for="variant2"  class = "varient_label">
                   <h6 class = "mb-1">{{productVariation.attribute4[1].variant_tag}}:</h6>
                 </label>
                 <div *ngFor="let varient4 of productVariation.attribute4[0]" class="size_list">
                   <input type="radio" value="{{varient4}}" name="variant4" formControlName="variant4" (change)="changeVariation()">
-                  <label for="male">{{varient4}}</label>
+                  <label for="varient">{{varient4}}</label>
                 </div>
               </div>
+              <!--Size varient-->
+              <div *ngIf="productVariation.attribute1[1].variantnumber == 38; else variant2" class = "sizes">
+                <label for="variant2"  class = "varient_label">
+                  <h6 class = "mb-1">{{productVariation.attribute1[1].variant_tag}}:</h6>
+                </label>
+                <div *ngFor="let s1 of productVariation.attribute1[0]" class="size_list">
+                  <input type="radio" value="{{s1}}" name="size" formControlName="size" (change)="changeVariation()">
+                  <label for="varient">{{s1}}</label>
+                </div>
+              </div>
+              <ng-template #variant2>
+                <div *ngIf="productVariation.attribute2[1].variantnumber == 38; else variant3" class = "sizes">
+                  <label for="variant2"  class = "varient_label">
+                    <h6 class = "mb-1">{{productVariation.attribute2[1].variant_tag}}:</h6>
+                  </label>
+                  <div *ngFor="let s2 of productVariation.attribute2[0]" class="size_list">
+                    <input type="radio" value="{{s2}}" name="size" formControlName="size" (change)="changeVariation()">
+                    <label for="varient">{{s2}}</label>
+                  </div>
+                </div>
+              </ng-template>
+              <ng-template #variant3>
+                <div *ngIf="productVariation.attribute3[1].variantnumber == 38; else variant4" class = "sizes">
+                  <label for="variant2"  class = "varient_label">
+                    <h6 class = "mb-1">{{productVariation.attribute3[1].variant_tag}}:</h6>
+                  </label>
+                  <div *ngFor="let s2 of productVariation.attribute3[0]" class="size_list">
+                    <input type="radio" value="{{s2}}" name="size" formControlName="size" (change)="changeVariation()">
+                    <label for="varient">{{s2}}</label>
+                  </div>
+                </div>
+              </ng-template>
+              <ng-template #variant4>
+                <label for="variant2"  class = "varient_label">
+                  <h6 class = "mb-1">{{productVariation.attribute4[1].variant_tag}}:</h6>
+                </label>
+                <div *ngIf="productVariation.attribute2[1].variantnumber == 38; else variant3" class = "sizes">
+                  <div *ngFor="let s2 of productVariation.attribute4[0]" class="size_list">
+                    <input type="radio" value="{{s2}}" name="size" formControlName="size" (change)="changeVariation()">
+                    <label for="varient">{{s2}}</label>
+                  </div>
+                </div>
+              </ng-template>
               <!-----Choose tassels---->
               <!--- <div class = "choose_tassels py-2 d-block" *ngIf="productVariation.attribute1[1].variantnumber==41 ||
                 productVariation.attribute2[1].variantnumber== 41 ||
@@ -198,26 +241,25 @@
           </div>
         </div>
       </div>
-      <div class="product_detail" *ngIf="productVariation.data.detail != ''">
+      <div class="product_detail" *ngIf="product.productfaq != ''">
         <nav class = "pt-3">
           <div class="nav nav-tabs gap-2" id="nav-tab" role="tablist">
-            <button class="nav-link active" id="nav-materials-tab" data-bs-toggle="tab" data-bs-target="#nav-materials"
-              type="button" role="tab" aria-controls="materials" aria-selected="true" *ngFor="let detail of productVariation.data.detail">Materials</button>
-            <button class="nav-link" id="nav-tassels-tab" data-bs-toggle="tab" data-bs-target="#nav-tassels"
-              type="button" role="tab" aria-controls="nav-tassels" aria-selected="false">Tassels</button>
+            <button *ngFor="let detail of product.productfaq; let i=index" class="nav-link" [ngClass]="{'active': i === activeTabIndex}" data-bs-toggle="tab" [attr.data-bs-target]="'#nav-tabs'+i" type="button" role="tab" [attr.aria-selected]="'false'" (click)="selectTab(i)">{{detail.question}}</button>
+            <!-- <button class="nav-link" id="nav-tassels-tab" data-bs-toggle="tab" [attr.data-bs-target]="'#nav-tabs'+i+1"
+              type="button" role="tab" aria-selected="false">Tassels</button>
             <button class="nav-link" id="nav-lead-time-tab" data-bs-toggle="tab" data-bs-target="#nav-lead-time"
-              type="button" role="tab" aria-controls="nav-lead-time" aria-selected="true">Lead Time</button>
+              type="button" role="tab" aria-selected="false">Lead Time</button>
             <button class="nav-link" id="nav-returns-tab" data-bs-toggle="tab" data-bs-target="#nav-returns"
-              type="button" role="tab" aria-controls="nav-returns" aria-selected="false">Returns</button>
+              type="button" role="tab" aria-selected="false">Returns</button>-->
             <button class="nav-link" id="nav-size-tab" data-bs-toggle="tab" data-bs-target="#nav-size"
-              type="button" role="tab" aria-controls="nav-size" aria-selected="true">What does 3' x 5' look like?</button>
+              type="button" role="tab" aria-selected="false">What does {{sizevariant}} look like?</button>
           </div>
         </nav>
         <div class="tab-content pt-4" id="nav-tabContent">
-          <div class="tab-pane fade show active" id="nav-materials" role="tabpanel" aria-labelledby="nav-materials-tab">
-            <p>Your order is made entirely by hand from 100% natural wool, which means there will be natural (and beautiful) variations in pattern and color. Wool shrinks! While we do our best, final sizes can vary by 1-4"</p>
+          <div *ngFor="let detail of product.productfaq; let i=index" class="tab-pane fade show" [ngClass]="{'active': i === activeTabIndex}" [id]="'nav-tabs'+i" role="tabpanel">
+            <p>{{detail.answer}}</p>
           </div>
-          <div class="tab-pane fade" id="nav-tassels" role="tabpanel" aria-labelledby="nav-tassels-tab">
+          <!-- <div class="tab-pane fade" [id]="'nav-tabs'+i+1" role="tabpanel">
             <p>Traditional Moroccan rugs feature tassels just on one side. You can toggle them on and off below, as you prefer! Tassel length is normally in the range of 4–6".</p>
           </div>
           <div class="tab-pane fade" id="nav-lead-time" role="tabpanel" aria-labelledby="nav-lead-time-tab">
@@ -228,9 +270,11 @@
             <p >All orders are final and we cannot accept returns. Please ensure all measurements, colors, and design are correct before submitting your order!</p>
             <h6 class = "mb-0">What if I don't like what I ordered?</h6>
             <p>We certainly hope that never happens! We're here to answer whatever questions you've got before you place an order to ensure you're 100% happy with your one-of-a-kind design.</p>
-          </div>
-          <div class="tab-pane fade" id="nav-size" role="tabpanel" aria-labelledby="nav-size-tab">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, expedita!</p>
+          </div> -->
+          <div class="tab-pane fade product_size" id="nav-size" role="tabpanel" aria-labelledby="nav-size-tab">
+            <div class="size-square" style="grid-template-columns: repeat({{sizev2}}, 15px)">
+              <div *ngFor="let s of counter(sizev1*sizev2); let i as index"></div>
+            </div>
           </div>
         </div>
       </div>

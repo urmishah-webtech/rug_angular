@@ -13,6 +13,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class ProductDetailComponent implements OnInit  {
 
   private productId: any = '';
+  public activeTabIndex:number = 0;
   panelExpanded = true;
   product: any = [];
   cart: any = [];
@@ -29,11 +30,9 @@ export class ProductDetailComponent implements OnInit  {
   session_id: any
   variationValidation:boolean = false;
   variantForm: any
-  v1: string = ''
-  v2: string = ''
-
-  @ViewChild('varient1', {static: true}) varient1!: ElementRef;
-  @ViewChild('varient2') varient2!: ElementRef;
+  sizevariant: string = ''
+  sizev1: any = 0
+  sizev2: any = 0
 
   constructor(public productService: ProductService,
     private route: ActivatedRoute,
@@ -57,7 +56,7 @@ export class ProductDetailComponent implements OnInit  {
       variant2: new FormControl('', Validators.required),
       variant3: new FormControl('', Validators.required),
       variant4: new FormControl(''),
-      tassels: new FormControl('')
+      size: new FormControl('')
     });
 
   }
@@ -88,11 +87,18 @@ export class ProductDetailComponent implements OnInit  {
     let varient2 = this.variantForm.value.variant2;
     let varient3 = this.variantForm.value.variant3;
     let varient4 = this.variantForm.value.variant4;
-    let tassels = this.variantForm.value.tassels
+    let size = this.variantForm.value.size
+    this.sizevariant = size
+    var newint = size.match(/\d+/g);
+    this.sizev1 = newint[0]
+    this.sizev2 = newint[1]
+
     // console.log(varient1)
     // console.log(varient2)
     // console.log(varient3)
-    // console.log(varient4)
+    console.log(this.sizevariant)
+    console.log(this.sizev1)
+    console.log(this.sizev2)
 
     if(varient1 != ''){
       this.variationValidation = true;
@@ -110,7 +116,7 @@ export class ProductDetailComponent implements OnInit  {
       'text1': varient1,
       'text2': varient2,
       'text3': varient3,
-      'text4': varient4,
+      'text4': size,
       'product_id': this.productId
     }
     this.productService.variationProduct(variation).subscribe(
@@ -264,4 +270,14 @@ productFeatures = [
   {title: 'Lead Time', description: 'Description'},
   {title: 'Returns', description: 'Description'}
 ]
+
+
+selectTab(index:number) {
+  this.activeTabIndex = index;
+ }
+
+ counter(i: number) {
+  return new Array(i);
+}
+
 }
