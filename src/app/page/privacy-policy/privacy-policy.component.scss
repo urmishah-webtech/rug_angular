@@ -50,6 +50,8 @@
 			font-weight: 600;
 			text-decoration: underline;
 			color: #627b80 !important;
+			word-break: break-all;
+			font-size: 14px;
 		}
 
 	}
@@ -63,3 +65,21 @@
 		list-style: inherit;
 	}
 }
+
+/****=============(Responsive SCSS)============******/
+
+@media(max-width:991px) {
+
+	#privacy_section{
+	.row{
+		padding-left: 0rem !important;
+		padding-top: 2rem;
+	}
+
+	ul{
+		padding-left: 1rem !important;
+	}
+
+    }
+	
+  }

@@ -24,7 +24,7 @@
                       </td>
 
                       <td class = "text-center"><h5> <span>Qty: </span>{{cart.stock}}</h5></td>
-                      <td class = "text-end"><h4>${{cart.price*cart.stock}}</h4></td>
+                      <td class = "text-end"><h4>€{{cart.price*cart.stock}}</h4></td>
 
                     </tr>
 
@@ -42,12 +42,12 @@
             <hr>
             <li class = "d-flex justify-content-between py-2">
                 <p class = "mb-0">Standard Shipping</p>
-                <p class = "mb-0"><span>$10</span></p>
+                <p class = "mb-0"><span>€10</span></p>
             </li>
             <hr>
             <li class = "d-flex justify-content-between py-2">
                 <h6 class = "mb-0">Paid Total Amount</h6>
-                <h5 class = "mb-0"><span>${{order.orders.netamout+10}}</span></h5>
+                <h5 class = "mb-0"><span>€{{order.orders.netamout+10}}</span></h5>
             </li>
             <hr>
             </ul>
