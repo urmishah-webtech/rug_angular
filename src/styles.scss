@@ -1105,6 +1105,7 @@ hr{
 			height: 40px;
 		}
 		.blue-btn {
+			margin-left: 0rem;
 			width: 200px;
 			cursor: pointer;
 			margin-top: 1rem;
@@ -1170,6 +1171,7 @@ hr{
 			height: 40px;
 		}
 		.blue-btn {
+			margin-left: 0rem;
 			width: 200px;
 			cursor: pointer;
 			margin-top: 1rem;
@@ -3099,7 +3101,13 @@ border-bottom: 1px solid #e8e4dd;
 				padding-top: 0rem;
 			}
 		}
-	} 
+	}
+	
+	#privacy_section{
+		.row{
+			padding-left: 0rem !important;
+		}
+	}
 
 	
 
@@ -3569,6 +3577,41 @@ footer {
 		
 		}
 		
+	}
+
+	#login .box{
+		padding:1rem;
+		margin: 1rem;
+	}
+	#login .box .shape:last-child {
+		right: -25px;
+		bottom: -25px;
+	}
+	#login .box .background .shape{
+		width: 70px;
+		height: 70px;
+	}
+
+	#signup .box .shape:first-child{
+		top: -25px;
+		left: -25px;
+	}
+	#signup .box{
+		padding:1rem;
+		margin: 1rem;
+	}
+	#signup .box .shape:last-child {
+		right: -25px;
+		bottom: -25px;
+	}
+	#signup .box .background .shape{
+		width: 70px;
+		height: 70px;
+	}
+
+	#signup .box .shape:first-child{
+		top: -25px;
+		left: -25px;
 	}
 	 
 
