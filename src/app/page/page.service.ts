@@ -24,7 +24,10 @@ export class PageService {
     return this.http.get(environment.footer_contact_blog_api);
   }
   terms_condition(){
-    return this.http.get(environment.terms_condition_api);
+    return this.http.get(this.url+'pages/terms-of-service', {headers: this.headers});
+  }
+  privacy_policy(){
+    return this.http.get(this.url+'pages/privacy-policy', {headers: this.headers});
   }
   studio(){
     return this.http.get(this.url+'studiopage', {headers: this.headers});
