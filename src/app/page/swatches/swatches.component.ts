@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PageService } from '../page.service';
 
 @Component({
   selector: 'app-swatches',
@@ -7,12 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SwatchesComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private pageService: PageService) { }
+  page: any
   ngOnInit(): void {
+    this.swatches()
   }
 
-  swatchSlideConfig = {"slidesToShow": 3, 
+  swatches(){
+    this.pageService.swatches().subscribe(res=>{
+      this.page = res
+    })
+  }
+
+  swatchSlideConfig = {"slidesToShow": 3,
   "slidesToScroll": 1,
    "centerMode": true,
   "centerPadding": '100px',
@@ -22,7 +30,7 @@ export class SwatchesComponent implements OnInit {
   "arrow":true,
   "prevArrow": '<img src = "assets/img/visit/slider/long-arrow-left.svg" class = "left_arrow">',
    "nextArrow": '<img src = "assets/img/visit/slider/long-arrow-right.svg" class = "right_arrow">',
-  
+
 
     responsive: [
       {
@@ -50,7 +58,7 @@ export class SwatchesComponent implements OnInit {
         }
       }
     ]
- 
+
   };
 
 

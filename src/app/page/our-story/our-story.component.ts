@@ -11,9 +11,10 @@ export class OurStoryComponent implements OnInit {
   constructor(private pageService: PageService) { }
   page: any
   ngOnInit(): void {
+    this.story()
   }
-  process(){
-    this.pageService.process().subscribe(res=>{
+  story(){
+    this.pageService.story().subscribe(res=>{
       this.page = res
     })
   }

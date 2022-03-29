@@ -20,4 +20,7 @@ export class HeaderService {
   getfooterMenu(){
     return this.http.get(environment.api+'pages',{headers: this.headers})
   }
+  footerinfo(){
+    return this.http.get(environment.api+'footerinformation', {headers: this.headers});
+  }
 }
