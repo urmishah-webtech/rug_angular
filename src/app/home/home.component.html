@@ -1,3 +1,4 @@
+
 <!------------Banner Section Starts--------------->
 <section id = "banner-section">
   <div class = "container">
@@ -23,9 +24,9 @@
       </div>
       <div class = "col-md-6">
         <div class = "sec1-col2">
-          <h2>Our Story</h2>
-          <p class = "py-3 mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id similique quo velit, facilis iure ea magni sequi voluptatum ratione beatae harum corrupti eos ut ipsa vero ex natus porro suscipit, deleniti asperiores ducimus rerum totam! Autem impedit cumque, nostrum ut veritatis quis blanditiis quidem, magnam aliquam maiores, error minima rem?</p>
-          <button type = "button" class = "btn blue-btn" routerLink = "/our-story">Our Story</button>
+          <h2>{{home.ourstorytitle1}}</h2>
+          <div class = "py-3 mb-0" innerHTML="{{home.ourstorydescripation}}"></div>
+          <button type = "button" class = "btn blue-btn" routerLink = "/our-story">{{home.ourstorybuttonname}}</button>
         </div>
       </div>
     </div>
@@ -45,9 +46,9 @@
 <section id = "section3">
   <div class = "container">
     <div class = "box">
-      <h2>Our Success</h2>
-      <p class = "py-3 mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget turpis ac justo sagittis rhoncus ut id sem. Proin nulla velit, vestibulum vitae lobortis quis, consequat a nulla. Praesent tincidunt, dolor vitae rutrum tincidunt, lacus lectus euismod justo, ut tincidunt erat lorem ut ex. Fusce vitae interdum lorem. Aliquam blandit facilisis risus non fringilla. Duis accumsan nulla at ligula vehicula, quis fermentum nisl dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget turpis ac justo sagittis rhoncus ut id sem. Proin nulla velit, vestibulum vitae lobortis quis, consequat a nulla. </p>
-      <button type = "button" class = "btn blue-btn">Our Success</button>
+      <h2>{{home.oursuccesstitle}}</h2>
+      <p class = "py-3 mb-0">{{home.oursuccessdescripation}}</p>
+      <button type = "button" class = "btn blue-btn">{{home.oursuccessbuttonname}}</button>
     </div>
   </div>
 </section>
@@ -59,9 +60,9 @@
     <div class = "row ">
       <div class = "col-lg-6 col-12">
         <div class = "sec1-col2">
-          <h2>Meet Resolute</h2>
-          <p class = "py-3 mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget turpis ac justo sagittis rhoncus ut id sem.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget turpis ac justo sagittis rhoncus ut id sem.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget turpis ac justo sagittis rhoncus ut id sem.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget turpis ac justo sagittis rhoncus ut id sem.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget turpis ac justo sagittis rhoncus ut id sem.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget turpis ac justo sagittis rhoncus ut id sem.</p>
-          <button type = "button" class = "btn blue-btn">Shop Now</button>
+          <h2>{{home.meetresolutetitle}}</h2>
+          <p class = "py-3 mb-0">{{home.meetresolutedescripation}}</p>
+          <button type = "button" class = "btn blue-btn">{{home.meetresolutebuttonname}}</button>
         </div>
       </div>
       <div class = "col-lg-6 col-12">
@@ -78,7 +79,7 @@
 <section id = "section5">
   <div class="container">
     <div>
-      <h2>Rugs Accordance</h2>
+      <h2>{{home.rugsAccordancetitle}}</h2>
     </div>
     <div class="row">
       <div class="col-md-6">
@@ -156,9 +157,9 @@
       </div>
       <div class = "col-lg-4 col-12">
         <div>
-          <h2>Flat & Knotted</h2>
-          <p class = "py-3 mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
-          <button type = "button" class = "btn blue-btn">Find More</button>
+          <h2>{{home.flattitle}}</h2>
+          <p class = "py-3 mb-0">{{home.flatdesctipation}}</p>
+          <button type = "button" class = "btn blue-btn">{{home.flatbuttonname}}</button>
         </div>
       </div>
     </div>
@@ -167,26 +168,26 @@
 <!-----------Section 6 Ends--------->
 <hr class = "section_hr">
 <!-----------Section 7 Starts--------->
-<section id = "section7">
-  <div class = "container">
-    <div class = "row">
-      <div class  = "col-lg-6 col-12">
-        <div class = "col-left">
-          <h2>Our Collection</h2>
-          <p class = "py-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
-          <button type = "button" class = "btn blue-btn">Find More</button>
+<section id="section7">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-12">
+        <div class="col-left">
+          <h2>{{home.collectiontitle}}</h2>
+          <p class="py-3">{{home.collectiondescripation}}</p>
+          <button type="button" class = "btn blue-btn">{{home.collectionbuttonname}}</button>
         </div>
       </div>
-      <div class  = "col-lg-6 col-12">
-        <div class ="row">
-          <div class = "col-lg-6 col-md-6 col-12" *ngFor="let product of featureProduct">
+      <div class="col-lg-6 col-12">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-12" *ngFor="let product of featureProduct">
             <a [routerLink]="['/product-detail', product.id]">
               <div class="card">
-                <hr class = "section_hr">
-                <div class = "card_img">
+                <hr class="section_hr">
+                <div class="card_img">
                   <img src="assets/img/collection1.jpg" class="card-img-top" alt="...">
                 </div>
-                <hr class = "section_hr">
+                <hr class="section_hr">
                 <div class="card-body text-center">
                   <h5 class="card-title mb-0">€{{product.price}}
                   </h5>

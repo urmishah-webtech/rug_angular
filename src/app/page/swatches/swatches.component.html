@@ -4,22 +4,19 @@
     <div class = "row">
         <div class = "col-lg-7 col-12">
          <div class = "img-container">
-          <img src = "assets/img/swatches/swatch.png" alt = "img" width="100%" height="100%">
+          <img src = "{{page.swatchseimage}}" alt = "img" width="100%" height="100%">
          </div>
         </div>
         <div class = "col-lg-5 col-12">
           <div class  = "col1">
               <div>
-                <h2>Swatch Set</h2>
+                <h2>{{page.swatchsettitle1}}</h2>
               </div>
               <div class = "pt-4">
-                <p>Our traditional pile is sumptuous, warm, and incredibly soft underfoot. The coziest addition to any room. The pile for these rugs ranges from 1" - 1.5".</p>
-                <p>Our flatweave pile is the breezier, more casual cousin to full pile. A different weaving technique means these rugs keep a lower profile. Easy to layer and at home in any setting.</p>
-                <p>Please note that the binding around the edge is for sample purposes only, and will not be used on your rug.</p>
-                <p>Each swatch set includes both knotted and flatweave samples and are accompanied by color sample cards with all of our available colors.</p>
+                <p innerHTML="{{page.swatchsedescripation}}"></p>
               </div>
               <div class = "text-center pt-4 mt-4">
-                  <button type = "button" class = "btn blue-btn">Add to Cart</button>
+                  <!-- <button type = "button" class = "btn blue-btn">Add to Cart</button> -->
               </div>
 
             </div>
@@ -33,18 +30,18 @@
 <section id = "swatch-section2">
     <div class = "container">
       <div class = "row">
-          
+
           <div class = "col-lg-5 col-12">
             <div class = "col1 text-center">
                 <div>
-                  <h2>Pick a Color</h2>
-                 <p>Every sample swatch also ships with a card of our in stock colors. If you have another shade in mind, just let us know!</p>
+                  <h2>{{page.pickcolorettitle1}}</h2>
+                 <p>{{page.pickcoloredescripation}}</p>
                 </div>
               </div>
           </div>
-          <div class = "col-lg-7 col-12">
-            <div class = "img-container">
-             <img src = "assets/img/swatches/swatch1.png" alt = "img" width="100%" height="100%">
+          <div class="col-lg-7 col-12">
+            <div class="img-container">
+             <img src="{{page.pickcoloreimage}}" alt = "img" width="100%" height="100%">
             </div>
            </div>
       </div>
@@ -53,38 +50,38 @@
 <!-----Section2 End----->
 <hr class = "section_hr">
 <!-----Section3 Start----->
-<section id = "swatch-section3">
-    <div class = "container">
-      <div class = "row">
-        <div class = "col-lg-3 col-12">
+<section id="swatch-section3">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-12">
 
         </div>
-          <div class = "col-lg-6 col-12">
-             <div class = "text-center">
-                 <h2>Knotted vs. Flat</h2>
-                 <p>Knotted rugs are sumptuous, warm, and incredibly soft underfoot. The pile for these rugs ranges from 1" - 1.5".  Flat rugs are the breezier, more casual cousin to full pile. A different weaving technique means these rugs keep a lower profile.</p>
+          <div class="col-lg-6 col-12">
+             <div class="text-center">
+                 <h2>{{page.knottedflattitle}}</h2>
+                 <p innerHTML="{{page.knottedflatdescripation}}"></p>
              </div>
           </div>
-          <div class = "col-lg-3 col-12">
+          <div class="col-lg-3 col-12">
 
           </div>
-          <div class = "col-lg-6 col-12 ">
-            <a routerLink = "/products" class = "box">
+          <div class="col-lg-6 col-12 ">
+            <a routerLink="{{page.knottedflatbuttonlink1}}" class = "box">
             <div>
-              <div class = "img-container pt-3">
-                <img src = "assets/img/swatches/swatch2.jpg" alt = "img" width="100%" height="100%">
+              <div class="img-container pt-3">
+                <img src="{{page.knottedflatimage1}}" alt = "img" width="100%" height="100%">
               </div>
-              <h6  class = "pt-2 mb-0">Knotted Weave</h6>
+              <h6 class="pt-2 mb-0">{{page.knottedflatbuttonname1}}</h6>
             </div>
            </a>
            </div>
            <div class = "col-lg-6 col-12">
-            <a routerLink = "/products" class = "box">
+            <a routerLink = "{{page.knottedflatbuttonlink2}}" class = "box">
               <div>
                 <div class = "img-container pt-3">
-                  <img src = "assets/img/swatches/swatch3.jpg" alt = "img" width="100%" height="100%">
+                  <img src = "{{page.knottedflatimage2}}" alt = "img" width="100%" height="100%">
                 </div>
-                <h6 class = "pt-2 mb-0">Flat Weave</h6>
+                <h6 class = "pt-2 mb-0">{{page.knottedflatbuttonname2}}</h6>
               </div>
              </a>
            </div>
@@ -108,7 +105,7 @@
         </div>
         <div class = "col-md-3 col-12">
 
-        </div> 
+        </div>
     </div>
     <ngx-slick-carousel class="carousel"
     #slickModal="slick-carousel"
@@ -170,11 +167,11 @@
 <section class = "swatch-section5">
   <div class = "container">
   <video autoplay muted loop id="myVideo" width="100%">
-      <source src="assets/video/our-process.mp4" type="video/mp4" width = >  
+      <source src="assets/video/our-process.mp4" type="video/mp4" width = >
   </video>
   <div class = "banner-content">
-      <h1 class = "text-light">10,000 Years of Tradition.</h1>
+      <h1 class = "text-light">{{page.videotitle}}</h1>
   </div>
-  </div> 
+  </div>
 </section>
 <!-----Section5 End----->

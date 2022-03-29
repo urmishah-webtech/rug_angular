@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PageService } from '../page.service';
 
 @Component({
   selector: 'app-gift-card',
@@ -6,14 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./gift-card.component.scss']
 })
 export class GiftCardComponent implements OnInit {
-  constructor() { }
-
+  constructor(private pageService: PageService) { }
+  page: any
   ngOnInit(): void {
+    this.gift()
   }
-  
+
+  gift(){
+    this.pageService.swatches().subscribe(res=>{
+      this.page = res
+    })
+  }
+
   sizes: string[] = ["3 X 6","3 X 7","3 X 8","4 X 5","4 X 6","5 X 6","5 X 7","6 X 6","6 X 7","7 X 7"]
 selectedSize = this.sizes[0];
-  swatchSlideConfig = {"slidesToShow": 3, 
+  swatchSlideConfig = {"slidesToShow": 3,
   "slidesToScroll": 1,
    "centerMode": true,
   "centerPadding": '100px',
@@ -23,7 +31,7 @@ selectedSize = this.sizes[0];
   "arrow":true,
   "prevArrow": '<img src = "assets/img/visit/slider/long-arrow-left.svg" class = "left_arrow">',
    "nextArrow": '<img src = "assets/img/visit/slider/long-arrow-right.svg" class = "right_arrow">',
-  
+
 
     responsive: [
       {
@@ -51,7 +59,7 @@ selectedSize = this.sizes[0];
         }
       }
     ]
- 
+
   };
 
 }

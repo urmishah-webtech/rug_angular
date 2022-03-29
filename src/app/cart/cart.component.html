@@ -29,17 +29,16 @@
                           <tr *ngFor="let cart of cart.cartitem">
                               <!-- <td><img src = "assets/img/product/product.png"></td> -->
                               <!-- <div class="" *ngIf="cart.length != 0"> -->
-                              <td><div class = "cart_product_img"><img src = "{{cart.image}}"></div></td>
-                              <td class = "product_name"><h6 class = "mb-0">{{cart.product_detail.title}}</h6>
-                                   <p  class = "mb-0"><span *ngIf="cart.product_variant[0].attribute1">{{cart.product_variant[0].attribute1}} </span> / <span *ngIf="cart.product_variant[0].attribute2">{{cart.product_variant[0].attribute2}}</span> / <span *ngIf="cart.product_variant[0].attribute3">{{cart.product_variant[0].attribute3}}</span></p>
-
+                              <td><div class="cart_product_img"><img src="{{cart.image}}"></div></td>
+                              <td class="product_name"><h6 class="mb-0">{{cart.product_detail.title}}</h6>
+                                   <p class="mb-0"><span *ngIf="cart.product_variant[0].attribute1">{{cart.product_variant[0].attribute1}} </span> / <span *ngIf="cart.product_variant[0].attribute2">{{cart.product_variant[0].attribute2}}</span> / <span *ngIf="cart.product_variant[0].attribute3">{{cart.product_variant[0].attribute3}}</span></p>
                             </td>
                             <td class = "text-center product_quant"><div class = "product-quantity">
-                              <button type="button" class = "minus" (click)="minus(cart.id, cart.price)">-</button>
+                              <button type="button" class="minus" (click)="minus(cart.id, cart.price)">-</button>
                               <input type="text" #quantity class="cartqty" value="{{cart.stock}}">
-                             <button type = "button" class = "plus" (click)="plus(cart.id, cart.price)">+</button>
+                             <button type = "button" class="plus" (click)="plus(cart.id, cart.price)">+</button>
                             </div></td>
-                            <td class = "text-center"><h5>${{cart.price*cart.stock}}</h5></td>
+                            <td class = "text-center"><h5>€{{cart.price*cart.stock}}</h5></td>
                             <td  class = "text-end"><button type="button" (click)="deleteCartItem(cart.id)">&#10005;</button></td>
                             <!-- </div> -->
                           </tr>
@@ -57,17 +56,17 @@
                     <hr>
                 <li class = "d-flex justify-content-between py-2">
                     <p>Subtotal</p>
-                    <p><span>${{cart.Totalamount}}</span></p>
+                    <p><span>€{{cart.Totalamount}}</span></p>
                 </li>
                 <hr>
                 <li class = "d-flex justify-content-between py-2">
                     <p>Standard Shipping</p>
-                    <p><span>$10</span></p>
+                    <p><span>€10</span></p>
                 </li>
                 <hr>
                 <li class = "d-flex justify-content-between py-2">
                     <p class = "mb-0">Total</p>
-                    <h5 class = "mb-0"><span>${{cart.Totalamount+10}}</span></h5>
+                    <h5 class = "mb-0"><span>€{{cart.Totalamount+10}}</span></h5>
                 </li>
                 <hr>
                 </ul>

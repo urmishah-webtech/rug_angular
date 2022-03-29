@@ -10,11 +10,19 @@ export class FooterComponent implements OnInit {
 
   company: any = [];
   support: any = [];
+  information: any = []
   constructor(private headerService: HeaderService) { }
 
   ngOnInit(): void {
     this.getcompany()
     this.getSupport()
+    this.getcompanyInfo()
+  }
+
+  getcompanyInfo(){
+    this.headerService.footerinfo().subscribe(data=> {
+      this.information = data;
+    })
   }
 
   getcompany(){

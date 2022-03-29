@@ -16,53 +16,53 @@
             <p>Accredited interior designers, hoteliers, architects, and creative studios qualify for exclusive trade pricing. Let us know a bit more about yourself below, and we'll be in touch!</p>
         </div>
         <div class ="box mt-4">
-            <form>
+            <form [formGroup]="enquiryForm" (ngSubmit)="onsubmit()">
                 <div class = "row">
                     <div class = "col-md-6 col-sm-6 col-12">
                         <div class="form-group py-3">
                           <label class="form-label">First Name</label>
-                          <input type="text" class="form-control" placeholder="Rosy" name = "firstname">
+                          <input type="text" class="form-control" placeholder="Rosy" formControlName = "firstname">
                         </div>
                     </div>
                     <div class = "col-md-6 col-sm-6 col-12">
                         <div class="form-group py-3">
                             <label for="exampleFormControlInput2" class="form-label">Last Name</label>
-                            <input type="text" class="form-control" name = "lastname" placeholder = "Smith">
+                            <input type="text" class="form-control" formControlName = "lastname" placeholder = "Smith">
                         </div>
                     </div>
                     <div class = "col-md-6 col-sm-6 col-12">
                         <div class="form-group py-3">
                             <label class="form-label">Email</label>
-                            <input type="email" class="form-control" name = "email"   aria-describedby="emailHelp" placeholder="rosysmith@gmail.com">
+                            <input type="email" class="form-control" formControlName = "email"   aria-describedby="emailHelp" placeholder="rosysmith@gmail.com">
                         </div>
                     </div>
                     <div class = "col-md-6 col-sm-6 col-12">
                         <div class="form-group py-3">
                             <label class="form-label">Mobile Number</label>
-                            <input type="text" class="form-control" placeholder="1234567890" >
+                            <input type="text" class="form-control" placeholder="1234567890" formControlName="mobilenumber" >
                           </div>
                     </div>
                     <div class = "col-md-6 col-sm-6 col-12">
                         <div class="form-group py-3">
                             <label for="exampleFormControlInput2" class="form-label">Company Name                            </label>
-                            <input type="text" class="form-control" name = "lastname" placeholder = "Rug">
+                            <input type="text" class="form-control" formControlName = "companyname" placeholder = "Rug">
                         </div>
                     </div>
                     <div class = "col-md-6 col-sm-6 col-12">
                         <div class="form-group py-3">
                             <label for="exampleFormControlInput2" class="form-label">Company Website</label>
-                            <input type="url" class="form-control" name = "lastname" placeholder = "https://www.benirugs.com/">
+                            <input type="url" class="form-control" formControlName = "companywebsite" placeholder = "https://www.benirugs.com/">
                         </div>
                     </div>
                 </div>
                 <div class="form-group py-3">
                   <label class="form-label">Message</label>
-                  <textarea class="form-control"  name = "textarea" placeholder = "Type your message here!" rows="3" ></textarea>
+                  <textarea class="form-control"  formControlName = "message" placeholder = "Type your message here!" rows="3" ></textarea>
                 </div>
                 <div class = "text-center pt-4">
-                  <button type = "submit" class  = "btn blue-btn mt-4" id="button-addon2">Send Enquiry</button>
+                  <button type="submit" class="btn blue-btn mt-4" id="button-addon2">Send Enquiry</button>
                 </div>
-                </form>    
+                </form>
         </div>
         <div class = "text-center pt-4">
             <small>If you have any questions, <br>email us at <a href="#">trade@benirugs.com</a></small>

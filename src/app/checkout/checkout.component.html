@@ -278,7 +278,7 @@
                                  <!-- <p  class = "mb-0"><span>Fawn + Natural </span> / <span>3' x 5'</span> / <span>Tassels</span></p> -->
                           </td>
                           <td><h5 class = "checkout_product_quantity"><span> Qty: </span>{{cart.stock}}</h5></td>
-                          <td class = "text-center"><h5>${{cart.price*cart.stock}}</h5></td>
+                          <td class = "text-center"><h5>€{{cart.price*cart.stock}}</h5></td>
                           <td  class = "text-end"><button (click)="deleteCartItem(cart.id)">&#10005;</button></td>
                         </tr>
                     </tbody>
@@ -290,17 +290,17 @@
                     <hr>
                 <li class = "d-flex justify-content-between py-2">
                     <p class = "mb-0">Subtotal</p>
-                    <p class = "mb-0"><span>${{cart.Totalamount}}</span></p>
+                    <p class = "mb-0"><span>€{{cart.Totalamount}}</span></p>
                 </li>
                 <hr>
                 <li class = "d-flex justify-content-between py-2">
                     <p class = "mb-0">Standard Shipping</p>
-                    <p class = "mb-0"><span>$10</span></p>
+                    <p class = "mb-0"><span>€10</span></p>
                 </li>
                 <hr>
                 <li class = "d-flex justify-content-between py-2">
                     <p class = "mb-0">Total</p>
-                    <h5 class = "mb-0"><span>${{cart.Totalamount+10}}</span></h5>
+                    <h5 class = "mb-0"><span>€{{cart.Totalamount+10}}</span></h5>
                 </li>
                 <hr>
                 </ul>

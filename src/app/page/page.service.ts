@@ -35,4 +35,14 @@ export class PageService {
   process(){
     return this.http.get(this.url+'proceesspage', {headers: this.headers});
   }
+  story(){
+    return this.http.get(this.url+'ourstorypage', {headers: this.headers});
+  }
+  swatches(){
+    return this.http.get(this.url+'swatchespage', {headers: this.headers});
+  }
+
+  enquire(enquireform: any){
+    return this.http.post(this.url+'tradesave', enquireform, {headers: this.headers});
+  }
 }
