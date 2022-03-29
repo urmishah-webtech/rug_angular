@@ -16,7 +16,7 @@
     <div class = "container">
       <div class = "text-center box">
         <h2 class = "mb-4">{{page.bringingmoroccotitle}}</h2>
-        <p>{{page.bringingmoroccodescripation}}</p>
+        <p [innerHTML]="page.bringingmoroccodescripation"></p>
     </div>
     </div>
 </section>
@@ -29,7 +29,7 @@
         <div class = "row flex-column-reverse flex-lg-row">
             <div class = "col-lg-6 col-12">
             <div class = "visit-img">
-                <img src = "assets/img/visit/apartment1.jpg" width="100%"  alt = "img">
+                <img src = "{{page.detailsimage}}" width="100%"  alt = "img">
             </div>
         </div>
        <div class = "col-lg-6 col-12 ">
@@ -56,7 +56,7 @@
      </div>
      <div class = "col-lg-6 col-12">
         <div class = "visit-img">
-            <img src = "assets/img/visit/apartment2.jpg" width="100%"  alt = "img">
+            <img src = "{{page.leafyimage}}" width="100%"  alt = "img">
         </div>
     </div>
   </div>
@@ -88,7 +88,7 @@
      <div class = "col-lg-6 col-12">
         <div class = "visit-img">
             <div class ="opacity"></div>
-            <img src = "assets/img/visit/apartment3.jpg" width="100%" alt = "img">
+            <img src = "{{page.expectimage}}" width="100%" alt = "img">
         </div>
     </div>
      </div>
@@ -110,7 +110,7 @@
      <div class = "col-lg-6 col-12">
         <div class = "visit-img1">
 
-            <img src = "assets/img/visit/studio-banner1.jpg" width="100%">
+            <img src = "{{page.marrakechimage}}" width="100%">
         </div>
     </div>
     <div class = "col-lg-6 col-12">

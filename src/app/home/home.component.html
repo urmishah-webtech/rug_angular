@@ -19,14 +19,14 @@
     <div class = "row flex-column-reverse flex-lg-row flex-md-row">
       <div class = "col-md-6">
         <div class = "sec1-img">
-          <img src = "assets/img/sec1-img.png" width="100%">
+          <img src = "{{home?.ourstoryimage}}" width="100%">
         </div>
       </div>
       <div class = "col-md-6">
         <div class = "sec1-col2">
-          <h2>{{home.ourstorytitle1}}</h2>
+          <h2>{{home?.ourstorytitle1}}</h2>
           <div class = "py-3 mb-0" innerHTML="{{home.ourstorydescripation}}"></div>
-          <button type = "button" class = "btn blue-btn" routerLink = "/our-story">{{home.ourstorybuttonname}}</button>
+          <button type = "button" class = "btn blue-btn" routerLink = "/our-story">{{home?.ourstorybuttonname}}</button>
         </div>
       </div>
     </div>
@@ -67,7 +67,7 @@
       </div>
       <div class = "col-lg-6 col-12">
         <div class ="sec4-img">
-          <img src = "assets/img/sec4-img.png" width="100%">
+          <img src = "{{home.meetresoluteimage}}" width="100%">
         </div>
       </div>
     </div>
@@ -86,10 +86,10 @@
         <div class="content">
           <a routerLink = "/products">
             <div class="content-overlay"></div>
-            <img class="content-image" src="assets/img/sec5-img1.jpg">
+            <img class="content-image" src="{{home.rugsproductproductimage1}}">
             <div class="content-details fadeIn-bottom">
-              <h3 class="content-title">Modern Area Rugs</h3>
-              <a type = "button" class = "btn" routerLink = "/products">View Products</a>
+              <h3 class="content-title">{{home.rugsproducttitle1}}</h3>
+              <a type = "button" class = "btn" routerLink = "/products">{{home.rugsproductbuttonname1}}</a>
             </div>
           </a>
         </div>
@@ -98,10 +98,10 @@
         <div class="content">
           <a routerLink = "/products">
             <div class="content-overlay"></div>
-            <img class="content-image" src="assets/img/sec5-img2.jpg">
+            <img class="content-image" src="{{home.rugsproductproductimage2}}">
             <div class="content-details fadeIn-bottom">
-              <h3 class="content-title">Shag Area Rugs</h3>
-              <a type = "button" class = "btn" routerLink = "/products">View Products</a>
+              <h3 class="content-title">{{home.rugsproducttitle2}}</h3>
+              <a type = "button" class = "btn" routerLink = "/products">{{home.rugsproductbuttonname2}}</a>
             </div>
           </a>
         </div>
@@ -110,10 +110,10 @@
         <div class="content ">
           <a routerLink = "/products">
             <div class="content-overlay "></div>
-            <img class="content-image " src="assets/img/sec5-img3.jpg">
+            <img class="content-image " src="{{home.rugsproductproductimage3}}">
             <div class="content-details fadeIn-bottom">
-              <h3 class="content-title">Traditional Area Rugs</h3>
-              <a type = "button" class = "btn" routerLink = "/products">View Products</a>
+              <h3 class="content-title">{{home.rugsproducttitle3}}</h3>
+              <a type = "button" class = "btn" routerLink = "/products">{{home.rugsproductbuttonname3}}</a>
             </div>
           </a>
         </div>
@@ -122,10 +122,10 @@
         <div class="content">
           <a routerLink = "/products">
             <div class="content-overlay"></div>
-            <img class="content-image" src="assets/img/sec5-img4.jpg">
+            <img class="content-image" src="{{home.rugsproductproductimage4}}">
             <div class="content-details fadeIn-bottom">
-              <h3 class="content-title">Outdoor Area Rugs</h3>
-              <a type = "button" class = "btn" routerLink = "/products">View Products</a>
+              <h3 class="content-title">{{home.rugsproducttitle4}}</h3>
+              <a type = "button" class = "btn" routerLink = "/products">{{home.rugsproductbuttonname3}}</a>
             </div>
           </a>
         </div>
