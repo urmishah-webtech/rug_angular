@@ -1213,27 +1213,6 @@ hr{
 	background-image: linear-gradient(-45deg, #38494d99, #38494d99),url("assets/img/product/banner1.jpg");
 	padding-top: 8rem;
     padding-bottom: 8rem;
-	animation: productchange 20s infinite ease-in-out;
-
-
-	@keyframes productchange {
-		0%{
-			background-image: linear-gradient(-45deg, #38494d99, #38494d99),url("assets/img/product/banner1.jpg");
-		}
-		25%{
-			background-image: linear-gradient(-45deg, #38494d99, #38494d99),url("assets/img/product/banner2.jpg");
-		}
-		50%{
-			background-image: linear-gradient(-45deg, #38494d99, #38494d99),url("assets/img/product/banner3.jpg");
-		}
-		75%{
-			background-image: linear-gradient(-45deg, #38494d99, #38494d99),url("assets/img/product/banner4.jpg");
-		}
-		100%{
-			background-image: linear-gradient(-45deg, #38494d99, #38494d99),url("assets/img/product/banner5.jpg");
-		}
-
-	}
 
 	h1{
 		color: #fff;
@@ -2768,14 +2747,30 @@ border-bottom: 1px solid #e8e4dd;
 	}
 }
 
-
-
 /**********Tue Studio Page Slider SCSS**********/
+#studio-banner-slider{
+	.slick-arrow{
+		display: none !important;
+	}
+}
+
+#apartment-banner-slider {
+	.slick-arrow{
+		display: none !important;
+	}
+}
+#trade-banner-slider {
+	.slick-arrow{
+		display: none !important;
+	}
+}
+
 .slick-arrow{
 	position: absolute;
 	cursor: pointer;
 	top:42%;
 	width: 50px;
+	
 
 }
 .left_arrow{

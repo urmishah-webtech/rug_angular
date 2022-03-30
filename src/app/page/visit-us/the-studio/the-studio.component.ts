@@ -20,6 +20,16 @@ export class TheStudioComponent implements OnInit {
     });
   }
 
+  
+  studioBannerSlideConfig = {"slidesToShow": 1,
+  "fade":true,
+  "slidesToScroll": 1,
+  "autoplay":true,
+  "speed":3000,
+  "infinite": true,
+  "arrow":false,
+  };
+
   studioSlideConfig = {"slidesToShow": 3,
   "slidesToScroll": 1,
    "centerMode": true,

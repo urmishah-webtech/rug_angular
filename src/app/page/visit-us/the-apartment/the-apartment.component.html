@@ -1,12 +1,59 @@
 <!----------------(Banner Start)------------------>
-<section id = "apartment-banner">
-    <div class = "container">
-      <div class = "text-center">
-        <h1 class = "mb-0 text-light">The Apartment, NYC</h1>
-        <h6 class = "mb-0 text-light">Beni in a brownstone. Let’s meet by the fireplace to chat rug design, review color and construction samples, and answer any questions.</h6>
-        <button type = "button" class= "btn black-btn" data-bs-toggle="modal" data-bs-target="#requestModal">Request Appointment</button>
+<section id = "apartment-banner-slider">
+    <ngx-slick-carousel class="carousel"
+    #slickModal="slick-carousel"
+    [config]="apartmentBannerSlideConfig">
+   
+    <div ngxSlickItem  class="slide slider_content">
+      <div class = "box">
+        <div>
+          <img src = "assets/img/visit/studio-banner2.jpg" width="100%">
+          <div class ="overlay">
+          </div>
+        </div>
+        <div class = "container">
+            <div class = "text-center">
+              <h1 class = "mb-0 text-light">The Apartment, NYC</h1>
+              <h6 class = "mb-0 text-light">Beni in a brownstone. Let’s meet by the fireplace to chat rug design, review color and construction samples, and answer any questions.</h6>
+              <button type = "button" class= "btn black-btn" data-bs-toggle="modal" data-bs-target="#requestModal">Request Appointment</button>
+          </div>
+          </div>
     </div>
     </div>
+    <div ngxSlickItem  class="slide slider_content">
+      <div class = "box">
+        <div>
+          <img src = "assets/img/visit/studio-banner3.jpg" width="100%">
+           <div class ="overlay">
+          </div>
+        </div>
+        <div class = "container">
+            <div class = "text-center">
+              <h1 class = "mb-0 text-light">The Apartment, NYC</h1>
+              <h6 class = "mb-0 text-light">Beni in a brownstone. Let’s meet by the fireplace to chat rug design, review color and construction samples, and answer any questions.</h6>
+              <button type = "button" class= "btn black-btn" data-bs-toggle="modal" data-bs-target="#requestModal">Request Appointment</button>
+          </div>
+          </div>
+    </div>
+    </div>
+    <div ngxSlickItem  class="slide slider_content">
+      <div class = "box">
+        <div>
+          <img src = "assets/img/visit/studio-banner4.jpg" width="100%">
+          <div class ="overlay">
+          </div>
+        </div>
+        <div class = "container">
+            <div class = "text-center">
+              <h1 class = "mb-0 text-light">The Apartment, NYC</h1>
+              <h6 class = "mb-0 text-light">Beni in a brownstone. Let’s meet by the fireplace to chat rug design, review color and construction samples, and answer any questions.</h6>
+              <button type = "button" class= "btn black-btn" data-bs-toggle="modal" data-bs-target="#requestModal">Request Appointment</button>
+          </div>
+          </div>
+    </div>
+    </div>
+    </ngx-slick-carousel>
+  
 </section>
 <!----------------(Banner End)------------------>
 

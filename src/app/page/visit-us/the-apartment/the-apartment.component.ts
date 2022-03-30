@@ -14,6 +14,17 @@ export class TheApartmentComponent implements OnInit {
     this.getPage();
   }
 
+  apartmentBannerSlideConfig ={"slidesToShow": 1,
+  "fade":true,
+  "slidesToScroll": 1,
+  "autoplay":true,
+  "speed":3000,
+  "infinite": true,
+  "arrow":false,
+  }; 
+      
+     
+
   getPage(){
     this.pageService.apartment().subscribe(res =>{
       this.page = res;

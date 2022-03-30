@@ -35,4 +35,14 @@ export class TradeProgramComponent implements OnInit {
       })
     }
   }
+
+  tradeBannerSlideConfig = {"slidesToShow": 1,
+  "fade":true,
+  "slidesToScroll": 1,
+  "autoplay":true,
+  "autoplaySpeed": 0,
+  "speed":3000,
+  "infinite": true,
+  "arrow":false,
+  };
 }
