@@ -26,7 +26,7 @@
         <div class = "sec1-col2">
           <h2>{{home?.ourstorytitle1}}</h2>
           <div class = "py-3 mb-0" innerHTML="{{home.ourstorydescripation}}"></div>
-          <button type = "button" class = "btn blue-btn" routerLink = "/our-story">{{home?.ourstorybuttonname}}</button>
+          <button type = "button" class = "btn blue-btn" routerLink = "{{home.ourstorybuttonlink}}">{{home?.ourstorybuttonname}}</button>
         </div>
       </div>
     </div>
@@ -48,7 +48,7 @@
     <div class = "box">
       <h2>{{home.oursuccesstitle}}</h2>
       <p class = "py-3 mb-0">{{home.oursuccessdescripation}}</p>
-      <button type = "button" class = "btn blue-btn">{{home.oursuccessbuttonname}}</button>
+      <button type = "button" class = "btn blue-btn" routerLink="{{home.oursuccessbuttonlink}}">{{home.oursuccessbuttonname}}</button>
     </div>
   </div>
 </section>
@@ -62,7 +62,7 @@
         <div class = "sec1-col2">
           <h2>{{home.meetresolutetitle}}</h2>
           <p class = "py-3 mb-0">{{home.meetresolutedescripation}}</p>
-          <button type = "button" class = "btn blue-btn">{{home.meetresolutebuttonname}}</button>
+          <button type = "button" class = "btn blue-btn" routerLink="{{home.meetresolutebuttonelink}}">{{home.meetresolutebuttonname}}</button>
         </div>
       </div>
       <div class = "col-lg-6 col-12">
@@ -89,7 +89,7 @@
             <img class="content-image" src="{{home.rugsproductproductimage1}}">
             <div class="content-details fadeIn-bottom">
               <h3 class="content-title">{{home.rugsproducttitle1}}</h3>
-              <a type = "button" class = "btn" routerLink = "/products">{{home.rugsproductbuttonname1}}</a>
+              <a type = "button" class = "btn" routerLink = "{{home.rugsproductproductbuttonlink1}}">{{home.rugsproductbuttonname1}}</a>
             </div>
           </a>
         </div>
@@ -101,7 +101,7 @@
             <img class="content-image" src="{{home.rugsproductproductimage2}}">
             <div class="content-details fadeIn-bottom">
               <h3 class="content-title">{{home.rugsproducttitle2}}</h3>
-              <a type = "button" class = "btn" routerLink = "/products">{{home.rugsproductbuttonname2}}</a>
+              <a type = "button" class = "btn" routerLink = "{{home.rugsproductproductbuttonlink2}}">{{home.rugsproductbuttonname2}}</a>
             </div>
           </a>
         </div>
@@ -113,7 +113,7 @@
             <img class="content-image " src="{{home.rugsproductproductimage3}}">
             <div class="content-details fadeIn-bottom">
               <h3 class="content-title">{{home.rugsproducttitle3}}</h3>
-              <a type = "button" class = "btn" routerLink = "/products">{{home.rugsproductbuttonname3}}</a>
+              <a type = "button" class = "btn" routerLink = "{{home.rugsproductproductbuttonlink3}}">{{home.rugsproductbuttonname3}}</a>
             </div>
           </a>
         </div>
@@ -125,7 +125,7 @@
             <img class="content-image" src="{{home.rugsproductproductimage4}}">
             <div class="content-details fadeIn-bottom">
               <h3 class="content-title">{{home.rugsproducttitle4}}</h3>
-              <a type = "button" class = "btn" routerLink = "/products">{{home.rugsproductbuttonname3}}</a>
+              <a type = "button" class = "btn" routerLink = "{{home.rugsproductproductbuttonlink4}}">{{home.rugsproductbuttonname3}}</a>
             </div>
           </a>
         </div>
@@ -145,12 +145,12 @@
         <div class = "row">
           <div class = "col-lg-6 col-12">
             <div class="hover-effect">
-              <img src="assets/img/sec6-img1.jpg" alt="images">
+              <img src="{{home.flatimage1}}" alt="images">
              </div>
           </div>
           <div class = "col-lg-6 col-12">
             <div class="hover-effect">
-              <img src="assets/img/sec6-img2.jpg" alt="images">
+              <img src="{{home.flatimage2}}" alt="images">
               </div>
           </div>
         </div>
@@ -159,7 +159,7 @@
         <div>
           <h2>{{home.flattitle}}</h2>
           <p class = "py-3 mb-0">{{home.flatdesctipation}}</p>
-          <button type = "button" class = "btn blue-btn">{{home.flatbuttonname}}</button>
+          <button type = "button" class = "btn blue-btn" routerLink="{{home.flatbuttonlink}}">{{home.flatbuttonname}}</button>
         </div>
       </div>
     </div>

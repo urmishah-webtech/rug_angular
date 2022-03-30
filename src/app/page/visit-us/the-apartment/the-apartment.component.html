@@ -15,8 +15,8 @@
 <section id = "apartment-section1" class = "inner_sec1">
     <div class = "container">
       <div class = "text-center box">
-        <h2 class = "mb-4">{{page.bringingmoroccotitle}}</h2>
-        <p [innerHTML]="page.bringingmoroccodescripation"></p>
+        <h2 class = "mb-4">{{page[0].bringingmoroccotitle}}</h2>
+        <p [innerHTML]="page[0].bringingmoroccodescripation"></p>
     </div>
     </div>
 </section>
@@ -29,13 +29,13 @@
         <div class = "row flex-column-reverse flex-lg-row">
             <div class = "col-lg-6 col-12">
             <div class = "visit-img">
-                <img src = "{{page.detailsimage}}" width="100%"  alt = "img">
+                <img src = "{{page[0].detailsimage}}" width="100%"  alt = "img">
             </div>
         </div>
        <div class = "col-lg-6 col-12 ">
           <div class = "col2 text-start">
-              <h2 class = "text-capitalize">{{page.detailstitle}}</h2>
-              <p>{{page.detailsdescriaption}}</p>
+              <h2 class = "text-capitalize">{{page[0].detailstitle}}</h2>
+              <p>{{page[0].detailsdescriaption}}</p>
           </div>
        </div>
 
@@ -50,13 +50,13 @@
      <div class = "row">
        <div class = "col-lg-6 col-12">
         <div class = "col2 text-lg-end text-start">
-            <h2 class = "text-capitalize">{{page.leafytitle}}</h2>
-            <p>{{page.leafydescriaption}}</p>
+            <h2 class = "text-capitalize">{{page[0].leafytitle}}</h2>
+            <p>{{page[0].leafydescriaption}}</p>
         </div>
      </div>
      <div class = "col-lg-6 col-12">
         <div class = "visit-img">
-            <img src = "{{page.leafyimage}}" width="100%"  alt = "img">
+            <img src = "{{page[0].leafyimage}}" width="100%"  alt = "img">
         </div>
     </div>
   </div>
@@ -68,8 +68,8 @@
 <section id = "apartment-section4">
     <div class = "container">
      <div class = "text-center">
-        <h3>{{page.onlydescriaption}}</h3>
-        <h6>{{page.onlytitle}}</h6>
+        <h3>{{page[0].onlydescriaption}}</h3>
+        <h6>{{page[0].onlytitle}}</h6>
     </div>
     </div>
 </section>
@@ -81,14 +81,14 @@
      <div class = "row">
        <div class = "col-lg-6 col-12 ">
         <div class = "col2">
-            <h2>{{page.expecttitle}}</h2>
-            <p>{{page.expectdescriaption}}</p>
+            <h2>{{page[0].expecttitle}}</h2>
+            <p>{{page[0].expectdescriaption}}</p>
         </div>
      </div>
      <div class = "col-lg-6 col-12">
         <div class = "visit-img">
             <div class ="opacity"></div>
-            <img src = "{{page.expectimage}}" width="100%" alt = "img">
+            <img src = "{{page[0].expectimage}}" width="100%" alt = "img">
         </div>
     </div>
      </div>
@@ -110,14 +110,14 @@
      <div class = "col-lg-6 col-12">
         <div class = "visit-img1">
 
-            <img src = "{{page.marrakechimage}}" width="100%">
+            <img src = "{{page[0].marrakechimage}}" width="100%">
         </div>
     </div>
     <div class = "col-lg-6 col-12">
         <div class = "col2">
-            <h2>{{page.marrakechtitle}}</h2>
-            <p>{{page.marrakechdescripation}}</p>
-           <button type = "button" class = "btn blue-btn" routerLink = "/visit/studio">{{page.marrakechbuttonname}}</button>
+            <h2>{{page[0].marrakechtitle}}</h2>
+            <p>{{page[0].marrakechdescripation}}</p>
+           <button type = "button" class = "btn blue-btn" routerLink = "/visit/studio">{{page[0].marrakechbuttonname}}</button>
         </div>
      </div>
      </div>

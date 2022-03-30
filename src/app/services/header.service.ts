@@ -18,7 +18,10 @@ export class HeaderService {
     return this.http.get(this.menuUrl+'sub-menu-list/'+id, {headers: this.headers});
   }
   getfooterMenu(){
-    return this.http.get(environment.api+'pages',{headers: this.headers})
+    return this.http.get(environment.api+'footermenu/8',{headers: this.headers})
+  }
+  getfooterMenu1(){
+    return this.http.get(environment.api+'footermenu/9',{headers: this.headers})
   }
   footerinfo(){
     return this.http.get(environment.api+'footerinformation', {headers: this.headers});
