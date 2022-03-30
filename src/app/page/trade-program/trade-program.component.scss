@@ -62,6 +62,14 @@ section .blue-btn{
             background: linear-gradient(135deg, #f0f0f0 30%, #fff 30%, #fff 70%, #f0f0f0 70%);
             box-shadow: 0 0 5px #d5caca;
             form{
+                .alert-danger {
+                    background-color: transparent !important;
+                    border: unset !important;
+                    color: #ff0017;
+                    padding: 0.5rem 0rem 0rem 0rem !important;
+                    margin-bottom: 0rem !important;
+                }
+               
                 label{
                     margin-bottom: 0.3rem;
                 }
@@ -137,7 +145,6 @@ section .blue-btn{
         }
     }
 }
-
 
 
   

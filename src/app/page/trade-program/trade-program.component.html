@@ -22,42 +22,63 @@
                         <div class="form-group py-3">
                           <label class="form-label">First Name</label>
                           <input type="text" class="form-control" placeholder="Rosy" formControlName = "firstname">
+                          <div *ngIf="enquiryForm.controls['firstname'].invalid && (enquiryForm.controls['firstname'].dirty || enquiryForm.controls['firstname'].touched)"
+                            class="alert alert-danger"> First name is required.
+                          </div>
                         </div>
                     </div>
                     <div class = "col-md-6 col-sm-6 col-12">
                         <div class="form-group py-3">
                             <label for="exampleFormControlInput2" class="form-label">Last Name</label>
                             <input type="text" class="form-control" formControlName = "lastname" placeholder = "Smith">
-                        </div>
+                            <div *ngIf="enquiryForm.controls['lastname'].invalid && (enquiryForm.controls['lastname'].dirty || enquiryForm.controls['lastname'].touched)"
+                            class="alert alert-danger"> Last name is required.
+                          </div>
+                          </div>
                     </div>
                     <div class = "col-md-6 col-sm-6 col-12">
                         <div class="form-group py-3">
                             <label class="form-label">Email</label>
                             <input type="email" class="form-control" formControlName = "email"   aria-describedby="emailHelp" placeholder="rosysmith@gmail.com">
-                        </div>
+                            <div *ngIf="enquiryForm.controls['email'].invalid && (enquiryForm.controls['email'].dirty || enquiryForm.controls['email'].touched)"
+                            class="alert alert-danger">Email is required.
+                          </div>
+                          </div>
                     </div>
                     <div class = "col-md-6 col-sm-6 col-12">
                         <div class="form-group py-3">
                             <label class="form-label">Mobile Number</label>
                             <input type="text" class="form-control" placeholder="1234567890" formControlName="mobilenumber" >
+                            <div *ngIf="enquiryForm.controls['mobilenumber'].invalid && (enquiryForm.controls['mobilenumber'].dirty || enquiryForm.controls['mobilenumber'].touched)"
+                            class="alert alert-danger"> Mobile number is required.
+                          </div>
                           </div>
                     </div>
                     <div class = "col-md-6 col-sm-6 col-12">
                         <div class="form-group py-3">
                             <label for="exampleFormControlInput2" class="form-label">Company Name                            </label>
                             <input type="text" class="form-control" formControlName = "companyname" placeholder = "Rug">
-                        </div>
+                            <div *ngIf="enquiryForm.controls['companyname'].invalid && (enquiryForm.controls['companyname'].dirty || enquiryForm.controls['companyname'].touched)"
+                            class="alert alert-danger"> Company name is required.
+                          </div>
+                          </div>
                     </div>
                     <div class = "col-md-6 col-sm-6 col-12">
                         <div class="form-group py-3">
                             <label for="exampleFormControlInput2" class="form-label">Company Website</label>
                             <input type="url" class="form-control" formControlName = "companywebsite" placeholder = "https://www.benirugs.com/">
-                        </div>
+                            <div *ngIf="enquiryForm.controls['companywebsite'].invalid && (enquiryForm.controls['companywebsite'].dirty || enquiryForm.controls['companywebsite'].touched)"
+                            class="alert alert-danger">Company website is required.
+                          </div>
+                          </div>
                     </div>
                 </div>
                 <div class="form-group py-3">
                   <label class="form-label">Message</label>
                   <textarea class="form-control"  formControlName = "message" placeholder = "Type your message here!" rows="3" ></textarea>
+                  <div *ngIf="enquiryForm.controls['message'].invalid && (enquiryForm.controls['message'].dirty || enquiryForm.controls['message'].touched)"
+                            class="alert alert-danger"> Message is required.
+                          </div>
                 </div>
                 <div class = "text-center pt-4">
                   <button type="submit" class="btn blue-btn mt-4" id="button-addon2">Send Enquiry</button>
