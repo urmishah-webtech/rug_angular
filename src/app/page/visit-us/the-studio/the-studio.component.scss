@@ -3,7 +3,7 @@ p{font-size: 18px;line-height: 28px;}
 h2{&:after{content: "";position: relative;display: block;width: 40px;height: 3px;background: #627b80;bottom: 0;text-align: center;margin-top: 10px;}}
 .col1{padding:10rem 2rem 0rem 0rem;}
   .col2{padding:10rem 0rem 0rem 2rem;}
-  
+
   /*********===========Visit Us(Studio) SCSS===========******/
   #studio-banner-slider {
 	padding-top: 0px;
@@ -101,7 +101,7 @@ h2{&:after{content: "";position: relative;display: block;width: 40px;height: 3px
 	  }
 	}
   }
-  /******Studio section4******/ 
+  /******Studio section4******/
   #studio-section4 {background: linear-gradient(154deg, #e7e3dc 50%, #fff 0);p{padding-top: 1rem;}}
   /******Studio section5******/
   #studio-section5 {
@@ -185,7 +185,7 @@ h2{&:after{content: "";position: relative;display: block;width: 40px;height: 3px
 		}
 	  }
 	#studio-section5 {
-	
+
 		h2{
 		  &:after {
 			left: 0;}}
@@ -222,7 +222,7 @@ h2{&:after{content: "";position: relative;display: block;width: 40px;height: 3px
 	  line-height:24px;
 	}
 	#studio-banner {
-	  padding:6rem 0rem; 
+	  padding:6rem 0rem;
 	}
 	#studio-section1 {
 	  .container {
@@ -247,9 +247,9 @@ h2{&:after{content: "";position: relative;display: block;width: 40px;height: 3px
   }
   @media (max-width: 576px) {
 	#studio-banner {
-	  padding:4rem 0rem;  
+	  padding:4rem 0rem;
 	}
-  }  
+  }
   @media (max-width: 470px) {
 	#studio-banner {
 	  padding:4rem 0rem;
@@ -265,6 +265,5 @@ h2{&:after{content: "";position: relative;display: block;width: 40px;height: 3px
 	  }
 	}
   }
-  
-  
-  
+
+
