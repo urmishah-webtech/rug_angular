@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PageService } from '../../page.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-the-studio',
@@ -8,10 +9,19 @@ import { PageService } from '../../page.service';
 })
 export class TheStudioComponent implements OnInit {
 
-  constructor(private pageService: PageService) { }
+  constructor(private fb: FormBuilder,private pageService: PageService) { }
   page: any
+  requestForm: any = FormGroup
   ngOnInit(): void {
     this.getPage()
+    this.requestForm=this.fb.group({
+      firstname: ['', Validators.required],
+      lastname: ['', Validators.required],
+      email: ['', Validators.required],
+      mobilenumber: ['', Validators.required],
+      message: ['', Validators.required],
+     
+    })
   }
 
   getPage(){
@@ -21,10 +31,14 @@ export class TheStudioComponent implements OnInit {
   }
 
   
+  
+
+  
   studioBannerSlideConfig = {"slidesToShow": 1,
   "fade":true,
   "slidesToScroll": 1,
   "autoplay":true,
+  "autoplaySpeed": 0,
   "speed":3000,
   "infinite": true,
   "arrow":false,

@@ -1,60 +1,5 @@
 <!----------------(Banner Start)------------------>
-<section id = "apartment-banner-slider">
-    <ngx-slick-carousel class="carousel"
-    #slickModal="slick-carousel"
-    [config]="apartmentBannerSlideConfig">
-   
-    <div ngxSlickItem  class="slide slider_content">
-      <div class = "box">
-        <div>
-          <img src = "assets/img/visit/studio-banner2.jpg" width="100%">
-          <div class ="overlay">
-          </div>
-        </div>
-        <div class = "container">
-            <div class = "text-center">
-              <h1 class = "mb-0 text-light">The Apartment, NYC</h1>
-              <h6 class = "mb-0 text-light">Beni in a brownstone. Let’s meet by the fireplace to chat rug design, review color and construction samples, and answer any questions.</h6>
-              <button type = "button" class= "btn black-btn" data-bs-toggle="modal" data-bs-target="#requestModal">Request Appointment</button>
-          </div>
-          </div>
-    </div>
-    </div>
-    <div ngxSlickItem  class="slide slider_content">
-      <div class = "box">
-        <div>
-          <img src = "assets/img/visit/studio-banner3.jpg" width="100%">
-           <div class ="overlay">
-          </div>
-        </div>
-        <div class = "container">
-            <div class = "text-center">
-              <h1 class = "mb-0 text-light">The Apartment, NYC</h1>
-              <h6 class = "mb-0 text-light">Beni in a brownstone. Let’s meet by the fireplace to chat rug design, review color and construction samples, and answer any questions.</h6>
-              <button type = "button" class= "btn black-btn" data-bs-toggle="modal" data-bs-target="#requestModal">Request Appointment</button>
-          </div>
-          </div>
-    </div>
-    </div>
-    <div ngxSlickItem  class="slide slider_content">
-      <div class = "box">
-        <div>
-          <img src = "assets/img/visit/studio-banner4.jpg" width="100%">
-          <div class ="overlay">
-          </div>
-        </div>
-        <div class = "container">
-            <div class = "text-center">
-              <h1 class = "mb-0 text-light">The Apartment, NYC</h1>
-              <h6 class = "mb-0 text-light">Beni in a brownstone. Let’s meet by the fireplace to chat rug design, review color and construction samples, and answer any questions.</h6>
-              <button type = "button" class= "btn black-btn" data-bs-toggle="modal" data-bs-target="#requestModal">Request Appointment</button>
-          </div>
-          </div>
-    </div>
-    </div>
-    </ngx-slick-carousel>
-  
-</section>
+<app-slider></app-slider>
 <!----------------(Banner End)------------------>
 
 <!----------------(studio-section1 Start)---------------->
@@ -157,7 +102,7 @@
      <div class = "col-lg-6 col-12">
         <div class = "visit-img1">
 
-            <img src = "{{page.marrakechimage}}" width="100%">
+            <img src = "{{page.marrakechimage}}" width="100%" alt = "img">
         </div>
     </div>
     <div class = "col-lg-6 col-12">
@@ -172,8 +117,7 @@
 </section>
 <!----------------(Studio-section8 Start)---------------->
 <hr class = "section_hr">
-
-  <!-- Request Appointment Modal -->
+<!-- Request Appointment Modal -->
   <div class="modal fade" id="requestModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -206,44 +150,59 @@
                 </div>
             </div>
             <div class = "request_form mt-3">
-                <form>
-                    <div class = "row">
-                        <div class = "col-6 pt-3">
-                            <div class = "form-group">
-                                <label for="exampleFormControlInput1" class="form-label">First Name</label>
-                                <input type="text" class="form-control" placeholder="John" name = "firstname"  id="exampleFormControlInput1" >
-                            </div>
+              <form [formGroup]="requestForm">
+                <div class = "row">
+                    <div class = "col-6 pt-3">
+                        <div class = "form-group">
+                            <label for="exampleFormControlInput1" class="form-label">First Name</label>
+                            <input type="text" class="form-control" placeholder="John" name = "firstname" formControlName = "firstname">
+                            <div *ngIf="requestForm.controls['firstname'].invalid && (requestForm.controls['firstname'].dirty || requestForm.controls['firstname'].touched)"
+                          class="alert alert-danger"> First name is required.
                         </div>
-                        <div class = "col-6 pt-3">
-                            <div class = "form-group">
-                                <label class="form-label">Last Name</label>
-                                <input type="text" class="form-control" placeholder="doe" name = "lastname">
-                            </div>
+                          </div>
+                    </div>
+                    <div class = "col-6 pt-3">
+                        <div class = "form-group">
+                            <label class="form-label">Last Name</label>
+                            <input type="text" class="form-control" placeholder="doe" name = "lastname"  formControlName = "lastname">
+                            <div *ngIf="requestForm.controls['lastname'].invalid && (requestForm.controls['lastname'].dirty || requestForm.controls['lastname'].touched)"
+                            class="alert alert-danger"> Last name is required.
+                          </div>
+                          </div>
+                    </div>
+                    <div class = "col-6 pt-3">
+                        <div class = "form-group">
+                            <label class="form-label">Email</label>
+                           <input type="email" class="form-control" name = "email"   aria-describedby="emailHelp" placeholder="lorem123@gmail.com"  formControlName = "email">
+                           <div *ngIf="requestForm.controls['email'].invalid && (requestForm.controls['email'].dirty || requestForm.controls['email'].touched)"
+                           class="alert alert-danger"> Email address is required.
+                         </div>
                         </div>
-                        <div class = "col-6 pt-3">
-                            <div class = "form-group">
-                                <label class="form-label">Email</label>
-                              <input type="email" class="form-control" name = "email"   aria-describedby="emailHelp" placeholder="lorem123@gmail.com">
-                            </div>
+                    </div>
+                    <div class = "col-6 pt-3">
+                        <div class = "form-group">
+                            <label class="form-label">Mobile</label>
+                            <input type="text" class="form-control" placeholder="1234567890" name = "firstname" formControlName = "mobilenumber" >
+                            <div *ngIf="requestForm.controls['mobilenumber'].invalid && (requestForm.controls['mobilenumber'].dirty || requestForm.controls['mobilenumber'].touched)"
+                            class="alert alert-danger"> Mobile number is required.
+                          </div>
                         </div>
-                        <div class = "col-6 pt-3">
-                            <div class = "form-group">
-                                <label class="form-label">Mobile</label>
-                                <input type="text" class="form-control" placeholder="1234567890" name = "firstname"  >
-                            </div>
-                        </div>
-                        <div class = "col-12 pt-3">
-                            <div class="form-group">
-                                <label class="form-label">Comments</label>
-                                <textarea class="form-control"  name = "textarea" placeholder = "Type your message here!" rows="3" ></textarea>
-                              </div>
-                        </div>
+                    </div>
+                    <div class = "col-12 pt-3">
+                        <div class="form-group">
+                            <label class="form-label">Comments</label>
+                            <textarea class="form-control"  name = "textarea" placeholder = "Type your message here!" rows="3"  formControlName ="message"></textarea>
+                            <div *ngIf="requestForm.controls['message'].invalid && (requestForm.controls['message'].dirty || requestForm.controls['message'].touched)"
+                            class="alert alert-danger"> Message is required.
+                          </div>
+                          </div>
+                    </div>
 
-                    </div>
-                    <div class = "my-3 text-center">
-                        <button type = "submit" class="btn blue-btn">Send Enquiry</button>
-                    </div>
-                </form>
+                </div>
+                <div class = "my-3 text-center">
+                    <button type = "submit" class="btn blue-btn">Send Enquiry</button>
+                </div>
+            </form>
 
             </div>
 

@@ -119,6 +119,9 @@ a {
   width: 100%;
   max-width: 1140px !important;
 }
+a:focus-visible{
+	outline: unset;
+}
 
 button {
   font-family: 'Poppins', sans-serif !important;
@@ -2360,7 +2363,7 @@ border-bottom: 1px solid #e8e4dd;
 		padding: 2rem;
 		margin-top: -30px;
 		margin-bottom: -30px;
-		background: linear-gradient(135deg, #627b80 25%, #627b8096 25% , #627b8096 75% , #627b80 75%);
+		background: #627b80;
 	}
 	.dbox {
 		padding: 0rem 2rem;
@@ -2379,6 +2382,14 @@ border-bottom: 1px solid #e8e4dd;
 	}
 	.contact-form {
 		form {
+
+			.alert-danger{
+				background-color: transparent !important;
+                border: unset !important;
+                color: #ff0017;
+                padding: 0.5rem 0rem 0rem 0rem !important;
+                margin-bottom: 0rem !important;
+			}
 			input {
 				color: #e9e5db !important;
 				background-color: transparent;
@@ -2496,48 +2507,7 @@ border-bottom: 1px solid #e8e4dd;
 		margin-bottom: 0rem;
 	}
 }
-/***============Terms & Conditions ===========***/
-#terms_banner{
-	background-image: linear-gradient(-45deg, rgba(56, 73, 77, 0.5), rgba(56, 73, 77, 0.5)),url(assets/img/product/banner1.jpg);
-    padding-top: 8rem;
-	padding-bottom: 8rem;
 
-	h2{
-		color: #fff;
-	}
-
-}
-
-#terms_section{
-	background: linear-gradient(160deg , #e7e3dc 17%,#fff 17%,#fff 34%,#e7e3dc 34%,#e7e3dc 51%,#fff 51% , #fff 68%,#e7e3dc 68%,#e7e3dc 85%,#fff 85% );
-	ul{
-		padding-left: 2rem !important;
-	}
-	h2{
-		&:after{
-			content: "";
-            position: relative;
-            display: block;
-            width: 40px;
-            height: 3px;
-            background: #627b80;
-            bottom: 0;
-            margin-top: 5px;
-		}
-	}
-
-	h6{
-		font-weight: 600 !important;
-		font-size: 18px !important;
-		line-height: 24px !important;
-		margin-top: 2rem;
-	}
-	p{
-		font-size: 14px;
-		line-height: 21px;
-
-	}
-}
 /***===========Thank You Page SCSS===========**/
 #thank-you .container{
 	max-width: 700px !important;
@@ -2711,13 +2681,8 @@ border-bottom: 1px solid #e8e4dd;
 			padding: 0px;
 			&:first-child {
 				
-				width: 85px;
-
-				
+				width: 85px;	
 			}
-			
-
-			
 			h5{
 				span{
 					font-size: 14px  !important;
@@ -2748,7 +2713,7 @@ border-bottom: 1px solid #e8e4dd;
 }
 
 /**********Tue Studio Page Slider SCSS**********/
-#studio-banner-slider{
+#banner-slider{
 	.slick-arrow{
 		display: none !important;
 	}
@@ -2764,7 +2729,6 @@ border-bottom: 1px solid #e8e4dd;
 		display: none !important;
 	}
 }
-
 .slick-arrow{
 	position: absolute;
 	cursor: pointer;
@@ -2918,6 +2882,13 @@ border-bottom: 1px solid #e8e4dd;
 			padding:0rem 1rem;
 		  }
 		  form {
+				.alert-danger{
+					background-color: transparent !important;
+					border: unset !important;
+					color: #ff0017;
+					padding: 0.5rem 0rem 0rem 0rem !important;
+					margin-bottom: 0rem !important;
+				}
 			.form-label {
 			  margin-bottom:0.3rem;
 			}
@@ -2941,7 +2912,12 @@ border-bottom: 1px solid #e8e4dd;
 		}
 	  }
 }
-
+/**********Custom CSS************/
+#privacy_section{
+	em{
+		font-weight: 600 !important;
+	}
+}
 
 /****=============(Responsive SCSS)============******/
 
