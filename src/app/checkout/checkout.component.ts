@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AuthService } from '../auth/auth.service';
 import { NotificationService } from '../notification.service';
 import { CartService } from '../services/cart.service';
+import { Country, State, City }  from 'country-state-city';
 
 @Component({
   selector: 'app-checkout',
@@ -16,7 +17,9 @@ export class CheckoutComponent implements OnInit {
     private authService: AuthService,
     private notifyService:NotificationService,
     private fb: FormBuilder,
-    private router: Router) { }
+    private router: Router) {
+      
+  }
 
   cart: any = [];
   addressForm: any = FormGroup
@@ -29,6 +32,10 @@ export class CheckoutComponent implements OnInit {
   showPaymentBtn: boolean = false
   cartCount: number = 0
   paymentsuccess: any
+  country_list:any;
+  state_list:any;
+  city_list:any;
+  
 
   ngOnInit(): void {
     this.loggedUser = this.authService.getToken()
@@ -51,6 +58,8 @@ export class CheckoutComponent implements OnInit {
       amount: [parseFloat(this.cart.Totalamount+10).toFixed(2)],
       payment_type: ['']
     })
+    this.country_list = Country.getAllCountries();
+    console.info(this.country_list);
 
   }
 
@@ -118,7 +127,14 @@ export class CheckoutComponent implements OnInit {
     this.payment = false
   }
 
- 
-
+  countryChange(value:any){
+    this.addressForm.city = null;
+    //var data = this.country_list[value];
+    var code = this.country_list.filter(function(itm:any){
+      return itm.name == value
+    });
+    //console.log(code);
+    this.city_list = City.getCitiesOfCountry(code[0].isoCode)
+  }
 
 }

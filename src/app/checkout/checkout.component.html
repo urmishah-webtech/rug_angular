@@ -97,11 +97,12 @@
                                          </div>
                                          <div class = "col-md-4 col-12">
                                              <div class="form-group py-2">
-                                                 <select class="form-select select_country" formControlName="country">
+                                                 <select class="form-select select_country" formControlName="country" (change)="countryChange(addressForm.controls['country'].value)">
                                                      <option value="" selected="">Country</option>
-                                                     <option value="1">India</option>
+                                                     <option *ngFor="let country of country_list; let i = index;" value="{{country.name}}">{{country.name}}</option>
+                                                     <!-- <option value="1">India</option>
                                                      <option value="2">Australia</option>
-                                                     <option value="3">USA</option>
+                                                     <option value="3">USA</option> -->
                                                   </select>
                                                   <div *ngIf="addressForm.controls['country'].invalid && (addressForm.controls['country'].dirty || addressForm.controls['country'].touched)"
                                                   class="alert alert-danger"> Country is required.
@@ -112,9 +113,7 @@
                                              <div class="form-group py-2">
                                                  <select class="form-select select_country" formControlName="city">
                                                      <option value="" selected="">City</option>
-                                                     <option value="1">Florida</option>
-                                                     <option value="2">Delhi</option>
-                                                     <option value="3">Mumbai</option>
+                                                     <option *ngFor="let city of city_list; let i = index;" value="{{city.name}}">{{city.name}}</option>
                                                   </select>
                                                   <div *ngIf="addressForm.controls['city'].invalid && (addressForm.controls['city'].dirty || addressForm.controls['city'].touched)"
                                                   class="alert alert-danger"> City is required.
