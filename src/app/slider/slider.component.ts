@@ -1,19 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { PageService } from '../../page.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
 @Component({
-  selector: 'app-the-apartment',
-  templateUrl: './the-apartment.component.html',
-  styleUrls: ['./the-apartment.component.scss']
+  selector: 'app-slider',
+  templateUrl: './slider.component.html',
+  styleUrls: ['./slider.component.scss']
 })
-export class TheApartmentComponent implements OnInit {
+export class SliderComponent implements OnInit {
 
-  constructor(private fb: FormBuilder,private pageService: PageService) { }
+  constructor(private fb: FormBuilder) { }
   page: any
   requestForm: any = FormGroup
   ngOnInit(): void {
-    this.getPage()
+    
     this.requestForm=this.fb.group({
       firstname: ['', Validators.required],
       lastname: ['', Validators.required],
@@ -24,21 +22,15 @@ export class TheApartmentComponent implements OnInit {
     })
   }
 
-  apartmentBannerSlideConfig ={"slidesToShow": 1,
+  
+  bannerSlideConfig = {"slidesToShow": 1,
   "fade":true,
   "slidesToScroll": 1,
   "autoplay":true,
+  "autoplaySpeed": 0,
   "speed":3000,
   "infinite": true,
   "arrow":false,
-  }; 
-      
-     
-
-  getPage(){
-    this.pageService.apartment().subscribe(res =>{
-      this.page = res;
-    });
-  }
+  };
 
 }

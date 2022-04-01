@@ -39,6 +39,7 @@ import { GiftCardComponent } from './page/gift-card/gift-card.component';
 import { SizeGuideComponent } from './page/size-guide/size-guide.component';
 import { TradeProgramComponent } from './page/trade-program/trade-program.component';
 import { ReturnComponent } from './page/return/return.component';
+import { SliderComponent } from './slider/slider.component';
 
 
 @NgModule({
@@ -74,7 +75,8 @@ import { ReturnComponent } from './page/return/return.component';
     GiftCardComponent,
     SizeGuideComponent,
     TradeProgramComponent,
-    ReturnComponent
+    ReturnComponent,
+    SliderComponent
   
   ],
   imports: [

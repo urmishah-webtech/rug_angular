@@ -1,81 +1,6 @@
+
 <!---------Banner Start---------->
-<section id = "trade-banner-slider">
-  <ngx-slick-carousel class="carousel"
-  #slickModal="slick-carousel"
-  [config]="tradeBannerSlideConfig">
- 
-  <div ngxSlickItem  class="slide slider_content">
-    <div class = "box">
-      <div>
-        <img src = "assets/img/trade-program/trade-banner1.jpg" width="100%">
-        <div class ="overlay">
-        </div>
-      </div>
-      <div class = "container">
-        <div class = "text-center">
-          <h1 class = "mb-0 text-light text-capitalize">Join our trade program</h1>
-      </div>
-    </div>
-  </div>
-  </div>
-  <div ngxSlickItem  class="slide slider_content">
-    <div class = "box">
-      <div>
-        <img src = "assets/img/trade-program/trade-banner2.jpg" width="100%">
-        <div class ="overlay">
-        </div>
-      </div>
-      <div class = "container">
-        <div class = "text-center">
-          <h1 class = "mb-0 text-light text-capitalize">Join our trade program</h1>
-      </div>
-    </div>
-  </div>
-  </div>
-  <div ngxSlickItem  class="slide slider_content">
-    <div class = "box">
-      <div>
-        <img src = "assets/img/trade-program/trade-banner3.jpg" width="100%">
-        <div class ="overlay">
-        </div>
-      </div>
-      <div class = "container">
-        <div class = "text-center">
-          <h1 class = "mb-0 text-light text-capitalize">Join our trade program</h1>
-      </div>
-    </div>
-  </div>
-  </div>
-  <div ngxSlickItem  class="slide slider_content">
-    <div class = "box">
-      <div>
-        <img src = "assets/img/trade-program/trade-banner4.jpg" width="100%">
-         <div class ="overlay">
-        </div>
-      </div>
-      <div class = "container">
-        <div class = "text-center">
-          <h1 class = "mb-0 text-light text-capitalize">Join our trade program</h1>
-      </div>
-    </div>
-  </div>
-  </div>
-  <div ngxSlickItem  class="slide slider_content">
-    <div class = "box">
-      <div>
-        <img src = "assets/img/trade-program/trade-banner5.jpg" width="100%">
-        <div class ="overlay">
-        </div>
-      </div>
-      <div class = "container">
-        <div class = "text-center">
-          <h1 class = "mb-0 text-light text-capitalize">Join our trade program</h1>
-      </div>
-    </div>
-  </div>
-  </div>
-  </ngx-slick-carousel>
-</section>
+<app-slider></app-slider>
 <!---------Banner End---------->
 <hr class = "section_hr">
 <!---------Section1  Start---------->
@@ -111,7 +36,7 @@
                             <label class="form-label">Email</label>
                             <input type="email" class="form-control" formControlName = "email"   aria-describedby="emailHelp" placeholder="rosysmith@gmail.com">
                             <div *ngIf="enquiryForm.controls['email'].invalid && (enquiryForm.controls['email'].dirty || enquiryForm.controls['email'].touched)"
-                            class="alert alert-danger">Email is required.
+                            class="alert alert-danger">Email address is required.
                           </div>
                           </div>
                     </div>

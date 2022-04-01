@@ -1,18 +1,13 @@
+
 /***=============(Privacy Policy SCSS)=========***/
 #privacy_banner{
 	background-image: linear-gradient(-45deg, rgba(56, 73, 77, 0.5), rgba(56, 73, 77, 0.5)),url(/assets/img/product/banner1.jpg);
     padding-top: 8rem;
 	padding-bottom: 8rem;
-
-	h2{
-		color: #fff;
-	}
-
 }
 
 #privacy_section{
 	background: linear-gradient(160deg , #e7e3dc 10%,#fff 10%,#fff 20%,#e7e3dc 20%,#e7e3dc 30%,#fff 30% , #fff 40% ,#e7e3dc 40% , #e7e3dc 50%,#fff 50% , #fff 60% ,#e7e3dc 60% , #e7e3dc 70%,#fff 70% , #fff 80% ,#e7e3dc 80% , #e7e3dc 90%,#fff 90% , #fff 100%);
-
     .row{
 		padding-left: 2rem;
 		padding-top: 2rem;
@@ -45,12 +40,13 @@
 	p{
 		font-size: 14px;
 		line-height: 21px;
+	
 
 		a{
 			font-weight: 600;
 			text-decoration: underline;
 			color: #627b80 !important;
-			word-break: break-all;
+			word-break: break-all !important;
 			font-size: 14px;
 		}
 

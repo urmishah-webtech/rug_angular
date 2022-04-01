@@ -3,17 +3,19 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NotificationService } from 'src/app/notification.service';
 import { PageService } from '../page.service';
 
+
 @Component({
   selector: 'app-trade-program',
   templateUrl: './trade-program.component.html',
   styleUrls: ['./trade-program.component.scss']
 })
 export class TradeProgramComponent implements OnInit {
-
+  
   constructor(private fb: FormBuilder, private pageService: PageService, private notifyService: NotificationService) { }
 
   enquiryForm: any = FormGroup
   ngOnInit(): void {
+    //this.showSlides();
     this.enquiryForm=this.fb.group({
       firstname: ['', Validators.required],
       lastname: ['', Validators.required],
@@ -25,6 +27,27 @@ export class TradeProgramComponent implements OnInit {
     })
 
   }
+
+ /* showSlides() {
+    let slideIndex = 0;
+    let i;
+    let slides = document.getElementsByClassName("mySlides") as HTMLCollectionOf<HTMLElement>;
+    let dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+    setTimeout(this.showSlides, 2000);
+  
+  }*/
+  
+  
 
   onsubmit(){
     if(this.enquiryForm.valid){
