@@ -40,6 +40,7 @@ import { SizeGuideComponent } from './page/size-guide/size-guide.component';
 import { TradeProgramComponent } from './page/trade-program/trade-program.component';
 import { ReturnComponent } from './page/return/return.component';
 import { SliderComponent } from './slider/slider.component';
+import { BannerComponent } from './banner/banner.component';
 
 
 @NgModule({
@@ -76,7 +77,8 @@ import { SliderComponent } from './slider/slider.component';
     SizeGuideComponent,
     TradeProgramComponent,
     ReturnComponent,
-    SliderComponent
+    SliderComponent,
+    BannerComponent
   
   ],
   imports: [

@@ -1,0 +1,17 @@
+<!----------------(Banner Start)------------------>
+<div class="slideshow">
+    <div *ngFor="let item of arrayImages; index as i" [ngClass]="item.isActive ? 'showSlide' : '' "
+        class="mySlides">
+         <div> <img src="{{item.src}}" style="width:100%">
+          <div class ="overlay"></div>
+        </div>
+          <div class = "container">
+          <div class="banner-content">
+            <h1 class = "text-light">{{item.heading}}</h1>
+            <h6 class = "text-light">{{item.text}}</h6>
+            <button type = "button" class = "btn black-btn">{{item.btn}}</button>
+          </div>
+        </div>   
+    </div>
+  </div>
+  <!----------------(Banner End)------------------>

@@ -1,0 +1,41 @@
+.mySlides {
+    display: none;
+    
+}
+.showSlide{
+    display: block;
+    
+}
+.slideshow{
+    position: relative;
+ 
+}
+
+.slideshow img{
+    height: 500px;
+    object-fit: cover;
+}
+
+.slideshow .container{
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 700px !important;
+    text-align: center;
+}
+
+.slideshow  .overlay{
+    background: #38494d99;
+    position: absolute;
+    top: 0;
+    left:0;
+    right:0;
+    bottom:0;
+    width: 100%;
+}
+
+.slideshow .btn{
+    padding:0.8rem !important;
+}

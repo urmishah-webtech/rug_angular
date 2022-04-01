@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
   home: any;
   featureProduct: any = []
   ngOnInit(): void {
+    
     this.getHome()
     this.featureProducts()
   }
@@ -58,4 +59,12 @@ export class HomeComponent implements OnInit {
 
   */
   };
+
+  
+
+
+
+  
+
+
 }
