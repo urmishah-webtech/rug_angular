@@ -1,7 +1,30 @@
 
-<!----------------(Banner Start)------------------>
-<app-slider></app-slider>
-<!----------------(Banner End)------------------>
+<section id = "studio-banner-slider">
+
+
+ <ngx-slick-carousel class="carousel"
+  #slickModal="slick-carousel"
+  [config]="studioBannerSlideConfig">
+
+  <div ngxSlickItem *ngFor="let slider of page[1]" class="slide slider_content">
+    <div class = "box">
+      <div>
+        <img src = "{{slider.slider_image}}" width="100%" class="slider_img">
+        <div class ="overlay">
+        </div>
+      </div>
+      <div class = "container">
+      <div class = "slider_content">
+        <div class = "text-center">
+          <h1 class = "mb-0 text-light text-capitalize">{{slider.title}}</h1>
+          <h6 class = " mb-0 text-light">{{slider.description}}</h6>
+          <button type = "button" class= "btn black-btn" data-bs-toggle="modal" data-bs-target="#requestModal">Request Appointment</button>
+      </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </ngx-slick-carousel>
 
 <!----------------(studio-section1 Start)---------------->
 <hr class = "section_hr">
@@ -305,28 +328,34 @@
                       <div class = "col-6 pt-3">
                           <div class = "form-group">
                               <label for="exampleFormControlInput1" class="form-label">First Name</label>
+
                               <input type="text" class="form-control" placeholder="John" name = "firstname" formControlName = "firstname">
                               <div *ngIf="requestForm.controls['firstname'].invalid && (requestForm.controls['firstname'].dirty || requestForm.controls['firstname'].touched)"
                             class="alert alert-danger"> First name is required.
                           </div>
+
                             </div>
                       </div>
                       <div class = "col-6 pt-3">
                           <div class = "form-group">
                               <label class="form-label">Last Name</label>
+
                               <input type="text" class="form-control" placeholder="doe" name = "lastname"  formControlName = "lastname">
                               <div *ngIf="requestForm.controls['lastname'].invalid && (requestForm.controls['lastname'].dirty || requestForm.controls['lastname'].touched)"
                               class="alert alert-danger"> Last name is required.
                             </div>
+
                             </div>
                       </div>
                       <div class = "col-6 pt-3">
                           <div class = "form-group">
                               <label class="form-label">Email</label>
+
                              <input type="email" class="form-control" name = "email"   aria-describedby="emailHelp" placeholder="lorem123@gmail.com"  formControlName = "email">
                              <div *ngIf="requestForm.controls['email'].invalid && (requestForm.controls['email'].dirty || requestForm.controls['email'].touched)"
                              class="alert alert-danger"> Email address is required.
                            </div>
+
                           </div>
                       </div>
                       <div class = "col-6 pt-3">

@@ -4,7 +4,7 @@
       <div class = "row">
           <div class = "col-lg-7 col-12">
            <div class = "img-container">
-            <img src = "assets/img/swatches/swatch.png" alt = "img" width="100%" height="100%">
+            <img src = "{{page[0].swatchseimage}}" alt = "img" width="100%" height="100%">
            </div>
           </div>
           <div class = "col-lg-5 col-12">
@@ -13,7 +13,7 @@
                   <h2>Gift Card</h2>
                 </div>
                 <div class = "pt-4">
-                  <p innerHTML="{{page.swatchsedescripation}}"></p>
+                  <p innerHTML="{{page[0].swatchsedescripation}}"></p>
                 </div>
                 <div>
                   <!-----<button *ngFor = "let size of sizes" class = "btn" [style.background] = "size" (click) = "selectedSize = size" [ngClass]="{selected:selectedSize === size}" value = {{}}>{{size}}</button>  --->
@@ -41,14 +41,14 @@
             <div class = "col-lg-5 col-12">
               <div class = "col1 text-center">
                   <div>
-                    <h2>{{page.pickcolorettitle1}}</h2>
-                   <p>{{page.pickcoloredescripation}}</p>
+                    <h2>{{page[0].pickcolorettitle1}}</h2>
+                   <p>{{page[0].pickcoloredescripation}}</p>
                   </div>
                 </div>
             </div>
             <div class = "col-lg-7 col-12">
               <div class = "img-container">
-               <img src = "{{page.pickcoloreimage}}" alt = "img" width="100%" height="100%">
+               <img src = "{{page[0].pickcoloreimage}}" alt = "img" width="100%" height="100%">
               </div>
              </div>
         </div>
@@ -65,30 +65,30 @@
           </div>
             <div class = "col-lg-6 col-12">
                <div class = "text-center">
-                   <h2>{{page.knottedflattitle}}</h2>
-                   <p innerHTML="{{page.knottedflatdescripation}}"></p>
+                   <h2>{{page[0].knottedflattitle}}</h2>
+                   <p innerHTML="{{page[0].knottedflatdescripation}}"></p>
                </div>
             </div>
             <div class = "col-lg-3 col-12">
 
             </div>
             <div class = "col-lg-6 col-12 pt-">
-                <a routerLink = "{{page.knottedflatbuttonlink1}}" class = "box">
+                <a routerLink = "{{page[0].knottedflatbuttonlink1}}" class = "box">
                     <div>
                       <div class = "img-container pt-3">
-                        <img src = "{{page.knottedflatimage1}}" alt = "img" width="100%" height="100%">
+                        <img src = "{{page[0].knottedflatimage1}}" alt = "img" width="100%" height="100%">
                       </div>
-                      <h6  class = "pt-2 mb-0">{{page.knottedflatbuttonname1}}</h6>
+                      <h6  class = "pt-2 mb-0">{{page[0].knottedflatbuttonname1}}</h6>
                     </div>
                    </a>
              </div>
              <div class = "col-lg-6 col-12">
-                <a routerLink = "{{page.knottedflatbuttonlink2}}" class = "box">
+                <a routerLink = "{{page[0].knottedflatbuttonlink2}}" class = "box">
                     <div>
                       <div class = "img-container pt-3">
-                        <img src = "{{page.knottedflatimage2}}" alt = "img" width="100%" height="100%">
+                        <img src = "{{page[0].knottedflatimage2}}" alt = "img" width="100%" height="100%">
                       </div>
-                      <h6  class = "pt-2 mb-0">{{page.knottedflatbuttonname2}}</h6>
+                      <h6  class = "pt-2 mb-0">{{page[0].knottedflatbuttonname2}}</h6>
                     </div>
                    </a>
              </div>
@@ -177,7 +177,7 @@
         <source src="assets/video/our-process.mp4" type="video/mp4" width = >
     </video>
     <div class = "banner-content">
-        <h1 class = "text-light">{{page.videotitle}}</h1>
+        <h1 class = "text-light">{{page[0].videotitle}}</h1>
     </div>
     </div>
   </section>

@@ -1,5 +1,29 @@
 <!----------------(Banner Start)------------------>
-<app-slider></app-slider>
+
+<section id = "apartment-banner-slider">
+    <ngx-slick-carousel class="carousel"
+    #slickModal="slick-carousel"
+    [config]="apartmentBannerSlideConfig">
+
+    <div ngxSlickItem *ngFor="let slider of page[1]" class="slide slider_content">
+      <div class = "box">
+        <div>
+          <img src = "{{slider.slider_image}}" width="100%">
+          <div class ="overlay">
+          </div>
+        </div>
+        <div class = "container">
+            <div class = "text-center">
+              <h1 class = "mb-0 text-light">{{slider.title}}</h1>
+              <h6 class = "mb-0 text-light">{{slider.description}}</h6>
+              <button type = "button" class= "btn black-btn" data-bs-toggle="modal" data-bs-target="#requestModal">Request Appointment</button>
+          </div>
+          </div>
+    </div>
+    </div>
+    </ngx-slick-carousel>
+
+</section>
 <!----------------(Banner End)------------------>
 
 <!----------------(studio-section1 Start)---------------->
