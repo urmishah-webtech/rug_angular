@@ -1,58 +1,22 @@
 <section id = "studio-banner-slider">
- 
-    
+
+
  <ngx-slick-carousel class="carousel"
   #slickModal="slick-carousel"
   [config]="studioBannerSlideConfig">
- 
-  <div ngxSlickItem  class="slide slider_content">
+
+  <div ngxSlickItem *ngFor="let slider of page[1]" class="slide slider_content">
     <div class = "box">
       <div>
-        <img src = "assets/img/visit/studio-banner2.jpg" width="100%">
+        <img src = "{{slider.slider_image}}" width="100%" class="slider_img">
         <div class ="overlay">
         </div>
       </div>
       <div class = "container">
       <div class = "slider_content">
         <div class = "text-center">
-          <h1 class = "mb-0 text-light text-capitalize">The Studio, Marrakech</h1>
-          <h6 class = " mb-0 text-light">Rug shopping, reimagined. Witness how Moroccan rugs are woven and washed, design your own, and top it all off with an espresso (or rosé) from our Milan-inspired bar.</h6>
-          <button type = "button" class= "btn black-btn" data-bs-toggle="modal" data-bs-target="#requestModal">Request Appointment</button>
-      </div>
-      </div>
-    </div>
-  </div>
-  </div>
-  <div ngxSlickItem  class="slide slider_content">
-    <div class = "box">
-      <div>
-        <img src = "assets/img/visit/studio-banner3.jpg" width="100%">
-         <div class ="overlay">
-        </div>
-      </div>
-      <div class = "container">
-      <div class = "slider_content">
-        <div class = "text-center">
-          <h1 class = "mb-0 text-light text-capitalize">The Studio, Marrakech</h1>
-          <h6 class = " mb-0 text-light">Rug shopping, reimagined. Witness how Moroccan rugs are woven and washed, design your own, and top it all off with an espresso (or rosé) from our Milan-inspired bar.</h6>
-          <button type = "button" class= "btn black-btn" data-bs-toggle="modal" data-bs-target="#requestModal">Request Appointment</button>
-      </div>
-      </div>
-    </div>
-  </div>
-  </div>
-  <div ngxSlickItem  class="slide slider_content">
-    <div class = "box">
-      <div>
-        <img src = "assets/img/visit/studio-banner4.jpg" width="100%">
-        <div class ="overlay">
-        </div>
-      </div>
-      <div class = "container">
-      <div class = "slider_content">
-        <div class = "text-center">
-          <h1 class = "mb-0 text-light text-capitalize">The Studio, Marrakech</h1>
-          <h6 class = " mb-0 text-light">Rug shopping, reimagined. Witness how Moroccan rugs are woven and washed, design your own, and top it all off with an espresso (or rosé) from our Milan-inspired bar.</h6>
+          <h1 class = "mb-0 text-light text-capitalize">{{slider.title}}</h1>
+          <h6 class = " mb-0 text-light">{{slider.description}}</h6>
           <button type = "button" class= "btn black-btn" data-bs-toggle="modal" data-bs-target="#requestModal">Request Appointment</button>
       </div>
       </div>
@@ -379,21 +343,21 @@
                           <div class = "form-group">
                               <label for="exampleFormControlInput1" class="form-label">First Name</label>
                               <input type="text" class="form-control" placeholder="John" name = "firstname"  id="exampleFormControlInput1" >
-                             
+
                             </div>
                       </div>
                       <div class = "col-6 pt-3">
                           <div class = "form-group">
                               <label class="form-label">Last Name</label>
                               <input type="text" class="form-control" placeholder="doe" name = "lastname">
-                              
+
                             </div>
                       </div>
                       <div class = "col-6 pt-3">
                           <div class = "form-group">
                               <label class="form-label">Email</label>
                              <input type="email" class="form-control" name = "email"   aria-describedby="emailHelp" placeholder="lorem123@gmail.com">
-                            
+
                           </div>
                       </div>
                       <div class = "col-6 pt-3">

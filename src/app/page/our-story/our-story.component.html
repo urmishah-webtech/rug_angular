@@ -1,8 +1,36 @@
+<div class="slideshow-container">
+
+  <div class="mySlides">
+    <div class="numbertext">1 / 3</div>
+    <img src="{{page[0].beginningimage}}" style="width:100%">
+    <div class="text">Caption Text</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 3</div>
+    <img src="{{page[0].woweareimage}}" style="width:100%">
+    <div class="text">Caption Two</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 3</div>
+    <img src="{{page[0].beginningimage}}" style="width:100%">
+    <div class="text">Caption Three</div>
+  </div>
+
+  </div>
+  <br>
+
+  <div style="text-align:center">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
 <!--------------Our Story banner Start------------->
 <section id = "story-banner">
     <div class = "container">
      <div class = "text-center">
-       <h1 class = "text-light">{{page.storymaintitle}}</h1>
+       <h1 class = "text-light">{{page[0].storymaintitle}}</h1>
      </div>
     </div>
    </section>
@@ -12,9 +40,9 @@
 <section id = "story-section1" class = "inner_sec1">
     <div class ="container">
         <div class = "box text-center">
-             <h2>{{page.wowearetitle1}}</h2>
-             <p [innerHTML]="page.wowearedescripation"></p>
-             <img src = "{{page.woweareimage}}" alt = "img">
+             <h2>{{page[0].wowearetitle1}}</h2>
+             <p [innerHTML]="page[0].wowearedescripation"></p>
+             <img src = "{{page[0].woweareimage}}" alt = "img">
         </div>
 
     </div>
@@ -27,14 +55,14 @@
        <div class = "row flex-column-reverse flex-lg-row flex-md-row">
          <div class = "col-lg-6 col-12">
              <div class = "card">
-                 <img src = "{{page.beginningimage}}" width="100%" alt = "img">
+                 <img src = "{{page[0].beginningimage}}" width="100%" alt = "img">
              </div>
          </div>
          <div class = "col-lg-6 col-12">
              <div class = "col2">
-                <h2>{{page.beginningtitle}}</h2>
-                <p>{{page.beginningdescripation}}</p>
-                <button type="button" class = "btn blue-btn" routerLink = "{{page.beginningbuttonelink}}">{{page.beginningbuttonname}}</button>
+                <h2>{{page[0].beginningtitle}}</h2>
+                <p>{{page[0].beginningdescripation}}</p>
+                <button type="button" class = "btn blue-btn" routerLink = "{{page[0].beginningbuttonelink}}">{{page[0].beginningbuttonname}}</button>
             </div>
          </div>
        </div>
@@ -47,9 +75,9 @@
 <section id = "story-section3">
     <div class = "container">
         <div class = "box text-center">
-            <h2  class = "text-light">{{page.inspiredtitle1}}</h2>
-            <p  class = "text-light">{{page.inspireddescripation1}}</p>
-            <button type = "button" class = "btn blue-btn text-light" routerLink = "{{page.inspiredproductbuttonlink1}}">{{page.inspiredbuttonname1}}</button>
+            <h2  class = "text-light">{{page[0].inspiredtitle1}}</h2>
+            <p  class = "text-light">{{page[0].inspireddescripation1}}</p>
+            <button type = "button" class = "btn blue-btn text-light" routerLink = "{{page[0].inspiredproductbuttonlink1}}">{{page[0].inspiredbuttonname1}}</button>
         </div>
     </div>
 </section>
@@ -61,14 +89,14 @@
        <div class = "row ">
         <div class = "col-lg-6 col-12">
             <div class = "col1">
-               <h2>{{page.dedicationtitle2}}</h2>
-               <p>{{page.dedicationdescripation2}}</p>
-               <button type="button" class = "btn blue-btn ms-0" routerLink = "{{page.dedicationproductbuttonlink2}}">{{page.dedicationbuttonname2}}</button>
+               <h2>{{page[0].dedicationtitle2}}</h2>
+               <p>{{page[0].dedicationdescripation2}}</p>
+               <button type="button" class = "btn blue-btn ms-0" routerLink = "{{page[0].dedicationproductbuttonlink2}}">{{page[0].dedicationbuttonname2}}</button>
            </div>
         </div>
          <div class = "col-lg-6 col-12">
              <div class = "col2 card">
-                 <img src = "{{page.dedicationproductimage2}}" width="100%" alt = "img">
+                 <img src = "{{page[0].dedicationproductimage2}}" width="100%" alt = "img">
              </div>
          </div>
 
@@ -82,8 +110,8 @@
 <section id = "story-section5">
   <div class = "container">
       <div class = "box">
-          <h2>{{page.communitytitle}}</h2>
-          <h5>{{page.communitydesctipation}}</h5>
+          <h2>{{page[0].communitytitle}}</h2>
+          <h5>{{page[0].communitydesctipation}}</h5>
       </div>
   </div>
 </section>

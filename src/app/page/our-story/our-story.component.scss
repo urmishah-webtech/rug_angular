@@ -1,4 +1,60 @@
 /****========Comman CSS==========***/
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+
+  .text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+
+  /* The dots/bullets/indicators */
+  .dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+
+  .active {
+    background-color: #717171;
+  }
+
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+}
+
+/* Caption text */
+
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
 p{
     font-size: 18px;
     line-height: 28px;
@@ -77,9 +133,9 @@ h2{
         button{
             margin-left: 0rem;
         }
-    }  
+    }
 }
-/*******Section3 SCSS********/ 
+/*******Section3 SCSS********/
 #story-section3{
     background:linear-gradient(-45deg, #38494d99, #38494d99), url('/assets/img/our-story/story2.jpg') no-repeat 0% 0px, url('/assets/img/our-story/story3.jpg') no-repeat 50% 0px, url('/assets/img/our-story/story4.jpg') no-repeat 100% 0px;
     background-size: contain;
@@ -93,7 +149,7 @@ h2{
 		}
 		100%{
             background:linear-gradient(-45deg, #38494d99, #38494d99), url('/assets/img/our-story/story4.jpg') no-repeat 0% 0px, url('/assets/img/our-story/story2.jpg') no-repeat 50% 0px, url('/assets/img/our-story/story3.jpg') no-repeat 100% 0px;
-		}	
+		}
 	}
     .container{
      max-width: 700px !important;
@@ -113,7 +169,7 @@ h2{
              }
          }
      }
- }   
+ }
 }
 /**********Section4 SCSS********/
 #story-section4{
@@ -125,7 +181,7 @@ h2{
             left: calc(100% - 45px);
         }
     }
-  }      
+  }
 }
 /*********Section5 SCSS*********/
 #story-section5{
@@ -192,27 +248,27 @@ h2{
     #story-section5{
         height: 600px;
     }
-}   
+}
 @media(max-width:768px) {
     p{
       font-size: 16px;
       line-height: 24px;
     }
     #story-banner{
-        padding: 6rem 0rem;    
+        padding: 6rem 0rem;
       }
       #story-section5{
           height: 500px;
       }
       #story-section3{
-          padding:4rem 0rem; 
+          padding:4rem 0rem;
         .container{
             .box{
                 padding:1.5rem;
             }
         }
-    }          
-}   
+    }
+}
 @media(max-width:576px) {
     #story-banner{
         padding: 4rem 0rem;
@@ -225,6 +281,6 @@ h2{
                    width: 200px;
                }
            }
-        }   
-    }      
+        }
+    }
 }
