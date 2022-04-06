@@ -35,7 +35,10 @@ export class CheckoutComponent implements OnInit {
   country_list:any;
   state_list:any;
   city_list:any;
-  
+  formData:any = [];
+  shipping_res:any;
+  total_amount:any = 0;
+  shipping_cost:any = 0;
 
   ngOnInit(): void {
     this.loggedUser = this.authService.getToken()
@@ -55,7 +58,7 @@ export class CheckoutComponent implements OnInit {
     })
     this.checkoutForm = this.fb.group({
       user_id: [this.loggedUser.id],
-      amount: [parseFloat(this.cart.Totalamount+10).toFixed(2)],
+      amount: [parseFloat(this.cart.Totalamount).toFixed(2)],
       payment_type: ['']
     })
     this.country_list = Country.getAllCountries();
@@ -82,11 +85,11 @@ export class CheckoutComponent implements OnInit {
     })
   }
   onPayment(){
-    let amount = this.cart.Totalamount+10
+    let amount = this.cart.Totalamount
     let newamount = amount.toString()
     this.checkoutForm = {
       'user_id': this.loggedUser.id,
-      'amount': parseFloat(this.cart.Totalamount+10).toFixed(2),
+      'amount': parseFloat(this.cart.Totalamount).toFixed(2),
       'payment_type': 1
     }
     // console.log(typeof(this.checkoutForm.amount));
@@ -107,6 +110,7 @@ export class CheckoutComponent implements OnInit {
     this.cartService.getCart(this.loggedUser.id).subscribe(res=>{
       this.cart = res;
       this.cartCount = this.cart.cartitem.length
+      this.total_amount = parseFloat(this.cart.Totalamount).toFixed(2);
     })
   }
   deleteCartItem(id: number){
@@ -126,6 +130,24 @@ export class CheckoutComponent implements OnInit {
     this.shipping = true
     this.payment = false
   }
+
+  shippingCost(country:any){
+    this.formData = {
+      'country': this.addressForm.controls['country'].value,
+      'amount': parseFloat(this.cart.Totalamount+10).toFixed(2),
+    }
+    this.cartService.shippingCost(this.formData ).subscribe(res=>{
+      this.shipping_res = res;
+      if(this.shipping_res['success'] == true){
+        this.shipping_cost = this.shipping_res['cost'];
+      }else{
+        this.shipping_cost = 0;
+      }
+      this.total_amount = parseFloat(this.cart.Totalamount + this.shipping_cost).toFixed(2);
+    })
+  }
+  
+  
 
   countryChange(value:any){
     this.addressForm.city = null;

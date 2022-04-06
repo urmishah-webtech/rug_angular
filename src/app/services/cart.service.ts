@@ -44,4 +44,8 @@ export class CartService {
   payment(payform: any){
     return this.http.post(this.url+'payment', payform, {headers: this.headers})
   }
+
+  shippingCost(data:any){
+    return this.http.post(this.url+'shipping-cost', data, {headers: this.headers})
+  }
 }
