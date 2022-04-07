@@ -10,6 +10,7 @@ export class OurStoryComponent implements OnInit {
 
   constructor(private pageService: PageService) { }
   page: any
+  banner!: Array<object>
 
   ngOnInit(): void {
     this.story()
@@ -18,6 +19,7 @@ export class OurStoryComponent implements OnInit {
   story(){
     this.pageService.story().subscribe(res=>{
       this.page = res
+      this.banner = this.page[1].map((v: any)=>({...v, isActive: false}))
     })
   }
 

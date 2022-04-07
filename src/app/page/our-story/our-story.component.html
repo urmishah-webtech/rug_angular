@@ -1,39 +1,5 @@
-<div class="slideshow-container">
-
-  <div class="mySlides">
-    <div class="numbertext">1 / 3</div>
-    <img src="{{page[0].beginningimage}}" style="width:100%">
-    <div class="text">Caption Text</div>
-  </div>
-
-  <div class="mySlides fade">
-    <div class="numbertext">2 / 3</div>
-    <img src="{{page[0].woweareimage}}" style="width:100%">
-    <div class="text">Caption Two</div>
-  </div>
-
-  <div class="mySlides fade">
-    <div class="numbertext">3 / 3</div>
-    <img src="{{page[0].beginningimage}}" style="width:100%">
-    <div class="text">Caption Three</div>
-  </div>
-
-  </div>
-  <br>
-
-  <div style="text-align:center">
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-  </div>
 <!--------------Our Story banner Start------------->
-<section id = "story-banner">
-    <div class = "container">
-     <div class = "text-center">
-       <h1 class = "text-light">{{page[0].storymaintitle}}</h1>
-     </div>
-    </div>
-   </section>
+<app-banner [banner]="banner"  *ngIf="banner.length != null"></app-banner>
 <!--------------Our Story banner End------------->
 <hr class = "section_hr">
 <!--------------Our Story Section1 Start------------->
