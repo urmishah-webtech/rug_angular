@@ -10,7 +10,7 @@ export class PrivacyPolicyComponent implements OnInit {
 
   constructor(private pageService: PageService) { }
   page: any
-
+  banner!: Array<object>
   ngOnInit(): void {
     this.privacyPage()
   }
@@ -18,6 +18,7 @@ export class PrivacyPolicyComponent implements OnInit {
   privacyPage(){
     this.pageService.privacy_policy().subscribe(res=>{
       this.page = res
+      this.banner = this.page[1].map((v: any)=>({...v, isActive: false}))
     })
   }
 

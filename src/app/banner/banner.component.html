@@ -1,17 +1,18 @@
 <!----------------(Banner Start)------------------>
-<div class="slideshow">
-    <div *ngFor="let item of arrayImages; index as i" [ngClass]="item.isActive ? 'showSlide' : '' "
+<div class="slideshow" >
+    <div *ngFor="let item of banner; index as i" [ngClass]="item.isActive ? 'showSlide' : '' "
         class="mySlides">
-         <div> <img src="{{item.src}}" style="width:100%">
+        <div> <img src="{{item.slider_image}}" style="width:100%">
           <div class ="overlay"></div>
         </div>
           <div class = "container">
           <div class="banner-content">
-            <h1 class = "text-light">{{item.heading}}</h1>
-            <h6 class = "text-light">{{item.text}}</h6>
-            <button type = "button" class = "btn black-btn">{{item.btn}}</button>
+            <h1 class = "text-light" *ngIf="item.title != ''">{{item.title}}</h1>
+            <h6 class = "text-light" *ngIf="item.description != ''">{{item.description}}</h6>
+            <button type = "button" class = "btn black-btn" *ngIf="item.buttne_text != null">{{item.buttne_text}}</button>
           </div>
-        </div>   
+        </div>
     </div>
   </div>
+
   <!----------------(Banner End)------------------>

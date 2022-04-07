@@ -11,6 +11,7 @@ export class TheApartmentComponent implements OnInit {
 
   constructor(private fb: FormBuilder,private pageService: PageService) { }
   page: any
+  banner!: Array<object>
   requestForm: any = FormGroup
   ngOnInit(): void {
     this.getPage()
@@ -20,7 +21,7 @@ export class TheApartmentComponent implements OnInit {
       email: ['', Validators.required],
       mobilenumber: ['', Validators.required],
       message: ['', Validators.required],
-     
+
     })
   }
 
@@ -31,13 +32,14 @@ export class TheApartmentComponent implements OnInit {
   "speed":3000,
   "infinite": true,
   "arrow":false,
-  }; 
-      
-     
+  };
+
+
 
   getPage(){
     this.pageService.apartment().subscribe(res =>{
       this.page = res;
+      this.banner = this.page[1].map((v: any)=>({...v, isActive: false}))
     });
   }
 

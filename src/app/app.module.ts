@@ -79,7 +79,7 @@ import { BannerComponent } from './banner/banner.component';
     ReturnComponent,
     SliderComponent,
     BannerComponent
-  
+
   ],
   imports: [
     BrowserModule,

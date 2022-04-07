@@ -8,9 +8,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./the-studio.component.scss']
 })
 export class TheStudioComponent implements OnInit {
-
+  banner!: Array<object>
+  bannerdata: any =[]
   constructor(private fb: FormBuilder,private pageService: PageService) { }
   page: any
+
   requestForm: any = FormGroup
   ngOnInit(): void {
     this.getPage()
@@ -20,20 +22,18 @@ export class TheStudioComponent implements OnInit {
       email: ['', Validators.required],
       mobilenumber: ['', Validators.required],
       message: ['', Validators.required],
-     
     })
   }
 
   getPage(){
     this.pageService.studio().subscribe(res =>{
       this.page = res;
+      //console.log(this.page)
+      this.banner = this.page[1].map((v: any)=>({...v, isActive: false}))
+      console.log(this.banner)
     });
   }
 
-  
-  
-
-  
   studioBannerSlideConfig = {"slidesToShow": 1,
   "fade":true,
   "slidesToScroll": 1,
