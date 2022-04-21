@@ -1670,7 +1670,104 @@ hr{
 	}
 }
 
-
+/********* Product cusomize css**********/
+button.border-btn {
+	border: 2px solid #1d1d1d;
+    margin: 25px auto;
+    display: table;
+    background: transparent;
+    padding: 12px 45px;
+    border-radius: 46px;
+    background-color: black;
+    color: #fff;
+    font-weight: 400;
+    letter-spacing: .05em;
+    line-height: normal;
+	&:hover {
+		background-color: transparent;
+		color: #1d1d1d;
+	}
+}
+#CustomizeModal .modal-content {
+    border-radius: 8px !important;
+}
+#CustomizeModal .modal-header {
+    padding: 15px 18px;
+}
+#CustomizeModal .modal-body {
+    padding: 18px;
+}
+.tassels-dropdown {
+    display: flex;
+}
+.tassels-dropdown .form-check {
+    margin-right: 20px;
+	display: flex;
+    align-items: center;
+}
+.pd-filter-option select {
+	cursor: pointer;
+}
+.pd-filter-option select, .pd-filter-option input {
+    border: 1px solid #919191 !important;
+    opacity: 1 !important;
+    padding: 10px 15px;
+    line-height: normal;
+    height: 40px;
+    color: #1d1d1d !important;
+    border-radius: 4px;
+	font-size: 14px !important
+}
+.pd-filter-option select::placeholder, .pd-filter-option input::placeholder {
+    color: #1d1d1d !important;
+    opacity: 1;
+}
+.tassels-dropdown .form-check-input[type=radio] {
+    padding: 0;
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+}
+.tassels-dropdown .form-check-input:checked[type=radio] {
+    background-color: #627b80;
+    border-color: #627b80 !important;
+    background-size: 12px;
+}
+.tassels-dropdown .form-check label {
+    line-height: normal;
+    padding-left: 8px;
+    margin-top: 3px;
+	margin-bottom: 0;
+	cursor: pointer;
+	font-weight: 400;
+}
+.pd-filter-option label {
+    margin-bottom: 4px;
+	color: #000;
+    opacity: 1;
+}
+.choode-size-input span {
+    margin: 0 8px;
+}
+.choode-size-input input[type="text"] {
+    width: 120px;
+}
+#CustomizeModal .modal-footer {
+    padding: 12px 20px;
+}
+#CustomizeModal .add-cart-btn {
+    background-color: #1d1d1d;
+    color: #fff;
+    font-size: 14px;
+    padding: 8px 20px;
+    margin: 0;
+    border: 1px solid #1d1d1d;
+	&:hover {
+		background-color: #627b80;
+		border-color: #627b80;
+		color: #fff;
+	}
+}
 /******Product Our Process CSS****/
 
 /******Product Contact CSS****/

@@ -239,6 +239,83 @@
           <div class = 'text-center'>
             <button class="btn blue-btn" (click)="addtoCart()" [disabled]="!variationValidation">Add to Cart</button>
           </div>
+          <div class="customize-btn">
+            <button class="border-btn" type="button" data-bs-toggle="modal" data-bs-target="#CustomizeModal">Customize</button>
+          </div>
+          <div class="modal fade" id="CustomizeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Products Filter</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form class="pd-filter-option" [formGroup]="customizeform">
+                    <div class="form-group mb-3">
+                      <label>Choose A Color</label>
+                      <select class="form-select" aria-label="Default select ChooseColor" formControlName="choosecolor">
+                        <option select Disabled>Choose A Color</option>
+                        <option select value="natural wool">natural wool</option>
+                        <option value="azure blue">azure blue</option>
+                        <option value="saffron yellow">saffron yellow</option>
+                        <option value="emerald green">emerald green</option>
+                        <option value="navy blue">navy blue</option>
+                        <option value="tangerine orange">tangerine orange</option>
+                        <option value="scarlet red">scarlet red</option>
+                        <option value="sahara brown">sahara brown</option>
+                        <option value="midnight black">midnight black</option>
+                        <option value="light gray">light gray</option>
+                      </select>
+                    </div>
+                    <div class="form-group mb-3">
+                      <label>Choose Another Color</label>
+                      <select class="form-select" aria-label="Default select ChooseAnotherColor" formControlName="chooseanothercolor">
+                        <option Disabled>Choose Another Color</option>
+                        <option value="midnight black">midnight black</option>
+                        <option value="azure blue">azure blue</option>
+                        <option value="emerald green">emerald green</option>
+                        <option value="light gray">light gray</option>
+                        <option value="navy blue">navy blue</option>
+                        <option value="saffron yellow">saffron yellow</option>
+                        <option value="sahara brown">sahara brown</option>
+                        <option value="scarlet red">scarlet red</option>
+                        <option value="tangerine orange">tangerine orange</option>
+                        <option value="natural wool">natural wool</option>
+                      </select>
+                    </div>
+                    <div class="form-group mb-3">
+                      <label for="Choose Tassels">Choose Tassels</label>
+                      <div class="tassels-dropdown">
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" formControlName="tassels" id="Tassels">
+                          <label class="form-check-label" for="Tassels">
+                            Tassels
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" formControlName="notassels" id="NoTassels">
+                          <label class="form-check-label" for="NoTassels">
+                            No Tassels
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="Choose Tassels">Choose Size</label>
+                      <div class="choose-size-input">
+                        <input type="text" placeholder="Width" formControlName="width">
+                        <span>X</span>
+                        <input type="text" placeholder="Height" formControlName="height">
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn add-cart-btn">Add to Cart – $664.00 USD</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="product_detail" *ngIf="product.productfaq != ''">

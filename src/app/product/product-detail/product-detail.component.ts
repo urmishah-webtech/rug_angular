@@ -33,6 +33,7 @@ export class ProductDetailComponent implements OnInit  {
   sizevariant: string = ''
   sizev1: any = 0
   sizev2: any = 0
+  customizeform : any
 
   constructor(public productService: ProductService,
     private route: ActivatedRoute,
@@ -58,7 +59,14 @@ export class ProductDetailComponent implements OnInit  {
       variant4: new FormControl(''),
       size: new FormControl('')
     });
-
+    this.customizeform = new FormGroup ({
+      choosecolor: new FormControl('', Validators.required),
+      chooseanothercolor: new FormControl('', Validators.required),
+      tassels: new FormControl('', Validators.required),
+      notassels: new FormControl('', Validators.required),
+      width: new FormControl('', Validators.required),
+      height: new FormControl('', Validators.required)
+    })
   }
 
   getSingleProduct(id: number){
