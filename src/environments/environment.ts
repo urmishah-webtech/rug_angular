@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  //api: "https://projects.webtech-evolution.com/rug/public/api/",
-  api: "http://127.0.0.1:8000/api/",
+  api: "https://projects.webtech-evolution.com/rug/public/api/",
+  // api: "http://127.0.0.1:8000/api/",
   menu: "https://projects.webtech-evolution.com/rug/public/api/menu-list/1",
   product_list_api:"https://projects.webtech-evolution.com/rug/public/api/products",
   // register_api:"https://projects.webtech-evolution.com/rug/public/api/",
