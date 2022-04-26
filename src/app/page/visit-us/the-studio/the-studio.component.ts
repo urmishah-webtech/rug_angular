@@ -28,9 +28,7 @@ export class TheStudioComponent implements OnInit {
   getPage(){
     this.pageService.studio().subscribe(res =>{
       this.page = res;
-      //console.log(this.page)
       this.banner = this.page[1].map((v: any)=>({...v, isActive: false}))
-      console.log(this.banner)
     });
   }
 

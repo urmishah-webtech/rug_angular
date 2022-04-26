@@ -9,43 +9,43 @@ import { environment } from "src/environments/environment";
 export class PageService {
   headers = new HttpHeaders({'Content-Type': 'application/json','Access-Control-Allow-Origin': '*'});
   constructor(private http:HttpClient) { }
-  url = environment.api;
+  api = environment.api;
   getpage(page: string){
     return this.http.get(environment.api+'pages/'+page);
   }
 
   faq_category(){
-    return this.http.get(environment.faq_category);
+    return this.http.get(this.api);
   }
   faqs(id:any){
-    return this.http.get(environment.faqs+'/'+id);
+    return this.http.get(this.api+'faq'+id);
   }
   footer_contact_blog(){
-    return this.http.get(environment.footer_contact_blog_api);
+    return this.http.get(this.api+'our_story_contact');
   }
   terms_condition(){
-    return this.http.get(this.url+'pages/terms-of-service', {headers: this.headers});
+    return this.http.get(this.api+'pages/terms-of-service', {headers: this.headers});
   }
   privacy_policy(){
-    return this.http.get(this.url+'pages/privacy-policy', {headers: this.headers});
+    return this.http.get(this.api+'pages/privacy-policy', {headers: this.headers});
   }
   studio(){
-    return this.http.get(this.url+'studiopage', {headers: this.headers});
+    return this.http.get(this.api+'studiopage', {headers: this.headers});
   }
   apartment(){
-    return this.http.get(this.url+'apartmentpage', {headers: this.headers});
+    return this.http.get(this.api+'apartmentpage', {headers: this.headers});
   }
   process(){
-    return this.http.get(this.url+'proceesspage', {headers: this.headers});
+    return this.http.get(this.api+'proceesspage', {headers: this.headers});
   }
   story(){
-    return this.http.get(this.url+'ourstorypage', {headers: this.headers});
+    return this.http.get(this.api+'ourstorypage', {headers: this.headers});
   }
   swatches(){
-    return this.http.get(this.url+'swatchespage', {headers: this.headers});
+    return this.http.get(this.api+'swatchespage', {headers: this.headers});
   }
 
   enquire(enquireform: any){
-    return this.http.post(this.url+'tradesave', enquireform, {headers: this.headers});
+    return this.http.post(this.api+'tradesave', enquireform, {headers: this.headers});
   }
 }

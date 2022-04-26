@@ -20,7 +20,6 @@ export class ThankyouComponent implements OnInit {
   getorder(){
     this.cartService.getOrder(this.loggedUser.id).subscribe(res=>{
       this.order = res;
-      console.log(this.order);
     })
   }
 

@@ -67,11 +67,6 @@ export class HeaderComponent implements OnInit {
   }
 
   getCartCount(){
-    // this.cartService.getCart(this.loggedUser.id).subscribe(res=>{
-    //   this.cart = res;
-    //   console.log(this.cart);
-    //   this.cartCount = this.cart.cartitem.length
-    // })
     this.cartCount = localStorage.getItem('cart')
   }
 

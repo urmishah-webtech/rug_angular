@@ -60,7 +60,6 @@ export class SignupComponent implements OnInit {
 
             if (err.status === 401) {
                 this.error_data=err.error.message;
-                console.log(this.error_data)
                 if(!(this.error_data.email === undefined))
                 {
                   this.email_error=this.error_data.email;

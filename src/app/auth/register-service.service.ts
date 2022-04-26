@@ -11,7 +11,6 @@ export class RegisterServiceService {
   constructor(private http:HttpClient) { }
 
   register(reg: any){
-    // console.log(fname);
     return this.http.post(environment.api+'signup',reg);
   }
 }

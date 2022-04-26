@@ -91,46 +91,37 @@ export class ProductDetailComponent implements OnInit  {
     this.productService.getproductVariation(id).subscribe(
       data => {
         this.productVariation = data;
-        console.log(this.productVariation.data)
         this.variantTag = this.productVariation.data[0].detail[0].title
-        console.log(this.variantTag)
       }
     )
   }
 
   changeVariation(){
-    console.log(this.variantForm.value.variant1)
-    console.log(this.variantForm.value.variant2)
-    console.log(this.variantForm.value.variant3)
     let varient1 = this.variantForm.value.variant1;
     let varient2 = this.variantForm.value.variant2;
     let varient3 = this.variantForm.value.variant3;
     let varient4 = this.variantForm.value.variant4;
+    console.log(varient1)
+    console.log(varient2)
+    console.log(varient3)
+    console.log(varient4)
     let size = this.variantForm.value.size
     this.sizevariant = size
     var newint = size.match(/\d+/g);
     this.sizev1 = newint[0]
     this.sizev2 = newint[1]
-
-    // console.log(varient1)
-    // console.log(varient2)
-    // console.log(varient3)
-    console.log(this.sizevariant)
-    console.log(this.sizev1)
-    console.log(this.sizev2)
-
     if(varient1 != ''){
       this.variationValidation = true;
     }
-    if(varient1 != '' && varient2 != ''){
-      this.variationValidation = true;
-    }
-    if(varient1 != '' && varient2 != '' && varient3 != ''){
-      this.variationValidation = true;
-    }
-    if(varient1 != '' && varient2 != '' && varient3 != '' && varient4 != ''){
-      this.variationValidation = true;
-    }
+    // if(varient1 != '' && varient2 != ''){
+    //   this.variationValidation = true;
+    // }
+    // if(varient1 != '' && varient2 != '' && varient3 != ''){
+    //   this.variationValidation = true;
+    // }
+    // if(varient1 != '' && varient2 != '' && varient3 != '' && varient4 != ''){
+    //   this.variationValidation = true;
+    // }
     let variation = {
       'text1': varient1,
       'text2': varient2,
@@ -140,7 +131,6 @@ export class ProductDetailComponent implements OnInit  {
     }
     this.productService.variationProduct(variation).subscribe(
       data =>{
-        console.log(data);
         this.variationProduct = data
         this.product.price_range = this.variationProduct.price
         this.product.image = this.variationProduct.image
@@ -171,12 +161,10 @@ export class ProductDetailComponent implements OnInit  {
     if(loggedUser.token == null){
       if(localStorage.getItem('session_id') == null){
         this.session_id = this.randomString(6);
-        console.log(this.session_id)
         localStorage.setItem('session_id', this.session_id)
       }else {
         this.session_id = localStorage.getItem('session_id')
       }
-      console.log(this.productId);
       this.cartProduct= {
         'product_id': this.productId,
         'stock': this.quantity,
@@ -192,11 +180,9 @@ export class ProductDetailComponent implements OnInit  {
       }
     }
     this.productService.addtocart(this.cartProduct).subscribe(response =>{
-      console.log(response);
       this.cart = response
       this.cartcount = this.cart.cartcount
       this.authService.cartSubject.next(this.cartcount);
-      console.log(this.cartcount);
       this.notifyService.showSuccess("Success", "Product Added Successfully!");
       localStorage.setItem('cart', this.cartcount)
     },err=>{

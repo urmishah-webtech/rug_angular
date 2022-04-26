@@ -7,16 +7,17 @@ import { environment } from "src/environments/environment";
     providedIn:"root"
 })
 export class ProductListService{
+  api = environment.api;
    constructor(
        private http:HttpClient
     ){
 
    }
     product_list(){
-        return this.http.get(environment.product_list_api);
+        return this.http.get(this.api);
     }
     get_customize_blog(){
-        return this.http.get(environment.product_customize_blog_api);
+        return this.http.get(this.api);
     }
-  
+
 }

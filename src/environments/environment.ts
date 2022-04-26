@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+<<<<<<< HEAD
   api: "https://rug.webtech-evolution.com/admin/api/",
   // api: "http://127.0.0.1:8000/api/",
   menu: "https://projects.webtech-evolution.com/rug/public/api/menu-list/1",
@@ -19,6 +20,9 @@ export const environment = {
   // menu: "https://projects.webtech-evolution.com/rug/public/api/menu-list/1",
   // product_detail:"https://projects.webtech-evolution.com/rug/public/api/products/",
   // product_variation:"https://projects.webtech-evolution.com/rug/public/api/product-variant/"
+=======
+  api: "https://rug.webtech-evolution.com/admin/api/"
+>>>>>>> 8624c00d52c53b14be23e94822aa347f3e80a5ce
 };
 
 /*d
