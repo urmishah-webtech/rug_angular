@@ -17,7 +17,6 @@ export class PageComponent implements OnInit {
     this.route.paramMap.subscribe((paramMap: ParamMap)=>{
       if(paramMap.has('pageId')){
         this.pageId = paramMap.get('pageId');
-        // console.log(this.pageId);
         this.getPage(this.pageId);
       }
     })

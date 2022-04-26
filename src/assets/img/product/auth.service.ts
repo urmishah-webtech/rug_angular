@@ -14,11 +14,6 @@ export class AuthService {
   public user: Observable<User>;
 
   constructor(private http:HttpClient, private router: Router) {
-    // this.userSubject.next("Jain")
-    // this.userSubject.subscribe(val=>{
-    //   console.log(val);
-    // })
-    // this.userSubject = JSON.parse(localStorage.getItem('currentUser') || '{}');
     const userJson = localStorage.getItem('user');
     this.userSubject = new BehaviorSubject<any>('accesstoken');
     this.user = this.userSubject.asObservable();
@@ -26,21 +21,11 @@ export class AuthService {
 
 
   register(reg: any){
-    //console.log(this.userSubject);
     return this.http.post(environment.api+'signup',reg);
   }
 
   login(data: any){
     return this.http.post(environment.api+'login',data)
-    // .pipe(map(user=>{
-    //   // const userdata = {
-    //   //   id: user.access_token;
-    //   // }
-    //   console.log(user);
-    //   localStorage.setItem('id', user.user.id);
-    //   // this.userSubject.next(user);
-    //   return user;
-    // }));
   }
   logout(){
     localStorage.clear();

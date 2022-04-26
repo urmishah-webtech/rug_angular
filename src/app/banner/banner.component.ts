@@ -12,7 +12,6 @@ export class BannerComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadImages();
-    console.log(this.banner[0].slider_image);
   }
 
   //static code

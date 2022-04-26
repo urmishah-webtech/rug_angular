@@ -18,7 +18,7 @@ export class CheckoutComponent implements OnInit {
     private notifyService:NotificationService,
     private fb: FormBuilder,
     private router: Router) {
-      
+
   }
 
   cart: any = [];
@@ -62,16 +62,13 @@ export class CheckoutComponent implements OnInit {
       payment_type: ['']
     })
     this.country_list = Country.getAllCountries();
-    console.info(this.country_list);
 
   }
 
   onSubmit(){
     if(this.addressForm.valid){
-      console.log(this.addressForm.value)
       this.cartService.addaddress(this.addressForm.value).subscribe(res=>{
         this.address = res;
-        //console.log(this.address);
         this.payment = true
         this.shipping = false
         this.showPaymentBtn = true
@@ -81,7 +78,6 @@ export class CheckoutComponent implements OnInit {
   getAddress(){
     this.cartService.getAddress(this.loggedUser.id).subscribe(res=>{
       this.ad = res;
-      //console.log(this.ad.data)
     })
   }
   onPayment(){
@@ -92,15 +88,8 @@ export class CheckoutComponent implements OnInit {
       'amount': parseFloat(this.cart.Totalamount).toFixed(2),
       'payment_type': 1
     }
-    // console.log(typeof(this.checkoutForm.amount));
-    // this.cartService.placeOrder(this.checkoutForm).subscribe(res=>{
-    //   console.log(res)
-    //   localStorage.removeItem('cart');
-    // })
     this.cartService.payment(this.checkoutForm).subscribe(res=>{
       this.paymentsuccess = res;
-      console.log(this.paymentsuccess.message._links.checkout.href)
-      //this.router.navigate(['/thankyou']);
       window.location.href=this.paymentsuccess.message._links.checkout.href;
       localStorage.removeItem('cart');
     })
@@ -146,8 +135,8 @@ export class CheckoutComponent implements OnInit {
       this.total_amount = parseFloat(this.cart.Totalamount + this.shipping_cost).toFixed(2);
     })
   }
-  
-  
+
+
 
   countryChange(value:any){
     this.addressForm.city = null;
@@ -155,7 +144,6 @@ export class CheckoutComponent implements OnInit {
     var code = this.country_list.filter(function(itm:any){
       return itm.name == value
     });
-    //console.log(code);
     this.city_list = City.getCitiesOfCountry(code[0].isoCode)
   }
 

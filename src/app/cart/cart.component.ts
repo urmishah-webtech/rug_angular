@@ -27,7 +27,6 @@ export class CartComponent implements OnInit {
   }
 
   getCart(){
-    console.log(this.userId)
     this.cartService.getCart(this.userId).subscribe(res=>{
       this.cart = res;
       this.cartCount = this.cart.cartcount
@@ -57,7 +56,6 @@ export class CartComponent implements OnInit {
         'price': price
       }
       this.cartService.updateCart(cartProduct).subscribe(response =>{
-        console.log(response);
         this.notifyService.showSuccess("Success", "Product Updated Successfully!");
         this.getCart()
       },err=>{

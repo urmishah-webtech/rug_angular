@@ -29,7 +29,6 @@ export class FooterComponent implements OnInit {
   getcompany(){
     this.headerService.getMenu().subscribe(data=> {
       this.company = data;
-      console.log(this.company)
     })
   }
   getfootermenu(){

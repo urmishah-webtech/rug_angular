@@ -30,7 +30,6 @@ export class ContactComponent implements OnInit {
     if(this.contactform.valid){
       this.contactService.contact(this.contactform.value).subscribe(res=>{
         this.response=res
-        console.log(this.response);
         this.notifyService.showSuccess("Success",'Message sent successfully!')
         this.contactform.reset()
       })
