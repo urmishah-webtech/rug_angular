@@ -25,7 +25,7 @@ p{
     h2{
         &:after{
             left: calc(50% - 20px);
-        }     
+        }
     }
    }
     .img-container{
@@ -160,72 +160,8 @@ p{
 			transform: translate(-50%, -50%) !important;
 			-ms-transform: translate(-50%, -50%) !important;
 			-webkit-transform: translate(-50%, -50%) !important;
-			
-           
+
+
       }
-       }   
+       }
   }
- 
-
-  
-  /**==========++++++(Responsive SCSS)++++++++++============*/
-  @media (max-width: 991px) {
-	h2{
-	  &:after{
-		margin-top:5px;
-	  }
-	}	
-	#swatch-section1{
-		.col1{
-			padding-top: 1rem;
-		}
-	 .img-container{
-       height: 100%;
- }
- 
-}
-#swatch-section2{
-	.col1{
-		padding: 0rem 2rem;
-	}
-	.img-container{
-		height: 100%;
-  }
-}
-
-#swatch-slider {
-	.slick-center {
-	  .overlay {
-		opacity:0;
-	  }
-	  img {
-		transform:scale(1);
-	  }
-	}
-	h2 {
-	  margin-bottom:0.5rem;
-	}
-  }
-
-  
-}
-  @media (max-width: 768px) {
-	p {
-	  font-size:16px;
-	  line-height:24px;
-	}
-	
-  }
-  @media (max-width: 576px) {
-	#swatch-section2{
-		.col1{
-			padding: 0rem;
-		}
-	} 
-  }  
-  @media (max-width: 470px) {
-	
-  }
-  
-
- 

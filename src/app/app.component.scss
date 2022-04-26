@@ -1,0 +1,435 @@
+//studio page
+@media (max-width: 768px) {
+	p {
+	  font-size:16px;
+	  line-height:24px;
+	}
+	#studio-banner {
+	  padding:6rem 0rem;
+	}
+	#studio-section1 {
+	  .container {
+		.box {
+		  padding:1.5rem;
+		}
+	  }
+	}
+	.modal-content {
+	  .modal-body {
+		.request_checkbox {
+		  padding: 0rem 0.5rem;
+		}
+		.request_form {
+		  padding:0rem 0.5rem;
+		  .blue-btn {
+			width:180px;
+		  }
+		}
+	  }
+	}
+  }
+  @media (max-width: 576px) {
+	#studio-banner {
+	  padding:4rem 0rem;
+	}
+  }
+  @media (max-width: 470px) {
+	#studio-banner {
+	  padding:4rem 0rem;
+	}
+	.modal-content {
+	  .modal-body {
+		.request_checkbox {
+		  .col-6 {
+			padding-top: 5px;
+			width: 100%;
+		  }
+		}
+	  }
+	}
+  }
+
+//trade program
+@media (max-width: 991px) {
+	h2{
+	  &:after{
+		margin-top:5px;
+	  }
+	}
+	#trade-banner{
+        padding-top: 10rem;
+        padding-bottom: 10rem;
+    }
+
+
+}
+  @media (max-width: 768px) {
+	p {
+	  font-size:16px !important;
+	  line-height:24px !important;
+	}
+
+    .blue-btn{
+        width: 200px;
+        margin-top: 0rem !important;
+
+    }
+
+    #trade-banner{
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+
+    #trade-section1{
+        .container{
+            .box{
+                padding: 1rem;
+            }
+        }
+    }
+
+    #trade-section2{
+        .container{
+            .accordion-item{
+                .accordion-button {
+                    h6{
+                        font-size: 16px !important;
+
+                    }
+                }
+            }
+        }
+    }
+
+  }
+  @media (max-width: 576px) {
+
+    #trade-banner{
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+
+  }
+
+//swatches
+  /**==========++++++(Responsive SCSS)++++++++++============*/
+  @media (max-width: 991px) {
+	h2{
+	  &:after{
+		margin-top:5px;
+	  }
+	}
+	#swatch-section1{
+		.col1{
+			padding-top: 1rem;
+		}
+	 .img-container{
+       height: 100%;
+ }
+
+}
+#swatch-section2{
+	.col1{
+		padding: 0rem 2rem;
+	}
+	.img-container{
+		height: 100%;
+  }
+}
+
+#swatch-slider {
+	.slick-center {
+	  .overlay {
+		opacity:0;
+	  }
+	  img {
+		transform:scale(1);
+	  }
+	}
+  }
+
+
+}
+  @media (max-width: 768px) {
+	p {
+	  font-size:16px;
+	  line-height:24px;
+	}
+
+  }
+  @media (max-width: 576px) {
+	#swatch-section2{
+		.col1{
+			padding: 0rem;
+		}
+	}
+  }
+  @media (max-width: 470px) {
+
+  }
+
+//our story
+/****========Comman CSS==========***/
+/*******Banner SCSS*********/
+
+/**==========++++++(Responsive SCSS)++++++++++============*/
+@media(max-width:991px) {
+    h2{
+        &:after{
+         margin-top: 5px;
+        }
+    }
+    #story-section2{
+        .col2{
+            padding:0rem 0rem 1rem 0rem;
+        }
+    }
+    #story-section3{
+        animation: change 10s infinite ease-in-out;
+        @keyframes change {
+            0%{
+                background:linear-gradient(-45deg, #38494d99, #38494d99), url('/assets/img/our-story/story4.jpg');
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            50%{
+                background:linear-gradient(-45deg, #38494d99, #38494d99), url('/assets/img/our-story/story2.jpg');
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+                100%{
+                background:linear-gradient(-45deg, #38494d99, #38494d99), url('/assets/img/our-story/story3.jpg');
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+    #story-section4{
+        .col1{
+            text-align: left;
+            padding: 0rem 0rem 1rem 0rem;
+            h2{
+                &:after{
+                    left: 0;
+                }
+            }
+        }
+    }
+    #story-section5{
+        height: 600px;
+    }
+}
+@media(max-width:768px) {
+    p{
+      font-size: 16px;
+      line-height: 24px;
+    }
+    #story-banner{
+        padding: 6rem 0rem;
+      }
+      #story-section5{
+          height: 500px;
+      }
+      #story-section3{
+          padding:4rem 0rem;
+        .container{
+            .box{
+                padding:1.5rem;
+            }
+        }
+    }
+}
+@media(max-width:576px) {
+    #story-banner{
+        padding: 4rem 0rem;
+    }
+    #story-section1{
+        .container{
+            .box{
+                padding:1.5rem;
+               img{
+                   width: 200px;
+               }
+           }
+        }
+    }
+}
+
+//our process
+/*****Comman SCSS*******/
+
+/**==========++++++(Responsive SCSS)++++++++++============*/
+@media(max-width:991px) {
+  #process-banner{
+      h1{
+          font-size: 50px !important;
+          line-height: 55px !important;
+      }
+      .banner-content{
+          top: 30%;
+      }
+   }
+ .process-section1{
+  .col1{
+      text-align: center;
+      padding: 1rem 3rem;
+
+  }
+  .col2{
+      text-align: center;
+      padding: 1rem 3rem;
+  }
+ }
+
+}
+
+@media(max-width:768px) {
+
+   p{
+       font-size: 16px;
+       line-height:24px;
+   }
+   #process-banner{
+      h1{
+          font-size: 40px !important;
+          line-height: 45px !important;
+      }
+      .banner-content{
+          top: 30%;
+      }
+   }
+   .process-section{
+       .container{
+           .box{
+               padding: 1.5rem;
+           }
+       }
+   }
+
+}
+
+@media(max-width:576px) {
+
+  #process-banner{
+
+      .banner-content{
+          top: 25%;
+          button{
+              margin-top: 0.5rem;
+              padding:0.5rem;
+              width: 200px !important;
+              line-height: 30px;
+          }
+      }
+   }
+   .process-section1{
+      .col1{
+          padding: 1rem;
+      }
+
+      .col2{
+          padding: 1rem;
+      }
+   }
+   #process-banner{
+      h1{
+          font-size: 36px !important;
+          line-height: 42px !important;
+      }
+      .banner-content{
+          top: 30%;
+      }
+   }
+}
+@media(max-width:470px) {
+  #process-banner{
+
+  .banner-content{
+      top: 10%;
+      h1{
+          font-size: 32px !important;
+          line-height: 40px !important;
+      }
+      button{
+          margin-top: 0rem;
+          width: 180px !important;
+          line-height: 25px;
+      }
+  }
+
+  #process-banner h1{
+      font-size: 30px !important;
+      line-height: 35px !important;
+  }
+}
+
+}
+@media(max-width:360px) {
+  #process-banner{
+      .banner-content{
+          top: 5%;
+      }
+  }
+}
+
+//gift card
+/*****===========Responsive=============***/
+  @media(max-width:991px) {
+
+	h2{
+	   &:after {
+		margin-top: 5px;
+	}
+	}
+	#gift-section1{
+		.img-container{
+			height: 100%;
+		}
+
+		.col1{
+			padding-top: 1rem;
+		}
+	}
+
+	#gift-section2{
+		.img-container{
+			height: 100%;
+		}
+	}
+
+	#gift-section2{
+		.col1{
+			padding: 0rem 2rem;
+		}
+	}
+
+	#gift-slider {
+		.slick-center {
+		  .overlay {
+			opacity:0;
+		  }
+		  img {
+			transform:scale(1);
+		  }
+		}
+		h2 {
+		  margin-bottom:0.5rem;
+		}
+	  }
+ }
+
+ @media(max-width:768px) {
+	p{
+		font-size: 16px;
+		line-height: 24px;
+	}
+	#size-guide1{
+		.container1{
+			p{
+				padding: 0rem !important;
+			}
+		}
+	}
+ }
+
+

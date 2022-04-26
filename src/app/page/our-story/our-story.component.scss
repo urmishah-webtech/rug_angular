@@ -1,5 +1,3 @@
-/****========Comman CSS==========***/
-/*******Banner SCSS*********/
 #story-banner{
 	background-image: linear-gradient(-45deg, #38494d99, #38494d99),url("/assets/img/product/banner1.jpg");
 	padding: 8rem 0rem;
@@ -79,88 +77,6 @@
                     left: calc(50% - 20px);
                 }
             }
-        }
-    }
-}
-/**==========++++++(Responsive SCSS)++++++++++============*/
-@media(max-width:991px) {
-    h2{
-        &:after{
-         margin-top: 5px;
-        }
-    }
-    #story-section2{
-        .col2{
-            padding:0rem 0rem 1rem 0rem;
-        }
-    }
-    #story-section3{
-        animation: change 10s infinite ease-in-out;
-        @keyframes change {
-            0%{
-                background:linear-gradient(-45deg, #38494d99, #38494d99), url('/assets/img/our-story/story4.jpg');
-                background-size: cover;
-                background-repeat: no-repeat;
-            }
-            50%{
-                background:linear-gradient(-45deg, #38494d99, #38494d99), url('/assets/img/our-story/story2.jpg');
-                background-size: cover;
-                background-repeat: no-repeat;
-            }
-                100%{
-                background:linear-gradient(-45deg, #38494d99, #38494d99), url('/assets/img/our-story/story3.jpg');
-                background-size: cover;
-                background-repeat: no-repeat;
-            }
-        }
-    }
-    #story-section4{
-        .col1{
-            text-align: left;
-            padding: 0rem 0rem 1rem 0rem;
-            h2{
-                &:after{
-                    left: 0;
-                }
-            }
-        }
-    }
-    #story-section5{
-        height: 600px;
-    }
-}
-@media(max-width:768px) {
-    p{
-      font-size: 16px;
-      line-height: 24px;
-    }
-    #story-banner{
-        padding: 6rem 0rem;
-      }
-      #story-section5{
-          height: 500px;
-      }
-      #story-section3{
-          padding:4rem 0rem;
-        .container{
-            .box{
-                padding:1.5rem;
-            }
-        }
-    }
-}
-@media(max-width:576px) {
-    #story-banner{
-        padding: 4rem 0rem;
-    }
-    #story-section1{
-        .container{
-            .box{
-                padding:1.5rem;
-               img{
-                   width: 200px;
-               }
-           }
         }
     }
 }
