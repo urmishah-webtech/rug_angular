@@ -253,7 +253,8 @@
                   <form class="pd-filter-option" [formGroup]="customizeform">
                     <div class="form-group mb-3">
                       <label>Choose A Color</label>
-                      <select class="form-select" aria-label="Default select ChooseColor" formControlName="choosecolor">
+                      {{product.id}}
+                      <select class="form-select"  (change)="getPrice(product.id)" aria-label="Default select ChooseColor" formControlName="choosecolor">
                         <option select Disabled>Choose A Color</option>
                         <option select value="natural wool">natural wool</option>
                         <option value="azure blue">azure blue</option>
@@ -311,7 +312,7 @@
                   </form>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn add-cart-btn">Add to Cart – $664.00 USD</button>
+                  <button type="button" class="btn add-cart-btn">Add to Cart  USD</button>
                 </div>
               </div>
             </div>

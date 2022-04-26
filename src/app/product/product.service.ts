@@ -35,4 +35,8 @@ export class ProductService {
   variationProduct(variation: any){
     return this.http.post(environment.api+'varientData', variation);
   }
+  getCustomPrice(id:any){
+    return this.http.get(environment.api+'custom-products/'+id, { headers: this.headers});
+  }
 }
+
