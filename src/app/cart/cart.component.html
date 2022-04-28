@@ -31,7 +31,29 @@
                               <!-- <div class="" *ngIf="cart.length != 0"> -->
                               <td><div class="cart_product_img"><img src="{{cart.image}}"></div></td>
                               <td class="product_name"><h6 class="mb-0">{{cart.product_detail.title}}</h6>
-                                   <p class="mb-0"><span *ngIf="cart.product_variant[0].attribute1">{{cart.product_variant[0].attribute1}} </span> / <span *ngIf="cart.product_variant[0].attribute2">{{cart.product_variant[0].attribute2}}</span> / <span *ngIf="cart.product_variant[0].attribute3">{{cart.product_variant[0].attribute3}}</span></p>
+                                  <div *ngIf="cart.cutomeid==1;else normal_product">
+                                   <p class="mb-0" >
+                                     <span *ngIf="cart.attribute1">{{cart.attribute1}} </span> /
+                                     <span *ngIf="cart.attribute2">{{cart.attribute2}}</span> 
+                                      <span *ngIf="cart.attribute3 && cart.attribute3==1">
+                                      / Tassels
+                                      </span><span *ngIf="cart.attribute3 && cart.attribute3==0">
+                                       No Tassels
+                                        </span> <span *ngIf="cart.height">/   {{cart.height}}  </span>  <span *ngIf="cart.width"> x {{cart.width}}</span>
+                                      </p>
+                                    </div>
+                                    <ng-template #normal_product>
+                                      
+                                      <p class="mb-0"><span *ngIf="cart.product_variant[0].attribute1">{{cart.product_variant[0].attribute1}} </span> /
+                                  <span *ngIf="cart.product_variant[0].attribute2">{{cart.product_variant[0].attribute2}} </span> /
+                                  <span *ngIf="cart.product_variant[0].attribute3 && cart.product_variant[0].attribute3=='yes'">
+                                  Tassels
+                                  </span><span *ngIf="cart.attribute3 && cart.attribute3==0">
+                                   No Tassels
+                                    </span> 
+
+                                      </p>
+                                    </ng-template>
                             </td>
                             <td class = "text-center product_quant"><div class = "product-quantity">
                               <button type="button" class="minus" (click)="minus(cart.id, cart.price)">-</button>

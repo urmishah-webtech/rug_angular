@@ -38,5 +38,8 @@ export class ProductService {
   getCustomPrice(id:any){
     return this.http.get(environment.api+'custom-products/'+id, { headers: this.headers});
   }
+  addCustomizeToCart(customizeData:any){
+    return this.http.post(environment.api+'customecart', customizeData);
+  }
 }
 

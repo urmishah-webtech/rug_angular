@@ -250,11 +250,11 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  <form class="pd-filter-option" [formGroup]="customizeform">
+                  <form class="pd-filter-option" [formGroup]="customizeform" (ngSubmit)="addCustomizedtoCart(customizeform.value)" >
                     <div class="form-group mb-3">
                       <label>Choose A Color</label>
                       {{product.id}}
-                      <select class="form-select"  (change)="getPrice(product.id)" aria-label="Default select ChooseColor" formControlName="choosecolor">
+                      <select class="form-select"  (change)="getPrice(product.id,36)" aria-label="Default select ChooseColor" formControlName="choosecolor">
                         <option select Disabled>Choose A Color</option>
                         <option select value="natural wool">natural wool</option>
                         <option value="azure blue">azure blue</option>
@@ -270,7 +270,7 @@
                     </div>
                     <div class="form-group mb-3">
                       <label>Choose Another Color</label>
-                      <select class="form-select" aria-label="Default select ChooseAnotherColor" formControlName="chooseanothercolor">
+                      <select class="form-select" (change)="getPrice(product.id,37)" aria-label="Default select ChooseAnotherColor" formControlName="chooseanothercolor">
                         <option Disabled>Choose Another Color</option>
                         <option value="midnight black">midnight black</option>
                         <option value="azure blue">azure blue</option>
@@ -288,13 +288,13 @@
                       <label for="Choose Tassels">Choose Tassels</label>
                       <div class="tassels-dropdown">
                         <div class="form-check">
-                          <input class="form-check-input" type="radio" formControlName="tassels" id="Tassels">
+                          <input class="form-check-input" (change)="getPrice(product.id,41)" type="radio" formControlName="tassels" id="Tassels" value="1">
                           <label class="form-check-label" for="Tassels">
                             Tassels
                           </label>
                         </div>
                         <div class="form-check">
-                          <input class="form-check-input" type="radio" formControlName="notassels" id="NoTassels">
+                          <input class="form-check-input" (change)="getPrice(product.id,41)" type="radio" formControlName="tassels" id="NoTassels" value="0">
                           <label class="form-check-label" for="NoTassels">
                             No Tassels
                           </label>
@@ -304,16 +304,17 @@
                     <div class="form-group">
                       <label for="Choose Tassels">Choose Size</label>
                       <div class="choose-size-input">
-                        <input type="text" placeholder="Width" formControlName="width">
+                        <input type="text" [(ngModel)]="custom_width" placeholder="Width" (keypress)="getPrice(product.id,38)" formControlName="width">
                         <span>X</span>
-                        <input type="text" placeholder="Height" formControlName="height">
+                        <input type="text" placeholder="Height" [(ngModel)]="custom_height" (keypress)="getPrice(product.id,38)" formControlName="height">
                       </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="submit" class="btn add-cart-btn" data-bs-dismiss="modal"> Add to Cart $ {{totalCustomPrice}} USD</button>
                     </div>
                   </form>
                 </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn add-cart-btn">Add to Cart  USD</button>
-                </div>
+              
               </div>
             </div>
           </div>
@@ -329,7 +330,7 @@
               type="button" role="tab" aria-selected="false">Lead Time</button>
             <button class="nav-link" id="nav-returns-tab" data-bs-toggle="tab" data-bs-target="#nav-returns"
               type="button" role="tab" aria-selected="false">Returns</button>-->
-            <button class="nav-link" id="nav-size-tab" data-bs-toggle="tab" data-bs-target="#nav-size"
+            <button class="nav-link" id="nav-size-tab" data-bs-toggle="tab" *ngIf="showChart" data-bs-target="#nav-size"
               type="button" role="tab" aria-selected="false">What does {{sizevariant}} look like?</button>
           </div>
         </nav>

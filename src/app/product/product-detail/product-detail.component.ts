@@ -35,7 +35,17 @@ export class ProductDetailComponent implements OnInit  {
   sizev2: any = 0
   customizeform : any
   customPriceData : any
-  customPriceLab1 : any
+  customPriceLab1 : number=0;
+  customPriceLab2 : number=0;
+  customPriceLab3 : number=0;
+  customPriceLab4 : number=0;
+  showChart:boolean=false;
+  cv_option_price:any
+  lable:any
+  totalCustomPrice:number=0;
+  custom_height:number=0;
+  custom_width:number=0;
+  customProduct:any =[];
   constructor(public productService: ProductService,
     private route: ActivatedRoute,
     private authService: AuthService,
@@ -64,17 +74,42 @@ export class ProductDetailComponent implements OnInit  {
       choosecolor: new FormControl('', Validators.required),
       chooseanothercolor: new FormControl('', Validators.required),
       tassels: new FormControl('', Validators.required),
-      notassels: new FormControl('', Validators.required),
+     // notassels: new FormControl('', Validators.required),
       width: new FormControl('', Validators.required),
       height: new FormControl('', Validators.required)
     })
   }
-  getPrice(id:number){
-    console.log(id)
+ 
+  getPrice(id:number,lable:number){
+
     this.productService.getCustomPrice(id).subscribe(
       data => {
         this.customPriceData = data;
-        this.customPriceLab1=
+        if(lable==36){
+        this.customPriceLab1=0
+        this.customPriceLab1=Number(this.customPriceData.cv_option_price[1].price)
+        }
+        if(lable==37){
+        this.customPriceLab2 =0 
+        this.customPriceLab2+=Number(this.customPriceData.cv_option_price[0].price)
+        }
+        if(lable==41){
+        
+           
+            this.customPriceLab3=0
+          this.customPriceLab3+=Number(this.customPriceData.cv_option_price[3].price)
+          
+        }
+        if(lable==38){
+          this.customPriceLab4=0;
+          if(this.custom_height!=0 && this.custom_width!=0){
+          this.customPriceLab4+=(this.custom_height * this.custom_width)*Number(this.customPriceData.cv_option_price[2].price)
+          }
+        }
+        this.totalCustomPrice=this.customPriceLab1+this.customPriceLab2+this.customPriceLab3+this.customPriceLab4
+        // this.totalCustomPrice+=this.customPriceData.cv_option_price[2].price
+        // this.totalCustomPrice+=this.customPriceData.cv_option_price[3].price
+
       });
   }
   getSingleProduct(id: number){
@@ -97,6 +132,7 @@ export class ProductDetailComponent implements OnInit  {
   }
 
   changeVariation(){
+    this.showChart=true;
     let varient1 = this.variantForm.value.variant1;
     let varient2 = this.variantForm.value.variant2;
     let varient3 = this.variantForm.value.variant3;
@@ -155,7 +191,68 @@ export class ProductDetailComponent implements OnInit  {
   showallcolors(){
     this.showcolors = !this.showcolors;
   }
-
+  addCustomizedtoCart(data:any){
+   
+    let loggedUser = this.authService.getToken()
+    if(loggedUser.token == null){
+        if(localStorage.getItem('session_id') == null){
+          this.session_id = this.randomString(6);
+          localStorage.setItem('session_id', this.session_id)
+        }else {
+          this.session_id = localStorage.getItem('session_id')
+      }
+      this.customProduct={
+        'product_id': this.productId,
+        'price':this.totalCustomPrice,
+        'session_id': this.session_id,
+        'stock': this.quantity,
+        'varient1':36,
+        'attribute1':data.choosecolor,
+        'varient2':37,
+        'attribute2':data.chooseanothercolor,
+        'varient3':44,
+        'attribute3':data.tassels,
+        'varient4':38,
+        'height':data.height,
+        'width':data.width,
+        'cutomeid':1
+        
+      }
+    }
+    else{
+      this.customProduct={
+        'product_id': this.productId,
+        'price':this.totalCustomPrice,
+        'user_id': localStorage.getItem('id'),
+        'stock': this.quantity,
+        'varient1':36,
+        'attribute1':data.choosecolor,
+        'varient2':37,
+        'attribute2':data.chooseanothercolor,
+        'varient3':44,
+        'attribute3':data.tassels,
+        'varient4':38,
+        'height':data.height,
+        'width':data.width,
+        'cutomeid':1
+      }
+    }
+    this.productService.addCustomizeToCart(this.customProduct).subscribe(response =>{
+      this.cart = response
+      this.cartcount = this.cart.cartcount
+      this.authService.cartSubject.next(this.cartcount);
+      this.notifyService.showSuccess("Success", "Product Added Successfully!");
+      localStorage.setItem('cart', this.cartcount)
+    },err=>{
+      this.notifyService.showError("Error", "Something went wrong!");
+    })
+    // this.productService.addCustomizeToCart(this.customProduct).subscribe(
+    //   data =>{
+    //     console.log(data)
+    //   }
+    // );
+   
+  }
   addtoCart(){
     let loggedUser = this.authService.getToken()
     if(loggedUser.token == null){
@@ -179,6 +276,7 @@ export class ProductDetailComponent implements OnInit  {
         'variation': this.variantId
       }
     }
+  
     this.productService.addtocart(this.cartProduct).subscribe(response =>{
       this.cart = response
       this.cartcount = this.cart.cartcount

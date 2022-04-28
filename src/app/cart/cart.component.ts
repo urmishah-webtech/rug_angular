@@ -29,6 +29,7 @@ export class CartComponent implements OnInit {
   getCart(){
     this.cartService.getCart(this.userId).subscribe(res=>{
       this.cart = res;
+      console.log(this.cart)
       this.cartCount = this.cart.cartcount
       localStorage.setItem('cart', this.cartCount)
     })
