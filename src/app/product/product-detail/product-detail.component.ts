@@ -34,7 +34,8 @@ export class ProductDetailComponent implements OnInit  {
   sizev1: any = 0
   sizev2: any = 0
   customizeform : any
-
+  customPriceData : any
+  customPriceLab1 : any
   constructor(public productService: ProductService,
     private route: ActivatedRoute,
     private authService: AuthService,
@@ -68,12 +69,22 @@ export class ProductDetailComponent implements OnInit  {
       height: new FormControl('', Validators.required)
     })
   }
-
+  getPrice(id:number){
+    console.log(id)
+    this.productService.getCustomPrice(id).subscribe(
+      data => {
+        this.customPriceData = data;
+        this.customPriceLab1=
+      });
+  }
   getSingleProduct(id: number){
+    
     this.productService.getsingleProduct(id).subscribe(
       data => {
         this.product = data;
+       
       });
+
   }
 
   getproductVariation(id: number){
