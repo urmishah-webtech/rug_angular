@@ -41,7 +41,11 @@ import { TradeProgramComponent } from './page/trade-program/trade-program.compon
 import { ReturnComponent } from './page/return/return.component';
 import { SliderComponent } from './slider/slider.component';
 import { BannerComponent } from './banner/banner.component';
-
+import { LightboxModule } from 'ngx-lightbox';
+import { KeysPipePipe } from './keys-pipe.pipe';
+//import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
+import { MyAccountComponent } from './myaccount/my-account/my-account.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +82,9 @@ import { BannerComponent } from './banner/banner.component';
     TradeProgramComponent,
     ReturnComponent,
     SliderComponent,
-    BannerComponent
+    BannerComponent,
+    KeysPipePipe,
+    MyAccountComponent
 
   ],
   imports: [
@@ -89,9 +95,10 @@ import { BannerComponent } from './banner/banner.component';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    SlickCarouselModule
-
-  ],
+    SlickCarouselModule,
+    LightboxModule,
+    FormsModule
+  ], 
   providers: [{provide: ToastrService, useClass: ToastrService}
   ],
   bootstrap: [AppComponent]

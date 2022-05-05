@@ -10,9 +10,12 @@
                     <ul class = "nav nav-tabs justify-content-center" id = "nav-tab" role = "tablist">
                         <li class="nav-link"><a class="nav-item" [ngClass]="shipping ? 'active' : ''" id="nav-shipping-tab" data-bs-toggle="tab" data-bs-target="#nav-shipping"
                             role="tab" aria-controls="nav-shipping" aria-selected="true" (click)="showshipping()">Information</a></li>
-                        <span *ngIf="showPaymentBtn">|</span>
-                       <li class="nav-link"><a class="nav-item" [ngClass]="!shipping ? 'active' : ''" id="nav-payment-tab" data-bs-toggle="tab" data-bs-target="#nav-payment"
-                        role="tab" aria-controls="nav-payment" aria-selected="false" (click)="showpayment()">Payment</a></li>
+                        <span *ngIf="showPaymentBtn"></span>
+                        <div></div>
+
+                       <li class="nav-link" *ngIf="addressForm.valid && payment_tab_active && contactForm.valid"><a class="nav-item" [ngClass]="!shipping ? 'active' : ''" id="nav-payment-tab" data-bs-toggle="tab" data-bs-target="#nav-payment"
+                        role="tab" aria-controls="nav-payment" aria-selected="false" (click)="showpayment()"> | Payment</a></li>
+                      
                     </ul>
 
                 </nav>
@@ -28,10 +31,12 @@
                               </div> -->
                               <div class = "col-12">
                                 <div class = " checkout_contact">
-                                    <form class="needs-validation" novalidate="">
+                                    <form class="needs-validation" novalidate="" [formGroup]="contactForm">
                                         <div>
-                                          <input class="form-control " type="email" placeholder="Email" id="validationCustom01" required="">
+                                          <input class="form-control " formControlName="contactemail" name="contact_email" [(ngModel)]="contact_email" type="email" placeholder="Email" id="validationCustom01" required="">
                                         </div>
+                                        <div *ngIf="contactForm.controls['contactemail'].invalid && (contactForm.controls['contactemail'].dirty || contactForm.controls['contactemail'].touched)"
+                                        class="alert alert-danger"> Contact Email is required.</div>
                                         </form>
 
                                         <div class="information_check_box">
@@ -140,123 +145,126 @@
 
                         </div>
                     </div>
+                   
                     <div class="tab-pane fade show active" id="nav-payment" role="tabpanel" aria-labelledby="nav-payment-tab" *ngIf = "payment || !shipping">
                         <div>
-                           <div class = "ship_add">
-                               <table>
-                                   <tbody>
-                                       <tr>
-                                           <td>Email</td>
-                                           <td>{{address.dataget.email}}</td>
-                                           <td class = "text-end"><a (click)="showshipping()">Change</a></td>
-                                       </tr>
-                                       <tr><td colspan = "3"><hr class = "my-2"></td></tr>
-                                       <tr>
+                        <div class = "ship_add">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>Email</td>
+                                        <td>{{address.dataget.email}}</td>
+                                        <td class = "text-end"><a (click)="showshipping()">Change</a></td>
+                                    </tr>
+                                    <tr><td colspan = "3"><hr class = "my-2"></td></tr>
+                                    <tr>
                                         <td>Ship to</td>
                                         <!-- <td>A/7 main street , tempa , Florida 345627 (USA)</td> -->
                                         <td>{{address.dataget.address + ', ' + address.dataget.city + ', ' + address.dataget.postal_code + ', ' + address.dataget.country}}</td>
                                         <td class = "text-end"><a (click)="showshipping()">Change</a></td>
                                     </tr>
-                                   </tbody>
-                               </table>
-                           </div>
+                                </tbody>
+                            </table>
+                        </div>
                         </div>
                         <div class = "pt-4">
                             <div>
-                             <h5>Payment Method</h5>
+                            <h5>Payment Method</h5>
                             </div>
 
                         <div class="payment_method">
 
-                         <!-- <div class="db_card">
-                           <label class="check_box ">Credit Card/Dabit Card
+                        <!-- <div class="db_card">
+                        <label class="check_box ">Credit Card/Dabit Card
                                 <input type="radio" checked="checked" name="radio">
                                 <span class = "float-right"> <img src="assets/img/checkout/american-express.png">
-                                 <img src="assets/img/checkout/visa.png"></span>
+                                <img src="assets/img/checkout/visa.png"></span>
 
 
                                 <span class="checkmark"></span>
-                           </label>
+                        </label>
 
-                         </div>
-                         <form>
-                             <div class = "row">
-                                 <div class = "col-md-12 col-12">
-                                     <div class="form-group py-2">
-                                         <input type="text"  name="cardnumber" formControlName="cardnumber" class="form-control" placeholder = "Card number">
-                                     </div>
-                                 </div>
-                                 <div class = "col-md-12 col-12">
-                                     <div class="form-group py-2">
-                                         <input type="text"  name="cardname" formControlName="cardname" class="form-control" placeholder = "Card holder name">
-                                     </div>
-                                 </div>
-                                 <div class = "col-md-6 col-12">
-                                     <div class="form-group py-2">
-                                         <input type="text"  name="cvv" formControlName="cvv" class="form-control" placeholder = "Cvv">
-                                     </div>
-                                 </div>
-                                 <div class = "col-md-6 col-12">
-                                     <div class="form-group py-2">
-                                         <input type="text"  name="expirydate" formControlName="expirydate" class="form-control" placeholder = "Expiry date">
-                                     </div>
+                        </div>
+                        <form>
+                            <div class = "row">
+                                <div class = "col-md-12 col-12">
+                                    <div class="form-group py-2">
+                                        <input type="text"  name="cardnumber" formControlName="cardnumber" class="form-control" placeholder = "Card number">
+                                    </div>
+                                </div>
+                                <div class = "col-md-12 col-12">
+                                    <div class="form-group py-2">
+                                        <input type="text"  name="cardname" formControlName="cardname" class="form-control" placeholder = "Card holder name">
+                                    </div>
+                                </div>
+                                <div class = "col-md-6 col-12">
+                                    <div class="form-group py-2">
+                                        <input type="text"  name="cvv" formControlName="cvv" class="form-control" placeholder = "Cvv">
+                                    </div>
+                                </div>
+                                <div class = "col-md-6 col-12">
+                                    <div class="form-group py-2">
+                                        <input type="text"  name="expirydate" formControlName="expirydate" class="form-control" placeholder = "Expiry date">
+                                    </div>
 
-                                 </div>
+                                </div>
 
-                             </div>
+                            </div>
 
-                         </form>-->
+                        </form>-->
                         <div class="payment_option">
                             <ul class = "pt-2">
                                 <!-- <li>
-                                 <label class="check_box ">Google Pay UPI
-                                     <img class="gpay_img" src="assets/img/checkout/google-pay.png">
+                                <label class="check_box ">Google Pay UPI
+                                    <img class="gpay_img" src="assets/img/checkout/google-pay.png">
 
-                                          <input type="radio" checked="checked" name="radio">
-                                          <span class="checkmark"></span>
-                                 </label>
+                                        <input type="radio" checked="checked" name="radio">
+                                        <span class="checkmark"></span>
+                                </label>
                                 </li>
                                 <li>
-                                 <label class="check_box ">Paypal
-                                     <img class="paypal_img" src="assets/img/checkout/paypal.png">
+                                <label class="check_box ">Paypal
+                                    <img class="paypal_img" src="assets/img/checkout/paypal.png">
                                         <input type="radio" name="radio">
-                                         <span class="checkmark"></span>
+                                        <span class="checkmark"></span>
                                     </label>
                                 </li>
                                 <li>
-                                 <label class="check_box ">Amazon Pay
-                                     <img class="amazon_img" src="assets/img/checkout/amazon-pay.png">
-                                         <input type="radio" name="radio">
-                                          <span class="checkmark"></span>
-                                     </label>
+                                <label class="check_box ">Amazon Pay
+                                    <img class="amazon_img" src="assets/img/checkout/amazon-pay.png">
+                                        <input type="radio" name="radio">
+                                        <span class="checkmark"></span>
+                                    </label>
                                 </li> -->
                                 <li>
-                                 <label class="check_box ">Pay with Mollie
-                                  <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                                <label class="check_box ">Pay with Mollie
+                                <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
                                         <input type="radio" checked name="payment_type" value="1">
-                                         <span class="checkmark"></span>
+                                        <span class="checkmark"></span>
                                     </label>
                                 </li>
                                 <!-- <li>
-                                  <label class="check_box ">Cash on Delivery
-                                      <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-                                         <input type="radio" name="payment_type" value="0" (click)="payment_method($event)">
-                                          <span class="checkmark"></span>
-                                     </label>
-                                 </li> -->
+                                <label class="check_box ">Cash on Delivery
+                                    <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                                        <input type="radio" name="payment_type" value="0" (click)="payment_method($event)">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </li> -->
 
                             </ul>
 
-                         </div>
+                        </div>
 
-                     </div>
-                     <div class = "pay_btn nav nav-tabs" id = "nav-tab" role = "tablist">
+                    </div>
+                    <div class = "pay_btn nav nav-tabs" id = "nav-tab" role = "tablist">
                         <button type = "button" (click)="onPayment()" class = "btn btn1 green-btn">Pay Now</button>
                         <button type = "button" class = "btn btn2" id="nav-shipping-tab" data-bs-toggle="tab" data-bs-target="#nav-shipping"
                         type="button" role="tab" aria-controls="nav-shipping" aria-selected="true" (click) = "showshipping()">Return to Shipping</button>
-                     </div>
-                 </div>
                     </div>
+                </div>
+                    </div>
+                    
+
                 </div>
 
 

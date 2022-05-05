@@ -1,0 +1,106 @@
+
+<section id = "signup">
+    <div class="container">
+        <div class="row">
+
+           <!-- <div *ngIf="isEmailErrorVisible">
+                <div  *ngFor="let email_error of email_error">
+                    {{ email_error }}
+                </div>
+           </div>
+           <div *ngIf="isPasswordErrorVisible">
+                <div class="error" *ngFor="let password_error of password_error">
+                    {{ password_error }}
+                </div>
+           </div>
+           <div *ngIf="isFirstnameErrorVisible">
+                <div class="error" *ngFor="let first_name_error of first_name_error">
+                    {{ first_name_error }}
+                </div>
+            </div>
+            <div *ngIf="isLastnameErrorVisible">
+                <div class="error" *ngFor="let last_name_error of last_name_error">
+                    {{ last_name_error }}
+                </div>
+            </div> -->
+            <div class="col-md-12">
+                <div class = "box">
+
+
+                    <form [formGroup]="AccountForm" (ngSubmit)="onSubmit()" class="my_form">
+                        <div class = "py-2 text-center">
+                            <h3>Sign Up</h3>
+                        </div>
+                        <div class="form-group py-2">
+                            <label for="firstname">First Name </label>
+                            <input type="text" id="first_name" name="first_name" formControlName="first_name" class="form-control">
+
+                            <div *ngIf="AccountForm.controls['first_name'].invalid && (AccountForm.controls['first_name'].dirty || AccountForm.controls['first_name'].touched)"
+                            class="alert alert-danger">
+
+                                <div *ngIf="AccountForm.controls['first_name'].errors?.['required']">
+                                    First name is required.
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group py-2">
+                            <label for="lastname">Last Name</label>
+                            <input type="text" id="last_name" name="last_name" formControlName="last_name" class="form-control">
+
+                            <div *ngIf="AccountForm.controls['last_name'].invalid && (AccountForm.controls['last_name'].dirty || AccountForm.controls['last_name'].touched)"
+                            class="alert alert-danger">
+
+                                <div *ngIf="AccountForm.controls['last_name'].errors?.['required']">
+                                    Last name is required.
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group py-2">
+                            <label for="email">Email </label>
+                            <input type="text" id="email" name="email" formControlName="email" class="form-control">
+
+                            <div *ngIf="AccountForm.controls['email'].invalid && (AccountForm.controls['email'].dirty || AccountForm.controls['email'].touched)"
+                            class="alert alert-danger">
+
+                                <div *ngIf="AccountForm.controls['email'].errors?.['required']">
+                                    Email is required.
+                                </div>
+                                <div *ngIf="AccountForm.controls['email'].errors?.['email']">
+                                    Email should be valid.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group py-2">
+                            <label for="lastname">Last Name</label>
+                            <input type="text" id="last_name" name="last_name" formControlName="last_name" class="form-control">
+
+                            <div *ngIf="AccountForm.controls['last_name'].invalid && (AccountForm.controls['last_name'].dirty || AccountForm.controls['last_name'].touched)"
+                            class="alert alert-danger">
+
+                                <div *ngIf="AccountForm.controls['last_name'].errors?.['required']">
+                                    Last name is required.
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class = "text-center">
+                            <button type="submit" class="btn blue-btn text-center" [disabled]="!AccountForm.valid">Submit</button>
+                        </div>
+
+                    </form>
+                 
+                    <div class = "background">
+                        <div class = "shape"></div>
+                        <div class = "shape"></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>

@@ -1,3 +1,8 @@
+.multiple-items img{
+  height:500px !important;
+  max-height:500px !important;
+  width:100%;
+  }
 .varient_label{
   display: block;
   margin-right: 10px;
@@ -33,7 +38,7 @@ transition: all 100ms linear;
 }
 
 .preview input:checked {
-border: 2px solid #000 !important;
+border: 3px solid rgba(0, 0, 0, 0.938) !important;
 }
 
 .preview input:before {

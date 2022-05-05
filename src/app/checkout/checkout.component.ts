@@ -22,8 +22,10 @@ export class CheckoutComponent implements OnInit {
   }
 
   cart: any = [];
+  contact_email:any;
   addressForm: any = FormGroup
   checkoutForm: any = FormGroup
+  contactForm:any = FormGroup
   address: any
   ad: any
   payment: boolean = false
@@ -39,11 +41,15 @@ export class CheckoutComponent implements OnInit {
   shipping_res:any;
   total_amount:any = 0;
   shipping_cost:any = 0;
-
+  payment_tab_active:boolean=false;
   ngOnInit(): void {
+    this.contact_email=""
     this.loggedUser = this.authService.getToken()
     this.getCart();
     this.getAddress();
+    this.contactForm =this.fb.group({
+      contactemail:['',Validators.required]
+    })
     this.addressForm = this.fb.group({
       user_id: [this.loggedUser.id],
       first_name: ['',Validators.required],
@@ -72,6 +78,7 @@ export class CheckoutComponent implements OnInit {
         this.payment = true
         this.shipping = false
         this.showPaymentBtn = true
+        this.payment_tab_active=true
       })
     }
   }

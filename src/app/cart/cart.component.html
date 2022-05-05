@@ -39,19 +39,30 @@
                                       / Tassels
                                       </span><span *ngIf="cart.attribute3 && cart.attribute3==0">
                                        No Tassels
-                                        </span> <span *ngIf="cart.height">/   {{cart.height}}  </span>  <span *ngIf="cart.width"> x {{cart.width}}</span>
+                                       
+                                        </span>
+                                        
+                                        <span *ngIf="cart.height">/   {{cart.height}}  </span>  <span *ngIf="cart.width"> x {{cart.width}}</span>
                                       </p>
                                     </div>
                                     <ng-template #normal_product>
-                                      
+                                     
                                       <p class="mb-0"><span *ngIf="cart.product_variant[0].attribute1">{{cart.product_variant[0].attribute1}} </span> /
                                   <span *ngIf="cart.product_variant[0].attribute2">{{cart.product_variant[0].attribute2}} </span> /
-                                  <span *ngIf="cart.product_variant[0].attribute3 && cart.product_variant[0].attribute3=='yes'">
+                                  <span *ngIf="cart.product_variant[0].attribute3 && cart.product_variant[0].attribute3=='Yes' && cart.product_variant[0].varient3==41">
                                   Tassels
-                                  </span><span *ngIf="cart.attribute3 && cart.attribute3==0">
+                                  </span><span *ngIf="cart.product_variant[0].attribute3 && cart.product_variant[0].attribute3=='No' && cart.product_variant[0].varient3==41">
                                    No Tassels
                                     </span> 
-
+                                    <span *ngIf="cart.product_variant[0].attribute4 && cart.product_variant[0].attribute4=='Yes' && cart.product_variant[0].varient4==41">
+                                      Tassels
+                                      </span>
+                                      <span *ngIf="cart.product_variant[0].attribute4 && cart.product_variant[0].attribute4=='No' && cart.product_variant[0].varient4==41">
+                                       No Tassels
+                                        </span> 
+                                        <span *ngIf="cart.product_variant[0].attribute3 &&  cart.product_variant[0].varient3==38">
+                                          /{{cart.product_variant[0].attribute3}}
+                                           </span> 
                                       </p>
                                     </ng-template>
                             </td>

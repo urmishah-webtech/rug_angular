@@ -27,6 +27,7 @@ import { GiftCardComponent } from './page/gift-card/gift-card.component';
 import { SizeGuideComponent } from './page/size-guide/size-guide.component';
 import { TradeProgramComponent } from './page/trade-program/trade-program.component';
 import { ReturnComponent } from './page/return/return.component';
+import { MyAccountComponent } from './myaccount/my-account/my-account.component';
 
 
 
@@ -62,6 +63,7 @@ const routes: Routes = [
     {path: 'size-guide', component: SizeGuideComponent},
     {path: 'trade-program', component: TradeProgramComponent},
     {path: 'return', component:ReturnComponent},
+    {path: 'profile', component:MyAccountComponent},
     {path: 'thankyou', component: ThankyouComponent, canActivate: [AuthGuard]},
     {path: 'account/order-history', component: ThankyouComponent, canActivate: [AuthGuard]},
     {path: '**', component:NodataComponent}

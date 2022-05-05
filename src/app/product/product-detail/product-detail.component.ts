@@ -4,7 +4,8 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { NotificationService } from 'src/app/notification.service';
 import { AuthService } from 'src/app/auth/auth.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-
+import { Lightbox } from 'ngx-lightbox';
+import { KeysPipePipe } from 'src/app/keys-pipe.pipe';
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
@@ -46,10 +47,21 @@ export class ProductDetailComponent implements OnInit  {
   custom_height:number=0;
   custom_width:number=0;
   customProduct:any =[];
-  constructor(public productService: ProductService,
+  temp:any=[];
+ _albums:any=[];
+  album: any;
+  productImages:any=[];
+  tempImgs:any=[];
+  tempImgs2:any=[];
+  tempImgs3:any=[];
+  variantMedia:any=[]
+  showAddCart:boolean=false
+  mediaurl="https://rug.webtech-evolution.com/admin/public/storage/"
+    constructor(public productService: ProductService,
     private route: ActivatedRoute,
     private authService: AuthService,
-    private notifyService:NotificationService) { }
+    private notifyService:NotificationService,
+    private _lightbox: Lightbox) { }
 
 
   ngOnInit(): void {
@@ -113,11 +125,11 @@ export class ProductDetailComponent implements OnInit  {
       });
   }
   getSingleProduct(id: number){
-    
+  
     this.productService.getsingleProduct(id).subscribe(
       data => {
         this.product = data;
-       
+        console.log(this.product)
       });
 
   }
@@ -126,7 +138,29 @@ export class ProductDetailComponent implements OnInit  {
     this.productService.getproductVariation(id).subscribe(
       data => {
         this.productVariation = data;
-        this.variantTag = this.productVariation.data[0].detail[0].title
+        console.log(this.productVariation)
+     //   this.variantTag = this.productVariation.data[0].detail[0].title
+        this.productImages = this.productVariation.data
+       
+       // console.log(this.temp)
+        // for(let productimg of this.productImages){
+        //   for(let item of productimg.variantmedia)
+        //   {
+        //       this.tempImgs.push(this.mediaurl+item.image)
+        //   }
+        // }
+       for(let item of this.productImages.variantmedia){
+         
+              this.tempImgs.push(this.mediaurl+item.image)
+          
+        }
+        console.log(this.tempImgs)
+      //   for(let fimages of this.tempImgs2){
+      //      this.tempImgs3.push(fimages)
+      //   }
+      //   for(let f of this.tempImgs3 ){
+      //       console.log(f)
+      //   }
       }
     )
   }
@@ -137,15 +171,16 @@ export class ProductDetailComponent implements OnInit  {
     let varient2 = this.variantForm.value.variant2;
     let varient3 = this.variantForm.value.variant3;
     let varient4 = this.variantForm.value.variant4;
-    console.log(varient1)
-    console.log(varient2)
-    console.log(varient3)
-    console.log(varient4)
+  
     let size = this.variantForm.value.size
+
+    if(size != ''){
     this.sizevariant = size
     var newint = size.match(/\d+/g);
     this.sizev1 = newint[0]
     this.sizev2 = newint[1]
+    }
+   
     if(varient1 != ''){
       this.variationValidation = true;
     }
@@ -161,18 +196,33 @@ export class ProductDetailComponent implements OnInit  {
     let variation = {
       'text1': varient1,
       'text2': varient2,
-      'text3': varient3,
-      'text4': size,
+      'text3': size,
+      'text4': varient4,
       'product_id': this.productId
     }
+    if(varient1!='' &&  varient2!='' && varient4!='' && size!='' )
+    {
+      this.showAddCart=true;
+    
     this.productService.variationProduct(variation).subscribe(
       data =>{
         this.variationProduct = data
-        this.product.price_range = this.variationProduct.price
-        this.product.image = this.variationProduct.image
+        this.product.price_range = '€'+this.variationProduct.price
+        this.productImages = this.variationProduct.variantmedia
         this.variantId = this.variationProduct.variant.id
+        console.log(this.variantId)
+        //console.log(this.variationProduct.variant.variantmedia)
+      //  console.log(this.product.image)
+        this.tempImgs=[];
+        for(let item of this.variationProduct.variant.variantmedia)
+        {
+            this.tempImgs.push(this.mediaurl+item.image)
+        }
+        console.log(this.tempImgs)
       }
+    
     )
+    }
   }
 
   getRelatedProducts(id: number){
@@ -366,6 +416,35 @@ slideConfigProduct = {"slidesToShow": 4,
 
  };
 
+ /*****Product Slider*****/
+ slideConfigImg = {"slidesToShow": 1,
+"slidesToScroll": 1,
+ "dots":false,
+ "autoplay":false,
+ "speed":1000,
+ "infinite": true,
+ "arrows":true,
+ responsive: [
+   {
+     breakpoint: 1024,
+     settings: {
+       slidesToShow: 3
+     }
+   },
+   {
+     breakpoint: 800,
+     settings: {
+       slidesToShow: 2
+     }
+   },
+   {
+     breakpoint: 500,
+     settings: {
+       slidesToShow: 1
+     }
+   }
+ ]
+};
 
 productFeatures = [
   {title: 'Materials', description: 'Materials123456'},
@@ -381,6 +460,17 @@ selectTab(index:number) {
 
  counter(i: number) {
   return new Array(i);
+}
+open(event: any): void {
+  this._albums=[];
+  // open lightbox
+    this.album= {
+    src : event.target.src,
+  }
+  this._albums.push(this.album);
+ console.log(this._albums)
+ console.log(event.target.src)
+ this._lightbox.open(this._albums);
 }
 
 }

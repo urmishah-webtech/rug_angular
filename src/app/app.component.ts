@@ -20,7 +20,7 @@ export class AppComponent {
   title = 'Rug';
 
   onActivate(event: any) {
-    window.scroll(0,0);
+    //window.scroll(0,0);
     }
 
 }
