@@ -15,7 +15,7 @@ export class ProductService {
     return this.http.get(environment.api+'products', { headers: this.headers});
   }
 
-  getsingleProduct(id: any): Observable<any>{
+  getProduct(id: any): Observable<any>{
     //const headers = new HttpHeaders({'Content-Type': 'application/json'});
     return this.http.get(environment.api+'products/'+id, { headers: this.headers});
   }

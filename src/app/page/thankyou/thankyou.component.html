@@ -20,7 +20,13 @@
                     <tr *ngFor="let cart of order.order_item">
                         <td><div class = "checkout_product_img"><img src = "{{cart.image}}"></div></td>
                         <td class = "product_content"><h4 class = "mb-0">{{cart.title}}</h4>
-                            <p *ngIf="cart.varition_id != null" class = "mb-0"><span>{{cart.variant_product[0].attribute1}} </span> / <span>{{cart.variant_product[0].attribute2}}</span> / <span>Tassels</span></p>
+
+                            <p *ngIf="cart.varition_id != null" class = "mb-0">
+
+                              <span>{{cart.variant_product[0].attribute1}} </span>
+                             / <span>{{cart.variant_product[0].attribute2}}</span> / <span>Tassels</span>
+                            
+                            </p>
                       </td>
 
                       <td class = "text-center"><h5> <span>Qty: </span>{{cart.stock}}</h5></td>

@@ -100,6 +100,8 @@
                                                 </div>
                                                 </div>
                                          </div>
+                                         <input type="hidden"  name="address_type" formControlName="address_type" class="form-control" value="shipping_address">
+
                                          <div class = "col-md-4 col-12">
                                              <div class="form-group py-2">
                                                  <select class="form-select select_country" (change)="shippingCost(addressForm.controls['country'].value)" formControlName="country" (change)="countryChange(addressForm.controls['country'].value)">

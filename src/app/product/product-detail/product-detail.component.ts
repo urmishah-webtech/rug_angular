@@ -55,6 +55,7 @@ export class ProductDetailComponent implements OnInit  {
   tempImgs2:any=[];
   tempImgs3:any=[];
   variantMedia:any=[]
+  description:string=''
   showAddCart:boolean=false
   mediaurl="https://rug.webtech-evolution.com/admin/public/storage/"
     constructor(public productService: ProductService,
@@ -70,7 +71,7 @@ export class ProductDetailComponent implements OnInit  {
         this.productId = paramMap.get('productId');
       }
     })
-    this.getSingleProduct(this.productId)
+   this.getSingleProduct(this.productId)
     this.getproductVariation(this.productId)
     this.getRelatedProducts(this.productId)
     this.variationValidation
@@ -125,20 +126,20 @@ export class ProductDetailComponent implements OnInit  {
       });
   }
   getSingleProduct(id: number){
-  
-    this.productService.getsingleProduct(id).subscribe(
+   
+    this.productService.getProduct(id).subscribe(
       data => {
         this.product = data;
-        console.log(this.product)
+       
       });
-
+      
   }
 
   getproductVariation(id: number){
     this.productService.getproductVariation(id).subscribe(
       data => {
         this.productVariation = data;
-        console.log(this.productVariation)
+      
      //   this.variantTag = this.productVariation.data[0].detail[0].title
         this.productImages = this.productVariation.data
        
@@ -218,7 +219,39 @@ export class ProductDetailComponent implements OnInit  {
         {
             this.tempImgs.push(this.mediaurl+item.image)
         }
-        console.log(this.tempImgs)
+        // if(this.tempImgs.length<=2){
+        //   this.thumbnailConfigImg = {"slidesToShow": 1,
+        //     "slidesToScroll": 0,
+        //     "asNavFor": '.slider-for', 
+        //     "dots": false,
+        //     "centerMode": true, 
+        //     "focusOnSelect": true,
+        //     "autoplay":false,
+        //     "speed":1000,
+        //     "infinite": true,
+        //     "arrows":false,
+        //     responsive: [
+        //       {
+        //         breakpoint: 1024,
+        //         settings: {
+        //           slidesToShow: 3
+        //         }
+        //       },
+        //       {
+        //         breakpoint: 800,
+        //         settings: {
+        //           slidesToShow: 2
+        //         }
+        //       },
+        //       {
+        //         breakpoint: 500,
+        //         settings: {
+        //           slidesToShow: 1
+        //         }
+        //       }
+        //     ]
+        //     };
+        // }
       }
     
     )
@@ -424,6 +457,39 @@ slideConfigProduct = {"slidesToShow": 4,
  "speed":1000,
  "infinite": true,
  "arrows":true,
+ "fade": true, 
+ "asNavFor": '.slider-nav', 
+ responsive: [
+   {
+     breakpoint: 1024,
+     settings: {
+       slidesToShow: 3
+     }
+   },
+   {
+     breakpoint: 800,
+     settings: {
+       slidesToShow: 2
+     }
+   },
+   {
+     breakpoint: 500,
+     settings: {
+       slidesToShow: 1
+     }
+   }
+ ]
+};
+thumbnailConfigImg = {"slidesToShow": 2,
+"slidesToScroll": 1,
+"asNavFor": '.slider-for', 
+"dots": false,
+ "centerMode": true, 
+"focusOnSelect": true,
+ "autoplay":false,
+ "speed":1000,
+ "infinite": true,
+ "arrows":true,
  responsive: [
    {
      breakpoint: 1024,
@@ -446,6 +512,9 @@ slideConfigProduct = {"slidesToShow": 4,
  ]
 };
 
+afterChange(e:any) {
+ 
+}
 productFeatures = [
   {title: 'Materials', description: 'Materials123456'},
   {title: 'Tassels', description: 'Description'},
@@ -472,5 +541,15 @@ open(event: any): void {
  console.log(event.target.src)
  this._lightbox.open(this._albums);
 }
+truncateHTML(text: string): string {
+  let charlimit = 100;
+  if(!text || text.length <= charlimit )
+  {
+      return text;
+  }
 
+let without_html = text.replace(/<(?:.|\n)*?>/gm, '');
+let shortened = without_html.substring(0, charlimit) + "...";
+return shortened;
+}
 }

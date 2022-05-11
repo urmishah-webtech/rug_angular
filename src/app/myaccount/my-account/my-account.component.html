@@ -1,29 +1,394 @@
 
 <section id = "signup">
-    <div class="container">
-        <div class="row">
-
-           <!-- <div *ngIf="isEmailErrorVisible">
-                <div  *ngFor="let email_error of email_error">
-                    {{ email_error }}
+    <div class="container-fluid p-3">
+        <div class="row mb-5">
+        <div class="col-md-12">
+            
+                <div  class="text-center">
+                    <h1>Hello {{first_name}} {{last_name}}
+                    </h1>
+                    <!-- <p>You are logged in as nilay5456@gmail.com</p> -->
                 </div>
-           </div>
-           <div *ngIf="isPasswordErrorVisible">
-                <div class="error" *ngFor="let password_error of password_error">
-                    {{ password_error }}
-                </div>
-           </div>
-           <div *ngIf="isFirstnameErrorVisible">
-                <div class="error" *ngFor="let first_name_error of first_name_error">
-                    {{ first_name_error }}
-                </div>
+            
+        </div>
+        <div class="row mb-5">
+            <div class="col-md-4">
+                <div class="card bg-light">
+                    <div class="card-body text-center">
+                      <p class="card-text">Primary Shipping Address
+                    </p>
+                    <p class="card-text text-success">{{shippingaddress}} Shipping Address</p>
+                    <button class="btn btn-primary btn-group-sm"  data-bs-toggle="modal" data-bs-target="#AddShippingModal">Add New Shipping Address</button>
+                    <button class="btn btn-info btn-group-sm"  data-bs-toggle="modal" data-bs-target="#shippingListModal">Show All</button>        
+                    </div>
+                  </div>
             </div>
-            <div *ngIf="isLastnameErrorVisible">
-                <div class="error" *ngFor="let last_name_error of last_name_error">
-                    {{ last_name_error }}
+            <div class="col-md-4">
+                <div class="card bg-light">
+                    <div class="card-body text-center">
+                      <p class="card-text">Billing Address</p>
+                      <p class="card-text text-success">{{billingaddress}}  Billing Address</p>
+                      <button class="btn btn-primary btn-group-sm" data-bs-toggle="modal" data-bs-target="#AddBillingModal">Add New Billing Address</button>
+                      <button class="btn btn-info btn-group-sm" data-bs-toggle="modal" data-bs-target="#billingListModal">Show All</button>
+
+                    </div>
+                  </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-light">
+                    <div class="card-body text-center">
+                      <p class="card-text">Profile Information </p>
+                      <p class="card-text  text-success">Name , Email , password And Mobile Number </p>
+                      <button class="btn btn-primary btn-group-sm" (click)="getUserInfo()" data-bs-toggle="modal" data-bs-target="#UpdateUserModal">Update Information</button>
+                     
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <div class="modal fade" id="shippingListModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Shipping Addresses</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-            </div> -->
-            <div class="col-md-12">
+                <div class="modal-body">
+                    <div class="sp-add-details">
+                        <div *ngFor="let address of address let i=index " >
+                            <div *ngIf="address.address_type=='shipping_address'">
+                                
+                                <p>
+                                    <label>Name: </label>
+                                    <span> {{address.first_name}}  {{address.last_name}}</span>
+                                </p>
+                                <p>
+                                    <label>Address:</label>
+                                    <span> {{address.address}} , </span>
+                                    <span> {{address.city}} , </span>
+                                    <span> {{address.country}}</span>
+                                </p>
+                                <p>
+                                    <label>Postal code</label>:
+                                    <span> {{address.postal_code}}</span>
+                                </p>
+                                <p>
+                                    <label>Phone:</label>
+                                    <span> {{address.mobile_no}}</span>
+                                </p>
+                                <p>
+                                    <button class="btn btn-danger" (click)="delete(address.id)" >Delete</button>
+                                </p>
+                            </div>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+              
+              </div>
+            </div>
+        </div>
+        <div class="modal fade" id="billingListModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Billing Addresses</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="sp-add-details">
+                        <div *ngFor="let address of address let i=index " >
+                            <div *ngIf="address.address_type=='billing_address'">
+                                
+                                <p>
+                                    <label>Name: </label>
+                                    <span> {{address.first_name}}  {{address.last_name}}</span>
+                                </p>
+                                <p>
+                                    <label>Address:</label>
+                                    <span> {{address.address}} , </span>
+                                    <span> {{address.city}} , </span>
+                                    <span> {{address.country}}</span>
+                                </p>
+                                <p>
+                                    <label>Postal Code:</label>
+                                    <span> {{address.postal_code}}</span>
+                                </p>
+                                <p>
+                                    <label>Phone:</label>
+                                    <span> {{address.mobile_no}}</span>
+                                </p>
+                                <p>
+                                    <button class="btn btn-danger" (click)="delete(address.id)" >Delete</button>
+                                </p>
+                            </div>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+              
+              </div>
+            </div>
+        </div>
+        <div class="modal fade" id="AddShippingModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">New Shipping Address</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form [formGroup]="ShippingForm" (ngSubmit)="onShippingSubmit()" class="my_form">
+                        <div class = "py-2 text-center">
+                            <h3>New Shipping Address</h3>
+                        </div>
+                        <div class="form-group py-2">
+                            <input type="text" name="first_name" formControlName="first_name" class="form-control" placeholder = "First name" value="">
+                            <div *ngIf="ShippingForm.controls['first_name'].invalid && (ShippingForm.controls['first_name'].dirty 
+                            || ShippingForm.controls['first_name'].touched)"
+                                    class="alert alert-danger"> First name is required.
+                           </div>
+                        </div>
+                        <div class="form-group py-2">
+                            <input type="text" name="last_name" formControlName="last_name" class="form-control" placeholder  = "Last name">
+                            <div *ngIf="ShippingForm.controls['last_name'].invalid && (ShippingForm.controls['last_name'].dirty || ShippingForm.controls['last_name'].touched)"
+                            class="alert alert-danger"> Last name is required.
+                           </div>
+                        </div>
+                        <div class="form-group py-2">
+                            <input type="text"  name="email" formControlName="email" class="form-control" placeholder = "Email">
+                            <div *ngIf="ShippingForm.controls['email'].invalid && (ShippingForm.controls['email'].dirty || ShippingForm.controls['email'].touched)"
+                            class="alert alert-danger"> Email is required.
+                           </div>
+                        </div>
+                        <div class="form-group py-2">
+                            <input type="text"  name="mobile" formControlName="mobile_no" class="form-control" placeholder = "Mobile">
+                            <div *ngIf="ShippingForm.controls['mobile_no'].invalid && (ShippingForm.controls['mobile_no'].dirty || ShippingForm.controls['mobile_no'].touched)"
+                            class="alert alert-danger"> Mobile number is required.
+                           </div>
+                        </div>
+                        <div class="form-group py-2">
+                            <input type="text"  name="address" formControlName="address" class="form-control" placeholder = "Address">
+                            <div *ngIf="ShippingForm.controls['address'].invalid && (ShippingForm.controls['address'].dirty || ShippingForm.controls['address'].touched)"
+                            class="alert alert-danger"> Address is required.
+                           </div>
+                        </div>
+                        <input type="hidden"  name="address_type" formControlName="address_type" class="form-control" value="shipping_address">
+                        <div class="form-group py-2">
+                            <select class="form-select select_country" (change)="shippingCost(ShippingForm.controls['country'].value)" formControlName="country" (change)="countryChange(ShippingForm.controls['country'].value)">
+                                <option value="" selected="">Country</option>
+                                <option *ngFor="let country of country_list; let i = index;" value="{{country.name}}">{{country.name}}</option>
+                                <!-- <option value="1">India</option>
+                                <option value="2">Australia</option>
+                                <option value="3">USA</option> -->
+                             </select>
+                             <div *ngIf="ShippingForm.controls['country'].invalid && (ShippingForm.controls['country'].dirty || ShippingForm.controls['country'].touched)"
+                             class="alert alert-danger"> Country is required.
+                            </div>
+                        </div>
+                        <div class = "col-md-4 col-12">
+                            <div class="form-group py-2">
+                                <select class="form-select select_country" formControlName="city">
+                                    <option value="" selected="">City</option>
+                                    <option *ngFor="let city of city_list; let i = index;" value="{{city.name}}">{{city.name}}</option>
+                                 </select>
+                                 <div *ngIf="ShippingForm.controls['city'].invalid && (ShippingForm.controls['city'].dirty || ShippingForm.controls['city'].touched)"
+                                 class="alert alert-danger"> City is required.
+                                </div>
+                            </div>
+                        </div>
+                        <div class = "col-md-4 col-12">
+                            <div class="form-group py-2">
+                                <input type="text"  name="code" formControlName="postal_code" class="form-control" placeholder = "Postal code">
+                                <div *ngIf="ShippingForm.controls['postal_code'].invalid && (ShippingForm.controls['postal_code'].dirty || ShippingForm.controls['postal_code'].touched)"
+                                class="alert alert-danger"> Postal code is required.
+                               </div>
+                            </div>
+                        </div>
+                        <div  class = "pay_btn nav nav-tabs" id = "nav-tab" role = "tablist">
+                            <button type = "submit" class = "btn checkout-btn green-btn" id="nav-payment-tab" data-bs-toggle="tab" data-bs-target="#nav-payment"
+                            role="tab" aria-controls="nav-payment" data-bs-dismiss="modal" aria-label="Close" aria-selected="false" [disabled]="!ShippingForm.valid">Save</button>
+                          </div>
+                    </form>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="modal fade" id="AddBillingModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">New Billing Address</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form [formGroup]="BillingForm" (ngSubmit)="onBillingSubmit()" class="my_form">
+                        <div class = "py-2 text-center">
+                            <h3>New Shipping Address</h3>
+                        </div>
+                        <div class="form-group py-2">
+                            <input type="text" name="first_name" formControlName="first_name" class="form-control" placeholder = "First name" value="">
+                            <div *ngIf="BillingForm.controls['first_name'].invalid && (BillingForm.controls['first_name'].dirty 
+                            || BillingForm.controls['first_name'].touched)"
+                                    class="alert alert-danger"> First name is required.
+                           </div>
+                        </div>
+                        <div class="form-group py-2">
+                            <input type="text" name="last_name" formControlName="last_name" class="form-control" placeholder  = "Last name">
+                            <div *ngIf="BillingForm.controls['last_name'].invalid && (BillingForm.controls['last_name'].dirty || BillingForm.controls['last_name'].touched)"
+                            class="alert alert-danger"> Last name is required.
+                           </div>
+                        </div>
+                        <div class="form-group py-2">
+                            <input type="text"  name="email" formControlName="email" class="form-control" placeholder = "Email">
+                            <div *ngIf="BillingForm.controls['email'].invalid && (BillingForm.controls['email'].dirty || BillingForm.controls['email'].touched)"
+                            class="alert alert-danger"> Email is required.
+                           </div>
+                        </div>
+                        <div class="form-group py-2">
+                            <input type="text"  name="mobile" formControlName="mobile_no" class="form-control" placeholder = "Mobile">
+                            <div *ngIf="BillingForm.controls['mobile_no'].invalid && (BillingForm.controls['mobile_no'].dirty || BillingForm.controls['mobile_no'].touched)"
+                            class="alert alert-danger"> Mobile number is required.
+                           </div>
+                        </div>
+                        <div class="form-group py-2">
+                            <input type="text"  name="address" formControlName="address" class="form-control" placeholder = "Address">
+                            <div *ngIf="BillingForm.controls['address'].invalid && (BillingForm.controls['address'].dirty || BillingForm.controls['address'].touched)"
+                            class="alert alert-danger"> Address is required.
+                           </div>
+                        </div>
+                        <input type="hidden"  name="address_type" formControlName="address_type" class="form-control" value="billing_address">
+                        <div class="form-group py-2">
+                            <select class="form-select select_country" (change)="shippingCost(BillingForm.controls['country'].value)" formControlName="country" (change)="countryChange(BillingForm.controls['country'].value)">
+                                <option value="" selected="">Country</option>
+                                <option *ngFor="let country of country_list; let i = index;" value="{{country.name}}">{{country.name}}</option>
+                                <!-- <option value="1">India</option>
+                                <option value="2">Australia</option>
+                                <option value="3">USA</option> -->
+                             </select>
+                             <div *ngIf="BillingForm.controls['country'].invalid && (BillingForm.controls['country'].dirty || BillingForm.controls['country'].touched)"
+                             class="alert alert-danger"> Country is required.
+                            </div>
+                        </div>
+                        <div class = "col-md-4 col-12">
+                            <div class="form-group py-2">
+                                <select class="form-select select_country" formControlName="city">
+                                    <option value="" selected="">City</option>
+                                    <option *ngFor="let city of city_list; let i = index;" value="{{city.name}}">{{city.name}}</option>
+                                 </select>
+                                 <div *ngIf="BillingForm.controls['city'].invalid && (BillingForm.controls['city'].dirty || BillingForm.controls['city'].touched)"
+                                 class="alert alert-danger"> City is required.
+                                </div>
+                            </div>
+                        </div>
+                        <div class = "col-md-4 col-12">
+                            <div class="form-group py-2">
+                                <input type="text"  name="code" formControlName="postal_code" class="form-control" placeholder = "Postal code">
+                                <div *ngIf="BillingForm.controls['postal_code'].invalid && (BillingForm.controls['postal_code'].dirty || BillingForm.controls['postal_code'].touched)"
+                                class="alert alert-danger"> Postal code is required.
+                               </div>
+                            </div>
+                        </div>
+                        <div  class = "pay_btn nav nav-tabs" id = "nav-tab" role = "tablist">
+                            <button type = "submit" class = "btn checkout-btn green-btn" id="nav-payment-tab" data-bs-toggle="tab" data-bs-target="#nav-payment"
+                            role="tab" aria-controls="nav-payment" data-bs-dismiss="modal" aria-label="Close" aria-selected="false" [disabled]="!BillingForm.valid">Save</button>
+                          </div>
+                    </form>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="modal fade" id="UpdateUserModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+            
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="my_form" [formGroup]="UserForm" (ngSubmit)="onProfileSubmit()">
+                        
+                        <div class="form-group py-2">
+                            <input type="text" name="first_name"  formControlName="first_name" class="form-control" placeholder = "First name" value="">
+                            <div *ngIf="UserForm.controls['first_name'].invalid && (UserForm.controls['first_name'].dirty 
+                            || UserForm.controls['first_name'].touched)"
+                                    class="alert alert-danger"> First name is required.
+                           </div>
+                        </div>
+                        <div class="form-group py-2">
+                            <input type="text" name="last_name"  formControlName="last_name" class="form-control" placeholder  = "Last name">
+                            <div *ngIf="UserForm.controls['last_name'].invalid && (UserForm.controls['last_name'].dirty || UserForm.controls['last_name'].touched)"
+                            class="alert alert-danger"> Last name is required.
+                           </div>
+                        </div>
+                        <div class="form-group py-2">
+                            <input type="text"  name="email"  formControlName="email" class="form-control" placeholder = "Email">
+                            <div *ngIf="UserForm.controls['email'].invalid && (UserForm.controls['email'].dirty || UserForm.controls['email'].touched)"
+                            class="alert alert-danger"> Email is required.
+                           </div>
+                        </div>
+                        <div class="form-group py-2">
+                            <input type="number"  name="mobile_number"  formControlName="mobile_number" class="form-control" placeholder = "Mobile Number">
+                            <div *ngIf="UserForm.controls['mobile_number'].invalid && (UserForm.controls['mobile_number'].dirty || UserForm.controls['mobile_number'].touched)"
+                            class="alert alert-danger"> Mobile Number is required.
+                           </div>
+                        </div>
+                        <div class="form-group py-2">
+                            <input type="password"  name="currpassword" 
+                            formControlName="currpassword" class="form-control" placeholder = "Old Password">
+                        </div>
+                        <div class="form-group py-2">
+                            <input type="password"  name="newpassword" 
+                            formControlName="newpassword" class="form-control" placeholder = "New Password">
+                        </div>
+                        <div class="form-group py-2">
+                            <input type="password"  name="repassword" 
+                            formControlName="repassword" class="form-control" placeholder = "Re-enter New Password">
+                        </div>
+                        <div *ngIf="UserForm.controls['repassword'].touched && UserForm.controls['repassword'].invalid" class="alert alert-danger">
+                            <div *ngIf="UserForm.controls['repassword'].errors.required">Password is required.</div>
+                            <div *ngIf="UserForm.controls['repassword'].errors.confirmedValidator">Password and Confirm Password must be match.</div>
+                        </div>
+                        <div  class = "pay_btn nav nav-tabs" id = "nav-tab" role = "tablist">
+                            <button type = "submit" class = "btn checkout-btn green-btn" id="nav-payment-tab" data-bs-toggle="tab" data-bs-target="#nav-payment"
+                            role="tab" aria-controls="nav-payment" data-bs-dismiss="modal" aria-label="Close" aria-selected="false" [disabled]="!UserForm.valid">Save</button>
+                          </div>
+                    </form>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <table class="table table-striped bg-light">
+                <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">First</th>
+                      <th scope="col">Last</th>
+                      <th scope="col">Handle</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                      <td>@mdo</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>Jacob</td>
+                      <td>Thornton</td>
+                      <td>@fat</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td colspan="2">Larry the Bird</td>
+                      <td>@twitter</td>
+                    </tr>
+                  </tbody>
+            </table>
+        </div>
+            <!-- <div class="col-md-12">
                 <div class = "box">
 
 
@@ -99,7 +464,7 @@
                     </div>
                 </div>
 
-            </div>
+            </div> -->
 
         </div>
     </div>

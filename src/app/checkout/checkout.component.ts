@@ -41,6 +41,7 @@ export class CheckoutComponent implements OnInit {
   shipping_res:any;
   total_amount:any = 0;
   shipping_cost:any = 0;
+  address_type : any;
   payment_tab_active:boolean=false;
   ngOnInit(): void {
     this.contact_email=""
@@ -59,6 +60,7 @@ export class CheckoutComponent implements OnInit {
       address: ['',Validators.required],
       country: ['',Validators.required],
       city: ['',Validators.required],
+      address_type:['shipping_address',Validators.required],
       postal_code: ['',[Validators.required]
     ],
     })
@@ -79,6 +81,7 @@ export class CheckoutComponent implements OnInit {
         this.shipping = false
         this.showPaymentBtn = true
         this.payment_tab_active=true
+        
       })
     }
   }
@@ -142,8 +145,6 @@ export class CheckoutComponent implements OnInit {
       this.total_amount = parseFloat(this.cart.Totalamount + this.shipping_cost).toFixed(2);
     })
   }
-
-
 
   countryChange(value:any){
     this.addressForm.city = null;

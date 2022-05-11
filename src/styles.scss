@@ -42,6 +42,39 @@ html {
 .modal {
   overflow-y: auto !important;
 }
+#product-details{
+.slick-prev{
+	left: 0 !important;
+	z-index: 5 !important;
+}
+.slick-prev:before {
+    
+    color: #000;
+}
+
+.slick-next:before {
+    
+    position: relative;
+    right: 20px;
+    color: #000;
+}
+}
+
+.slick-nav .slick-list.draggable img{
+	height:500px !important;
+  max-height:500px !important;
+  width:100%;
+  object-fit: cover;
+  margin-bottom: 30px;
+}
+
+.slick-for .slick-list.draggable img{
+	height:100px !important;
+  max-height:100px !important;
+  width:100%;
+  object-fit: cover;
+  margin-bottom: 30px;
+}
 
 h6,.h6, h5,.h5, h4,.h4, h3,.h3, h2,.h2, h1,.h1 {
     font-family: 'Raleway', sans-serif !important;

@@ -2,7 +2,27 @@
   height:500px !important;
   max-height:500px !important;
   width:100%;
+  object-fit: cover;
+  margin-bottom: 30px;
   }
+
+  .multiple-items1{
+    padding: 10px;
+  }
+
+ .multiple-items1 img{
+    height:200px !important;
+    max-height:200px !important;
+    width:100%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 1px solid #000;
+    border-radius: 10px;
+
+
+    }
+   
+ 
 .varient_label{
   display: block;
   margin-right: 10px;
@@ -71,3 +91,4 @@ width: 100%;
       }
   }
 }
+

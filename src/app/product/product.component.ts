@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild } from '@angular/core';
 import { ProductService } from './product.service';
-
+import { ChildComponentComponent } from '../child-component/child-component.component';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -8,6 +8,7 @@ import { ProductService } from './product.service';
 })
 export class ProductComponent implements OnInit {
   product: any = [];
+ 
 
   constructor(public productService: ProductService) { }
 
@@ -17,7 +18,6 @@ export class ProductComponent implements OnInit {
         this.product = data;
       });
   }
-
   
 
 }

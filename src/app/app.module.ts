@@ -46,6 +46,13 @@ import { KeysPipePipe } from './keys-pipe.pipe';
 //import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { MyAccountComponent } from './myaccount/my-account/my-account.component';
+import { PipeTransformPipe } from './pipe-transform.pipe';
+import { ParentComponentComponent } from './parent-component/parent-component.component';
+import { ChildComponentComponent } from './child-component/child-component.component';
+import { ZippyBasicComponent } from './zippy-basic/zippy-basic.component';
+import { TestComponent } from './test/test.component';
+
+
 
 @NgModule({
   declarations: [
@@ -84,7 +91,12 @@ import { MyAccountComponent } from './myaccount/my-account/my-account.component'
     SliderComponent,
     BannerComponent,
     KeysPipePipe,
-    MyAccountComponent
+    MyAccountComponent,
+    PipeTransformPipe,
+    ParentComponentComponent,
+    ChildComponentComponent,
+    ZippyBasicComponent,
+    TestComponent,
 
   ],
   imports: [
