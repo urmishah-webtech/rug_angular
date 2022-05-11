@@ -6,6 +6,7 @@ import { AuthService } from 'src/app/auth/auth.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Lightbox } from 'ngx-lightbox';
 import { KeysPipePipe } from 'src/app/keys-pipe.pipe';
+
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
@@ -219,39 +220,74 @@ export class ProductDetailComponent implements OnInit  {
         {
             this.tempImgs.push(this.mediaurl+item.image)
         }
-        // if(this.tempImgs.length<=2){
-        //   this.thumbnailConfigImg = {"slidesToShow": 1,
-        //     "slidesToScroll": 0,
-        //     "asNavFor": '.slider-for', 
-        //     "dots": false,
-        //     "centerMode": true, 
-        //     "focusOnSelect": true,
-        //     "autoplay":false,
-        //     "speed":1000,
-        //     "infinite": true,
-        //     "arrows":false,
-        //     responsive: [
-        //       {
-        //         breakpoint: 1024,
-        //         settings: {
-        //           slidesToShow: 3
-        //         }
-        //       },
-        //       {
-        //         breakpoint: 800,
-        //         settings: {
-        //           slidesToShow: 2
-        //         }
-        //       },
-        //       {
-        //         breakpoint: 500,
-        //         settings: {
-        //           slidesToShow: 1
-        //         }
-        //       }
-        //     ]
-        //     };
-        // }
+        
+        if(this.tempImgs.length<=2){
+         
+          this.thumbnailConfigImg = {"slidesToShow": this.tempImgs.length,
+            "slidesToScroll":this.tempImgs.length,
+            "asNavFor": '', 
+            "dots": false,
+            "centerMode": true, 
+            "focusOnSelect": true,
+            "autoplay":false,
+            "speed":1000,
+            "infinite": false,
+            "arrows":false,
+            responsive: [
+              {
+                breakpoint: 1024,
+                settings: {
+                  slidesToShow: 3
+                }
+              },
+              {
+                breakpoint: 800,
+                settings: {
+                  slidesToShow: 2
+                }
+              },
+              {
+                breakpoint: 500,
+                settings: {
+                  slidesToShow: 1
+                }
+              }
+            ]
+            };
+        }
+        else{
+          this.thumbnailConfigImg = {"slidesToShow":this.tempImgs.length-1,
+          "slidesToScroll": 1,
+          "asNavFor": '', 
+          "dots": false,
+           "centerMode": true, 
+          "focusOnSelect": true,
+           "autoplay":false,
+           "speed":1000,
+           "infinite": true,
+           "arrows":true,
+           responsive: [
+             {
+               breakpoint: 1024,
+               settings: {
+                 slidesToShow: 3
+               }
+             },
+             {
+               breakpoint: 800,
+               settings: {
+                 slidesToShow: 2
+               }
+             },
+             {
+               breakpoint: 500,
+               settings: {
+                 slidesToShow: 1
+               }
+             }
+           ]
+          };
+        }
       }
     
     )
