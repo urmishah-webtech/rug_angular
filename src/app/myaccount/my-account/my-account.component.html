@@ -357,115 +357,33 @@
               </div>
             </div>
         </div>
+        
+       
+
         <div class="col-md-12">
+            
             <table class="table table-striped bg-light">
                 <thead>
                     <tr>
-                      <th scope="col">#</th>
-                      <th scope="col">First</th>
-                      <th scope="col">Last</th>
-                      <th scope="col">Handle</th>
+                      <th>Order Id</th>
+                      <th>Total (Incl. Shipping Cost)</th>
+                      <th>Payment Status</th>
+                      <th>Product Information</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>Mark</td>
-                      <td>Otto</td>
-                      <td>@mdo</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                      <td>Jacob</td>
-                      <td>Thornton</td>
-                      <td>@fat</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                      <td colspan="2">Larry the Bird</td>
-                      <td>@twitter</td>
-                    </tr>
+                    <ng-container *ngFor="let order of orderItems;let i=index";>
+                        <tr>
+                            <td>#{{order.id}}</td>
+                            <td>{{order.netamout + order.shipping_cost}} €</td>
+                            <td>{{order.paymentstatus}}</td> 
+                            <td><button class="btn btn-info" (click)="callThankYou()">{{order.order_items[i].product.title}}</button></td>
+                        </tr>
+                    </ng-container>
                   </tbody>
             </table>
         </div>
-            <!-- <div class="col-md-12">
-                <div class = "box">
-
-
-                    <form [formGroup]="AccountForm" (ngSubmit)="onSubmit()" class="my_form">
-                        <div class = "py-2 text-center">
-                            <h3>Sign Up</h3>
-                        </div>
-                        <div class="form-group py-2">
-                            <label for="firstname">First Name </label>
-                            <input type="text" id="first_name" name="first_name" formControlName="first_name" class="form-control">
-
-                            <div *ngIf="AccountForm.controls['first_name'].invalid && (AccountForm.controls['first_name'].dirty || AccountForm.controls['first_name'].touched)"
-                            class="alert alert-danger">
-
-                                <div *ngIf="AccountForm.controls['first_name'].errors?.['required']">
-                                    First name is required.
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div class="form-group py-2">
-                            <label for="lastname">Last Name</label>
-                            <input type="text" id="last_name" name="last_name" formControlName="last_name" class="form-control">
-
-                            <div *ngIf="AccountForm.controls['last_name'].invalid && (AccountForm.controls['last_name'].dirty || AccountForm.controls['last_name'].touched)"
-                            class="alert alert-danger">
-
-                                <div *ngIf="AccountForm.controls['last_name'].errors?.['required']">
-                                    Last name is required.
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div class="form-group py-2">
-                            <label for="email">Email </label>
-                            <input type="text" id="email" name="email" formControlName="email" class="form-control">
-
-                            <div *ngIf="AccountForm.controls['email'].invalid && (AccountForm.controls['email'].dirty || AccountForm.controls['email'].touched)"
-                            class="alert alert-danger">
-
-                                <div *ngIf="AccountForm.controls['email'].errors?.['required']">
-                                    Email is required.
-                                </div>
-                                <div *ngIf="AccountForm.controls['email'].errors?.['email']">
-                                    Email should be valid.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group py-2">
-                            <label for="lastname">Last Name</label>
-                            <input type="text" id="last_name" name="last_name" formControlName="last_name" class="form-control">
-
-                            <div *ngIf="AccountForm.controls['last_name'].invalid && (AccountForm.controls['last_name'].dirty || AccountForm.controls['last_name'].touched)"
-                            class="alert alert-danger">
-
-                                <div *ngIf="AccountForm.controls['last_name'].errors?.['required']">
-                                    Last name is required.
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class = "text-center">
-                            <button type="submit" class="btn blue-btn text-center" [disabled]="!AccountForm.valid">Submit</button>
-                        </div>
-
-                    </form>
-                 
-                    <div class = "background">
-                        <div class = "shape"></div>
-                        <div class = "shape"></div>
-                    </div>
-                </div>
-
-            </div> -->
-
+        
         </div>
     </div>
 </section>

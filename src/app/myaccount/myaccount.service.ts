@@ -23,4 +23,7 @@ export class MyaccountService {
   deleteAddress(id:number){
     return this.http.get(environment.api+'delete-address/'+id,{ headers: this.headers });
   }
+  OrderInformation(id:number){
+    return this.http.get(environment.api+'orderget/'+id,{ headers: this.headers });
+  }
 }

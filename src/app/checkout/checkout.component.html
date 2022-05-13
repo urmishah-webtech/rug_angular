@@ -155,14 +155,18 @@
                                 <tbody>
                                     <tr>
                                         <td>Email</td>
-                                        <td>{{address.dataget.email}}</td>
+                                        <td>{{contact_email}}</td>
                                         <td class = "text-end"><a (click)="showshipping()">Change</a></td>
                                     </tr>
                                     <tr><td colspan = "3"><hr class = "my-2"></td></tr>
                                     <tr>
                                         <td>Ship to</td>
                                         <!-- <td>A/7 main street , tempa , Florida 345627 (USA)</td> -->
-                                        <td>{{address.dataget.address + ', ' + address.dataget.city + ', ' + address.dataget.postal_code + ', ' + address.dataget.country}}</td>
+                                        <td><p>{{addressForm.controls['address'].value + ', ' +
+                                             addressForm.controls['city'].value+'
+                                              ,' + addressForm.controls['country'].value+','+addressForm.controls['postal_code'].value}}
+                                            </p>
+                                            <p>contact : {{addressForm.controls['mobile_no'].value}}</p></td>
                                         <td class = "text-end"><a (click)="showshipping()">Change</a></td>
                                     </tr>
                                 </tbody>

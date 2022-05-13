@@ -1,12 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MyaccountService } from '../myaccount.service';
 import { Country, State, City }  from 'country-state-city';
 import { CartService } from '../../services/cart.service';
 import { NotificationService } from '../../notification.service';
 import { ConfirmedValidator } from '../../confirmed.validator';
-
-
+import { InvoiceSharingService } from 'src/app/invoice-sharing.service';
 @Component({
   selector: 'app-my-account',
   templateUrl: './my-account.component.html',
@@ -34,13 +33,18 @@ export class MyAccountComponent implements OnInit {
   userInfo:any;
   first_name: any;
   last_name: any;
+  orderItems:any=[];
   orderdata:any;  
+
+
   constructor(private cartService: CartService,
     private notifyService:NotificationService,
-    private fb: FormBuilder,public MyaccountService:MyaccountService) { 
+    private fb: FormBuilder,
+    public MyaccountService:MyaccountService,
+    private invoiceSharing:InvoiceSharingService) { 
    
     }
-
+  
   ngOnInit(): void {
 
     this.userId = localStorage.getItem('id');
@@ -181,10 +185,17 @@ export class MyAccountComponent implements OnInit {
     })
   }
   orderInfo(){
-    // this.MyaccountService.OrderInformation(this.userId).subscribe(
-    //   data => {
-    //     this.data = data;
-    //     this.userInfo=this.showItem
-    //   });
+    this.MyaccountService.OrderInformation(this.userId).subscribe(
+      data => {
+        this.orderdata = data;
+        this.orderItems=this.orderdata.order
+         
+      });
   }
+ callThankYou()
+ {
+  this.invoiceSharing(data=> {
+    this.data = data // do whatever you want with it
+  })
+ }
 }
