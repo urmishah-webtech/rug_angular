@@ -38,7 +38,8 @@ const routes: Routes = [
     {path: 'contact', component: ContactComponent},
     {path: 'footer', component: FooterContactComponent},
     {path: 'cart', component: CartComponent},
-    {path: 'checkout', component: CheckoutComponent, canActivate: [AuthGuard, CartGuard]},
+    // {path: 'checkout', component: CheckoutComponent, canActivate: [AuthGuard, CartGuard]},
+    {path: 'checkout', component: CheckoutComponent},
     // {
     //   path: 'pages',
     //   children: [
@@ -68,13 +69,13 @@ const routes: Routes = [
     {path: 'profile', component:MyAccountComponent},
   
 
-    {path: 'thankyou', component: ThankyouComponent, canActivate: [AuthGuard]},
+    {path: 'thankyou', component: ThankyouComponent},
     {path: 'account/order-history', component: ThankyouComponent, canActivate: [AuthGuard]},
     {path: '**', component:NodataComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {enableTracing: true})],
+  imports: [RouterModule.forRoot(routes, {enableTracing: false})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

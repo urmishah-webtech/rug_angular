@@ -1,4 +1,6 @@
+<app-loader></app-loader>
 <app-header *ngIf="showHeaderFooter"></app-header>
+
 <router-outlet (activate)="onActivate($event)"></router-outlet>
 <app-footer *ngIf="showHeaderFooter"></app-footer>
 

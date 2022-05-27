@@ -12,6 +12,7 @@ export class CartComponent implements OnInit {
   userId: any
   cartCount: any;
   countSub: any;
+  userExists: boolean=false;
 
   constructor(private cartService: CartService,
     private notifyService:NotificationService) {
@@ -19,6 +20,7 @@ export class CartComponent implements OnInit {
   ngOnInit(): void {
     if(localStorage.getItem('id') !== null)
     {
+      this.userExists= true;
       this.userId = localStorage.getItem('id');
     }else {
       this.userId = localStorage.getItem('session_id');

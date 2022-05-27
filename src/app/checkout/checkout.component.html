@@ -54,40 +54,121 @@
 
                             </div>
                           </div>
-                        <div class = "pt-4">
-                            <h5>Shipping Address</h5>
+                          <div class = "pt-4">
                             <div class = "ship_address">
-
-                                 <form [formGroup]="addressForm" (ngSubmit)="onSubmit()">
+                                <form [formGroup]="addressForm" (ngSubmit)="onSubmit()" autocomplete="off">
+                                <div class = "pt-4" *ngIf="!userExists">
+                                    <h5>Basic Information</h5>
+    
+                                    <div class = "row">
+                                        <div class = "col-md-6 col-12">
+                                            <div class="form-group py-2">
+                                                <input type="text" name="g_first_name" formControlName="g_first_name" class="form-control" placeholder = "Your First name" value="">
+                                                <div *ngIf="addressForm.controls['g_first_name'].invalid && (addressForm.controls['g_first_name'].dirty || addressForm.controls['g_first_name'].touched)"
+                        class="alert alert-danger"> Your Firstname name is required.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class = "col-md-6 col-12">
+                                            <div class="form-group py-2">
+                                                <input type="text" name="g_last_name" formControlName="g_last_name" class="form-control" placeholder  = "Your Last name">
+                                                <div *ngIf="addressForm.controls['g_last_name'].invalid && (addressForm.controls['g_last_name'].dirty || addressForm.controls['g_last_name'].touched)"
+                                                class="alert alert-danger"> Your Last name is required.
+                                               </div>
+                                               </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class = "col-md-6 col-12">
+                                            <div class="form-group py-2">
+                                                <input type="text"  name="g_email" formControlName="g_email" class="form-control" placeholder = "Your Email">
+                                                <div *ngIf="addressForm.controls['g_email'].invalid && (addressForm.controls['g_email'].dirty || addressForm.controls['g_email'].touched)"
+                                                class="alert alert-danger">Your Email is required.
+                                               </div>
+                                               </div>
+                                        </div>
+                                        <div class = "col-md-6 col-12">
+                                            <div class="form-group py-2">
+                                                <input type="text"  name="mobile" formControlName="g_mobile_number" class="form-control" placeholder = "Your Mobile Number">
+                                                <div *ngIf="addressForm.controls['g_mobile_number'].invalid && (addressForm.controls['g_mobile_number'].dirty || addressForm.controls['g_mobile_number'].touched)"
+                                                class="alert alert-danger">Your Mobile number is required.
+                                               </div>
+                                               </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class = "col-md-6 col-12">
+                                            <div class="form-group py-2">
+                                                Want to be Part of Rug ?
+                                                <input type="checkbox" #account_type id="account_type" (change)="accountTypeChange(account_type.checked,addressForm.value)" name="account_type" formControlName="account_type" class="">
+                                            </div>
+                                        </div>
+                                        <div class = "col-md-6 col-12" *ngIf="account_type.checked">
+                                            <div class="form-group py-2">
+                                                <input type="password"  autocomplete="new-password"   name="password" formControlName="password" class="form-control" placeholder = "Password">
+                                                <div *ngIf="addressForm.controls['password'].invalid && account_type.checked && (addressForm.controls['password'].touched || addressForm.controls['password'].dirty)"
+                                                class="alert alert-danger"> Password  is required.
+                                               </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class = "pt-4">
+                                    <h5>Shipping Address</h5>
+                                </div>
+                                
                                      <div class = "row">
                                          <div class = "col-md-6 col-12">
                                              <div class="form-group py-2">
-                                                 <input type="text" name="first_name" formControlName="first_name" class="form-control" placeholder = "First name" value="">
-                                                 <div *ngIf="addressForm.controls['first_name'].invalid && (addressForm.controls['first_name'].dirty || addressForm.controls['first_name'].touched)"
+                                                 <div *ngIf="!userExists else elseFirstName">
+                                                    <input type="text" name="first_name" formControlName="first_name" [(ngModel)]="addressForm.controls['g_first_name'].value"  class="form-control" placeholder = "First name" value="">
+                                                 </div>
+                                                 <ng-template #elseFirstName>
+                                                    <input type="text" name="first_name" formControlName="first_name"  class="form-control" placeholder = "First name" value="">
+
+                                                 </ng-template>
+                                                  <div *ngIf="addressForm.controls['first_name'].invalid && (addressForm.controls['first_name'].dirty || addressForm.controls['first_name'].touched)"
                             class="alert alert-danger"> First name is required.
                                                 </div>
                                                 </div>
                                          </div>
                                          <div class = "col-md-6 col-12">
                                              <div class="form-group py-2">
-                                                 <input type="text" name="last_name" formControlName="last_name" class="form-control" placeholder  = "Last name">
-                                                 <div *ngIf="addressForm.controls['last_name'].invalid && (addressForm.controls['last_name'].dirty || addressForm.controls['last_name'].touched)"
+                                                <div *ngIf="!userExists else elseLastName">
+                                                 <input type="text" name="last_name" formControlName="last_name" class="form-control"  [(ngModel)]="addressForm.controls['g_last_name'].value" placeholder  = "Last name">
+                                                 </div>
+                                                 <ng-template #elseLastName>
+                                                    <input type="text" name="last_name" formControlName="last_name" class="form-control"  placeholder  = "Last name">
+                                                </ng-template>
+                                                <div *ngIf="addressForm.controls['last_name'].invalid && (addressForm.controls['last_name'].dirty || addressForm.controls['last_name'].touched)"
                                                  class="alert alert-danger"> Last name is required.
                                                 </div>
                                                 </div>
                                          </div>
                                          <div class = "col-md-6 col-12">
                                              <div class="form-group py-2">
-                                                 <input type="text"  name="email" formControlName="email" class="form-control" placeholder = "Email">
-                                                 <div *ngIf="addressForm.controls['email'].invalid && (addressForm.controls['email'].dirty || addressForm.controls['email'].touched)"
+                                                <div *ngIf="!userExists else elseEmail">
+                                                 <input type="text"  name="email" formControlName="email" class="form-control"  [(ngModel)]="addressForm.controls['g_email'].value" placeholder = "Email">
+                                                </div>
+                                                <ng-template #elseEmail>
+                                                    <input type="text"  name="email" formControlName="email" class="form-control"  placeholder = "Email">
+
+                                                 </ng-template>
+                                                <div *ngIf="addressForm.controls['email'].invalid && (addressForm.controls['email'].dirty || addressForm.controls['email'].touched)"
                                                  class="alert alert-danger"> Email is required.
                                                 </div>
                                                 </div>
                                          </div>
                                          <div class = "col-md-6 col-12">
                                              <div class="form-group py-2">
-                                                 <input type="text"  name="mobile" formControlName="mobile_no" class="form-control" placeholder = "Mobile">
-                                                 <div *ngIf="addressForm.controls['mobile_no'].invalid && (addressForm.controls['mobile_no'].dirty || addressForm.controls['mobile_no'].touched)"
+                                                <div *ngIf="!userExists else elseMobNo">
+                                                 <input type="text"  name="mobile" formControlName="mobile_no" [(ngModel)]="addressForm.controls['g_mobile_number'].value" class="form-control" placeholder = "Mobile">
+                                                </div> 
+                                                <ng-template #elseMobNo>
+                                                    <input type="text"  name="mobile" formControlName="mobile_no" class="form-control" placeholder = "Mobile">
+                                                </ng-template>
+
+                                                <div *ngIf="addressForm.controls['mobile_no'].invalid && (addressForm.controls['mobile_no'].dirty || addressForm.controls['mobile_no'].touched)"
                                                  class="alert alert-danger"> Mobile number is required.
                                                 </div>
                                                 </div>
@@ -106,7 +187,9 @@
                                              <div class="form-group py-2">
                                                  <select class="form-select select_country" (change)="shippingCost(addressForm.controls['country'].value)" formControlName="country" (change)="countryChange(addressForm.controls['country'].value)">
                                                      <option value="" selected="">Country</option>
-                                                     <option *ngFor="let country of country_list; let i = index;" value="{{country.name}}">{{country.name}}</option>
+                                                     <ng-container *ngIf="country">
+                                                     <option *ngFor="let country of country; let i = index;" value="{{country.id}}">{{country.name}}</option>
+                                                        </ng-container>
                                                      <!-- <option value="1">India</option>
                                                      <option value="2">Australia</option>
                                                      <option value="3">USA</option> -->
@@ -117,10 +200,25 @@
                                              </div>
                                          </div>
                                          <div class = "col-md-4 col-12">
+                                            <div class="form-group py-2">
+                                                <select class="form-select" formControlName="state"  (change)="stateChange(addressForm.controls['state'].value)">
+                                                    <option value="" selected="">State</option>
+                                                    <ng-container *ngIf="state">
+                                                        <option *ngFor="let state of state; let i = index;" value="{{state.id}}">{{state.name}}</option>
+                                                    </ng-container>
+                                                </select>
+                                                <div *ngIf="addressForm.controls['state'].invalid && (addressForm.controls['state'].dirty || addressForm.controls['state'].touched)"
+                                                class="alert alert-danger"> State is required.
+                                               </div>
+                                            </div>
+                                         </div>
+                                         <div class = "col-md-4 col-12">
                                              <div class="form-group py-2">
                                                  <select class="form-select select_country" formControlName="city">
                                                      <option value="" selected="">City</option>
-                                                     <option *ngFor="let city of city_list; let i = index;" value="{{city.name}}">{{city.name}}</option>
+                                                     <ng-container *ngIf="city">
+                                                     <option *ngFor="let city of city; let i = index;" value="{{city.id}}">{{city.name}}</option>
+                                                    </ng-container>
                                                   </select>
                                                   <div *ngIf="addressForm.controls['city'].invalid && (addressForm.controls['city'].dirty || addressForm.controls['city'].touched)"
                                                   class="alert alert-danger"> City is required.
@@ -135,12 +233,16 @@
                                                 </div>
                                                 </div>
                                          </div>
-
+                                        
+                                        <div  class = "pay_btn nav nav-tabs" id = "nav-tab" role = "tablist">
+                                            <button type = "submit" class = "btn checkout-btn green-btn" id="nav-payment-tab" data-bs-toggle="tab" data-bs-target="#nav-payment"
+                                            role="tab" aria-controls="nav-payment" aria-selected="false" [disabled]="!addressForm.valid">Continue to Payment</button>
+                                          </div>
                                      </div>
-                                     <div  class = "pay_btn nav nav-tabs" id = "nav-tab" role = "tablist">
+                                     <!-- <div  *ngIf="userExists" class = "pay_btn nav nav-tabs" id = "nav-tab" role = "tablist">
                                       <button type = "submit" class = "btn checkout-btn green-btn" id="nav-payment-tab" data-bs-toggle="tab" data-bs-target="#nav-payment"
                                       role="tab" aria-controls="nav-payment" aria-selected="false" [disabled]="!addressForm.valid">Continue to Payment</button>
-                                    </div>
+                                    </div> -->
 
                                  </form>
                             </div>
@@ -309,6 +411,11 @@
                 <li class = "d-flex justify-content-between py-2">
                     <p class = "mb-0">Standard Shipping</p>
                     <p class = "mb-0"><span>€{{shipping_cost}}</span></p>
+                </li>
+                <hr>
+                <li class = "d-flex justify-content-between py-2">
+                    <p class = "mb-0">Tax</p>
+                    <p class = "mb-0"><span>€{{tax}}</span></p>
                 </li>
                 <hr>
                 <li class = "d-flex justify-content-between py-2">

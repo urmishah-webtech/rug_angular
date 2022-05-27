@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common'
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductComponent } from './product/product.component';
@@ -51,6 +51,7 @@ import { ParentComponentComponent } from './parent-component/parent-component.co
 import { ChildComponentComponent } from './child-component/child-component.component';
 import { ZippyBasicComponent } from './zippy-basic/zippy-basic.component';
 import { TestComponent } from './test/test.component';
+import { LoaderInterceptor } from "./loader.interceptor";
 
 
 
@@ -111,8 +112,8 @@ import { TestComponent } from './test/test.component';
     LightboxModule,
     FormsModule
   ], 
-  providers: [{provide: ToastrService, useClass: ToastrService}
+  providers: [{provide: ToastrService, useClass: ToastrService},{ provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { } 

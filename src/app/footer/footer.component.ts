@@ -27,16 +27,16 @@ export class FooterComponent implements OnInit {
   }
 
   getcompany(){
-    this.headerService.getMenu().subscribe(data=> {
-      this.company = data;
-    })
+    // this.headerService.getMenu().subscribe(data=> {
+    //   this.company = data;
+    // })
   }
   getfootermenu(){
-    this.headerService.getfooterMenu().subscribe(data=>{
-      this.menu = data;
-    })
-    this.headerService.getfooterMenu1().subscribe(data=>{
-      this.menu1 = data;
-    })
+    // this.headerService.getfooterMenu().subscribe(data=>{
+    //   this.menu = data;
+    // })
+    // this.headerService.getfooterMenu1().subscribe(data=>{
+    //   this.menu1 = data;
+    // })
   }
 }

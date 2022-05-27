@@ -72,7 +72,7 @@ export class ProductDetailComponent implements OnInit  {
         this.productId = paramMap.get('productId');
       }
     })
-   this.getSingleProduct(this.productId)
+    this.getSingleProduct(this.productId)
     this.getproductVariation(this.productId)
     this.getRelatedProducts(this.productId)
     this.variationValidation
@@ -131,7 +131,7 @@ export class ProductDetailComponent implements OnInit  {
     this.productService.getProduct(id).subscribe(
       data => {
         this.product = data;
-       
+        
       });
       
   }
@@ -140,29 +140,10 @@ export class ProductDetailComponent implements OnInit  {
     this.productService.getproductVariation(id).subscribe(
       data => {
         this.productVariation = data;
-      
-     //   this.variantTag = this.productVariation.data[0].detail[0].title
         this.productImages = this.productVariation.data
-       
-       // console.log(this.temp)
-        // for(let productimg of this.productImages){
-        //   for(let item of productimg.variantmedia)
-        //   {
-        //       this.tempImgs.push(this.mediaurl+item.image)
-        //   }
-        // }
-       for(let item of this.productImages.variantmedia){
-         
-              this.tempImgs.push(this.mediaurl+item.image)
-          
+        for(let item of this.productImages.variantmedia){ 
+              this.tempImgs.push(this.mediaurl+item.image)  
         }
-        console.log(this.tempImgs)
-      //   for(let fimages of this.tempImgs2){
-      //      this.tempImgs3.push(fimages)
-      //   }
-      //   for(let f of this.tempImgs3 ){
-      //       console.log(f)
-      //   }
       }
     )
   }

@@ -26,4 +26,8 @@ export class MyaccountService {
   OrderInformation(id:number){
     return this.http.get(environment.api+'orderget/'+id,{ headers: this.headers });
   }
+  getOrderById(id:number){
+    return this.http.get(environment.api+'get-order/'+id,{ headers: this.headers });
+
+  }
 }

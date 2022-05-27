@@ -7,6 +7,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class CartService {
+  
 
   url = environment.api;
   // private cartCount = new ReplaySubject<number>(1);
@@ -35,8 +36,8 @@ export class CartService {
   placeOrder(id: any){
     return this.http.post(this.url+'orderplace', id, {headers: this.headers});
   }
-  getOrder(id: number){
-    return this.http.get(this.url+'thankyou/'+id, {headers: this.headers});
+  getOrder(id: number,userExists:number){
+    return this.http.get(this.url+'thankyou/'+id+'/'+userExists, {headers: this.headers});
   }
   updateCart(cart: any){
     return this.http.post(this.url+'cartupdate', cart, {headers: this.headers});
@@ -46,6 +47,25 @@ export class CartService {
   }
 
   shippingCost(data:any){
-    return this.http.post(this.url+'shipping-cost', data, {headers: this.headers})
+    return this.http.post(this.url+'get-shipping-price', data, {headers: this.headers})
+  }
+
+  guestCheckout(value: any) {
+    return this.http.post(this.url+'guestcheckouted', value, {headers: this.headers})
+  }
+  getCountry()
+  {
+    return this.http.get(this.url+"getCountry", {headers: this.headers});
+  }
+  getState(value:any)
+  {
+    return this.http.post(this.url+'getStates', value, {headers: this.headers})
+  }
+  getCity(value:any)
+  {
+    return this.http.post(this.url+'getCity', value, {headers: this.headers})
+  }
+  getTax(value:any){
+    return this.http.post(this.url+'get-tax-all', value, {headers: this.headers})
   }
 }

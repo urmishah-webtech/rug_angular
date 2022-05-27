@@ -35,13 +35,15 @@ export class MyAccountComponent implements OnInit {
   last_name: any;
   orderItems:any=[];
   orderdata:any;  
-
+  order: any=[];
+  orders:any =[];
 
   constructor(private cartService: CartService,
     private notifyService:NotificationService,
     private fb: FormBuilder,
     public MyaccountService:MyaccountService,
-    private invoiceSharing:InvoiceSharingService) { 
+    private invoiceSharing:InvoiceSharingService,
+    ) { 
    
     }
   
@@ -51,6 +53,7 @@ export class MyAccountComponent implements OnInit {
 
     this.profileInfo();
     this.orderInfo();
+    // this.getorder();
     this.AccountForm = this.fb.group({
       first_name: ['',Validators.required],
       last_name: ['',Validators.required],
@@ -192,10 +195,12 @@ export class MyAccountComponent implements OnInit {
          
       });
   }
- callThankYou()
- {
-  this.invoiceSharing(data=> {
-    this.data = data // do whatever you want with it
-  })
- }
+  getorder(id:any){
+     this.order=[];
+     this.MyaccountService.getOrderById(id).subscribe(
+      data=>{
+      this.order = data;
+      console.log(this.order)
+    })
+  }
 }

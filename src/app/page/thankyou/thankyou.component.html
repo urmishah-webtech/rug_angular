@@ -12,7 +12,7 @@
         <div class = "order_status mt-4">
           <div class = "d-flex justify-content-between order_id_strip">
             <h6 class = "mb-0">Order Details</h6>
-            <h5 class = "mb-0">Order ID: {{order.orders.id}}</h5>
+            <h5 class = "mb-0">Order ID: {{order?.orders?.id}}</h5>
           </div>
           <div class = "checkout_product cart-item">
             <table>
@@ -21,12 +21,49 @@
                         <td><div class = "checkout_product_img"><img src = "{{cart.image}}"></div></td>
                         <td class = "product_content"><h4 class = "mb-0">{{cart.title}}</h4>
 
-                            <p *ngIf="cart.varition_id != null" class = "mb-0">
-
-                              <span>{{cart.variant_product[0].attribute1}} </span>
-                             / <span>{{cart.variant_product[0].attribute2}}</span> / <span>Tassels</span>
-                            
-                            </p>
+                            <div *ngIf="cart.varition_id != null" class = "mb-0">
+                              <div *ngIf="cart.cutomeid==1;else normal_product">
+                                <p class="mb-0" >
+                                  <span *ngIf="cart.variant_product[0].attribute1">{{cart.variant_product[0].attribute1}} </span> /
+                                  <span *ngIf="cart.variant_product[0].attribute2">{{cart.variant_product[0].attribute2}}</span> 
+                                   <span *ngIf="cart.variant_product[0].attribute3 && cart.variant_product[0].attribute3==1">
+                                   / Tassels
+                                   </span><span *ngIf="cart.variant_product[0].attribute3 && cart.variant_product[0].attribute3==0">
+                                    No Tassels
+                                    
+                                     </span>
+                                     
+                                     <span *ngIf="cart.variant_product[0].height">/   {{cart.variant_product[0].height}}  </span>  <span *ngIf="cart.variant_product[0].width"> x {{cart.variant_product[0].width}}</span>
+                                   </p>
+                             </div>
+                             <ng-template #normal_product>
+                              <p class="mb-0">
+                                <span *ngIf="cart.variant_product[0].attribute1 && cart.variant_product[0].varient3!=41">{{cart.variant_product[0].attribute1}}
+                                </span> /
+                                <span *ngIf="cart.variant_product[0].attribute2 && cart.variant_product[0].varient2!=41">
+                                  {{cart.variant_product[0].attribute2}}
+                                </span> 
+                                <span *ngIf="cart.variant_product[0].attribute2 && cart.variant_product[0].varient2==41">
+                                  Tassels : {{cart.variant_product[0].attribute2}}
+                                </span>
+                               
+                                <span *ngIf="cart.variant_product[0].attribute3 && cart.variant_product[0].varient3==41">
+                                Tassels : {{cart.variant_product[0].attribute3}}
+                                </span>
+                               
+                                <span *ngIf="cart.variant_product[0].attribute4  && cart.variant_product[0].varient4==41">
+                                 / Tassels  : {{cart.variant_product[0].attribute4}}
+                                  </span>
+                               
+                                <span *ngIf="cart.variant_product[0].attribute3  && cart.variant_product[0].varient3!=41">
+                               / {{cart.variant_product[0].attribute3}}
+                                </span>
+                                <span *ngIf="cart.variant_product[0].attribute4  && cart.variant_product[0].varient4!=41">
+                                  /{{cart.variant_product[0].attribute4}}
+                                  </span> 
+                              </p>
+                             </ng-template>                          
+                            </div>
                       </td>
 
                       <td class = "text-center"><h5> <span>Qty: </span>{{cart.stock}}</h5></td>
@@ -41,19 +78,24 @@
            <div class="checkout_payment">
             <ul>
                 <hr>
-         <li class="d-flex justify-content-between py-2">
+            <li class="d-flex justify-content-between py-2">
                 <p class="mb-0">Subtotal</p>
-                <p class="mb-0"><span>€{{order.product_amount}}</span></p>
+                <p class="mb-0"><span>€{{product_amount}}</span></p>
             </li>
             <hr>
             <li class = "d-flex justify-content-between py-2">
                 <p class = "mb-0">Standard Shipping</p>
-                <p class = "mb-0"><span>€10</span></p>
+                <p class = "mb-0"><span>€{{shipping_cost}}</span></p>
+            </li>
+            <hr>
+              <li class = "d-flex justify-content-between py-2">
+                <p class = "mb-0">Tax Incl. </p>
+                <p class = "mb-0"><span>€{{tax}}</span></p>
             </li>
             <hr>
             <li class = "d-flex justify-content-between py-2">
                 <h6 class = "mb-0">Paid Total Amount</h6>
-                <h5 class = "mb-0"><span>€{{order.orders.netamout+10}}</span></h5>
+                <h5 class = "mb-0"><span>€{{total_amount}}</span></h5>
             </li>
             <hr>
             </ul>

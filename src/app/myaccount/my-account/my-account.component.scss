@@ -1,0 +1,20 @@
+table.order-detail-cls td {padding: 10px;border-bottom: 1px solid #ddd;}
+table.order-detail-cls {width: 100%;}
+
+table.order-detail-cls .product_content h4 {font-size: 20px !important;}
+
+table.order-detail-cls h5 {font-size: 18px !important;}
+
+table.order-detail-cls h4 {font-size: 18px !important;}
+.card{
+    width: 90%;
+}
+.card:hover {
+    background: #309df0;
+    color: #fff;
+    transform: scale(1.1);
+   
+
+
+    z-index: 10;
+  }

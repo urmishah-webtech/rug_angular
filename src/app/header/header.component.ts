@@ -39,15 +39,15 @@ export class HeaderComponent implements OnInit {
   }
 
   getmenu(){
-    this.headerService.getMenu().subscribe(data=> {
-      this.menu = data;
-      // this.menuId = data.id;
-    })
+    // this.headerService.getMenu().subscribe(data=> {
+    //   this.menu = data;
+    //   // this.menuId = data.id;
+    // })
   }
   getSubmenu(id: number){
-    this.headerService.getSubMenu(80).subscribe(data=>{
-      this.submenu = data;
-    })
+    // this.headerService.getSubMenu(80).subscribe(data=>{
+    //   this.submenu = data;
+    // })
   }
   isLogged(){
     if(this.loggedUser.token == null){
@@ -58,6 +58,12 @@ export class HeaderComponent implements OnInit {
     return this.login
   }
   logout() {
+    localStorage.removeItem('id');
+    localStorage.removeItem('name');
+    localStorage.removeItem('token');
+    localStorage.removeItem('cart');
+    localStorage.removeItem('session_id');
+    
     this.authService.logout();
     this.login = false
     //this.router.navigate(['/']);

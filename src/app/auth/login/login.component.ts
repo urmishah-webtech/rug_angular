@@ -21,7 +21,11 @@ export class LoginComponent implements OnInit {
   formValidate:boolean=true;
   isLoaderVisible:boolean=false;
   ngOnInit(): void {
-
+    localStorage.removeItem('id');
+    localStorage.removeItem('name');
+    localStorage.removeItem('token');
+    localStorage.removeItem('cart');
+    localStorage.removeItem('session_id');
   }
 
   loginForm = this.fb.group({
@@ -39,6 +43,8 @@ export class LoginComponent implements OnInit {
         localStorage.removeItem('id');
         localStorage.removeItem('name');
         localStorage.removeItem('token');
+        localStorage.removeItem('cart');
+        localStorage.removeItem('session_id');
         localStorage.setItem('id', this.response_data.user.id)
         localStorage.setItem('name', this.response_data.user.first_name+' '+ this.response_data.user.last_name)
         localStorage.setItem('token',this.response_data.access_token)

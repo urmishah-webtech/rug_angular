@@ -82,29 +82,6 @@
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-7 product_detail_left-col">
           <div class="product">
-
-            <!-- <ngx-slick-carousel class="carousel"
-            #slickModal="slick-carousel"
-            [config]="slideConfigImg" >
-            <div ngxSlickItem  class="slide slider_content">
-              <div class = "product-card">
-                <div>
-                  <img (click)="open($event)" src="https://rug.webtech-evolution.com/admin/public/storage/media/tF7tAUeQZ0piFTkCizTDrexe3E31GYBxMp11J6b9.jpg
-                  "/>
-                </div>
-            
-              </div>
-            </div>
-            <div ngxSlickItem  class="slide slider_content">
-              <div class = "product-card">
-                <div>
-                  <img (click)="open($event)" src="https://rug.webtech-evolution.com/admin/public/storage/media/tF7tAUeQZ0piFTkCizTDrexe3E31GYBxMp11J6b9.jpg
-                  "/>
-                </div>
-            
-              </div>
-            </div>
-            </ngx-slick-carousel> -->
               <ngx-slick-carousel class="carousel slider-for"
                 #slickModal="slick-carousel"
                 [config]="slideConfigImg" (afterChange)="afterChange($event)">
@@ -123,21 +100,7 @@
                     </div>
                   </div>
                 </ngx-slick-carousel>  
-            <!-- <ngx-slick-carousel class="carousel"
-            #slickModal="slick-carousel"
-            [config]="slideConfigImg" *ngFor="let temp2 of tempImgs3.image">
-              <div ngxSlickItem  class="slide slider_content">
-                <div class = "product-card">
-                  <div>
-                    <img (click)="open($event)" src="{{temp2}}"/>
-                  </div>
-                 <div class = 'text-center'>
-                    <h3>Plush Texture</h3>
-                  </div> -->
-                <!-- </div>
-              </div>
-          
-            </ngx-slick-carousel>  -->
+         
 
           </div>
         </div>
@@ -170,7 +133,7 @@
           </div>
           <!-----Product Variation---->
           <!-----Choose Size----->
-          <div class="preview" *ngIf="productVariation != ''">
+          <div class="preview" *ngIf="productVariation != '' && productVariation">
             <form [formGroup]="variantForm">
               <div *ngIf="productVariation.attribute1 != '' && productVariation.attribute1[1].variantnumber != 38" class = "sizes">
                 <label for="variant1"  class = "varient_label">
@@ -417,9 +380,9 @@
       </div>
 
 
-      <div class="product_detail" *ngIf="product.productfaq != ''">
+      <div class="product_detail" *ngIf="product.productfaq != '' && product.productfaq">
         <nav class = "pt-3">
-          <div class="nav nav-tabs gap-2" id="nav-tab" role="tablist">
+          <div class="nav nav-tabs gap-2" id="nav-tab" role="tablist" *ngIf="product.productfaq[0].question!=null">
             <button *ngFor="let detail of product.productfaq; let i=index" class="nav-link" [ngClass]="{'active': i === activeTabIndex}" data-bs-toggle="tab" [attr.data-bs-target]="'#nav-tabs'+i" type="button" role="tab" [attr.aria-selected]="'false'" (click)="selectTab(i)">{{detail.question}}</button>
             <!-- <button class="nav-link" id="nav-tassels-tab" data-bs-toggle="tab" [attr.data-bs-target]="'#nav-tabs'+i+1"
               type="button" role="tab" aria-selected="false">Tassels</button>
@@ -462,14 +425,14 @@
   
   <!----------Product Details Section Ends---------->
   <!----------Product slider Section Starts---------->
-  <section id = "product-detail-slider" *ngIf="relatedProducts != ''">
+  <section id = "product-detail-slider" *ngIf="relatedProducts != '' && relatedProducts">
     <div class = "container">
       <div class = "text-center">
         <h2>You May Also Like</h2>
       </div>
       <ngx-slick-carousel class="carousel"
       #slickModal="slick-carousel"
-      [config]="slideConfigProduct">
+      [config]="slideConfigProduct"> 
       <div ngxSlickItem  class="slide slider_content" *ngFor="let relProducts of relatedProducts">
         <a [routerLink]="['/product-detail', relProducts.id]">
           <div class = "product-card">

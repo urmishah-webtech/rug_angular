@@ -1,45 +1,45 @@
 
 <section id = "signup">
     <div class="container-fluid p-3">
-        <div class="row mb-5">
+        <div class="row  m-4">
         <div class="col-md-12">
             
                 <div  class="text-center">
-                    <h1>Hello {{first_name}} {{last_name}}
+                    <h1>Hello , {{first_name}} {{last_name}}
                     </h1>
                     <!-- <p>You are logged in as nilay5456@gmail.com</p> -->
                 </div>
             
         </div>
-        <div class="row mb-5">
+        <div class="row m-4">
             <div class="col-md-4">
-                <div class="card bg-light">
+                <div class="card bg-light shadow-lg bg-white rounded">
                     <div class="card-body text-center">
                       <p class="card-text">Primary Shipping Address
                     </p>
                     <p class="card-text text-success">{{shippingaddress}} Shipping Address</p>
-                    <button class="btn btn-primary btn-group-sm"  data-bs-toggle="modal" data-bs-target="#AddShippingModal">Add New Shipping Address</button>
-                    <button class="btn btn-info btn-group-sm"  data-bs-toggle="modal" data-bs-target="#shippingListModal">Show All</button>        
+                    <button class="btn btn-primary btn-group-sm btn-sm m-1"  data-bs-toggle="modal" data-bs-target="#AddShippingModal">Add New Shipping Address</button>
+                    <button class="btn btn-info btn-group-sm btn-sm m-1"  data-bs-toggle="modal" data-bs-target="#shippingListModal">Show All</button>        
                     </div>
                   </div>
             </div>
             <div class="col-md-4">
-                <div class="card bg-light">
+                <div class="card bg-light shadow-lg bg-white rounded">
                     <div class="card-body text-center">
                       <p class="card-text">Billing Address</p>
                       <p class="card-text text-success">{{billingaddress}}  Billing Address</p>
-                      <button class="btn btn-primary btn-group-sm" data-bs-toggle="modal" data-bs-target="#AddBillingModal">Add New Billing Address</button>
-                      <button class="btn btn-info btn-group-sm" data-bs-toggle="modal" data-bs-target="#billingListModal">Show All</button>
+                      <button class="btn btn-primary btn-group-sm btn-sm m-1" data-bs-toggle="modal" data-bs-target="#AddBillingModal">Add New Billing Address</button>
+                      <button class="btn btn-info btn-group-sm btn-sm m-1" data-bs-toggle="modal" data-bs-target="#billingListModal">Show All</button>
 
                     </div>
                   </div>
             </div>
             <div class="col-md-4">
-                <div class="card bg-light">
+                <div class="card bg-light shadow-lg bg-white rounded">
                     <div class="card-body text-center">
                       <p class="card-text">Profile Information </p>
                       <p class="card-text  text-success">Name , Email , password And Mobile Number </p>
-                      <button class="btn btn-primary btn-group-sm" (click)="getUserInfo()" data-bs-toggle="modal" data-bs-target="#UpdateUserModal">Update Information</button>
+                      <button class="btn btn-primary btn-group-sm btn-sm m-1" (click)="getUserInfo()" data-bs-toggle="modal" data-bs-target="#UpdateUserModal">Update Information</button>
                      
                     </div>
                   </div>
@@ -54,6 +54,9 @@
                 </div>
                 <div class="modal-body">
                     <div class="sp-add-details">
+                        <div *ngIf="address.length ==0 ">
+                            No Shipping Addrress Found
+                        </div>
                         <div *ngFor="let address of address let i=index " >
                             <div *ngIf="address.address_type=='shipping_address'">
                                 
@@ -96,6 +99,9 @@
                 </div>
                 <div class="modal-body">
                     <div class="sp-add-details">
+                        <div *ngIf="address.length ==0 ">
+                            No Billing Addrress Found
+                        </div>
                         <div *ngFor="let address of address let i=index " >
                             <div *ngIf="address.address_type=='billing_address'">
                                 
@@ -357,33 +363,137 @@
               </div>
             </div>
         </div>
-        
-       
+ 
 
-        <div class="col-md-12">
+        <div class="col-md-12 m-4">
             
             <table class="table table-striped bg-light">
                 <thead>
                     <tr>
-                      <th>Order Id</th>
-                      <th>Total (Incl. Shipping Cost)</th>
-                      <th>Payment Status</th>
-                      <th>Product Information</th>
+                      <th class="text-center">Order Id</th>
+                      <th class="text-center" >Total (Incl. Shipping Cost)</th>
+                      <th class="text-center">Payment Status</th>
+                      <th class="text-center">Product Information</th>
                     </tr>
                   </thead>
                   <tbody>
+                    <ng-container *ngIf="orderItems.length==0"> <tr> <td colspan="4" class="text-center">No Orders Yet ! </td> </tr> </ng-container>
                     <ng-container *ngFor="let order of orderItems;let i=index";>
-                        <tr>
-                            <td>#{{order.id}}</td>
-                            <td>{{order.netamout + order.shipping_cost}} €</td>
-                            <td>{{order.paymentstatus}}</td> 
-                            <td><button class="btn btn-info" (click)="callThankYou()">{{order.order_items[i].product.title}}</button></td>
+                        <tr class="orderRow">
+                            
+                            <td class="text-center">#{{order.id}}</td>
+                            <td class="text-center">{{order.netamout + order.shipping_cost}} €</td>
+                            <td class="text-center">{{order.paymentstatus}}</td> 
+                            <td class="text-center"><button class="btn btn-info" (click)="getorder(order.id)"  data-bs-toggle="modal" data-bs-target="#OrderDetailModal">View</button></td>
                         </tr>
                     </ng-container>
                   </tbody>
             </table>
         </div>
-        
+        <div class="modal fade" id="OrderDetailModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                    <ng-container ><h5 class="modal-title" id="exampleModalLabel" *ngIf="order.orders">#{{order.orders.id }}</h5></ng-container>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="sp-add-details">
+                        <div class = "checkout_product cart-item">
+                           <!-- <ng-container *ngFor="let order of order"> -->
+                            <table class="order-detail-cls">
+                                <tbody>
+                                    <tr *ngFor="let cart of order.order_item">
+                                        <td><div class = "" style="height:100px;width:100%"><img src = "{{cart.image}}" style="width: 100px;height:100px;object-fit: cover;"></div></td>
+                                        <td class = "product_content"><h4 class = "mb-0">{{cart.title}}</h4>
+                
+                                            <div *ngIf="cart.varition_id != null" class = "mb-0">
+                                                <div *ngIf="cart.cutomeid==1;else normal_product">
+                                                  <p class="mb-0" >
+                                                    <span *ngIf="cart.variant_product[0].attribute1">{{cart.variant_product[0].attribute1}} </span> /
+                                                    <span *ngIf="cart.variant_product[0].attribute2">{{cart.variant_product[0].attribute2}}</span> 
+                                                     <span *ngIf="cart.variant_product[0].attribute3 && cart.variant_product[0].attribute3==1">
+                                                     / Tassels
+                                                     </span><span *ngIf="cart.variant_product[0].attribute3 && cart.variant_product[0].attribute3==0">
+                                                      No Tassels
+                                                      
+                                                       </span>
+                                                       
+                                                       <span *ngIf="cart.variant_product[0].height">/   {{cart.variant_product[0].height}}  </span>  <span *ngIf="cart.variant_product[0].width"> x {{cart.variant_product[0].width}}</span>
+                                                     </p>
+                                               </div>
+                                               <ng-template #normal_product>
+                                                <p class="mb-0">
+                                                  <span *ngIf="cart.variant_product[0].attribute1 && cart.variant_product[0].varient3!=41">{{cart.variant_product[0].attribute1}}
+                                                  </span> /
+                                                  <span *ngIf="cart.variant_product[0].attribute2 && cart.variant_product[0].varient2!=41">
+                                                    {{cart.variant_product[0].attribute2}}
+                                                  </span> 
+                                                  <span *ngIf="cart.variant_product[0].attribute2 && cart.variant_product[0].varient2==41">
+                                                    Tassels : {{cart.variant_product[0].attribute2}}
+                                                  </span>
+                                                 
+                                                  <span *ngIf="cart.variant_product[0].attribute3 && cart.variant_product[0].varient3==41">
+                                                  Tassels : {{cart.variant_product[0].attribute3}}
+                                                  </span>
+                                                 
+                                                  <span *ngIf="cart.variant_product[0].attribute4  && cart.variant_product[0].varient4==41">
+                                                   / Tassels  : {{cart.variant_product[0].attribute4}}
+                                                    </span>
+                                                 
+                                                  <span *ngIf="cart.variant_product[0].attribute3  && cart.variant_product[0].varient3!=41">
+                                                 / {{cart.variant_product[0].attribute3}}
+                                                  </span>
+                                                  <span *ngIf="cart.variant_product[0].attribute4  && cart.variant_product[0].varient4!=41">
+                                                    /{{cart.variant_product[0].attribute4}}
+                                                    </span> 
+                                                </p>
+                                               </ng-template>                          
+                                            </div>
+                                          
+                                        </td>   
+                                       
+                                      <td class = "text-center"><h5> <span>Qty: </span>{{cart.stock}}</h5></td>
+                                      <td class = "text-end"><h4>€{{cart.price*cart.stock}}</h4></td>
+                                      
+                                    </tr>
+                                    <ng-container *ngIf="order.orders">
+                                        <tr>
+                                            <td>Shipping Details</td>
+                                            <td>
+                                                <tr>
+                                                    <td>{{order.orders.first_name}} {{order.orders.last_name}}</td>
+                                                </tr>
+                                                <tr><td>{{order.orders.address}} , </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>{{order.orders.city}} , {{order.orders.state}} </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>{{order.orders.country}} - {{order.orders.pincode}}</td>
+    
+                                                </tr>
+                                            </td>
+    
+                                        </tr>
+                                    </ng-container>
+                                   
+                 
+                                </tbody>
+                            </table>
+                            <div>
+                            
+                            </div>
+                            <!-- </ng-container> -->
+
+                           </div>
+                    </div>
+                </div>
+              
+              </div>
+            </div>
+        </div>
+       
         </div>
     </div>
 </section>

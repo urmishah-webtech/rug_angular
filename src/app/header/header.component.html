@@ -70,6 +70,7 @@
           <li class="nav-item rounded">
             <a class="nav-link" routerLink = "/products" routerLinkActive = "active">Our Products</a>
           </li>
+        
           <li class="nav-item rounded">
             <a class="nav-link" routerLink = "our-process" routerLinkActive = "active">Our Process</a>
           </li>
@@ -82,14 +83,22 @@
         </ul>
         <ul class = "d-flex login_signup_btn" *ngIf="!login; else logoutbtn">
           <li><a routerLink = "login">Login</a></li>
+          
           <li><span> | </span></li>
           <li><a routerLink = "signup">Signup</a></li>
+          
         </ul>
+        
         <ng-template #logoutbtn>
+
           <ul class = "d-flex login_signup_btn">
+            <li class="nav-item rounded" *ngIf="login">
+              <a class="nav-link" routerLink = "/profile" routerLinkActive = "active">My Account</a>
+            </li>
             <li class="nav-item rounded">
               <a class="nav-link" (click)="logout()">Logout</a>
             </li>
+            
           </ul>
         </ng-template>
         <div  class = "ms-4">
@@ -115,7 +124,7 @@
           </g>
             </svg>
 
-              <span class="badge bg-secondary">{{cartCount}}</span>
+              <span class="badge bg-secondary" *ngIf="cartCount!=0 && cartCount!=undefined">{{cartCount}}</span>
 
           </a>
         </div>
