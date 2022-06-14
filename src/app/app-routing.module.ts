@@ -71,6 +71,7 @@ const routes: Routes = [
 
     {path: 'thankyou', component: ThankyouComponent},
     {path: 'account/order-history', component: ThankyouComponent, canActivate: [AuthGuard]},
+    { path: 'products', loadChildren: () => import('./products/products.module').then(m => m.ProductsModule) },
     {path: '**', component:NodataComponent}
 ];
 
