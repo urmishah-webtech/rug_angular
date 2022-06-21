@@ -6,11 +6,16 @@ import { HomeService } from '../services/home.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit { 
 
   constructor(private homeService: HomeService) { }
   home: any;
   featureProduct: any = []
+  defaultImage:string="../../assets/img/download.png"
+  collect1img:string="../../assets/img/collection1.jpg"
+  partner1:string="../../assets/img/partner1.png"
+  partner2:string="../../assets/img/partner2.png"
+
   ngOnInit(): void {
     
     this.getHome()

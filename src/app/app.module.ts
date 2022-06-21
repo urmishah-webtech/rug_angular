@@ -4,9 +4,7 @@ import { CommonModule } from '@angular/common'
 import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProductComponent } from './product/product.component';
 import { ProductlistComponent } from './productlist/productlist.component';
-import { ProductDetailComponent } from './product/product-detail/product-detail.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
@@ -41,7 +39,7 @@ import { TradeProgramComponent } from './page/trade-program/trade-program.compon
 import { ReturnComponent } from './page/return/return.component';
 import { SliderComponent } from './slider/slider.component';
 import { BannerComponent } from './banner/banner.component';
-import { LightboxModule } from 'ngx-lightbox';
+// import { LightboxModule } from 'ngx-lightbox';
 import { KeysPipePipe } from './keys-pipe.pipe';
 //import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
@@ -52,15 +50,14 @@ import { ChildComponentComponent } from './child-component/child-component.compo
 import { ZippyBasicComponent } from './zippy-basic/zippy-basic.component';
 import { TestComponent } from './test/test.component';
 import { LoaderInterceptor } from "./loader.interceptor";
+import { LazyLoadImageModule } from 'ng-lazyload-image'; 
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductComponent,
     ProductlistComponent,
-    ProductDetailComponent,
     HeaderComponent,
     FooterComponent,
     SignupComponent,
@@ -98,7 +95,6 @@ import { LoaderInterceptor } from "./loader.interceptor";
     ChildComponentComponent,
     ZippyBasicComponent,
     TestComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -108,9 +104,10 @@ import { LoaderInterceptor } from "./loader.interceptor";
     ReactiveFormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
+    // LightboxModule,
+    FormsModule,
+    LazyLoadImageModule,
     SlickCarouselModule,
-    LightboxModule,
-    FormsModule
   ], 
   providers: [{provide: ToastrService, useClass: ToastrService},{ provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }
   ],

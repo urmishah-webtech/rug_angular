@@ -50,7 +50,7 @@ const routes: Routes = [
     //   ],
     // },
     {path: 'pages/:pageId', component: PageComponent},
-    {path: 'products', component: ProductComponent},
+    // {path: 'products', component: ProductComponent},
     {path: 'product-detail/:productId', component: ProductDetailComponent},
     {path: 'signup', component: SignupComponent},
     {path: 'login', component: LoginComponent},
@@ -71,7 +71,8 @@ const routes: Routes = [
 
     {path: 'thankyou', component: ThankyouComponent},
     {path: 'account/order-history', component: ThankyouComponent, canActivate: [AuthGuard]},
-    { path: 'products', loadChildren: () => import('./products/products.module').then(m => m.ProductsModule) },
+    { path: 'product-detail/:productId', loadChildren: () => import('./products/products.module').then(m => m.ProductsModule) },
+    { path: 'products', loadChildren: () => import('./product-lists/product-lists.module').then(m => m.ProductListsModule) },
     {path: '**', component:NodataComponent}
 ];
 

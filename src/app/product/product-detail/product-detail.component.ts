@@ -149,6 +149,7 @@ export class ProductDetailComponent implements OnInit  {
   }
 
   changeVariation(){
+   
     this.showChart=true;
     let varient1 = this.variantForm.value.variant1;
     let varient2 = this.variantForm.value.variant2;
@@ -156,7 +157,7 @@ export class ProductDetailComponent implements OnInit  {
     let varient4 = this.variantForm.value.variant4;
   
     let size = this.variantForm.value.size
-
+    
     if(size != ''){
     this.sizevariant = size
     var newint = size.match(/\d+/g);
@@ -183,10 +184,12 @@ export class ProductDetailComponent implements OnInit  {
       'text4': varient4,
       'product_id': this.productId
     }
+  
     if(varient1!='' &&  varient2!='' && varient4!='' && size!='' )
     {
-      this.showAddCart=true;
-    
+     
+     
+    this.showAddCart=true
     this.productService.variationProduct(variation).subscribe(
       data =>{
         this.variationProduct = data

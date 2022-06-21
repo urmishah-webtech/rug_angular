@@ -133,7 +133,7 @@
           </div>
           <!-----Product Variation---->
           <!-----Choose Size----->
-          <div class="preview" *ngIf="productVariation != '' && productVariation">
+          <div class="preview" *ngIf="productVariation != ''">
             <form [formGroup]="variantForm">
               <div *ngIf="productVariation.attribute1 != '' && productVariation.attribute1[1].variantnumber != 38" class = "sizes">
                 <label for="variant1"  class = "varient_label">
