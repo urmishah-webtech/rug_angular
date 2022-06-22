@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { AuthService } from '../auth/auth.service';
 import { NotificationService } from '../notification.service';
 import { CartService } from '../services/cart.service';
-import { Country, State, City }  from 'country-state-city';
+// import { Country, State, City }  from 'country-state-city';
 
 @Component({
   selector: 'app-checkout',
@@ -278,28 +278,28 @@ export class CheckoutComponent implements OnInit {
     })
   }
   getCountry(){
-    this.cartService.getCountry().subscribe(res=>{
-      this.country_list=res
-      this.country=this.country_list.country
-    })
+    // this.cartService.getCountry().subscribe(res=>{
+    //   this.country_list=res
+    //   this.country=this.country_list.country
+    // })
   }
   countryChange(value:any){
-    var req_data={
-      country_id:value
-    }
-    this.cartService.getState(req_data).subscribe(res=>{
-      this.state_list=res
-      this.state=this.state_list.states
-    })
+    // var req_data={
+    //   country_id:value
+    // }
+    // this.cartService.getState(req_data).subscribe(res=>{
+    //   this.state_list=res
+    //   this.state=this.state_list.states
+    // })
   }
   stateChange(value:any){
     
-    var req_data={
-      state_id:value
-    }
-    this.cartService.getCity(req_data).subscribe(res=>{
-      this.city_list=res
-      this.city=this.city_list.cities
-    })
+    // var req_data={
+    //   state_id:value
+    // }
+    // this.cartService.getCity(req_data).subscribe(res=>{
+    //   this.city_list=res
+    //   this.city=this.city_list.cities
+    // })
   }
 }

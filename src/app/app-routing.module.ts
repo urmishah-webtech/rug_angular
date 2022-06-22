@@ -1,13 +1,11 @@
 import { Component, NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { FaqComponent } from './page/faq/faq.component';
 import { FooterContactComponent } from './page/footer-contact/footer-contact.component';
 import { PageComponent } from './page/page.component';
 import { ProductDetailComponent } from './product/product-detail/product-detail.component';
-import { ProductComponent } from './product/product.component';
-import { ProductlistComponent } from './productlist/productlist.component';
 import { HomeComponent } from './home/home.component';
 import { NodataComponent } from './nodata/nodata.component';
 import { CartComponent } from './cart/cart.component';
@@ -28,9 +26,6 @@ import { SizeGuideComponent } from './page/size-guide/size-guide.component';
 import { TradeProgramComponent } from './page/trade-program/trade-program.component';
 import { ReturnComponent } from './page/return/return.component';
 import { MyAccountComponent } from './myaccount/my-account/my-account.component';
-import { ParentComponentComponent } from './parent-component/parent-component.component';
-import { ZippyBasicComponent } from './zippy-basic/zippy-basic.component';
-import { TestComponent } from './test/test.component';
 
 
 const routes: Routes = [
@@ -67,12 +62,10 @@ const routes: Routes = [
     {path: 'trade-program', component: TradeProgramComponent},
     {path: 'return', component:ReturnComponent},
     {path: 'profile', component:MyAccountComponent},
-  
-
     {path: 'thankyou', component: ThankyouComponent},
     {path: 'account/order-history', component: ThankyouComponent, canActivate: [AuthGuard]},
-    { path: 'product-detail/:productId', loadChildren: () => import('./products/products.module').then(m => m.ProductsModule) },
-    { path: 'products', loadChildren: () => import('./product-lists/product-lists.module').then(m => m.ProductListsModule) },
+    // {path: 'product-detail/:productId', loadChildren: () => import('./products/products.module').then(m => m.ProductsModule) },
+    // {path: 'products', loadChildren: () => import('./product-lists/product-lists.module').then(m => m.ProductListsModule) },
     {path: '**', component:NodataComponent}
 ];
 

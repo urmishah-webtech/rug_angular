@@ -1,7 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MyaccountService } from '../myaccount.service';
-import { Country, State, City }  from 'country-state-city';
+// import { Country, State, City }  from 'country-state-city';
 import { CartService } from '../../services/cart.service';
 import { NotificationService } from '../../notification.service';
 import { ConfirmedValidator } from '../../confirmed.validator';
@@ -99,7 +99,7 @@ export class MyAccountComponent implements OnInit {
       validator: ConfirmedValidator('newpassword', 'repassword')
     });
    
-    this.country_list = Country.getAllCountries();
+    // this.country_list = Country.getAllCountries();
 
   }
   onShippingSubmit() {
@@ -179,7 +179,7 @@ export class MyAccountComponent implements OnInit {
     var code = this.country_list.filter(function(itm:any){
       return itm.name == value
     });
-    this.city_list = City.getCitiesOfCountry(code[0].isoCode)
+    // this.city_list = City.getCitiesOfCountry(code[0].isoCode)
   }
   delete(id:number){
     this.MyaccountService.deleteAddress(id).subscribe(res=>{
