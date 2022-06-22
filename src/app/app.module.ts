@@ -39,7 +39,7 @@ import { TradeProgramComponent } from './page/trade-program/trade-program.compon
 import { ReturnComponent } from './page/return/return.component';
 import { SliderComponent } from './slider/slider.component';
 import { BannerComponent } from './banner/banner.component';
-// import { LightboxModule } from 'ngx-lightbox';
+import { LightboxModule } from 'ngx-lightbox';
 import { KeysPipePipe } from './keys-pipe.pipe';
 //import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
@@ -50,7 +50,8 @@ import { ChildComponentComponent } from './child-component/child-component.compo
 import { ZippyBasicComponent } from './zippy-basic/zippy-basic.component';
 import { TestComponent } from './test/test.component';
 import { LoaderInterceptor } from "./loader.interceptor";
-import { LazyLoadImageModule } from 'ng-lazyload-image'; 
+import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component'; 
 
 
 
@@ -95,6 +96,7 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
     ChildComponentComponent,
     ZippyBasicComponent,
     TestComponent,
+    ForgotpasswordComponent,
   ],
   imports: [
     BrowserModule,
@@ -104,7 +106,7 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    // LightboxModule,
+    LightboxModule,
     FormsModule,
     LazyLoadImageModule,
     SlickCarouselModule,

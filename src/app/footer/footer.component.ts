@@ -32,11 +32,13 @@ export class FooterComponent implements OnInit {
     // })
   }
   getfootermenu(){
-    // this.headerService.getfooterMenu().subscribe(data=>{
-    //   this.menu = data;
-    // })
-    // this.headerService.getfooterMenu1().subscribe(data=>{
-    //   this.menu1 = data;
-    // })
+   
+    this.headerService.getfooterMenu().subscribe(data=>{
+      this.menu = data;
+
+    })
+    this.headerService.getfooterMenu1().subscribe(data=>{
+      this.menu1 = data;
+    })
   }
 }

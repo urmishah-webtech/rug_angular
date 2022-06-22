@@ -31,6 +31,7 @@ import { MyAccountComponent } from './myaccount/my-account/my-account.component'
 import { ParentComponentComponent } from './parent-component/parent-component.component';
 import { ZippyBasicComponent } from './zippy-basic/zippy-basic.component';
 import { TestComponent } from './test/test.component';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 
 
 const routes: Routes = [
@@ -54,6 +55,7 @@ const routes: Routes = [
     {path: 'product-detail/:productId', component: ProductDetailComponent},
     {path: 'signup', component: SignupComponent},
     {path: 'login', component: LoginComponent},
+    {path: 'forgot-password', component:ForgotpasswordComponent},
     {path: 'faqs', component: FaqComponent},
     {path: 'terms-and-conditions', component: TermsAndConditionsComponent},
     {path: 'privacy-policy', component: PrivacyPolicyComponent},

@@ -131,15 +131,18 @@ export class ProductDetailComponent implements OnInit  {
     this.productService.getProduct(id).subscribe(
       data => {
         this.product = data;
-        
+       
       });
       
   }
 
   getproductVariation(id: number){
+    
     this.productService.getproductVariation(id).subscribe(
+   
       data => {
         this.productVariation = data;
+        alert(this.productVariation.attribute1)
         this.productImages = this.productVariation.data
         for(let item of this.productImages.variantmedia){ 
               this.tempImgs.push(this.mediaurl+item.image)  
@@ -184,11 +187,10 @@ export class ProductDetailComponent implements OnInit  {
       'text4': varient4,
       'product_id': this.productId
     }
-  
-    if(varient1!='' &&  varient2!='' && varient4!='' && size!='' )
+ 
+    if(varient1!='' ||  varient2!='' || varient4!='' || size!='' )
     {
-     
-     
+    
     this.showAddCart=true
     this.productService.variationProduct(variation).subscribe(
       data =>{
