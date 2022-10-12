@@ -135,7 +135,7 @@
           <!-----Choose Size----->
           <div class="preview" *ngIf="productVariation != '' && productVariation">
             <form [formGroup]="variantForm">
-              <div *ngIf="productVariation.attribute1 != '' && productVariation.attribute1[1].variantnumber != 38" class = "sizes">
+              <div *ngIf="productVariation.attribute1 != ''  && productVariation.attribute1[1].variantnumber != 38" class = "sizes">
                 <label for="variant1"  class = "varient_label">
                   <h6 class = "mb-1">{{productVariation.attribute1[1].variant_tag}}:</h6>
                 </label>
@@ -154,7 +154,7 @@
                 </div>
               </div>
               
-              <div *ngIf="productVariation.attribute3[0] != '' && productVariation.attribute3[1].variantnumber != 38" class = "sizes">
+              <div *ngIf=" productVariation.attribute3[0] != '' && productVariation.attribute3[1].variantnumber != 38" class = "sizes">
                 <label for="variant3"  class = "varient_label">
                   <h6 class = "mb-1">{{productVariation.attribute3[1].variant_tag}}:</h6>
                 </label>
@@ -163,7 +163,7 @@
                   <label for="varient3">{{varient3 | titlecase}}</label>
                 </div>
               </div>
-              <div *ngIf="productVariation.attribute4[0] != '' && productVariation.attribute4[1].variantnumber != 38" class = "sizes">
+              <div *ngIf=" productVariation.attribute4[0] != '' && productVariation.attribute4[1].variantnumber != 38" class = "sizes">
                 <label for="variant4"  class = "varient_label">
                   <h6 class = "mb-1">{{productVariation.attribute4[1].variant_tag}}:</h6>
                 </label>
@@ -173,7 +173,7 @@
                 </div>
               </div>
               <!--Size varient-->
-              <div *ngIf="productVariation.attribute1[1].variantnumber == 38; else variant2" class = "sizes">
+              <div *ngIf=" productVariation.attribute1[1].variantnumber == 38; else variant2" class = "sizes">
                 <label for="sizevariant1"  class = "varient_label">
                   <h6 class = "mb-1">{{productVariation.attribute1[1].variant_tag}}:</h6>
                 </label>
@@ -194,7 +194,7 @@
                 </div>
               </ng-template>
               <ng-template #variant3>
-                <div *ngIf="productVariation.attribute3[1].variantnumber == 38; else variant4" class = "sizes">
+                <div *ngIf=" productVariation.attribute3[1].variantnumber == 38; else variant4" class = "sizes">
                   <label for="sizevariant3"  class = "varient_label">
                     <h6 class = "mb-1">{{productVariation.attribute3[1].variant_tag}}:</h6><p></p>
                   </label>
@@ -278,7 +278,7 @@
             <button class="btn blue-btn" (click)="addtoCart()" [disabled]="!showAddCart ">Add to Cart</button>
           </div>
           <div class="customize-btn">
-            <button class="border-btn" type="button" data-bs-toggle="modal" data-bs-target="#CustomizeModal">Customize</button>
+            <button class="border-btn" type="button" (click)="getcolorPrice(product.id)" data-bs-toggle="modal" data-bs-target="#CustomizeModal">Customize</button>
           </div>
           <div class="modal fade" id="CustomizeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
@@ -291,48 +291,31 @@
                   <form class="pd-filter-option" [formGroup]="customizeform" (ngSubmit)="addCustomizedtoCart(customizeform.value)" >
                     <div class="form-group mb-3">
                       <label>Choose A Color</label>
-                 
-                      <select class="form-select"  (change)="getPrice(product.id,36)" aria-label="Default select ChooseColor" formControlName="choosecolor">
-                        <option select Disabled>Choose A Color</option>
-                        <option select value="natural wool">natural wool</option>
-                        <option value="azure blue">azure blue</option>
-                        <option value="saffron yellow">saffron yellow</option>
-                        <option value="emerald green">emerald green</option>
-                        <option value="navy blue">navy blue</option>
-                        <option value="tangerine orange">tangerine orange</option>
-                        <option value="scarlet red">scarlet red</option>
-                        <option value="sahara brown">sahara brown</option>
-                        <option value="midnight black">midnight black</option>
-                        <option value="light gray">light gray</option>
-                      </select>
+                      <select class="form-select select_country" (change)="getPrice(product.id,'color_name',$event)" formControlName="choosecolor" >
+                        <option value="">Choose A Color</option>
+                        <option *ngFor="let item1 of customPriceData1; let i = index" [ngValue]="item1.name">{{item1.name}}</option>
+                        </select>
+
+                      
                     </div>
                     <div class="form-group mb-3">
                       <label>Choose Another Color</label>
-                      <select class="form-select" (change)="getPrice(product.id,37)" aria-label="Default select ChooseAnotherColor" formControlName="chooseanothercolor">
-                        <option Disabled>Choose Another Color</option>
-                        <option value="midnight black">midnight black</option>
-                        <option value="azure blue">azure blue</option>
-                        <option value="emerald green">emerald green</option>
-                        <option value="light gray">light gray</option>
-                        <option value="navy blue">navy blue</option>
-                        <option value="saffron yellow">saffron yellow</option>
-                        <option value="sahara brown">sahara brown</option>
-                        <option value="scarlet red">scarlet red</option>
-                        <option value="tangerine orange">tangerine orange</option>
-                        <option value="natural wool">natural wool</option>
-                      </select>
+                        <select class="form-select"  (change)="getPrice(product.id,'other_color',$event)"  aria-label="Default select ChooseColor" formControlName="chooseanothercolor">
+                          <option select >Choose Another Color</option>
+                         <option *ngFor="let item of custom_another_color" [ngValue]="item.name">{{item.name}}</option>
+                        </select>
                     </div>
                     <div class="form-group mb-3">
                       <label for="Choose Tassels">Choose Tassels</label>
                       <div class="tassels-dropdown">
                         <div class="form-check">
-                          <input class="form-check-input" (change)="getPrice(product.id,41)" type="radio" formControlName="tassels" id="Tassels" value="1">
+                          <input class="form-check-input" (click)="getPrice(product.id,'tassle',$event)"  type="radio" formControlName="tassels" id="Tassels" value="yes">
                           <label class="form-check-label" for="Tassels">
                             Tassels
                           </label>
                         </div>
                         <div class="form-check">
-                          <input class="form-check-input" (change)="getPrice(product.id,41)" type="radio" formControlName="tassels" id="NoTassels" value="0">
+                          <input class="form-check-input" type="radio" (click)="getPrice(product.id,'tassle',$event)" formControlName="tassels" id="NoTassels" value="no">
                           <label class="form-check-label" for="NoTassels">
                             No Tassels
                           </label>
@@ -342,9 +325,9 @@
                     <div class="form-group">
                       <label for="Choose Tassels">Choose Size</label>
                       <div class="choose-size-input">
-                        <input type="text" [(ngModel)]="custom_width" placeholder="Width" (keypress)="getPrice(product.id,38)" formControlName="width">
+                        <input type="text" [(ngModel)]="custom_width" placeholder="Width" (keyup)="getPrice(product.id,'size',$event)"  formControlName="width">
                         <span>X</span>
-                        <input type="text" placeholder="Height" [(ngModel)]="custom_height" (keypress)="getPrice(product.id,38)" formControlName="height">
+                        <input type="text" placeholder="Height" [(ngModel)]="custom_height" (keyup)="getPrice(product.id,'size',$event)" formControlName="height">
                       </div>
                     </div>
                     <div class="modal-footer">
@@ -411,7 +394,7 @@
             <p>We certainly hope that never happens! We're here to answer whatever questions you've got before you place an order to ensure you're 100% happy with your one-of-a-kind design.</p>
           </div> -->
           <div class="tab-pane fade product_size" id="nav-size" role="tabpanel" aria-labelledby="nav-size-tab">
-            <div class="size-square" style="grid-template-columns: repeat({{sizev2}}, 15px)">
+            <div class="size-square" style="grid-template-columns: repeat(sizev2, 15px)">
               <div *ngFor="let s of counter(sizev1*sizev2); let i as index"></div>
             </div>
           </div>
