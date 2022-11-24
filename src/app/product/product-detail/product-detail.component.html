@@ -135,7 +135,8 @@
           <!-----Choose Size----->
           <div class="preview" *ngIf="productVariation != '' && productVariation">
             <form [formGroup]="variantForm">
-              <div *ngIf="productVariation.attribute1 != ''  && productVariation.attribute1[1].variantnumber != 38" class = "sizes">
+              <ng-container *ngIf="productVariation.attribute1">
+              <div *ngIf="productVariation.attribute1[0] != ''  && productVariation.attribute1[1].variantnumber != 38" class = "sizes">
                 <label for="variant1"  class = "varient_label">
                   <h6 class = "mb-1">{{productVariation.attribute1[1].variant_tag}}:</h6>
                 </label>
@@ -144,6 +145,8 @@
                   <label for="varient1">{{varient1 | titlecase}}</label>
                 </div>
               </div>
+            </ng-container>
+            <ng-container *ngIf="productVariation.attribute2">
               <div *ngIf="productVariation.attribute2[0] != '' && productVariation.attribute2[1].variantnumber != 38" class = "sizes">
                 <label for="variant2"  class = "varient_label">
                   <h6 class = "mb-1">{{productVariation.attribute2[1].variant_tag}}:</h6>
@@ -153,7 +156,8 @@
                   <label for="varient2">{{varient2 | titlecase}}</label>
                 </div>
               </div>
-              
+            </ng-container>
+            <ng-container *ngIf="productVariation.attribute3">
               <div *ngIf=" productVariation.attribute3[0] != '' && productVariation.attribute3[1].variantnumber != 38" class = "sizes">
                 <label for="variant3"  class = "varient_label">
                   <h6 class = "mb-1">{{productVariation.attribute3[1].variant_tag}}:</h6>
@@ -163,6 +167,9 @@
                   <label for="varient3">{{varient3 | titlecase}}</label>
                 </div>
               </div>
+            </ng-container>
+            <ng-container *ngIf="productVariation.attribute4">
+
               <div *ngIf=" productVariation.attribute4[0] != '' && productVariation.attribute4[1].variantnumber != 38" class = "sizes">
                 <label for="variant4"  class = "varient_label">
                   <h6 class = "mb-1">{{productVariation.attribute4[1].variant_tag}}:</h6>
@@ -172,7 +179,11 @@
                   <label for="varient4">{{varient4 | titlecase}}</label>
                 </div>
               </div>
+              </ng-container>
+              
               <!--Size varient-->
+            <ng-container *ngIf="productVariation.attribute1">
+
               <div *ngIf=" productVariation.attribute1[1].variantnumber == 38; else variant2" class = "sizes">
                 <label for="sizevariant1"  class = "varient_label">
                   <h6 class = "mb-1">{{productVariation.attribute1[1].variant_tag}}:</h6>
@@ -182,7 +193,10 @@
                   <label for="svarient1">{{s1}}</label>
                 </div>
               </div>
+              </ng-container>
               <ng-template #variant2>
+            <ng-container *ngIf="productVariation.attribute2">
+
                 <div *ngIf="productVariation.attribute2[1].variantnumber == 38; else variant3" class = "sizes">
                   <label for="sizevariant2"  class = "varient_label">
                     <h6 class = "mb-1">{{productVariation.attribute2[1].variant_tag}}:</h6>
@@ -192,8 +206,11 @@
                     <label for="svarient2">{{s2}}</label>
                   </div>
                 </div>
+                </ng-container>
               </ng-template>
               <ng-template #variant3>
+            <ng-container *ngIf="productVariation.attribute3">
+
                 <div *ngIf=" productVariation.attribute3[1].variantnumber == 38; else variant4" class = "sizes">
                   <label for="sizevariant3"  class = "varient_label">
                     <h6 class = "mb-1">{{productVariation.attribute3[1].variant_tag}}:</h6><p></p>
@@ -203,9 +220,13 @@
                     <label for="svarient3">{{s2}}</label>
                   </div>
                 </div>
+                </ng-container>
+
               </ng-template>
               <ng-template #variant4>
-                <div *ngIf="productVariation.attribute2[1].variantnumber == 38; else variant3" class = "sizes">
+            <ng-container *ngIf="productVariation.attribute4">
+
+                <div *ngIf="productVariation.attribute4[1].variantnumber == 38; else variant3" class = "sizes">
                 <label for="sizevariant4"  class = "varient_label">
                   <h6 class = "mb-1">{{productVariation.attribute4[1].variant_tag}}:</h6>
                 </label>
@@ -214,6 +235,7 @@
                     <label for="svarient4">{{s2}}</label>
                   </div>
                 </div>
+            </ng-container>
               </ng-template>
               <!-----Choose tassels---->
               <!--- <div class = "choose_tassels py-2 d-block" *ngIf="productVariation.attribute1[1].variantnumber==41 ||
@@ -257,18 +279,18 @@
                 <!-----Choose Sizes---->
                 <div class = "choose_size py-2" *ngIf="data.varient2 != null">
                   <h6 class = "mb-1">Sizes</h6>
-                  <!--<select (change)="changeVariation()" #varient2 class = "form-select">
+                  <select (change)="changeVariation()" #varient2 class = "form-select">
                     <option selected>-- Choose an Option --</option>
                     <option [ngValue]="varient2.attribute2" *ngFor="let varient2 of productVariation.data;let i = index">{{ varient2.attribute2 }}</option>
-                    </select>    --->
-                  <!-----  <div *ngFor="let varient2 of productVariation.data;let i = index" #varient2>
+                  </select>
+                 <div *ngFor="let varient2 of productVariation.data;let i = index" #varient2>
                     <label (click)="changeVariation($event,varient2, i)">{{ varient2.attribute2 }}</label>
-                    </div> -->
-                  <!----<select class="button_list">
+                    </div>
+                 <select class="button_list">
                     <option id="varient2" *ngFor="let varient2 of productVariation.data" class="btn float-left"
                     [style.background]="varient2" (click)="changeVariation()" [ngClass] ="{'selected' : selectedSize === varient2}">
                     {{varient2.attribute2}}</option>
-                    </select> --->
+                    </select> -
                 </div>
               </div>
             </div>
@@ -278,7 +300,7 @@
             <button class="btn blue-btn" (click)="addtoCart()" [disabled]="!showAddCart ">Add to Cart</button>
           </div>
           <div class="customize-btn">
-            <button class="border-btn" type="button" (click)="getcolorPrice(product.id)" data-bs-toggle="modal" data-bs-target="#CustomizeModal">Customize</button>
+            <button class="border-btn" type="button" *ngIf="!showAddCart  " (click)="getcolorPrice(product.id)" data-bs-toggle="modal" data-bs-target="#CustomizeModal">Customize</button>
           </div>
           <div class="modal fade" id="CustomizeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">

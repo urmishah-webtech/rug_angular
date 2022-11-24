@@ -66,6 +66,7 @@ export class ProductDetailComponent implements OnInit {
   custom_size: any;
   tassle: any;
   tassleprice: any;
+  size: any;
   constructor(public productService: ProductService,
     private route: ActivatedRoute,
     private authService: AuthService,
@@ -87,7 +88,6 @@ export class ProductDetailComponent implements OnInit {
     this.variantForm = new FormGroup({
       variant1: new FormControl('', Validators.required),
       variant2: new FormControl('', Validators.required),
-      variant3: new FormControl('', Validators.required),
       variant4: new FormControl(''),
       size: new FormControl('')
     });
@@ -112,12 +112,13 @@ export class ProductDetailComponent implements OnInit {
         
         if (lable == 'color_name') {
         this.customPriceData1 = this.customPriceData.color_name;
-
+if(this.customPriceData1!=''||this.customPriceData1 != null){
           for(let i =0; i<this.customPriceData1.length;i++){
             if(this.customizeform.value.choosecolor ==this.customPriceData1[i].name){ 
               this.colorprice= this.customPriceData1[i].price;
               console.log(this.colorprice)
             }
+          }
           }
           this.customPriceLab1 = 0
           this.customPriceLab1 = Number(this.colorprice)
@@ -125,6 +126,8 @@ export class ProductDetailComponent implements OnInit {
 
         if (lable == 'other_color') {
         this.custom_another_color = this.customPriceData.other_color;
+if(this.custom_another_color!=''||this.custom_another_color != null){
+
         console.log('hi1');
 
           for(let j=0; j<this.custom_another_color.length;j++){
@@ -138,11 +141,14 @@ export class ProductDetailComponent implements OnInit {
 
             }
           }
+          }
           this.customPriceLab2 = 0
           this.customPriceLab2 += Number(this.anothercolorprice)
         }
         if (lable == 'tassle') {
           this.tassle = this.customPriceData.tassle;
+if(this.tassle!=''||this.tassle != null){
+
           for(let k=0; k<this.tassle.length;k++){
             if(this.customizeform.value.tassels == 'yes'){
               this.tassleprice= this.tassle[k].price;
@@ -150,7 +156,7 @@ export class ProductDetailComponent implements OnInit {
             }else{
               this.tassleprice= 0;
             }
-
+          }
           }
 
           this.customPriceLab3 = 0
@@ -158,10 +164,13 @@ export class ProductDetailComponent implements OnInit {
 
         }
         if (lable == 'size') {
+if(this.size!=''||this.size != null){
+
           this.customPriceLab4 = 0;
           if (this.custom_height != 0 && this.custom_width != 0) {
             this.customPriceLab4 += (this.custom_height * this.custom_width) * Number(this.customPriceData.size[0].price)
           }
+        }
         }
         this.totalCustomPrice = this.customPriceLab1 + this.customPriceLab2 + this.customPriceLab3 + this.customPriceLab4
         // this.totalCustomPrice+=this.customPriceData.cv_option_price[2].price
@@ -215,11 +224,11 @@ export class ProductDetailComponent implements OnInit {
     this.showChart = true;
     let varient1 = this.variantForm.value.variant1;
     let varient2 = this.variantForm.value.variant2;
-    let varient3 = this.variantForm.value.variant3;
     let varient4 = this.variantForm.value.variant4;
+    let varient3 = this.variantForm.value.variant3;
+
 
     let size = this.variantForm.value.size
-
     if (size != '') {
       this.sizevariant = size
       var newint = size.match(/\d+/g);
@@ -242,11 +251,12 @@ export class ProductDetailComponent implements OnInit {
     let variation = {
       'text1': varient1,
       'text2': varient2,
-      'text3': size,
+      'text3': varient3,
+
       'text4': varient4,
       'product_id': this.productId
     }
-    if (varient1 != '' && varient2 != '' && varient4 != '' && size != '') {
+    if (varient1 != '' && varient2 != '' && varient4 != '' && varient3 != ''&& size != '') {
       this.showAddCart = true;
 
       this.productService.variationProduct(variation).subscribe(

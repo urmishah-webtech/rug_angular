@@ -13,6 +13,7 @@ export class CartComponent implements OnInit {
   cartCount: any;
   countSub: any;
   userExists: boolean=false;
+  productitem: any;
 
   constructor(private cartService: CartService,
     private notifyService:NotificationService) {
@@ -31,6 +32,7 @@ export class CartComponent implements OnInit {
   getCart(){
     this.cartService.getCart(this.userId).subscribe(res=>{
       this.cart = res;
+      this.productitem =this.cart.cartitem;
       console.log(this.cart)
       this.cartCount = this.cart.cartcount
       localStorage.setItem('cart', this.cartCount)
